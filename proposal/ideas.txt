@@ -1,0 +1,54 @@
++ Eyes*
+  Science:
+  - Optical apparatus and movement of different species, e.g.
+      Flies, Spiders, Wasps, Bees, Bats (sonic perception?),
+      fish (deep sea?), birds, simple cellular organisms
+  - Mapping of the perceived sectra of the different species to the human
+    perceivable spectrum (papers on this topic)
+    
+  Gamification:
+  - Search targets with different eyes. Different species have different
+    "standard" activities.
+    Implement one/two/... which can be solved with any vision system.
+    I.e. All n vision systems can be chosen in all m species specific activities,
+    or to put it differently: Equip character with another vision system.
+    E.g. Ant foraging: search food and return to base as fast as possible.
+  - Possibility to create your own vision system by configuring n eyes(cameras)
+    and attach them to the model (ant, spider, whatever) and choose a layout
+    for the 2D-screen / oculus.
+    This lets the user test and develop better, task specific visual systems.
+    Of course: save/load
+  - Species-task specific companions/enemies which need to be simulated
+
+  Complexity:
+  - In combination with the oculus rift: visual complexity in
+    processing/perceiving the environment.    
+  - learning about the visual systems of other species
+  - Dunno about model complexity, yet.
+  
+  Aesthetics:
+
+  Eyes are taylored to a specific environment. How do eyes work in environments
+  they are not designed for? E.g. "How would a spider perceive the deep sea?".
+  All eye-implementations are available in all environments.
+  
+
++ Ant Foraging*
+  Science:
+  Gamification:
+  Complexity:
+  Aesthetics:
+
+  Vein maze
+  Science:
+  Gamification:
+  Complexity:
+  Aesthetics:
+
+  Bacteria cultures
+  Science:
+  Gamification:
+  Complexity:
+  Aesthetics:
+
+* Perhaps combinable?
