@@ -1,0 +1,69 @@
+\documentclass{acm_proc_article-sp}
+
+\usepackage[T1]{fontenc}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{libertine}
+
+\usepackage{xcolor}
+\usepackage{blindtext}
+
+
+
+\begin{document}
+
+\title{Titel}
+\subtitle{Subtitel}
+\numberofauthors{2}
+\author{
+% 1st. author
+\alignauthor
+First Author\titlenote{Some note on first authors name}\\
+       \affaddr{Street, House}\\
+       \affaddr{PLZ City}\\
+       \affaddr{Country}\\
+       \email{some.random@e-mail.address}
+% 2nd. author
+\alignauthor
+Second Author\titlenote{Some note on seconds authors name}\\
+       \affaddr{Street, House}\\
+       \affaddr{PLZ City}\\
+       \affaddr{Country}\\
+       \email{some.random@e-mail.address}
+}
+\additionalauthors{Additional Authors}
+\date{University of Augsburg, \today}
+
+% Not neede for our purposes
+%\terms{Terms}
+%\keywords{Keyword 1, Keyword 2}
+%% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+%%A category including the fourth, optional field follows...
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+%% For the ACM ToG format
+%\acmformat{ACMFormat}
+%\acmVolume{Vol.}
+%\acmNumber{Nr.}
+%\acmYear{YYYY}
+%\acmMonth{MM}
+%\acmArticleNum{XXX}
+%\doi{DOI}
+
+
+
+\maketitle
+\begin{abstract}
+\blindtext
+\end{abstract}
+
+
+
+\section{Introduction}
+\blindtext
+
+\end{document}
