@@ -3,9 +3,9 @@
   - Optical apparatus and movement of different species, e.g.
       Flies, Spiders, Wasps, Bees, Bats (sonic perception?),
       fish (deep sea?), birds, simple cellular organisms
-  - Mapping of the perceived sectra of the different species to the human
+  - Mapping of the perceived spectra of the different species to the human
     perceivable spectrum (papers on this topic)
-    
+
   Gamification:
   - Search targets with different eyes. Different species have different
     "standard" activities.
@@ -22,16 +22,19 @@
 
   Complexity:
   - In combination with the oculus rift: visual complexity in
-    processing/perceiving the environment.    
+    processing/perceiving the environment.
   - learning about the visual systems of other species
   - Dunno about model complexity, yet.
-  
+
   Aesthetics:
 
-  Eyes are taylored to a specific environment. How do eyes work in environments
+  Eyes are tailored to a specific environment. How do eyes work in environments
   they are not designed for? E.g. "How would a spider perceive the deep sea?".
   All eye-implementations are available in all environments.
-  
+
+  Links:
+  Some DLR shit: http://www.insectvision.org/flying-insects/bee-view-render-engine
+
 
 + Ant Foraging*
   Science:
