@@ -128,6 +128,17 @@ Stefan Büttner\\
 \subsection{User Experience}
 
 \section{Project Requirements}
+The pinhole camera model used in most computer graphics software to mimic
+the human visual perception is a rather crude approximation to the real world.
+We do not recognize this most of the time, because we are used to it or to
+put it differently, because our brain does a lot of preprocessing.
+One example is the \emph{blind spot} where the optic nerve exits the eye.
+In this area there are no photoreceptor cells and thus no visual information is
+available. Yet, we don't notice this in everyday life since the brain merges
+the information of the left and the right eye and compensates this lack of
+information. The same goes for optical distortion
+
+Although we do not see
 \begin{description}
 \item[Science]
 - Optical apparatus and movement of different species, e.g.
@@ -135,8 +146,27 @@ Stefan Büttner\\
     fish (deep sea?), birds, simple cellular organisms
 - Mapping of the perceived spectra of the different species to the human
   perceivable spectrum (papers on this topic)
+- How is polarized light perceived?
 - Mapping of the layout of one system to the human visual system
 See \cite{insectvision}
+
+Different eye types
+\begin{itemize}
+  \item Simple eyes
+  \begin{itemize}
+    \item Pit
+    \item Spherical lensed
+    \item Multiple lenses
+    \item Refractive cornea
+    \item Reflector
+  \end{itemize}
+  \item Compound eyes
+  \begin{itemize}
+    \item Apposition
+    \item Superposition
+    \item Parabolic superposition
+  \end{itemize}
+\end{itemize}
 
 \item[Gamification]
 - Search targets with different eyes. Different species have different
