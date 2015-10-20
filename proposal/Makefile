@@ -12,6 +12,12 @@ all: proposal
 	-@${RM} *.log
 	-@${RM} *.thm
 	-@${RM} *.out
+	-@${RM} *.bbl
+	-@${RM} *.bcf
+	-@${RM} *.blg
+	-@${RM} *.ilg
+	-@${RM} *.ind
+	-@${RM} *.run.xml
 
 clean:
 	-@${RM} proposal.pdf
@@ -20,3 +26,9 @@ clean:
 	-@${RM} *.thm
 	-@${RM} *.out
 	-@${RM} *.tex~
+	-@${RM} *.bbl
+	-@${RM} *.bcf
+	-@${RM} *.blg
+	-@${RM} *.ilg
+	-@${RM} *.ind
+	-@${RM} *.run.xml
