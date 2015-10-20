@@ -11,15 +11,18 @@
 \usepackage{xcolor}
 \usepackage{blindtext}
 
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\bibliography{literatur.bib}
+
 
 \begin{document}
 
 
 \title{
-Interactive Simulation WS15/16\\ %
+Interactive Simulation WS 15/16\\ %
 Project Proposal
 }
-\subtitle{Simulating visual systems of different species}
+\subtitle{EYES - Exchange Your Vision Simulator}
 \numberofauthors{2}
 \author{
 % 1st. author
@@ -28,14 +31,14 @@ Sebastian Lemp\\
 %       \affaddr{Street, House}\\
 %       \affaddr{PLZ City}\\
 %       \affaddr{Country}\\
-       \email{sebastian.lemp@student.uni-augsburg.de}
+%       \email{sebastian.lemp@student.uni-augsburg.de}
 % 2nd. author
 \alignauthor
 Stefan Büttner\\
 %       \affaddr{Street, House}\\
 %       \affaddr{PLZ City}\\
 %       \affaddr{Country}\\
-       \email{stefan.buettner@student.uni-augsburg.de}
+%       \email{stefan.buettner@student.uni-augsburg.de}
 }
 %\additionalauthors{Additional Authors}
 
@@ -61,12 +64,63 @@ Stefan Büttner\\
 
 
 \maketitle
-\begin{abstract}
+%\begin{abstract}
+%\end{abstract}
 
-\end{abstract}
+\section{Introduction/Motivation}
++ Convey understanding of other optical perception than the human eye.
 
+\section{Concept}
+\begin{itemize}
+\item At least 2 other visual systems to choose from
+\item One or more tasks to solve using those available systems.
+\item Model the visual systems as realistically as possible.
+\item Use oculus rift to address each eye individually → different modes:
+  \begin{itemize}
+  \item Both human eyes see the same images to have a flat, monitor like view
+  \item For binocular systems: One-to-one mapping of the eyes
+        For multiocular systemo: Map them somehow to the two human eyes
+  \end{itemize}
+\end{itemize}
 
-\section{Introduction}
-\blindtext
+\subsection{User Experience}
+
+\section{Project Requirements}
+\begin{description}
+\item[Science]
+- Optical apparatus and movement of different species, e.g.
+    Flies, Spiders, Wasps, Bees, Bats (sonic perception?),
+    fish (deep sea?), birds, simple cellular organisms
+- Mapping of the perceived spectra of the different species to the human
+  perceivable spectrum (papers on this topic)
+- Mapping of the layout of one system to the human visual system
+See \cite{insectvision}
+
+\item[Gamification]
+- Search targets with different eyes. Different species have different
+  \"standard\" activities.
+  Implement one/two/... which can be solved with any vision system.
+  I.e. All n vision systems can be chosen in all m species specific activities,
+  or to put it differently: Equip character with another vision system.
+  E.g. Ant foraging: search food and return to base as fast as possible.
+- Possibility to create your own vision system by configuring n eyes(cameras)
+  and attach them to the model (ant, spider, whatever) and choose a layout
+  for the 2D-screen / oculus.
+  This lets the user test and develop better, task specific visual systems.
+  Of course: save/load
+- Species-task specific companions/enemies which need to be simulated
+
+\item[Complexity]
+- In combination with the oculus rift: visual complexity in
+  processing/perceiving the environment.
+- learning about the visual systems of other species
+- Dunno about model complexity, yet.
+
+\item[Aesthetics]
+\end{description}
+
+\section{Timeline}
+
+\printbibliography
 
 \end{document}
