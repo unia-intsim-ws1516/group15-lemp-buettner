@@ -23,3 +23,10 @@ sysinfo.txt
 # vim temporary files
 *.swp
 
+# LaTeX temporaries
+*.bbl
+*.bcf
+*.blg
+*.ilg
+*.ind
+*.run.xml
