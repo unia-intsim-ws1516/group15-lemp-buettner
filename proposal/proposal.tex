@@ -129,6 +129,7 @@ Stefan Büttner\\
 \subsection{User Experience}
 
 \section{Project Requirements}
+\todo{Cite this whole shit}\\
 The pinhole camera model used in most computer graphics software to mimic
 the human visual perception is a rather crude approximation to the real world.
 We do not recognize this most of the time, because we are used to it. In other
@@ -139,13 +140,13 @@ available. Yet, we don't notice this in everyday life since the brain merges
 the information of the left and the right eye and compensates this lack of
 information. Other effects are optical distortion or color sensitivity which
 is not uniform over the retina.
-Nevertheless, using this pinhole model yields better, actually the expected
-results on computer screen or a virtual reality device. Displaying the image
-captured by the retina of a human eye would not yield satisfying results
-(\todo{describe them?}).
+Nevertheless, using this pinhole model yields better results on computer screen
+or a virtual reality device, actually the ones we expect. In contrast,
+displaying the image captured by the retina of a human eye would not yield
+satisfying results (\todo{describe them?}).
 Yet, the only thing we can do about other animals visual systems is reconstruct
-this image as closely as possible and invent a mapping of those images to our
-eyes which we believe comes close to the actual perception.
+this image as closely as possible and invent mappings of those images to our
+eyes which we believe come close to the actual perception.
 This is especially evident when looking at species with more than two eyes.
 
 The same goes for the perceived range of the visual spectrum. If the perceived
@@ -155,34 +156,58 @@ range exceeds the spectrum visible to humans, a remapping is required.
 to human-eye mapping? E.g. the spectral mapping could be influenced quite easily
 because it's from ℝ to ℝ.}
 
-\begin{description}
-\item[Science]
-- Optical apparatus and movement of different species, e.g.
-    Flies, Spiders, Wasps, Bees, Bats (sonic perception?),
-    fish (deep sea?), birds, simple cellular organisms
-- Mapping of the perceived spectra of the different species to the human
-  perceivable spectrum (papers on this topic)
-- How is polarized light perceived?
-- Mapping of the layout of one system to the human visual system
-See \cite{insectvision}
+The eyes of honey bees are already well studied. There are measurements
+of the ommatidial density on the eye ellipsoid as well as the spectral
+sensitivity of the ommatidia. Therefor an accurate model can be derived.
+Scientist of the German Aerospace Center in cooperation with the Australian
+National University, for example, implemented a renderer
+which renders a panorama image from the view of a bee \cite{insectvision}
+in order to study the way bees navigate almost without any depth perception and
+low image resolution.
+Another project at the University of Sussex realized a VR-game where the
+player is supposed to find as many flowers as possible in a given time
+period \cite{beepilot}.
+Yet, both of these project did not take the spectral sensitivity of the bees
+into account. Therefor this project's novum is to represent the bee's spectral
+perception in some way.
 
-Different eye types
-\begin{itemize}
-  \item Simple eyes
-  \begin{itemize}
-    \item Pit
-    \item Spherical lensed
-    \item Multiple lenses
-    \item Refractive cornea
-    \item Reflector
-  \end{itemize}
-  \item Compound eyes
-  \begin{itemize}
-    \item Apposition
-    \item Superposition
-    \item Parabolic superposition
-  \end{itemize}
-\end{itemize}
+Unlike humans, bee's are less sensitive to red but more sensitive to green and
+ultra violet wavelengths \todo{cite}. They are even capable of recognizing the
+polarization of the light because the photoreceptive cells in each ommatidium
+respond to different polarizations differently.
+Altough all of this is really interesting, we don't know yet to what extent those
+aspects are going to be realized. This is due to our current lack of technical
+knowledge about Unity3D and the principal difficulty how to display these
+effects.
+
+\begin{description}
+% \item[Science]
+% - Optical apparatus and movement of different species, e.g.
+%     Flies, Spiders, Wasps, Bees, Bats (sonic perception?),
+%     fish (deep sea?), birds, simple cellular organisms
+% - Mapping of the perceived spectra of the different species to the human
+%   perceivable spectrum (papers on this topic)
+% - How is polarized light perceived?
+% - Mapping of the layout of one system to the human visual system
+% See \cite{insectvision}
+
+% Different eye types
+% \begin{itemize}
+%   \item Simple eyes
+%   \begin{itemize}
+%     \item Pit
+%     \item Spherical lensed
+%     \item Multiple lenses
+%     \item Refractive cornea
+%     \item Reflector
+%   \end{itemize}
+%   \item Compound eyes
+%   \begin{itemize}
+%     \item Apposition
+%     \item Superposition
+%     \item Parabolic superposition
+%   \end{itemize}
+% \end{itemize}
 
 \item[Gamification]
 - Search targets with different eyes. Different species have different
@@ -210,5 +235,7 @@ Different eye types
 \section{Timeline}
 
 \printbibliography
+
+\balancecolumns
 
 \end{document}
