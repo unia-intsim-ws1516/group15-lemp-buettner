@@ -1,0 +1,73 @@
+--- /home/xadrin/Downloads/acm_proc_article-sp.cls	2015-10-23 00:22:31.985480992 +0200
++++ acm_proc_article-sp.cls	2015-10-23 00:25:35.777334345 +0200
+@@ -313,26 +313,52 @@
+ % *********************************************
+ % Gerry Murray 11/30/2006
+ % *********************************************
+-\newfont{\secfnt}{ptmb8t at 12pt}
+-\newfont{\secit}{ptmbi8t at 12pt}    %13 Jan 00 gkmt
+-\newfont{\subsecfnt}{ptmri8t at 11pt}
+-\newfont{\subsecit}{ptmbi8t at 11pt}  % 
+-\newfont{\ttlfnt}{phvb8t at 18pt}
+-\newfont{\ttlit}{phvbo8t at 18pt}    % GM 2/4/2000
+-\newfont{\subttlfnt}{phvr8t at 14pt}
+-\newfont{\subttlit}{phvro8t at 14pt} % GM 2/4/2000
+-\newfont{\subttlbf}{phvb8t at 14pt}  % 13 Jan 00 gkmt
+-\newfont{\aufnt}{phvr8t at 12pt}
+-\newfont{\auit}{phvro8t at 12pt}     % GM 2/4/2000
+-\newfont{\affaddr}{phvr8t at 10pt}
+-\newfont{\affaddrit}{phvro8t at 10pt} % GM 2/4/2000
+-\newfont{\eaddfnt}{phvr8t at 12pt}
+-\newfont{\ixpt}{ptmr8t at 9pt}
+-\newfont{\confname}{ptmri8t at 8pt}
+-\newfont{\crnotice}{ptmr8t at 8pt}
+-\newfont{\ninept}{ptmr8t at 9pt}
++%\newfont{\secfnt}{ptmb8t at 12pt}
++%\newfont{\secit}{ptmbi8t at 12pt}    %13 Jan 00 gkmt
++%\newfont{\subsecfnt}{ptmri8t at 11pt}
++%\newfont{\subsecit}{ptmbi8t at 11pt}  % 
++%\newfont{\ttlfnt}{phvb8t at 18pt}
++%\newfont{\ttlit}{phvbo8t at 18pt}    % GM 2/4/2000
++%\newfont{\subttlfnt}{phvr8t at 14pt}
++%\newfont{\subttlit}{phvro8t at 14pt} % GM 2/4/2000
++%\newfont{\subttlbf}{phvb8t at 14pt}  % 13 Jan 00 gkmt
++%\newfont{\aufnt}{phvr8t at 12pt}
++%\newfont{\auit}{phvro8t at 12pt}     % GM 2/4/2000
++%\newfont{\affaddr}{phvr8t at 10pt}
++%\newfont{\affaddrit}{phvro8t at 10pt} % GM 2/4/2000
++%\newfont{\eaddfnt}{phvr8t at 12pt}
++%\newfont{\ixpt}{ptmr8t at 9pt}
++%\newfont{\confname}{ptmri8t at 8pt}
++%\newfont{\crnotice}{ptmr8t at 8pt}
++%\newfont{\ninept}{ptmr8t at 9pt}
+ % +++++++++++++++++++++++++++++++++++++++++++++
+ % -- End of block B --
++%
++%
++% -- Start of block C -- Don't use any particular font
++% *********************************************
++% Stefan Buettner 10/23/2015
++% *********************************************
++\newcommand{\secfnt}{\sffamily\large\upshape\bfseries}
++\newcommand{\secit}{\sffamily\large\itshape\bfseries}
++\newcommand{\subsecfnt}{\sffamily\upshape}
++\newcommand{\subsecit}{\sffamily\itshape}
++\newcommand{\ttlfnt}{\sffamily\huge\upshape\bfseries}
++\newcommand{\ttlit}{\sffamily\huge\itshape\bfseries}
++\newcommand{\subttlfnt}{\sffamily\Large\upshape}
++\newcommand{\subttlit}{\sffamily\Large\itshape}
++\newcommand{\subttlbf}{\sffamily\Large\upshape\bfseries}
++\newcommand{\aufnt}{\sffamily\large\upshape}
++\newcommand{\auit}{\sffamily\large\itshape}
++\newcommand{\affaddr}{\sffamily\normalsize\upshape}
++\newcommand{\affaddrit}{\sffamily\normalsize\itshape} 
++\newcommand{\eaddfnt}{\sffamily\small\upshape}
++\newcommand{\ixpt}{\sffamily\small\upshape}
++\newcommand{\confname}{\sffamily\small\upshape}
++\newcommand{\crnotice}{\sffamily\small\upshape}
++\newcommand{\ninept}{\sffamily\small\upshape}
++% +++++++++++++++++++++++++++++++++++++++++++++
++% -- End of block C --
+ 
+ %\def\email#1{{{\eaddfnt{\vskip 4pt#1}}}}
+ % If we have an email, inside a "shared affiliation" then we need the following instead
