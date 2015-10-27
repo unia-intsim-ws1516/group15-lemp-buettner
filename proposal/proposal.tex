@@ -31,6 +31,7 @@ filecolor=black%
 \newcommand{\todo}[1]{\textcolor{Red}{#1}}
 \newcommand{\sebastian}[1]{\textcolor{Green}{#1}}
 \newcommand{\stefan}[1]{\textcolor{BurntOrange}{#1}}
+\newcommand{\etal}{\textit{et. al.}}
 
 \begin{document}
 
@@ -142,6 +143,29 @@ a particular disease.
 
 \section{Project Requirements}
 
+Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent Display in order
+to evaluate the users eye direction and adept the displayed images in real-time.
+That way they were able to create realistic results because the effects of eye
+diseases are mostly following the eye movement since the eye itself is affected.
+Thus tracking the eye direction and using that information to adjust the
+generated image accordingly presumably yields better results on VR devices
+than displaying fixed images.
+
+Contemporary mobile phones usually have two cameras, one at the back side
+and one on the side of the dislay. The latter one can be used for video calls
+or selfies. Yet, in this project it could be useful for acquiring the gaze
+direction of the eyes when using the Cardboard. Since the screen of the phone
+is lighting the eyes, they should be well visible. Two other problems are that
+the processing power of mobile phones is limited and the there might be no
+way of accessing the phones camera directly from a Unity3D program. The latter
+could be addressed by a seperate app which acts as a gaze-direction server
+with which the simulation is communicating via some inter process communication
+mechanism. The other problem of the limited processing power is subject to
+further research ;).
+
+The gaze-direction would also be useful to accurately simulate the depth-of-field
+for some diseases like cataract.
+
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{human_eye_scheme.pdf}
@@ -185,7 +209,7 @@ a particular disease.
 \end{description}
 
 \section{Timeline}
-
+\todo{}
 \printbibliography
 
 \balancecolumns
