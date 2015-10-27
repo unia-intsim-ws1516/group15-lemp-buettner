@@ -14,6 +14,8 @@ all: proposal
 	-@${RM} *.ilg
 	-@${RM} *.ind
 	-@${RM} *.run.xml
+	-@${RM} *.fls
+	-@${RM} *_latexmk
 
 clean:
 	-@${RM} proposal.pdf
@@ -28,3 +30,5 @@ clean:
 	-@${RM} *.ilg
 	-@${RM} *.ind
 	-@${RM} *.run.xml
+	-@${RM} *.fls
+	-@${RM} *_latexmk
