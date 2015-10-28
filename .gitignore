@@ -32,3 +32,4 @@ sysinfo.txt
 *.run.xml
 *.fls
 *_latexmk
+out/
