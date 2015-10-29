@@ -1,34 +1,12 @@
-TEX=xelatex
+OUTDIR=out
+TEX=latexmk -xelatex -outdir=${OUTDIR}
 
 all: proposal
 
 .PHONY proposal:
 	${TEX} proposal.tex
-	makeindex proposal.tex
-	biber proposal
-	${TEX} proposal.tex
-	${TEX} proposal.tex
-	-@${RM} *.aux
-	-@${RM} *.log
-	-@${RM} *.thm
-	-@${RM} *.out
-	-@${RM} *.bbl
-	-@${RM} *.bcf
-	-@${RM} *.blg
-	-@${RM} *.ilg
-	-@${RM} *.ind
-	-@${RM} *.run.xml
+	cp ${OUTDIR}/proposal.pdf ./
 
 clean:
 	-@${RM} proposal.pdf
-	-@${RM} *.aux
-	-@${RM} *.log
-	-@${RM} *.thm
-	-@${RM} *.out
-	-@${RM} *.tex~
-	-@${RM} *.bbl
-	-@${RM} *.bcf
-	-@${RM} *.blg
-	-@${RM} *.ilg
-	-@${RM} *.ind
-	-@${RM} *.run.xml
+	-@${RM} -fr ${OUTDIR}

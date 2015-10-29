@@ -16,6 +16,7 @@
 \bibliography{literatur.bib}
 
 \usepackage{subcaption}
+\usepackage{fancyref}
 
 \usepackage[%
 unicode=true,%
@@ -31,6 +32,8 @@ filecolor=black%
 \newcommand{\todo}[1]{\textcolor{Red}{#1}}
 \newcommand{\sebastian}[1]{\textcolor{Green}{#1}}
 \newcommand{\stefan}[1]{\textcolor{BurntOrange}{#1}}
+\newcommand{\etal}{\textit{et. al.}}
+\newcommand{\Gray}[1]{\textcolor{Gray}{#1}}
 
 \begin{document}
 
@@ -83,248 +86,207 @@ Stefan Büttner\\
 %\begin{abstract}
 %\end{abstract}
 
-\section{Introduction/Motivation}
-\begin{itemize}
-  \item Give people the opportunity to experience other perception systems
-  than the human eye ⇒ understanding why moths are caught by light, why
-  flies fly in your eye while bicycling, why flies fly against glass...
+% Disease list:
+% -------------------------------------------------------------------------------
+% (Stefan)     11 Disorders of sclera, cornea, iris and ciliary body
+% (Sebastian)   1 Cataract (Grauer Star)
+% (Stefan)      2 Retinal detachment and breaks
+% (Sebastian)  14 Other retinal disorders
+% (Stefan)      1 Glaucoma (Grüner Star)
+% (Stefan)      2 Disorders of optic nerve and visual pathways
+% (Sebastian)  10 Disorders of ocular muscles, binocular movement, accommodation and refraction
+% (Stefan)      6 Visual disturbances and blindness
+%              47
 
-\end{itemize}
+%
+% Possible References:
+% http://www.svi.cps.utexas.edu/EI466209.pdf
 
-\sebastian{willst du die moths reinbringen wenn wir die evenutell nicht machen?
-Sondern lieber nen Beispiel mit Bienen}\\
-\stefan{Weiss noch net. Wenn wir die net machen, dann net. Hab bisher lediglich
-die meisten Gedanken, die mir durch den Kopf gegangen sind niedergeschrieben.}
-\sebastian{Würde schauen wie viel wir haben (vom Platz) und danach ein wenig entscheiden was wir aufschreiben}
+% http://www.icdvrat.org/2008/papers/ICDVRAT2008_S04_N06_Banks_McCrindle.pdf
+%
+% claim they have an real-time app for Android and iOS:
+% http://www.brailleinstitute.org/sight-loss-blog/398-leading-eye-diseases.html 
+%
+% OpenGL real-time simulation
+% http://percept.eecs.yorku.ca/papers/p127-vinnikov.pdf
+% 
 
+\section{Motivation}
+Eye diseases have been an issue throughout all the human history. In the
+beginning the focus layed on their treatment. This task is reasonably well
+solved for many diseases and since Virtual Reality (VR) is more and more
+pushing into the consumer market, it could be broadly used for education and
+thus prevention of eye diseases. For example, the risk of suffering from
+retinal detachment can be greatly reduced if the signs are recognized early
+and a doctor is consulted. Therefore, educational software can be used.
+In addition, people would hopefully visit a doctor earlier if they already
+experienced a good simulation of a severe state of a disease, before they
+actually are in a severe state.
+Other applications could be testing designs of consumer products like packaging
+or traffic signs or other signs at public places.
 
+Although there are many simulations available already, they usually work on
+still 2D images, 2D video streams or static 3D scenes\footnote{All these
+statements are based on our brief research. There might still be game-like
+applications out there... somewhere.} and don't have any game component.
+Moreover, more sophisticated simulations are probably not easily available
+for public use and implementing a simulator using Unity3D in terms of an
+\emph{eye disease asset set} wrapped into a small game could be interesting
+for a broad audience.
+
+%\begin{itemize}
+%  \item Give people the opportunity to experience different symptoms of eye
+%      disease, to know what they are and how to fight them for example
+%      nightblindness can caused by a wrong diet
+%      ⇒ so help people to eat the right food.
+%  \item Supposedly there is already a real-time simulator for eye diseases for
+%      Android, although we were not able to find it on Google Play Store for
+%      our phones \cite{braille}.
+%\end{itemize}
 
 \section{Concept}
-\begin{itemize}
-\item At least 2 other visual systems to choose from
-\item One or more tasks to solve using those available systems.
-  \begin{itemize}
-    \item Find a flower or some sweets (Bee/Wasp)
-    \item Find something and return to the colony as fast as possible (Ant)
-    \item Go as far as possible in the night without dying (moth)
-    \item Find an exit to the room/café/drinking glass (caught by some human)/...
-    \item Cross the highway
-  \end{itemize}
-\item Model the visual systems as realistically as possible.
-\item Use oculus rift / Google Cardboard to address each eye individually
-→ different modes:
-  \begin{itemize}
-  \item Both human eyes see the same images to have a flat, monitor like view
-  \item For binocular systems: One-to-one mapping of the eyes
-        For multiocular systems: Map them somehow to the two human eyes
-  \end{itemize}
-\end{itemize}
+%\begin{itemize}
+%  \item Fulfill everyday tasks with impaired vision
+%  \item Possible boni: 
+%  \begin{itemize}
+%    \item Get rid of disease by performing the right actions
+%    e.g. take medication on the way or make a doctors appointment...
+%    \item Preventive measures during the task to not get disease in next lvl
+%  \end{itemize}
+%  \item Target platform: Android \& Google Cardboard to address many people
+%\end{itemize}
 
-\sebastian{Ich würde glaub ich das mit oculus rift / cardboard rausnehmen,
-Will es zwar auch umbedingt machen aber weiß nicht ob wir den fokus auf ne pc
-version lenken sollten. Aufgrund der eventuellen komplexität}\\
-\stefan{Nee, ich würd's schon reinschreiben. Weil ich finde das wäre schon ein
-zentraler Punkt des Projekts. Klar machen wir uns dadurch auch etwas Druck,
-aber muss. Aber dafür können wir ja vllt. bis Mo kurz schauen, ob ne Oculus Rift
-Integration eher schwer oder eher einfach ist und es danach entscheiden.}
-\sebastian{Jap}
+The user should be able to experience different types of eye diseases,
+including early as well as severe stages in order to understand when to consult
+a doctor and why. Hopefully, this gives people better judgment on when to
+visit a doctor as well as the courage to do so, if they experience the symptoms
+of a particular disease.
 
+There will be at least the first 6 different eye diseases in
+\Fref{tab:eye_diseases} either to choose from in every task or appear at least
+once in the game.
 
+Possible tasks could be based on reading (visual acuity), distinguishing
+objects (color), and navigating in everyday environments
+(limited field of view).
+This may be realized required for cooking, working at a line in a factory
+sorting screws or similar things, using public transport or driving a car
+(at night), food shopping, going to the pharmacy getting the right medication,
+find hidden object given written hints, or board/care games.
+
+Ideally the chosen tasks would be individual levels which depend on each other
+and will tell a small story, like car driving → food shopping → cooking.
+The user can either choose the disease for the level himself or a random disease
+is selected in the beginning.
+The chosen disease should become worse over the time (within one level or
+across levels) but, if possible and accurate (neglecting the time), the user
+should also be able to slow down the process or even heal the disease
+completely. Therefore he/she has to take the appropriate measures for the
+specific disease.
+
+\section{Technical Aspects}
+In order to convincingly convey the topic, using a VR device like the
+Oculus Rift or an mobile phone / Google Cardboard combination would
+be beneficial to the project.
+
+Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order
+to evaluate the users eye direction and adept the displayed images in real-time.
+Because the effects of eye diseases follow the eye movement, i.e. are static
+with respect to the eye coordinate frame, they achieved more realistic results
+in comparison to rendering gaze-independent images.
+A consumer solution is under development by the German company
+SensoMotoric Instruments (SIM) which provides an gaze tracking solution update
+for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
+According to their website they also provide an integration into various VR
+engines, including Unity3D, available making it especially interesting for
+this project.
+
+The gaze-direction would be useful to accurately simulate the vision fields
+and would also be an interesting human interface for the game mechanics.
+
+As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like
+blurry or distorted vision, floaters, and reduced field of view can be
+efficiently implemented by using fragment shaders. The individual properties
+of the shaders and how to decompose the individual diseases into different
+shaders (re-usability) is subject to the first research block. But since this
+appears to be a very well researched topic, we're confident that we won't run
+into any major difficulties.
 
 \begin{figure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{bee-vision.jpg}
-  \caption{Qualitative retina image captured by an apposition eye.}
-  \label{appositeeye}
+    \centering
+    \includegraphics[width=\columnwidth]{human_eye_scheme.pdf}
+    \caption{Scheme of the human eye.}
+    \label{humaneye}
 \end{figure}
 
-\begin{centering}
-\begin{figure}
-  \begin{subfigure}[t]{0.1345\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{beeview.png}
-    \caption{Rendering of an environment as seen by a bee.}
-    \label{beeview}
-  \end{subfigure}
-  ~
-  \begin{subfigure}[t]{0.3255\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{beeview-panorama.png}
-    \caption{Panorama rendering of the scene.}
-    \label{beeviewpanorama}
-  \end{subfigure}
-  \caption{Renderings generated by InsectVision \cite{insectvision}.}
-\end{figure}
-\end{centering}
+\begin{table}
+    \textbf{Glaucoma}\\
+    Sudden eye pain, blurred vision and loss of vision especially in the
+    outer regions.
 
-\subsection{User Experience}
+    \vspace{1em}\textbf{Cataracts}\\
+    Blurred vision especially in the center region.
 
-\section{Project Requirements}
-\todo{Cite this whole shit}\\
-The pinhole camera model used in most computer graphics software to mimic
-the human visual perception is a rather crude approximation to the real world.
-We do not recognize this most of the time, because we are used to it. In other
-words, our brains do a lot of preprocessing.
-One example is the \emph{blind spot} where the optic nerve exits the eye.
-In this area there are no photoreceptor cells and thus no visual information is
-available. Yet, we don't notice this in everyday life since the brain merges
-the information of the left and the right eye and compensates this lack of
-information. Other effects are optical distortion or color sensitivity which
-is not uniform over the retina.
-Nevertheless, using this pinhole model yields better results on computer screen
-or a virtual reality device, actually the ones we expect. In contrast,
-displaying the image captured by the retina of a human eye would not yield
-satisfying results (\todo{describe them?}).
-Yet, the only thing we can do about other animals visual systems is reconstruct
-this image as closely as possible and invent mappings of those images to our
-eyes which we believe come close to the actual perception.
-This is especially evident when looking at species with more than two eyes.
+    \vspace{1em}\textbf{Diabetic Retinopathy}\\
+    Black spots in the view.
 
-The same goes for the perceived range of the visual spectrum. If the perceived
-range exceeds the spectrum visible to humans, a remapping is required.
+    \vspace{1em}\textbf{Color blindness}\\
+    Some colours appear indistinguishable.
 
-\todo{Give the user/player the freedom to design or influence this retina image
-to human-eye mapping? E.g. the spectral mapping could be influenced quite easily
-because it's from ℝ to ℝ.}
+    \vspace{1em}\textbf{Achromatopsia}\\
+    (Almost) No color sensitivity at all.
 
-The eyes of honey bees are already well studied. There are measurements
-of the ommatidial density on the eye ellipsoid as well as the spectral
-sensitivity of the ommatidia. Therefor an accurate model can be derived.
-Scientist of the German Aerospace Center in cooperation with the Australian
-National University, for example, implemented a renderer
-which renders a panorama image from the view of a bee \cite{insectvision}
-in order to study the way bees navigate almost without any depth perception and
-low image resolution.
-Another project at the University of Sussex realized a VR-game where the
-player is supposed to find as many flowers as possible in a given time
-period \cite{beepilot}.
-Yet, both of these project did not take the spectral sensitivity of the bees
-into account. Therefor this project's novum is to represent the bee's spectral
-perception in some way.
+    \vspace{1em}\textbf{Myopia / Hyperopia}\\
+    Commonly known as nearsightedness and farsightedness respectively.
 
-Unlike humans, bee's are less sensitive to red but more sensitive to green and
-ultra violet wavelengths \todo{cite}. They are even capable of recognizing the
-polarization of the light because the photoreceptive cells in each ommatidium
-respond to different polarizations differently.
-Altough all of this is really interesting, we don't know yet to what extent those
-aspects are going to be realized. This is due to our current lack of technical
-knowledge about Unity3D and the principal difficulty how to display these
-effects.
+    \vspace{1em}\textbf{Kreatoconus}\\
+    The cornea deforms into a conical shape.
+    Multiple ghost images may be visible, arranged in a chaotic pattern,
+    the vision becomes blurry, and visual acuity decreases at all distances.
+    Poor night vision, photo-phobia, and eye strain are additional symptoms.
 
-\begin{description}
-  \item[Science]
-% - Optical apparatus and movement of different species, e.g.
-%     Flies, Spiders, Wasps, Bees, Bats (sonic perception?),
-%     fish (deep sea?), birds, simple cellular organisms
-% - Mapping of the perceived spectra of the different species to the human
-%   perceivable spectrum (papers on this topic)
-% - How is polarized light perceived?
-% - Mapping of the layout of one system to the human visual system
-% See \cite{insectvision}
-  \sebastian{Sollten wir dies nicht genauer beschreiben? Also genau welche wir
-  vorhaben zu machen? ( Bienen/Fliegen?)}\\
-  \stefan{Jap, aber das ist immernoch die Ideensammlung von So einfach
-  reinkopiert.}
+    \vspace{1em}\textbf{Nyctalopia / Hermalopia}\\
+    High difficulty to see in relatively low and bright light respectively.
 
-\item[Different eye types]
-% \begin{itemize}
-%   \item Simple eyes
-%   \begin{itemize}
-%     \item Pit
-%     \item Spherical lensed
-%     \item Multiple lenses
-%     \item Refractive cornea
-%     \item Reflector
-%   \end{itemize}
-%   \item Compound eyes
-%   \begin{itemize}
-%     \item Apposition
-%     \item Superposition
-%     \item Parabolic superposition
-%   \end{itemize}
-% \end{itemize}
-\sebastian{Auch evenutell genauer? Bezüglich was wir machen.}\\
-\stefan{Ist nur ne Übersicht um bissel Info zu haben und dass es nach mehr
-aussieht :P}
-\sebastian{allright}
+    \vspace{1em}\textbf{Retinal detachment / Posterior vitreous detachment}\\
+    Flashes of light, very brief in the extreme peripheral region.
+    Sudden increase in the amount of floaters.
+    Slight feeling of heaviness in the eye.
+    \caption{Eye diseases}
+    \label{tab:eye_diseases}
+\end{table}
 
-\item[Gamification]
-- Search targets with different eyes. Different species have different
-  \"standard\" activities.
-  Implement one/two/... which can be solved with any vision system.
-  I.e. All n vision systems can be chosen in all m species specific activities,
-  or to put it differently: Equip character with another vision system.
-  E.g. Ant foraging: search food and return to base as fast as possible.
-- Possibility to create your own vision system by configuring n eyes(cameras)
-  and attach them to the model (ant, spider, whatever) and choose a layout
-  for the 2D-screen / oculus.
-  /sebastian{weis nicht ob ich das auch rausnehmen würde}
-  This lets the user test and develop better, task specific visual systems.
-  Of course: save/load
-- Species-task specific companions/enemies which need to be simulated
-
-\item[Complexity]
-- In combination with the oculus rift: visual complexity in
-  processing/perceiving the environment.
-- learning about the visual systems of other species
-- Dunno about model complexity, yet.
-
-\sebastian{Wie oben würde ich mich glaube nicht so auf OR fixieren oder
-zumindestens es als untersten Punkt nennen.}\\
-\stefan{\href{https://www.youtube.com/watch?v=F54ME85o_aQ}
-{Aber ich mag doch die Oculus...}}
-\sebastian{Ich liebe die Oculus auch nur angst das es in der Zeit nicht umsetzbar ist;)}
-
-
-\item[Aesthetics]
-\end{description}
-
-\sebastian{Bezüglich Aesthetics: Da würde ich einfach die Basic sachen trozdem
-nochmal reinschreiben: 3D, firstperson, etc...}\\
-\stefan{Okay, mach ;)}
-\sebastian{Okay;) werd ich noch machen}
-
-
-\section{Timeline}
-
-Todos:
+\newpage
+\section{Time-line}
+The dates behind the categories are the due dates.
 \begin{itemize}
-  \item Research
+
+  \item Research \Gray{- 15. Nov. '15}
   \begin{itemize}
-    \item How to model the eyes of a bee?
+    \item What kind of eye diseases are most common?
+    \item Find some suitable tasks.
+	\item Are there simulators like this available?
     \item How to implement custom camera projections in Unity?
-    \item How to realize spectral rendering?
-    \item What other visual systems are well known to be implemented? → Fiddler Crab
-    \item How to model the eyes of this othe species?
-    \item How to interface with the oculus ritf?
-    \item Obtain model for infrared/ultraviolet light transport in real life
-          scenarios along realistic values for materials and emmiters (sun/sky/lamps/...)
+    \item How to interface with the Oculus Rift?
   \end{itemize}
-  \item Implementation
+
+  \item Implementation \Gray{- 1. Jan. '16}
   \begin{itemize}
-    \item Implement bee sight
-    \item Implement other sight
     \item Create scenario/level 1
+    \item Implement the first disease
+    \item Implement the other diseases 
     \item Create another scenario
     \item Create menu
-    \item Based on level: Implement threats
-    \item Integrate oculus rift
+    \item Integrate Oculus Rift
   \end{itemize}
-  \item Testing
+
+  \item Testing \Gray{- 11. Jan. '16}
+  \item Report \Gray{- 18. Jan. '16}
+  \item Presentation \Gray{- 25. Jan. '16}
+
 \end{itemize}
 
-\begin{center}
-  \begin{tabular}{|l|p{6.5cm}|}
-    \hline
-    Oct. '15 & uiae \\ \hline
-    Nov. '15 & xvlc \\ \hline
-    Dec. '15 & asdf \\ \hline
-    Jan. '15 & qwer \\ \hline
-    Feb. '15 & foo \\
-    \hline
-  \end{tabular}
-\end{center}
-
+\todo{}
 \printbibliography
 
 \balancecolumns

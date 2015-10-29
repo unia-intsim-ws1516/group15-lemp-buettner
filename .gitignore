@@ -30,3 +30,6 @@ sysinfo.txt
 *.ilg
 *.ind
 *.run.xml
+*.fls
+*_latexmk
+out/
