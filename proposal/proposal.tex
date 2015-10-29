@@ -183,22 +183,33 @@ should also be able to slow down the process or even heal the disease
 completely. Therefore he/she has to take the appropriate measures for the
 specific disease.
 
-\section{Project Requirements}
+\section{Technical Aspects}
+In order to convincingly convey the topic, using a VR device like the
+Oculus Rift or an mobile phone / Google Cardboard combination would
+be benificial to the project.
+
 Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order
 to evaluate the users eye direction and adept the displayed images in real-time.
 Because the effects of eye diseases follow the eye movement, i.e. are static
 with respect to the eye coordinate frame, they achieved more realistic results
 in comparison to rendering gaze-independant images.
+A consumer solution is under development by the german company
+SensoMotoric Instruments (SIM) which provides an gaze tracking solution update
+for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
+According to their website they also provide an integration into various VR
+engines, including Unity3D, available making it especially interesting for
+this project.
 
-However the german company SensoMotoric Instruments (SIM) provides an gaze
-tracking solution update for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
-Like the Oculus, it's
-still under development but could probably already be purchased. There is also
-an integration into various VR engines, including Unity3D available making it
-especially interesting for this project.
-
-The gaze-direction would be useful to accurately simulate the vision field
+The gaze-direction would be useful to accurately simulate the vision fields
 and would also be an interesting human interface for the game mechanics.
+
+As descriped in \cite{gazedisplays} and \cite{eyediseasesim} effects like
+blurry or distorted vision, floaters, and reduced field of view can be
+efficiently implemented by using fragment shaders. The individual properties
+of the shaders and how to decompose the individual diseases into different
+shaders (reusability) is subject to the first research block. But since this
+appears to be a very well researched topic, we're confident that we won't run
+into any major difficulties.
 
 \begin{figure}
     \centering
@@ -254,9 +265,7 @@ and would also be an interesting human interface for the game mechanics.
 
     \item What kind of eye diseases are most common?
 	
-    \item Are there Simulators like this available?
-	
-    \item Find some suitable task.
+	\item Are there Simulators like this available?
 
     \item How to implement custom camera projections in Unity?
 
@@ -278,6 +287,8 @@ and would also be an interesting human interface for the game mechanics.
     \item Create another scenario
 
     \item Create menu
+
+    \item Based on level: Implement threats
 
     \item Integrate oculus rift
 
