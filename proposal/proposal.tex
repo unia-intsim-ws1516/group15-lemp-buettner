@@ -115,24 +115,24 @@ Stefan Büttner\\
 Eye diseases have been an issue throughout all the human history. In the
 beginning the focus layed on their treatment. This task is reasonably well
 solved for many diseases and since Virtual Reality (VR) is more and more
-pushing into the consumer market, it could be broardly used for education and
+pushing into the consumer market, it could be broadly used for education and
 thus prevention of eye diseases. For example, the risk of suffering from
 retinal detachment can be greatly reduced if the signs are recognized early
-and a doctor is consulted. Therfore, educational software can be used.
+and a doctor is consulted. Therefore, educational software can be used.
 In addition, people would hopefully visit a doctor earlier if they already
 experienced a good simulation of a severe state of a disease, before they
 actually are in a severe state.
 Other applications could be testing designs of consumer products like packaging
 or traffic signs or other signs at public places.
 
-Altough there are many simulations available already, they usually work on
+Although there are many simulations available already, they usually work on
 still 2D images, 2D video streams or static 3D scenes\footnote{All these
 statements are based on our brief research. There might still be game-like
 applications out there... somewhere.} and don't have any game component.
 Moreover, more sophisticated simulations are probably not easily available
 for public use and implementing a simulator using Unity3D in terms of an
 \emph{eye disease asset set} wrapped into a small game could be interesting
-for a broard audience.
+for a broad audience.
 
 %\begin{itemize}
 %  \item Give people the opportunity to experience different symptoms of eye
@@ -158,7 +158,7 @@ for a broard audience.
 
 The user should be able to experience different types of eye diseases,
 including early as well as severe stages in order to understand when to consult
-a doctor and why. Hopefully, this gives people better judgement on when to
+a doctor and why. Hopefully, this gives people better judgment on when to
 visit a doctor as well as the courage to do so, if they experience the symptoms
 of a particular disease.
 
@@ -174,8 +174,8 @@ sorting screws or similar things, using public transport or driving a car
 (at night), food shopping, going to the pharmacy getting the right medication,
 find hidden object given written hints, or board/care games.
 
-Ideally the chosen tasks would be individual levels which depend on eachother
-and will tell a small story, like cardriving → food shopping → cooking.
+Ideally the chosen tasks would be individual levels which depend on each other
+and will tell a small story, like car driving → food shopping → cooking.
 The user can either choose the disease for the level himself or a random disease
 is selected in the beginning.
 The chosen disease should become worse over the time (within one level or
@@ -187,14 +187,14 @@ specific disease.
 \section{Technical Aspects}
 In order to convincingly convey the topic, using a VR device like the
 Oculus Rift or an mobile phone / Google Cardboard combination would
-be benificial to the project.
+be beneficial to the project.
 
 Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order
 to evaluate the users eye direction and adept the displayed images in real-time.
 Because the effects of eye diseases follow the eye movement, i.e. are static
 with respect to the eye coordinate frame, they achieved more realistic results
-in comparison to rendering gaze-independant images.
-A consumer solution is under development by the german company
+in comparison to rendering gaze-independent images.
+A consumer solution is under development by the German company
 SensoMotoric Instruments (SIM) which provides an gaze tracking solution update
 for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
 According to their website they also provide an integration into various VR
@@ -204,11 +204,11 @@ this project.
 The gaze-direction would be useful to accurately simulate the vision fields
 and would also be an interesting human interface for the game mechanics.
 
-As descriped in \cite{gazedisplays} and \cite{eyediseasesim} effects like
+As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like
 blurry or distorted vision, floaters, and reduced field of view can be
 efficiently implemented by using fragment shaders. The individual properties
 of the shaders and how to decompose the individual diseases into different
-shaders (reusability) is subject to the first research block. But since this
+shaders (re-usability) is subject to the first research block. But since this
 appears to be a very well researched topic, we're confident that we won't run
 into any major difficulties.
 
@@ -221,7 +221,7 @@ into any major difficulties.
 
 \begin{table}
     \textbf{Glaucoma}\\
-    Sudden eye pain, blurred vision and loss of vision espacilly in the
+    Sudden eye pain, blurred vision and loss of vision especially in the
     outer regions.
 
     \vspace{1em}\textbf{Cataracts}\\
@@ -231,24 +231,24 @@ into any major difficulties.
     Black spots in the view.
 
     \vspace{1em}\textbf{Color blindness}\\
-    Some colours appear undistinguishable.
+    Some colours appear indistinguishable.
 
     \vspace{1em}\textbf{Achromatopsia}\\
     (Almost) No color sensitivity at all.
 
     \vspace{1em}\textbf{Myopia / Hyperopia}\\
-    Commonly known as nearsightness and farsightness respectively.
+    Commonly known as nearsightedness and farsightedness respectively.
 
     \vspace{1em}\textbf{Kreatoconus}\\
     The cornea deforms into a conical shape.
     Multiple ghost images may be visible, arranged in a chaotic pattern,
     the vision becomes blurry, and visual acuity decreases at all distances.
-    Poor night vision, photophobia, and eye strain are additional symptoms.
+    Poor night vision, photo-phobia, and eye strain are additional symptoms.
 
     \vspace{1em}\textbf{Nyctalopia / Hermalopia}\\
     High difficulty to see in relatively low and bright light respectively.
 
-    \vspace{1em}\textbf{Retinal detachment / Posterior viterous detachment}\\
+    \vspace{1em}\textbf{Retinal detachment / Posterior vitreous detachment}\\
     Flashes of light, very brief in the extreme peripheral region.
     Sudden increase in the amount of floaters.
     Slight feeling of heaviness in the eye.
@@ -257,7 +257,7 @@ into any major difficulties.
 \end{table}
 
 \newpage
-\section{Timeline}
+\section{Time-line}
 The dates behind the categories are the due dates.
 \begin{itemize}
 
@@ -267,7 +267,7 @@ The dates behind the categories are the due dates.
     \item Find some suitable tasks.
 	\item Are there simulators like this available?
     \item How to implement custom camera projections in Unity?
-    \item How to interface with the oculus rift?
+    \item How to interface with the Oculus Rift?
   \end{itemize}
 
   \item Implementation \Gray{- 1. Jan. '16}
@@ -277,7 +277,7 @@ The dates behind the categories are the due dates.
     \item Implement the other diseases 
     \item Create another scenario
     \item Create menu
-    \item Integrate oculus rift
+    \item Integrate Oculus Rift
   \end{itemize}
 
   \item Testing \Gray{- 11. Jan. '16}
