@@ -16,6 +16,7 @@
 \bibliography{literatur.bib}
 
 \usepackage{subcaption}
+\usepackage{fancyref}
 
 \usepackage[%
 unicode=true,%
@@ -109,7 +110,7 @@ Stefan Büttner\\
 % http://percept.eecs.yorku.ca/papers/p127-vinnikov.pdf
 % 
 
-\section{Introduction/Motivation}
+\section{Motivation}
 Eye diseases have been an issue throughout all the human history. In the
 beginning the focus layed on their treatment. This task is reasonably well
 solved for many diseases and since Virtual Reality (VR) is more and more
@@ -124,13 +125,13 @@ Other applications could be testing designs of consumer products like packaging
 or traffic signs or other signs at public places.
 
 Altough there are many simulations available already, they usually work on
-still 2D images, 2D video streams or static 3D scenes \footnote{All these
+still 2D images, 2D video streams or static 3D scenes\footnote{All these
 statements are based on our brief research. There might still be game-like
 applications out there... somewhere.} and don't have any game component.
 Moreover, more sophisticated simulations are probably not easily available
 for public use and implementing a simulator using Unity3D in terms of an
 \emph{eye disease asset set} wrapped into a small game could be interesting
-for broard audience.
+for a broard audience.
 
 %\begin{itemize}
 %  \item Give people the opportunity to experience different symptoms of eye
@@ -143,32 +144,51 @@ for broard audience.
 %\end{itemize}
 
 \section{Concept}
+%\begin{itemize}
+%  \item Fulfill everyday tasks with impaired vision
+%  \item Possible boni: 
+%  \begin{itemize}
+%    \item Get rid of disease by performing the right actions
+%    e.g. take medication on the way or make a doctors appointment...
+%    \item Preventive measures during the task to not get disease in next lvl
+%  \end{itemize}
+%  \item Target platform: Android \& Google Cardboard to address many people
+%\end{itemize}
 
-\begin{itemize}
-  \item Fulfill everyday tasks with impaired vision
-  \item Possible boni: 
-  \begin{itemize}
-    \item Get rid of disease by performing the right actions
-    e.g. take medication on the way or make a doctors appointment...
-    \item Preventive measures during the task to not get disease in next lvl
-  \end{itemize}
-  \item Target platform: Android \& Google Cardboard to address many people
-\end{itemize}
+The user should be able to experience different types of eye diseases,
+including early as well as severe stages in order to understand when to consult
+a doctor and why. Hopefully, this gives people better judgement on when to
+visit a doctor as well as the courage to do so, if they experience the symptoms
+of a particular disease.
 
-\subsection{User Experience}
+There will be at least the first 6 different eye diseases in
+\Fref{tab:eye_diseases} either to choose from in every task or appear at least
+once in the game.
 
-User should be able to experience different types of eye diseases, including
-their early as well as the severe stages, in order to understand when to consult
-a doctor and why. Hopefully this gives people better judgement on when to visit
-a doctor as well as the courage to do so, if they experience the symptoms of
-a particular disease.
+Possible tasks could be based on reading (visual acuity), distinguishing
+objects (color), and navigating in everyday environments
+(limited field of view).
+This may be realized required for cooking, working at a line in a factory
+sorting screws or similar things, using public transport or driving a car
+(at night), food shopping, going to the pharmacy getting the right medication,
+find hidden object given written hints, or board/care games.
+
+Ideally the chosen tasks would be individual levels which depend on eachother
+and will tell a small story, like cardriving → food shopping → cooking.
+The user can either choose the disease for the level himself or a random disease
+is selected in the beginning.
+The chosen disease should become worse over the time (within one level or
+across levels) but, if possible and accurate (neglecting the time), the user
+should also be able to slow down the process or even heal the disease
+completely. Therefore he/she has to take the appropriate measures for the
+specific disease.
 
 \section{Project Requirements}
 Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order
 to evaluate the users eye direction and adept the displayed images in real-time.
-Because the effects of eye diseases follow the eye movement, i.e. are static in
-the eye coordinate frame, they achieved more realistic results in comparison to
-rendering gaze-independant images.
+Because the effects of eye diseases follow the eye movement, i.e. are static
+with respect to the eye coordinate frame, they achieved more realistic results
+in comparison to rendering gaze-independant images.
 
 However the german company SensoMotoric Instruments (SIM) provides an gaze
 tracking solution update for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
@@ -187,42 +207,42 @@ and would also be an interesting human interface for the game mechanics.
     \label{humaneye}
 \end{figure}
 
-\begin{description}
-    \item[Glaucoma]
-        Sudden eye pain, blurred vision and loss of vision espacilly in the outer regions.
+\begin{table}
+    \textbf{Glaucoma}\\
+    Sudden eye pain, blurred vision and loss of vision espacilly in the
+    outer regions.
 
-    \item[Cataracts]
-        Blurred vision especially in the center region.
+    \vspace{1em}\textbf{Cataracts}\\
+    Blurred vision especially in the center region.
 
-    \item[Diabetic Retinopathy]
-        Black spots in the view
+    \vspace{1em}\textbf{Diabetic Retinopathy}\\
+    Black spots in the view.
 
-    \item[Color blindness]
-        Some colours appear undistinguishable.
+    \vspace{1em}\textbf{Color blindness}\\
+    Some colours appear undistinguishable.
 
-    \item[Achromatopsia]
-        (Almost) No color sensitivity at all.
+    \vspace{1em}\textbf{Achromatopsia}\\
+    (Almost) No color sensitivity at all.
 
-    \item[Myopia/Hyperopia]
-        Commonly known as nearsightness and farsightness respectively.
+    \vspace{1em}\textbf{Myopia / Hyperopia}\\
+    Commonly known as nearsightness and farsightness respectively.
 
-    \item[Kreatoconus]
-        Cornea shape converges to cone \\
-        Multiple ghost images! (chaotic pattern),
-        blurry vision, visual acuity at all distances, poor night vision
-        photophobia, eye strain \\
-        No to little pain \\
-        Differently strong in both eyes
+    \vspace{1em}\textbf{Kreatoconus}\\
+    The cornea deforms into a conical shape.
+    Multiple ghost images may be visible, arranged in a chaotic pattern,
+    the vision becomes blurry, and visual acuity decreases at all distances.
+    Poor night vision, photophobia, and eye strain are additional symptoms.
 
-    \item[Nyctalopia/Hermalopia]
-        High difficulty to see in relatively low and bright light respectively.
+    \vspace{1em}\textbf{Nyctalopia / Hermalopia}\\
+    High difficulty to see in relatively low and bright light respectively.
 
-    \item[Retinal detachment/Posterior viterous detachment]
-        Flashes of light, very brief in the extreme peripheral region.\\
-        Sudden increase in the amount of floaters. \\
-        Slight feeling of heaviness in the eye.
-
-\end{description}
+    \vspace{1em}\textbf{Retinal detachment / Posterior viterous detachment}\\
+    Flashes of light, very brief in the extreme peripheral region.
+    Sudden increase in the amount of floaters.
+    Slight feeling of heaviness in the eye.
+    \caption{Eye diseases}
+    \label{tab:eye_diseases}
+\end{table}
 
 \section{Timeline}
 
