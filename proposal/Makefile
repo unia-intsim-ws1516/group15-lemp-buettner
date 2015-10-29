@@ -9,4 +9,4 @@ all: proposal
 
 clean:
 	-@${RM} proposal.pdf
-	-@${RM} ${OUTDIR}
+	-@${RM} -fr ${OUTDIR}
