@@ -32,4 +32,10 @@ sysinfo.txt
 *.run.xml
 *.fls
 *_latexmk
+*.log
 out/
+
+# Eclipse temporaries
+.cproject
+.project
+settings/
