@@ -14,7 +14,9 @@ int main(int argc, char* argv[])
     CmdLine cmdParser("Test program", ' ', "strange version");
 
     ValueArg<string> fileName("f", "file", "Image file", true, "", "path");
+    SwitchArg disableColorProcessing("", "disable", "Disable color processing", false);
     cmdParser.add(fileName);
+    cmdParser.add(disableColorProcessing);
     cmdParser.parse(argc, argv);
 
     Mat image;
@@ -30,10 +32,13 @@ int main(int argc, char* argv[])
         cout << "Loaded '" << fileName.getValue() << "'." << endl;
     }
 
-    Matrix3f CVD;
-    CVD << 0.259411, 0.923008, -0.182420,
-           0.110296, 0.804340, 0.085364,
-           -0.006276, -0.034346, 1.040622;
+    Matrix3f CVD(Matrix3f::Identity());
+    if (!disableColorProcessing.getValue())
+    {
+        CVD << 0.259411, 0.923008, -0.182420,
+               0.110296, 0.804340, 0.085364,
+               -0.006276, -0.034346, 1.040622;
+    }
     for (int y = 0; y < image.rows; ++y)
     {
         for (int x = 0; x < image.cols; ++x)
@@ -55,7 +60,6 @@ int main(int argc, char* argv[])
     }
 
     imwrite("uiae.png", image);
-    namedWindow("Some Window", WINDOW_AUTOSIZE);
     imshow("Some caption", image);
     waitKey(0);
 
