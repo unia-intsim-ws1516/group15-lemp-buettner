@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace jp.gulti.ColorBlind
 {
@@ -18,7 +19,7 @@ namespace jp.gulti.ColorBlind
 		[SerializeField]
 		public float BlindIntensity = 1.0f;
 
-		[SerializeField]
+        [SerializeField]
 		public Shader ColorBlindShader;
 		protected Material ColorBlindMat;
 
@@ -35,7 +36,6 @@ namespace jp.gulti.ColorBlind
 		{
 			CheckSupport(false);
 			ColorBlindShader = Shader.Find("Hidden/GULTI/ColorBlindSimulator");
-
 			ColorBlindMat = CreateMaterial (ColorBlindShader, ColorBlindMat);
 
 			return ColorBlindMat != null;
@@ -90,7 +90,7 @@ namespace jp.gulti.ColorBlind
 			}
 			ColorBlindMat.shader = ColorBlindShader;
 
-			//Intensity Set
+			// Intensity Set
 			ColorBlindMat.SetFloat("_BlindIntensity", BlindIntensity);
 
 			Graphics.Blit(_src, _dst, ColorBlindMat);
