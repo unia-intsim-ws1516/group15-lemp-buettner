@@ -1,0 +1,110 @@
+﻿\documentclass[a4paper, 11pt]{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage{csquotes}
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{libertine}
+
+\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\bibliography{literatur.bib}
+
+\usepackage{subcaption}
+\usepackage{fancyref}
+\usepackage{enumerate}
+
+\usepackage[%
+unicode=true,%
+colorlinks=true,%
+linkcolor=black,%
+urlcolor=MidnightBlue,%
+citecolor=black,%
+filecolor=black%
+]
+{hyperref}
+
+\newcommand{\dateversion}{Augsburg, \today,  Version: 0.0.0}
+\newcommand{\authors}{Sebastian Lemp, Stefan Büttner}
+\newcommand{\documenttitle}{Interactive Simulation\\Projekt: EYES}
+
+\title{\documenttitle}
+\author{\authors}
+\date{\dateversion}
+
+\usepackage{scrpage2}
+
+\clearscrheadfoot
+\setkomafont{pageheadfoot}{ %
+    \bfseries\large}
+
+\ihead[]{\documenttitle} %
+\ohead[]{\hfill {\large\scshape \thepage}} %
+\ifoot[]{\footnotesize \authors} % 
+\ofoot[]{\footnotesize % 
+\dateversion} %
+\pagestyle{scrheadings}
+
+\newcommand{\fertig}{\color{ForestGreen}}
+\newcommand{\unwichtig}{\color{Gray}}
+\newcommand{\entwickler}[1]{\textcolor{BurntOrange}{(#1)}}
+
+
+\begin{document}
+
+\maketitle
+
+{\bfseries Legende:}
+\begin{itemize}
+    \item {\fertig Projektteil implementiert}
+    \item {Projektteil noch nicht bearbeitet}
+    \item {\unwichtig Projektteil wurde, während des Projkts, als weniger
+    wichtig uneingestuft und kann später implementiert oder weggelassen werden.}
+\end{itemize}
+
+\section{Unabdingbare Anforderungen}
+\begin{description}
+    \item[Supermarkt Szenen 1 bauen]
+    \begin{itemize}
+        \item Objekte können aufgesammelt werden
+        \item Kollisionen (z.B. mit Regalen, ...)
+        \item Start ist am Eingang
+        \item Ziel ist an der Kasse.
+    \end{itemize}
+    \item[GUI]
+    \begin{itemize}
+        \item Zeitanzeige
+        \item Einkaufszettel
+        \item Menü um das Spiel zu verlassen.
+    \end{itemize}
+\end{description}
+
+
+\section{Optionale Anforderungen}
+\begin{enumerate}
+    \item Realistische Verpackungen (gibt es Texturen online?)
+\end{enumerate}
+
+
+\section{Ideensammlung}
+
+\subsection{Gameplay}
+\begin{itemize}
+    \item Ein Bezahl-/Münzensuch Minispiel wäre nice :)
+\end{itemize}
+
+
+\subsection{Gamedesign}
+\begin{enumerate}
+    \item Im Menü ggf. Infos über die einzelnen Krankheiten.
+\end{enumerate}
+
+\subsection{Sec 3}
+
+\end{document}
