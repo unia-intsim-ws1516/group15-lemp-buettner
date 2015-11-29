@@ -2,7 +2,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{polyglossia}
-\setdefaultlanguage{english}
+\setdefaultlanguage{german}
 \usepackage{csquotes}
 
 \usepackage{fontspec}
@@ -76,9 +76,17 @@ filecolor=black%
 Dies kann in einem Dummylevel (der danach vermutlich dem
 \emph{Explorationslevel} umgebaut wird) implementiert und getestet werden.
 \begin{itemize}
+    \item Bauen des Levels.
     \item Objekte können aufgesammelt werden
-    \item Kollisionen (z.B. mit Regalen, ...)
+    \item Kollisionen (z.B. mit Regale, ...)
+    \item Jedes Level hat eine oder mehrere bestimmte Krankheiten welche mit festgesetzten Parameter voreingestellt sind.
+    \item Je nach Level ändern sich die Krankheit(en) und/oder die eingestellten Parameter.
+    \item Der Spieler muss einen Einkaufszettel abarbeiten.
+    \item Start ist am Eingang
+    \item Ziel ist an der Kasse.
+    \item Punktevergabe wie viele Produkte vom Einkaufszettel in der gegebenen Zeit erreicht worden sind, Bonuspunkte für übrig gebliebene Zeit, Abzug für fehlende/falsche Produkte. Mindestpunktzahl zum Erreichen des nächsten levels.
 \end{itemize}
+Die verschiedenen Schwierigkeitsgrade für die einzelnen Level werden durch die Krankheiten, deren Parameter, den Einkaufszettel, das Marktlayout und das Zeitlimit bestimmt.
 %
 %
 \begin{description}
@@ -86,16 +94,7 @@ Dies kann in einem Dummylevel (der danach vermutlich dem
     Ein Level in dem man keine Aufgaben erledigen muss aber verschiedene Krankheiten testen kann.
     Dh. man kann zur Laufzeit Krankheiten "zu- und abschalten" und diese auch zur Laufzeit dynamisch konfigurieren. → GUI
     \item[Level 1]
-    Hier sollten die Ziele, also was man mit dem Level zeigen will sowie deren Realisierung beschreiben werden.\\
-    \begin{itemize}
-        \item Jedes level hat eine bestimmte Krankheit welche mit festgesetzten Parameter voreingestellt sind.
-        \item Je nach level ändernt sich die Krankheit oder die eingestellten Parameter.
-        \item Der Spieler muss einen Einkaufszettel abarbeiten.
-        \item Start ist am Eingang
-        \item Ziel ist an der Kasse.
-        \item Punktevergabe wie viele Produkte vom Einkaufszettel in der gegebenen Zeit erreicht worden sind, Bonuspunkte für übrig gebliebene Zeit, Abzug für fehlende/falsche Produkte. Mindestpunktzahl zum Erreichen des nächsten levels.
-        \item verschiedene Schwirigkeiten für die einzelnen level???
-    \end{itemize}
+    Hier sollten die Ziele, also was man mit dem Level zeigen will sowie deren Realisierung beschreiben werden.
 \end{description}
 
 
