@@ -54,6 +54,8 @@ filecolor=black%
 \newcommand{\fertig}{\color{ForestGreen}}
 \newcommand{\unwichtig}{\color{Gray}}
 \newcommand{\entwickler}[1]{\textcolor{BurntOrange}{(#1)}}
+\newcommand{\Stefan}{\entwickler{Stefan}}
+\newcommand{\Sebastian}{\entwickler{Sebastian}}
 
 
 \begin{document}
@@ -69,41 +71,95 @@ filecolor=black%
 \end{itemize}
 
 \section{Unabdingbare Anforderungen}
+\subsection{Supermarkt - Allgemeine Anforderungen}
+Dies kann in einem Dummylevel, der danach vermutlich zu \emph{Level 1}
+oder dem \emph{Explorationslevel} umgebaut wird implementiert und
+getestet werden.
+\begin{itemize}
+    \item Objekte können aufgesammelt werden
+    \item Kollisionen (z.B. mit Regalen, ...)
+\end{itemize}
+%
+%
 \begin{description}
-    \item[Supermarkt Szenen 1 bauen]
+    \item[Explorationslevel}
+    Ein Level in dem man keine Aufgaben erledigen muss aber verschiedene
+    Krankheiten testen kann. Dh. man kann zur Laufzeit Krankheiten
+    "zu- und abschalten" und diese auch zur Laufzeit dynamisch
+    konfigurieren. → GUI
+    \item[Level 1]
+    Hier sollten die Ziele, also was man mit dem Level zeigen will sowie
+    deren Realisierung beschreiben werden.\\
     \begin{itemize}
-        \item Objekte können aufgesammelt werden
-        \item Kollisionen (z.B. mit Regalen, ...)
+        \item Man kann zu Spielbeginn die Krankheiten selbst
+        wählen/konfigurieren oder den Zufall entscheiden lassen.
+        \item Der Spieler muss einen Einkaufszettel abarbeiten.
         \item Start ist am Eingang
         \item Ziel ist an der Kasse.
     \end{itemize}
-    \item[GUI]
-    \begin{itemize}
-        \item Zeitanzeige
-        \item Einkaufszettel
-        \item Menü um das Spiel zu verlassen.
-    \end{itemize}
 \end{description}
+
+
+\subsection{GUI}
+\begin{itemize}
+    \item Zeitanzeige
+    \item Einkaufszettel
+    \item Menü um das Spiel zu verlassen.
+    \item Einstellungsdialog für jede Krankheit.
+\end{itemize}
+
+
+\subsection{Krankheiten}
+\begin{itemize}
+    \item Glaucoma \Sebastian
+    \item Cataracts \Sebastian
+    \item Diabethic Retinopathy \Sebastian
+    \item Colorblindness \Stefan
+    \item Myopia / Hyperopia \Stefan
+\end{itemize}
+
 
 
 \section{Optionale Anforderungen}
 \begin{enumerate}
     \item Realistische Verpackungen (gibt es Texturen online?)
+    \item Andere Leute die einkaufen, um den Weg zu versperren etc.
+    \begin{itemize}
+        \item 3+ Modelle
+        \item Animationen
+        \begin{itemize}
+            \item Laufen
+            \item Produkte einsammeln/aufheben/einstecken
+            \item Zahlen
+        \end{itemize}
+        \item Pfadplanung
+        \item Abläufe skripten
+    \end{itemize}
+    \item Kassierer
 \end{enumerate}
 
 
-\section{Ideensammlung}
 
+\section{Ideensammlung}
 \subsection{Gameplay}
 \begin{itemize}
     \item Ein Bezahl-/Münzensuch Minispiel wäre nice :)
+    \item Soll des Spieler in die Rolle des Kassierers schlüpfen können?
+    Mögliche Aufgaben wären bspw.
+    \begin{itemize}
+        \item Rückgeld geben → Münzen raussuchen
+        \item Falls der Barcode nicht gelesen werden kann muss die Ware
+        in einer Liste nachgeschlagen werden.
+        \item Ausweise bei Alkoholkauf lesen (ausländische Ausweise?)
+        \item Kunden klauen, das ist vllt schwieriger zu erkennen?
+    \end{itemize}
 \end{itemize}
-
 
 \subsection{Gamedesign}
 \begin{enumerate}
     \item Im Menü ggf. Infos über die einzelnen Krankheiten.
 \end{enumerate}
+
 
 \subsection{Sec 3}
 
