@@ -71,7 +71,66 @@ filecolor=black%
     wichtig uneingestuft und kann später implementiert oder weggelassen werden.}
 \end{itemize}
 
-\section{Unabdingbare Anforderungen}
+
+\section{Timeline}
+Bis Mo, 7. Dez. 2015:
+\begin{enumerate}
+    \item Bauen des Explorationslevels mit Hilfe des Supermarket Assets. \Sebastian
+    \begin{itemize}
+        \item Geometrie auslegen (Regale, Produkte, Eingangsbereich, Kassen, Decke, Lichter, etc.
+        \item Startpunkt festlegen
+        \item First-Person Steuerung implementieren
+    \end{itemize}
+    \item Glaucoma als Asset, das an die Kamera angeheftet werden kann, implementieren \Sebastian
+    \item Farbblindheit als Asset, das an die Kamera angeheftet werden kann, implementieren \Stefan
+    \item Dialog zum ein- und abschalten von Krankheiten. Platzhalter für spezialisierten Konfigurationsdialog der jeweiligen Krankheit. \Stefan
+\end{enumerate}
+Bis Mo, 14. Dez. 2015:
+\begin{enumerate}
+    \item Alle(!) Produkte können eingesammelt werden und werden in einem "Warenkorb" gespeichert. \Sebastian
+    \item Verfeinern des Explorationslevels.
+    \begin{itemize}
+        \item Kollisionen mit Regalen/Kassen/... implementieren \Sebastian
+    \end{itemize}
+    \item Einkaufszettel anzeigen \Stefan
+    \item Verbleibende Zeit zählen und anzeigen \Stefan
+    \item Information über aktuelle Krankheit und deren Schwere anzeigen \Stefan
+\end{enumerate}
+Bis Mo, 21. Dez. 2015:
+\begin{enumerate}
+    \item Einstellungsdialog für Glaucoma \Sebastian
+    \item Einstellungsdialog für Farbblindheit \Stefan
+    \item Myopia / Hyperopia als Asset, das an die Kamera angeheftet werden kann, implementieren \Stefan
+    \item Einstellungsdialog für Myopia/Hyperopia \Stefan
+    \item Cataract als Asset, das an die Kamera angeheftet werden kann, implementieren \Sebastian
+    \item Einstellungsdialog für Cataract \Sebastian
+\end{enumerate}
+Bis Mo, 4. Jan. 2016:
+\begin{enumerate}
+    \item Level 1 implementieren \Stefan
+    \item Punkteübersicht nach Levelende implementieren \Sebastian
+    \item Hauptmenü implementieren. \Stefan Links zu:
+        \begin{itemize}
+        \item Explorationslevel
+        \item Punktelevel
+        \item Informationen über die Krankheiten
+        \item Ende
+    \end{itemize}
+\end{enumerate}
+Bis Mo, 11. Jan. 2016:
+\begin{enumerate}
+    \item Level 2 implementieren \Sebastian
+    \item Level 3 implementieren \Stefan oder \Sebastian
+    \item Informationsmenü für Glaucoma \Sebastian
+    \item Informationsmenü für Cataract \Sebastian
+    \item Informationsmenü für Farbblindheit \Stefan
+    \item Informationsmenü für Myopia/Hyperopia \Stefan
+\end{enumerate}
+% Sebastian 11
+% Stefan 13
+
+
+\section{Ideensammlung}
 \subsection{Level: Supermarkt}
 Dies kann in einem Dummylevel (der danach vermutlich dem
 \emph{Explorationslevel} umgebaut wird) implementiert und getestet werden.
@@ -87,14 +146,14 @@ Dies kann in einem Dummylevel (der danach vermutlich dem
     \item Punktevergabe wie viele Produkte vom Einkaufszettel in der gegebenen Zeit erreicht worden sind, Bonuspunkte für übrig gebliebene Zeit, Abzug für fehlende/falsche Produkte. Mindestpunktzahl zum Erreichen des nächsten levels.
 \end{itemize}
 Die verschiedenen Schwierigkeitsgrade für die einzelnen Level werden durch die Krankheiten, deren Parameter, den Einkaufszettel, das Marktlayout und das Zeitlimit bestimmt.
-%
-%
+
+
+Hier sollten die Ziele, also was man mit dem Level zeigen will sowie deren Realisierung beschreiben werden.
 \begin{description}
     \item[Explorationslevel]
     Ein Level in dem man keine Aufgaben erledigen muss aber verschiedene Krankheiten testen kann.
     Dh. man kann zur Laufzeit Krankheiten "zu- und abschalten" und diese auch zur Laufzeit dynamisch konfigurieren. → GUI
     \item[Level 1]
-    Hier sollten die Ziele, also was man mit dem Level zeigen will sowie deren Realisierung beschreiben werden.
 \end{description}
 
 
@@ -103,7 +162,6 @@ Die verschiedenen Schwierigkeitsgrade für die einzelnen Level werden durch die 
     \item Zeitanzeige
     \item Einkaufszettel
     \item Einstellungsdialog für jede Krankheit → Parameter der Krankheit identifizieren
-    \item Einstellungsdialog für jede Krankheit.
 \end{itemize}
 
 
@@ -127,27 +185,6 @@ Die verschiedenen Schwierigkeitsgrade für die einzelnen Level werden durch die 
 
 
 
-\section{Optionale Anforderungen}
-\begin{enumerate}
-    \item Realistische Verpackungen (gibt es Texturen online?)
-    \item Andere Leute die einkaufen, um den Weg zu versperren etc.
-    \begin{itemize}
-        \item 3+ Modelle
-        \item Animationen
-        \begin{itemize}
-            \item Laufen
-            \item Produkte einsammeln/aufheben/einstecken
-            \item Zahlen
-        \end{itemize}
-        \item Pfadplanung
-        \item Abläufe skripten
-    \end{itemize}
-    \item Kassierer
-\end{enumerate}
-
-
-
-\section{Ideensammlung}
 \subsection{Gameplay}
 \begin{itemize}
     \item Ein Bezahl-/Münzensuch Minispiel wäre nice :)
@@ -165,9 +202,26 @@ Die verschiedenen Schwierigkeitsgrade für die einzelnen Level werden durch die 
 \subsection{Gamedesign}
 \begin{enumerate}
     \item Im Menü ggf. Infos über die einzelnen Krankheiten.
+    \item Andere Leute die einkaufen, um den Weg zu versperren etc.
+    \begin{itemize}
+        \item 3+ Modelle
+        \item Animationen
+        \begin{itemize}
+            \item Laufen
+            \item Produkte einsammeln/aufheben/einstecken
+            \item Zahlen
+        \end{itemize}
+        \item Pfadplanung
+        \item Abläufe skripten
+    \end{itemize}
+    \item Kassierer
 \end{enumerate}
 
 
-\subsection{Sec 3}
+\subsection{Sonstiges}
+\begin{enumerate}
+    \item Realistische Verpackungen (gibt es Texturen online?)
+\end{enumerate}
+
 
 \end{document}
