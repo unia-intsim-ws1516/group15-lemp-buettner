@@ -8,6 +8,7 @@ public class DiseaseListItem : MonoBehaviour {
 
     public Toggle diseaseSwitch;
     public Text diseaseSwitchLabel;
+    public eyediseases.EyeDisease disease;
 
 	// Use this for initialization
 	void Start () {
@@ -27,5 +28,7 @@ public class DiseaseListItem : MonoBehaviour {
         if (diseaseSwitch.isOn)
             onOff = " on";
         Debug.Log ("Turn " + diseaseSwitchLabel.text + onOff);
+
+        disease.enabled = diseaseSwitch.isOn;
     }
 }

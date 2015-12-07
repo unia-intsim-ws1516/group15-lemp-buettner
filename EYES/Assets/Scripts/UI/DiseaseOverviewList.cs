@@ -24,6 +24,7 @@ public class DiseaseOverviewList : MonoBehaviour
             item.SetParent (DiseaseListContainer, false);
             DiseaseListItem diseaseItem = item.GetComponent<DiseaseListItem> ();
             diseaseItem.diseaseSwitchLabel.text = disease.diseaseName;
+            diseaseItem.disease = disease;
         }
     }
     
