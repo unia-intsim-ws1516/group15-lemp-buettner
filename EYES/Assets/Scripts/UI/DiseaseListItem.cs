@@ -4,9 +4,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
 
-public class DunnoWhatThisShouldDo : MonoBehaviour {
+public class DiseaseListItem : MonoBehaviour {
 
     public Toggle diseaseSwitch;
+    public Text diseaseSwitchLabel;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,9 @@ public class DunnoWhatThisShouldDo : MonoBehaviour {
     }
 
     public void OnToggle () {
-        Debug.Log ("Use disease: " + diseaseSwitch.isOn);
+        string onOff = " off";
+        if (diseaseSwitch.isOn)
+            onOff = " on";
+        Debug.Log ("Turn " + diseaseSwitchLabel.text + onOff);
     }
 }
