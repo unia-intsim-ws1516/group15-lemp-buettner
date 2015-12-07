@@ -154,6 +154,8 @@ Shader "Hidden/GULTI/CVDSimulator"
 				fixed4 retColor;
 				retColor.rgb = mul(T, origColor.rgb);
 				retColor.a = origColor.a;
+                
+                retColor = saturate(retColor);
 				
 				return retColor;
 			}
