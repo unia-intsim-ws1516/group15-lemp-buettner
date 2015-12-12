@@ -7,6 +7,14 @@ TagManager:
   - MainInventory
   - New Tag
   - Tooltip
+  - Slot
+  - ItemIcon
+  - Canvas
+  - Slots
+  - Item
+  - Timer
+  - DraggingItem
+  - Panel
   layers:
   - Default
   - TransparentFX
@@ -16,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - test
   - 
   - 
   - 
