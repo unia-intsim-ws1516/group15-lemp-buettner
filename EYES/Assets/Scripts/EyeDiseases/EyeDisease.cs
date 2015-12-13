@@ -13,18 +13,24 @@ namespace eyediseases
      */
     public abstract class EyeDisease : PostEffectsBase
     {
+        private string diseaseName_ = "Unnamed disease";
+        public string diseaseName {
+            get { return diseaseName_; }
+            set { diseaseName_ = value; }
+        }
 
-        public string diseaseName = "Unnamed disease";
-
+        /** Subclasses have to give the disease a name. */
         public EyeDisease (string name) {
             diseaseName = name;
         }
 
-        // Use this for initialization
+        public abstract void showConfig();
+
+        /* Use this for initialization */
         void Start () {
         }
         
-        // Update is called once per frame
+        /* Update is called once per frame */
         void Update () {
         }
     }

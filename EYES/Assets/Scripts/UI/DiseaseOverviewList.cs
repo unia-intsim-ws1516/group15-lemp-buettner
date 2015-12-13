@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DiseaseOverviewList : MonoBehaviour
 {
 
     public Camera TargetCamera;
-    public Transform DiseaseListContainer;
-    public Transform DiseaseListItemPrefab;
+    [HideInInspector] public Transform DiseaseListContainer;
+    [HideInInspector] public Transform DiseaseListItemPrefab;
+
+    private eyediseases.EyeDisease[] diseaseList;
+    private IList<DiseaseListItem> diseaseListItems;
 
     // Use this for initialization
     void Start ()
@@ -16,15 +20,22 @@ public class DiseaseOverviewList : MonoBehaviour
             return;
         }
 
-        eyediseases.EyeDisease[] diseaseList = TargetCamera.GetComponents<eyediseases.EyeDisease> ();
+        if (diseaseListItems == null) {
+            diseaseListItems = new List<DiseaseListItem>();
+        } else {
+            diseaseListItems.Clear ();
+        }
 
+        diseaseList = TargetCamera.GetComponents<eyediseases.EyeDisease> ();
         foreach (eyediseases.EyeDisease disease in diseaseList) {
-            Debug.Log (disease.diseaseName);
-            Transform item = Object.Instantiate (DiseaseListItemPrefab);
+
+            Transform item = Instantiate (DiseaseListItemPrefab);
             item.SetParent (DiseaseListContainer, false);
+
             DiseaseListItem diseaseItem = item.GetComponent<DiseaseListItem> ();
             diseaseItem.diseaseSwitchLabel.text = disease.diseaseName;
             diseaseItem.disease = disease;
+            diseaseListItems.Add(diseaseItem);
         }
     }
     

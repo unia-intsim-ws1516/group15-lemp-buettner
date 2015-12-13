@@ -10,17 +10,9 @@ public class DiseaseListItem : MonoBehaviour {
     public Text diseaseSwitchLabel;
     public eyediseases.EyeDisease disease;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void OnShowConfig () {
         Debug.Log ("Show configuration");
+        disease.showConfig ();
     }
 
     public void OnToggle () {

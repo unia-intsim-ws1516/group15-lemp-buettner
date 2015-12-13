@@ -46,12 +46,24 @@ namespace eyediseases
         }
         public ColorBlindAlgorithm BlindAlgorithm = ColorBlindAlgorithm.GULTI;
 
+        public GameObject ConfigDialog;
+
         public ColorBlindnessSimulator ()
             : base("Protanopia")
         {
         }
 
+        public void Start () {
+            ConfigDialog.SetActive (false);
+            ConfigDialog.GetComponent<ColorBlindnessConfig>().cvdSim = this;
+        }
+
         #region Overrides
+
+
+        public override void showConfig () {
+            ConfigDialog.SetActive (true);
+        }
         
         protected override bool CheckResources ()
         {
