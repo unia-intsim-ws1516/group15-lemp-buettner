@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 223ab3ff450746b4f94b2f94ae977da9
+timeCreated: 1450181728
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body beetle.001
+    100002: body beetle.002
+    100004: bumper back
+    100006: bumper front
+    100008: Door beetle
+    100010: Door beetle.001
+    100012: Headlight
+    100014: Headlight post-67.004
+    100016: Hood_Handle
+    100018: hub 10-spoke
+    100020: hub 10-spoke.001
+    100022: hub 10-spoke.002
+    100024: Hubcap_01
+    100026: Hupcap_01_2
+    100028: Plane
+    100030: Plane.001
+    100032: Plane.002
+    100034: rim
+    100036: rim.001
+    100038: rim.002
+    100040: rim.003
+    100042: seat x1.002
+    100044: seat x1.005
+    100046: taillights late
+    100048: taillights late.001
+    100050: Tire.000
+    100052: Tire.001
+    100054: Tire.002
+    100056: Tire.003
+    100058: VW emblem.002
+    100060: //RootNode
+    400000: body beetle.001
+    400002: body beetle.002
+    400004: bumper back
+    400006: bumper front
+    400008: Door beetle
+    400010: Door beetle.001
+    400012: Headlight
+    400014: Headlight post-67.004
+    400016: Hood_Handle
+    400018: hub 10-spoke
+    400020: hub 10-spoke.001
+    400022: hub 10-spoke.002
+    400024: Hubcap_01
+    400026: Hupcap_01_2
+    400028: Plane
+    400030: Plane.001
+    400032: Plane.002
+    400034: rim
+    400036: rim.001
+    400038: rim.002
+    400040: rim.003
+    400042: seat x1.002
+    400044: seat x1.005
+    400046: taillights late
+    400048: taillights late.001
+    400050: Tire.000
+    400052: Tire.001
+    400054: Tire.002
+    400056: Tire.003
+    400058: VW emblem.002
+    400060: //RootNode
+    2300000: body beetle.001
+    2300002: body beetle.002
+    2300004: bumper back
+    2300006: bumper front
+    2300008: Door beetle
+    2300010: Door beetle.001
+    2300012: Headlight
+    2300014: Headlight post-67.004
+    2300016: Hood_Handle
+    2300018: hub 10-spoke
+    2300020: hub 10-spoke.001
+    2300022: hub 10-spoke.002
+    2300024: Hubcap_01
+    2300026: Hupcap_01_2
+    2300028: Plane
+    2300030: Plane.001
+    2300032: Plane.002
+    2300034: rim
+    2300036: rim.001
+    2300038: rim.002
+    2300040: rim.003
+    2300042: seat x1.002
+    2300044: seat x1.005
+    2300046: taillights late
+    2300048: taillights late.001
+    2300050: Tire.000
+    2300052: Tire.001
+    2300054: Tire.002
+    2300056: Tire.003
+    2300058: VW emblem.002
+    2300060: //RootNode
+    3300000: body beetle.001
+    3300002: body beetle.002
+    3300004: bumper back
+    3300006: bumper front
+    3300008: Door beetle
+    3300010: Door beetle.001
+    3300012: Headlight
+    3300014: Headlight post-67.004
+    3300016: Hood_Handle
+    3300018: hub 10-spoke
+    3300020: hub 10-spoke.001
+    3300022: hub 10-spoke.002
+    3300024: Hubcap_01
+    3300026: Hupcap_01_2
+    3300028: Plane
+    3300030: Plane.001
+    3300032: Plane.002
+    3300034: rim
+    3300036: rim.001
+    3300038: rim.002
+    3300040: rim.003
+    3300042: seat x1.002
+    3300044: seat x1.005
+    3300046: taillights late
+    3300048: taillights late.001
+    3300050: Tire.000
+    3300052: Tire.001
+    3300054: Tire.002
+    3300056: Tire.003
+    3300058: VW emblem.002
+    3300060: //RootNode
+    4300000: body beetle
+    4300002: seat x1.002
+    4300004: seat x1.005
+    4300006: Headlight
+    4300008: Headlight post-67.004
+    4300010: Hubcap_01
+    4300012: rim.003
+    4300014: Hupcap_01_2
+    4300016: Tire.001
+    4300018: Plane.002
+    4300020: Tire.002
+    4300022: hub 10-spoke.002
+    4300024: rim.002
+    4300026: Plane
+    4300028: rim
+    4300030: hub 10-spoke.001
+    4300032: Tire.000
+    4300034: Plane.001
+    4300036: Tire.003
+    4300038: hub 10-spoke
+    4300040: rim.001
+    4300042: body beetle.001
+    4300044: VW emblem.002
+    4300046: Hood_Handle
+    4300048: body beetle.002
+    4300050: taillights late
+    4300052: taillights late.001
+    4300054: bumper back
+    4300056: Door beetle.001
+    4300058: Door beetle
+    4300060: bumper front
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

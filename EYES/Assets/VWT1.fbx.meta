@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 35f6ddfd247dfba4489b2864b8d2f17b
+timeCreated: 1450178329
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: balloonTire.004
+    100002: balloonTire.005
+    100004: balloonTire.006
+    100006: balloonTire.007
+    100008: brake light.001
+    100010: brake light.002
+    100012: Bumper back T1
+    100014: Bumper front T1
+    100016: Door T1
+    100018: Door T1.001
+    100020: Engine lid T1
+    100022: Headlight pre-68
+    100024: Headlight pre-68.001
+    100026: hub T1
+    100028: hub T1.001
+    100030: hub T1.002
+    100032: hub T1.003
+    100034: hubcap speherical.004
+    100036: hubcap speherical.005
+    100038: hubcap speherical.006
+    100040: hubcap speherical.007
+    100042: Rear door T1
+    100044: turn light 63.001
+    100046: turn light 63.002
+    100048: VW emblem split
+    100050: //RootNode
+    400000: balloonTire.004
+    400002: balloonTire.005
+    400004: balloonTire.006
+    400006: balloonTire.007
+    400008: brake light.001
+    400010: brake light.002
+    400012: Bumper back T1
+    400014: Bumper front T1
+    400016: Door T1
+    400018: Door T1.001
+    400020: Engine lid T1
+    400022: Headlight pre-68
+    400024: Headlight pre-68.001
+    400026: hub T1
+    400028: hub T1.001
+    400030: hub T1.002
+    400032: hub T1.003
+    400034: hubcap speherical.004
+    400036: hubcap speherical.005
+    400038: hubcap speherical.006
+    400040: hubcap speherical.007
+    400042: Rear door T1
+    400044: turn light 63.001
+    400046: turn light 63.002
+    400048: VW emblem split
+    400050: //RootNode
+    2300000: balloonTire.004
+    2300002: balloonTire.005
+    2300004: balloonTire.006
+    2300006: balloonTire.007
+    2300008: brake light.001
+    2300010: brake light.002
+    2300012: Bumper back T1
+    2300014: Bumper front T1
+    2300016: Door T1
+    2300018: Door T1.001
+    2300020: Engine lid T1
+    2300022: Headlight pre-68
+    2300024: Headlight pre-68.001
+    2300026: hub T1
+    2300028: hub T1.001
+    2300030: hub T1.002
+    2300032: hub T1.003
+    2300034: hubcap speherical.004
+    2300036: hubcap speherical.005
+    2300038: hubcap speherical.006
+    2300040: hubcap speherical.007
+    2300042: Rear door T1
+    2300044: turn light 63.001
+    2300046: turn light 63.002
+    2300048: VW emblem split
+    2300050: //RootNode
+    3300000: balloonTire.004
+    3300002: balloonTire.005
+    3300004: balloonTire.006
+    3300006: balloonTire.007
+    3300008: brake light.001
+    3300010: brake light.002
+    3300012: Bumper back T1
+    3300014: Bumper front T1
+    3300016: Door T1
+    3300018: Door T1.001
+    3300020: Engine lid T1
+    3300022: Headlight pre-68
+    3300024: Headlight pre-68.001
+    3300026: hub T1
+    3300028: hub T1.001
+    3300030: hub T1.002
+    3300032: hub T1.003
+    3300034: hubcap speherical.004
+    3300036: hubcap speherical.005
+    3300038: hubcap speherical.006
+    3300040: hubcap speherical.007
+    3300042: Rear door T1
+    3300044: turn light 63.001
+    3300046: turn light 63.002
+    3300048: VW emblem split
+    3300050: //RootNode
+    4300000: Body TOne
+    4300002: hub T1.003
+    4300004: hubcap speherical.007
+    4300006: balloonTire.007
+    4300008: hub T1.002
+    4300010: balloonTire.006
+    4300012: hubcap speherical.006
+    4300014: hub T1.001
+    4300016: hubcap speherical.005
+    4300018: balloonTire.005
+    4300020: hub T1
+    4300022: balloonTire.004
+    4300024: hubcap speherical.004
+    4300026: brake light.001
+    4300028: brake light.002
+    4300030: Headlight pre-68.001
+    4300032: turn light 63.002
+    4300034: turn light 63.001
+    4300036: Bumper back T1
+    4300038: Bumper front T1
+    4300040: VW emblem split
+    4300042: Engine lid T1
+    4300044: Rear door T1
+    4300046: Door T1
+    4300048: Door T1.001
+    4300050: Headlight pre-68
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 1c5b907c917c27d478eea5ec256a7f59
+timeCreated: 1450191107
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: balloonTire
+    100002: balloonTire.001
+    100004: balloonTire.002
+    100006: balloonTire.003
+    100008: Body Ghia
+    100010: bumper ghia back
+    100012: bumper Ghia front
+    100014: clean back
+    100016: Door Ghia
+    100018: Door Ghia R
+    100020: Engine lid Ghia
+    100022: Grille ghia L
+    100024: Grille Ghia R
+    100026: Headlight post-67.002
+    100028: Headlight post-67.005
+    100030: hub smoothie
+    100032: hub smoothie.001
+    100034: hub smoothie.002
+    100036: hub smoothie.003
+    100038: hubcap speherical
+    100040: hubcap speherical.001
+    100042: hubcap speherical.002
+    100044: hubcap speherical.003
+    100046: seat x1.006
+    100048: seat x1.007
+    100050: Taillight Ghia mi
+    100052: Taillight Ghia midsiz
+    100054: Trunk ghia
+    100056: VW emblem.004
+    100058: //RootNode
+    100060: Wheel smoothie (5.002
+    400000: balloonTire
+    400002: balloonTire.001
+    400004: balloonTire.002
+    400006: balloonTire.003
+    400008: Body Ghia
+    400010: bumper ghia back
+    400012: bumper Ghia front
+    400014: clean back
+    400016: Door Ghia
+    400018: Door Ghia R
+    400020: Engine lid Ghia
+    400022: Grille ghia L
+    400024: Grille Ghia R
+    400026: Headlight post-67.002
+    400028: Headlight post-67.005
+    400030: hub smoothie
+    400032: hub smoothie.001
+    400034: hub smoothie.002
+    400036: hub smoothie.003
+    400038: hubcap speherical
+    400040: hubcap speherical.001
+    400042: hubcap speherical.002
+    400044: hubcap speherical.003
+    400046: seat x1.006
+    400048: seat x1.007
+    400050: Taillight Ghia mi
+    400052: Taillight Ghia midsiz
+    400054: Trunk ghia
+    400056: VW emblem.004
+    400058: //RootNode
+    400060: Wheel smoothie (5.002
+    2300000: balloonTire
+    2300002: balloonTire.001
+    2300004: balloonTire.002
+    2300006: balloonTire.003
+    2300008: Body Ghia
+    2300010: bumper ghia back
+    2300012: bumper Ghia front
+    2300014: clean back
+    2300016: Door Ghia
+    2300018: Door Ghia R
+    2300020: Engine lid Ghia
+    2300022: Grille ghia L
+    2300024: Grille Ghia R
+    2300026: Headlight post-67.002
+    2300028: Headlight post-67.005
+    2300030: hub smoothie
+    2300032: hub smoothie.001
+    2300034: hub smoothie.002
+    2300036: hub smoothie.003
+    2300038: hubcap speherical
+    2300040: hubcap speherical.001
+    2300042: hubcap speherical.002
+    2300044: hubcap speherical.003
+    2300046: seat x1.006
+    2300048: seat x1.007
+    2300050: Taillight Ghia mi
+    2300052: Taillight Ghia midsiz
+    2300054: Trunk ghia
+    2300056: VW emblem.004
+    2300058: //RootNode
+    3300000: balloonTire
+    3300002: balloonTire.001
+    3300004: balloonTire.002
+    3300006: balloonTire.003
+    3300008: Body Ghia
+    3300010: bumper ghia back
+    3300012: bumper Ghia front
+    3300014: clean back
+    3300016: Door Ghia
+    3300018: Door Ghia R
+    3300020: Engine lid Ghia
+    3300022: Grille ghia L
+    3300024: Grille Ghia R
+    3300026: Headlight post-67.002
+    3300028: Headlight post-67.005
+    3300030: hub smoothie
+    3300032: hub smoothie.001
+    3300034: hub smoothie.002
+    3300036: hub smoothie.003
+    3300038: hubcap speherical
+    3300040: hubcap speherical.001
+    3300042: hubcap speherical.002
+    3300044: hubcap speherical.003
+    3300046: seat x1.006
+    3300048: seat x1.007
+    3300050: Taillight Ghia mi
+    3300052: Taillight Ghia midsiz
+    3300054: Trunk ghia
+    3300056: VW emblem.004
+    3300058: //RootNode
+    4300000: Body Ghia
+    4300002: VW emblem.004
+    4300004: hub smoothie.003
+    4300006: hubcap speherical.003
+    4300008: balloonTire.003
+    4300010: hub smoothie.002
+    4300012: balloonTire.002
+    4300014: hubcap speherical.002
+    4300016: hub smoothie.001
+    4300018: hubcap speherical.001
+    4300020: balloonTire.001
+    4300022: hub smoothie
+    4300024: balloonTire
+    4300026: hubcap speherical
+    4300028: seat x1.006
+    4300030: seat x1.007
+    4300032: Trunk ghia
+    4300034: Grille Ghia R
+    4300036: bumper ghia back
+    4300038: Headlight post-67.002
+    4300040: bumper Ghia front
+    4300042: Headlight post-67.005
+    4300044: Taillight Ghia mi
+    4300046: Taillight Ghia midsiz
+    4300048: Door Ghia
+    4300050: Door Ghia R
+    4300052: Engine lid Ghia
+    4300054: clean back
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
