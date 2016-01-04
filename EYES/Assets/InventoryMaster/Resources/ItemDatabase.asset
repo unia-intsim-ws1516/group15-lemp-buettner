@@ -722,8 +722,104 @@ MonoBehaviour:
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
-  - itemName: New Item
+  - itemName: Lactose Free Milk
     itemID: 54
+    itemDesc: "Lactose \nFree Milk"
+    itemIcon: {fileID: 21300000, guid: 0a5b6f554e0a34de7a40816f1b7e6c4e, type: 3}
+    itemModel: {fileID: 100000, guid: ead5d26a0b5fc1341ad57f808869202c, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Fresh Milk
+    itemID: 55
+    itemDesc: Fresh Milk
+    itemIcon: {fileID: 21300000, guid: 87b4fa116b3a44368b9b407f2c2705d0, type: 3}
+    itemModel: {fileID: 100000, guid: 34c3d8584f5a86f4ca2131c74180cac6, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: H-Milk
+    itemID: 56
+    itemDesc: H-Milk 3,5% fat
+    itemIcon: {fileID: 21300000, guid: 9a1c2f03352e941baa6c1f0b8b427528, type: 3}
+    itemModel: {fileID: 100000, guid: 92997283e3ee45a488cacc21df6ffb92, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Butter
+    itemID: 57
+    itemDesc: fresh butter
+    itemIcon: {fileID: 21300000, guid: 533f93de4fb8d4995aa79168c93a8f22, type: 3}
+    itemModel: {fileID: 100000, guid: cfbeca16f28d51d4b9f58f630cbc08b4, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: White Wine
+    itemID: 58
+    itemDesc: White Wine from Spain
+    itemIcon: {fileID: 21300000, guid: f65d0a261c6994a3aa40c963415b6e1d, type: 3}
+    itemModel: {fileID: 100000, guid: a939b791d591cff40926e446bb5eb2be, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Red Wine
+    itemID: 59
+    itemDesc: Red Wine from Germany
+    itemIcon: {fileID: 21300000, guid: 12be71a12155b4cefb2c784ba8e35013, type: 3}
+    itemModel: {fileID: 100000, guid: 1f857ecfe0ebad842a85c59b1237ba79, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: gluten free Pizza
+    itemID: 60
+    itemDesc: gluten free morzarella pizza
+    itemIcon: {fileID: 21300000, guid: 3ea51d39252af4e0381b374f043b3ebe, type: 3}
+    itemModel: {fileID: 100000, guid: ad06c224ae79d4e4abb34196fb240282, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Pizza
+    itemID: 61
+    itemDesc: Pizza diabolo
+    itemIcon: {fileID: 21300000, guid: df81af79acf6a4adc911c8485faf3d45, type: 3}
+    itemModel: {fileID: 100000, guid: ba1497f40e4c56a4aba6f5584bb3bfcd, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: New Item
+    itemID: 62
     itemDesc: 
     itemIcon: {fileID: 0}
     itemModel: {fileID: 0}
