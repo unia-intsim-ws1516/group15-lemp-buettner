@@ -524,7 +524,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: 82a8909fcdc894f4aa3ea49a1b815af1, type: 3}
     itemModel: {fileID: 100000, guid: ecf512dcbbc74d44b972cb42251dba37, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -536,7 +536,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: 308b8681b556a4f59b0a492de6631cf3, type: 3}
     itemModel: {fileID: 100000, guid: 5c686768016272c46a8b122869428ea8, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -548,7 +548,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: 2f98ae2cbb82547d1bc1945e6efc9a66, type: 3}
     itemModel: {fileID: 100000, guid: 6a93e9d5a26c34e4d87e2f8574de20c7, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -560,7 +560,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: 4afcae5ff456a45bf934f8e6111496a7, type: 3}
     itemModel: {fileID: 100000, guid: 7095629f701f0a2469cdf43fa78ac531, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -572,7 +572,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: c7d59c0e9f91346d6b8bef921cbfe0cd, type: 3}
     itemModel: {fileID: 100000, guid: e3ce07aba9bd0d643a1571aa54d1bab4, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -584,7 +584,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: b1fa5fac5ecf64e1ca30f8bd49fdbe91, type: 3}
     itemModel: {fileID: 100000, guid: 97c497a590329974b8c8441683c1f30a, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -596,7 +596,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: d8f640f93be2d4431bcd1eca3cae76a4, type: 3}
     itemModel: {fileID: 100000, guid: 85c1864f96069fd45be4237907ab51b0, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -608,7 +608,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: eaf0a3aac37154b8c92141f14a3084f5, type: 3}
     itemModel: {fileID: 100000, guid: 5490f2dcd95b6b64391288d0abacbdb9, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -620,7 +620,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: d732591964d4b4873a7f5816407b3a83, type: 3}
     itemModel: {fileID: 100000, guid: 52add08f28a8c8a42a096b3a05e97f80, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
@@ -629,17 +629,101 @@ MonoBehaviour:
   - itemName: Salmon
     itemID: 46
     itemDesc: Wild smoked Salmon
-    itemIcon: {fileID: 21300000, guid: 4ba34a34ee3ef4c9289d051f0cd1de5f, type: 3}
+    itemIcon: {fileID: 21300000, guid: ee99e76ce657b4990a39a3e29cc904f8, type: 3}
     itemModel: {fileID: 100000, guid: e45f6d90176ebe543a48f528e102fd6e, type: 3}
     itemValue: 1
-    itemType: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Fish
+    itemID: 47
+    itemDesc: "Whole fresh Fish\t"
+    itemIcon: {fileID: 21300000, guid: 7ce8487ffb3294ee091da7a272d4da26, type: 3}
+    itemModel: {fileID: 100000, guid: 8a3f50198a373de4a8e6860cb108756c, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Lemon
+    itemID: 48
+    itemDesc: A box of fresh emons
+    itemIcon: {fileID: 21300000, guid: 61cdc0cde224849bba9dc9234a08cd44, type: 3}
+    itemModel: {fileID: 100000, guid: be2fe9fc3bd28a24880bd38568aa3f39, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Cherry
+    itemID: 49
+    itemDesc: A Box of Cherry's
+    itemIcon: {fileID: 21300000, guid: 65b65950964134e9881eaa46ff7ece43, type: 3}
+    itemModel: {fileID: 100000, guid: 39467fa68da93d14683071e8e43705d3, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Apple
+    itemID: 50
+    itemDesc: A fresh Box of Apple's
+    itemIcon: {fileID: 21300000, guid: c03acfb1c6d9943dfa5d3e8e2c12bd27, type: 3}
+    itemModel: {fileID: 100000, guid: 85fff6f9453441748b6d3f490b2eaab0, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Grape
+    itemID: 51
+    itemDesc: A fresh Box of Grape's
+    itemIcon: {fileID: 21300000, guid: fe9b04a52e779480fbe9ec30a667f813, type: 3}
+    itemModel: {fileID: 100000, guid: 92bc078bbd7cdf643b807c4769dbb794, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Orange
+    itemID: 52
+    itemDesc: A fresh Box of Orange's
+    itemIcon: {fileID: 21300000, guid: d6e8eda50942d4b998554127f1605ba3, type: 3}
+    itemModel: {fileID: 100000, guid: 7b4ed20b00ebeec46bdd6d02def05821, type: 3}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Tee
+    itemID: 53
+    itemDesc: Green Tee
+    itemIcon: {fileID: 21300000, guid: a4fe549994b954d41b84493047fd489d, type: 3}
+    itemModel: {fileID: 100000, guid: f7158c203223d994598748e2540db3d8, type: 3}
+    itemValue: 1
+    itemType: 0
     itemWeight: 0
     maxStack: 1
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
   - itemName: New Item
-    itemID: 47
+    itemID: 54
     itemDesc: 
     itemIcon: {fileID: 0}
     itemModel: {fileID: 0}
