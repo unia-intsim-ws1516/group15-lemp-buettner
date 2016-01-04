@@ -518,9 +518,9 @@ MonoBehaviour:
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
-  - itemName: Cafe
+  - itemName: Coffee
     itemID: 37
-    itemDesc: Bester Cafe
+    itemDesc: Best Coffee
     itemIcon: {fileID: 21300000, guid: 82a8909fcdc894f4aa3ea49a1b815af1, type: 3}
     itemModel: {fileID: 100000, guid: ecf512dcbbc74d44b972cb42251dba37, type: 3}
     itemValue: 1
@@ -529,4 +529,76 @@ MonoBehaviour:
     maxStack: 1
     indexItemInList: 999
     rarity: 2
+    itemAttributes: []
+  - itemName: Orange Juice
+    itemID: 38
+    itemDesc: Fresh Orange Juice
+    itemIcon: {fileID: 21300000, guid: 308b8681b556a4f59b0a492de6631cf3, type: 3}
+    itemModel: {fileID: 100000, guid: 5c686768016272c46a8b122869428ea8, type: 3}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Grape Juice
+    itemID: 39
+    itemDesc: Fresh grape Juice
+    itemIcon: {fileID: 21300000, guid: 2f98ae2cbb82547d1bc1945e6efc9a66, type: 3}
+    itemModel: {fileID: 100000, guid: 6a93e9d5a26c34e4d87e2f8574de20c7, type: 3}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Apple Juice
+    itemID: 40
+    itemDesc: Fresh Apple Juice
+    itemIcon: {fileID: 21300000, guid: 4afcae5ff456a45bf934f8e6111496a7, type: 3}
+    itemModel: {fileID: 100000, guid: 7095629f701f0a2469cdf43fa78ac531, type: 3}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Cookies
+    itemID: 41
+    itemDesc: Tripple Choclate Cookies
+    itemIcon: {fileID: 21300000, guid: c7d59c0e9f91346d6b8bef921cbfe0cd, type: 3}
+    itemModel: {fileID: 100000, guid: e3ce07aba9bd0d643a1571aa54d1bab4, type: 3}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: Fruit Bar
+    itemID: 42
+    itemDesc: 
+    itemIcon: {fileID: 21300000, guid: b1fa5fac5ecf64e1ca30f8bd49fdbe91, type: 3}
+    itemModel: {fileID: 100000, guid: 97c497a590329974b8c8441683c1f30a, type: 3}
+    itemValue: 1
+    itemType: 1
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
+  - itemName: New Item
+    itemID: 43
+    itemDesc: 
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
     itemAttributes: []
