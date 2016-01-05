@@ -16122,6 +16122,7 @@ GameObject:
   - 114: {fileID: 671971407}
   - 143: {fileID: 671971406}
   - 114: {fileID: 671971405}
+  - 114: {fileID: 671971412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16237,6 +16238,18 @@ Transform:
   - {fileID: 768197861}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &671971412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671971404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd0d3804debf413aa7449ac866ebc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
 --- !u!1 &673941396
 GameObject:
   m_ObjectHideFlags: 0
@@ -32119,6 +32132,7 @@ GameObject:
   - 4: {fileID: 1398822475}
   - 33: {fileID: 1398822477}
   - 23: {fileID: 1398822476}
+  - 64: {fileID: 1398822478}
   m_Layer: 0
   m_Name: mesh_inner_wall_02
   m_TagString: Untagged
@@ -32173,6 +32187,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1398822474}
+  m_Mesh: {fileID: 4300002, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &1398822478
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398822474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &1410561774
 GameObject:
@@ -43923,6 +43949,7 @@ GameObject:
   - 4: {fileID: 1951495516}
   - 33: {fileID: 1951495518}
   - 23: {fileID: 1951495517}
+  - 64: {fileID: 1951495519}
   m_Layer: 0
   m_Name: mesh_inner_wall_02
   m_TagString: Untagged
@@ -43977,6 +44004,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1951495515}
+  m_Mesh: {fileID: 4300002, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &1951495519
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951495515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &1951517970
 GameObject:
