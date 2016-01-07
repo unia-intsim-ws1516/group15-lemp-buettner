@@ -1,10 +1,10 @@
 ﻿#pragma strict
 
-var timer : float = 0.0;
+var timer : float = 600.0;
 
 function Update() {
 
-	timer += Time.deltaTime;
+	timer -= Time.deltaTime;
 
 }
 

@@ -4287,6 +4287,7 @@ GameObject:
   - 4: {fileID: 184942584}
   - 33: {fileID: 184942586}
   - 23: {fileID: 184942585}
+  - 64: {fileID: 184942587}
   m_Layer: 0
   m_Name: mesh_door_01_A
   m_TagString: Untagged
@@ -4341,6 +4342,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 184942583}
+  m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &184942587
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184942583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &186310396
 GameObject:
@@ -8416,6 +8429,7 @@ GameObject:
   - 4: {fileID: 351717903}
   - 33: {fileID: 351717905}
   - 23: {fileID: 351717904}
+  - 64: {fileID: 351717906}
   m_Layer: 0
   m_Name: mesh_door_01_A
   m_TagString: Untagged
@@ -8470,6 +8484,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 351717902}
+  m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &351717906
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 351717902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &353869551
 GameObject:
@@ -13351,6 +13377,7 @@ GameObject:
   - 4: {fileID: 550614046}
   - 33: {fileID: 550614048}
   - 23: {fileID: 550614047}
+  - 64: {fileID: 550614049}
   m_Layer: 0
   m_Name: mesh_door_01_A
   m_TagString: Untagged
@@ -13405,6 +13432,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550614045}
+  m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &550614049
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550614045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &554009102
 GameObject:
@@ -15040,6 +15079,7 @@ GameObject:
   - 4: {fileID: 611059416}
   - 33: {fileID: 611059418}
   - 23: {fileID: 611059417}
+  - 64: {fileID: 611059419}
   m_Layer: 0
   m_Name: mesh_door_02
   m_TagString: Untagged
@@ -15094,6 +15134,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611059415}
+  m_Mesh: {fileID: 4300048, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &611059419
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 611059415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300048, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &620373817
 GameObject:
@@ -15580,6 +15632,7 @@ GameObject:
   - 4: {fileID: 638682033}
   - 33: {fileID: 638682035}
   - 23: {fileID: 638682034}
+  - 64: {fileID: 638682036}
   m_Layer: 0
   m_Name: mesh_door_02
   m_TagString: Untagged
@@ -15634,6 +15687,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 638682032}
+  m_Mesh: {fileID: 4300048, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &638682036
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638682032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300048, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &652017086
 GameObject:
@@ -16231,8 +16296,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671971404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: 1.25, z: 17.6}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -20.5, y: 1.25, z: 4.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 768197861}
@@ -16249,7 +16314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd0d3804debf413aa7449ac866ebc5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 600
 --- !u!1 &673941396
 GameObject:
   m_ObjectHideFlags: 0
@@ -27564,6 +27629,7 @@ GameObject:
   - 4: {fileID: 1202545292}
   - 33: {fileID: 1202545294}
   - 23: {fileID: 1202545293}
+  - 64: {fileID: 1202545295}
   m_Layer: 0
   m_Name: mesh_door_01_A
   m_TagString: Untagged
@@ -27618,6 +27684,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202545291}
+  m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!64 &1202545295
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202545291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300044, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
 --- !u!1 &1205338007
 GameObject:
