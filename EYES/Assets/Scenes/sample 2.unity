@@ -16144,7 +16144,7 @@ MonoBehaviour:
   movementspeed: 5
   mouseSensitivity: 2
   verticalAngleLimit: 60
-  jumpSpeed: 5
+  jumpSpeed: 0
   showInventory: 0
 --- !u!143 &671971406
 CharacterController:
