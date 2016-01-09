@@ -16,6 +16,8 @@ namespace eyediseases
 
         public GameObject ConfigDialog;
 
+        public Texture2D SeverityTex;
+
         public GlaucomaSimulator ()
             : base("Glaucoma")
         {
@@ -89,6 +91,10 @@ namespace eyediseases
 //            // Intensity Set
 //            ColorBlindMat.SetFloat ("_BlindIntensity", BlindIntensity);
             ColorBlindMat.SetFloat("_Radius", MaxRadius);
+            if (SeverityTex)
+            {
+                ColorBlindMat.SetTexture("_BlurIntensity", SeverityTex);
+            }
 
             Graphics.Blit (_src, _dst, ColorBlindMat);
         }
