@@ -5,24 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class menuScript : MonoBehaviour 
 {
-	public Canvas Menu;
+	public Canvas QuitMenu;
 	public Button playbutton;
 	public Button quitbutton;
 
 	void Start ()
 
 	{
-		Menu = Menu.GetComponent<Canvas>();
+		QuitMenu = QuitMenu.GetComponent<Canvas>();
 		playbutton = playbutton.GetComponent<Button> ();
 		quitbutton = quitbutton.GetComponent<Button> ();
-		Menu.enabled = false;
+		QuitMenu.enabled = false;
 
 	}
 
-	public void ExitPress() //this function will be used on our Exit button
+	 public void ExitPress() //this function will be used on our Exit button
 
-	{
-		Menu.enabled = true; //enable the Quit menu when we click the Exit button
+	 {
+		QuitMenu.enabled = true; //enable the Quit menu when we click the Exit button
 		playbutton.enabled = false; //then disable the Play and Exit buttons so they cannot be clicked
 		quitbutton.enabled = false;
 
@@ -31,7 +31,7 @@ public class menuScript : MonoBehaviour
 	public void NoPress() //this function will be used for our "NO" button in our Quit Menu
 
 	{
-		Menu.enabled = false; //we'll disable the quit menu, meaning it won't be visible anymore
+		QuitMenu.enabled = false; //we'll disable the quit menu, meaning it won't be visible anymore
 		playbutton.enabled = true; //enable the Play and Exit buttons again so they can be clicked
 		quitbutton.enabled = true;
 
@@ -49,6 +49,10 @@ public class menuScript : MonoBehaviour
 	{
 		Application.Quit(); //this will quit our game. Note this will only work after building the game
 
+	}
+	public void goMenu ()
+	{
+		SceneManager.LoadScene(0); // laod Menu.
 	}
 
 }

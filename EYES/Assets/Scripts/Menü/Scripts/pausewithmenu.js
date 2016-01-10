@@ -36,7 +36,7 @@ if(isPaused == true){
 			doPause();
 		}
 		if(mousePos.y < 0.53 && mousePos.y > 0.2){
-			Application.LoadLevel(menuSceneName);
+			Application.LoadLevel(0);
 		}
 	}
 }
