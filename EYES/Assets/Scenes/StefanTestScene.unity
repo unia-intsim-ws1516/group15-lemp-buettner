@@ -805,15 +805,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142304465}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d23cbac8d24236f4791c410dd08b2486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxRadius: 0.01
-  ColorBlindShader: {fileID: 4800000, guid: bf79f4d7d0d9d424286bc1cebdb17c25, type: 3}
+  BlurSize: 2.4
+  BlurIterations: 3
   ConfigDialog: {fileID: 0}
-  SeverityTex: {fileID: 0}
+  Intensity: {fileID: 2800000, guid: 49b54a04a8e5a184db33065a3fbecb00, type: 3}
 --- !u!224 &1361960305 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22417144, guid: 5b44637e5f74c0648a4c53dd564d5384,
@@ -1688,7 +1688,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2056480812}
-  m_LocalRotation: {x: 0.29420996, y: 0.6506264, z: -0.30339268, w: 0.6309347}
+  m_LocalRotation: {x: 0.29421, y: 0.6506265, z: -0.3033927, w: 0.6309348}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
