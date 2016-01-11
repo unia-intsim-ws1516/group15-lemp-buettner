@@ -21,7 +21,7 @@ public class PickUpItem : MonoBehaviour
         {
             float distance = Vector3.Distance(this.gameObject.transform.position, _player.transform.position);
 
-            if (distance <= 2)
+            if (distance <= 1.3)
             {
                 bool check = _inventory.checkIfItemAllreadyExist(item.itemID, item.itemValue);
                 if (check)
