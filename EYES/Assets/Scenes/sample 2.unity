@@ -4007,7 +4007,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 335, y: 32}
+  m_AnchoredPosition: {x: 67, y: 7}
   m_SizeDelta: {x: 224, y: 289}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181849484
@@ -10162,6 +10162,18 @@ Prefab:
     - target: {fileID: 400006, guid: 5cfbc107393944a6b8ca37707c1b177b, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 5cfbc107393944a6b8ca37707c1b177b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 5cfbc107393944a6b8ca37707c1b177b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5cfbc107393944a6b8ca37707c1b177b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5cfbc107393944a6b8ca37707c1b177b, type: 2}
@@ -29100,7 +29112,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 668, y: -87}
+  m_AnchoredPosition: {x: 577.5, y: -40}
   m_SizeDelta: {x: 205, y: 269}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1248367142
@@ -34199,6 +34211,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1455938650}
   - 131: {fileID: 1455938649}
+  - 114: {fileID: 1455938651}
   m_Layer: 0
   m_Name: menu
   m_TagString: Untagged
@@ -34239,6 +34252,58 @@ Transform:
   - {fileID: 1043245903}
   m_Father: {fileID: 2109304476}
   m_RootOrder: 1
+--- !u!114 &1455938651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1455938648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: goMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1458683769
 GameObject:
   m_ObjectHideFlags: 0
@@ -44728,7 +44793,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 88, y: -21}
-  m_SizeDelta: {x: 130, y: 30}
+  m_SizeDelta: {x: 117, y: 45}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1954157121
 MonoBehaviour:
@@ -49191,7 +49256,6 @@ MonoBehaviour:
   resumeText: {fileID: 19863632}
   resumeGraphics: {fileID: 936668560}
   menuGraphics: {fileID: 1455938648}
-  isPaused: 0
 --- !u!4 &2109304476
 Transform:
   m_ObjectHideFlags: 0
