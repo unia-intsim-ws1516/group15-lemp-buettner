@@ -1,79 +1,235 @@
-﻿Shader "Hidden/GlaucomaSimulator"
-{
-    Properties
-    {
+﻿// Based on the MobileBlur shader from ImageEffects
+Shader "Hidden/Glaucoma" {
+    Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
-        _BlurIntensity ("Intensity of the blur", 2D) = "white" {}
-        _Radius ("Maximal radius of the blur", Range(0,0.5)) = 0.1
+        _IntensityMask ("Mask (Gray)", 2D) = "white" {}
     }
     
-    SubShader
-    {
-        Pass
+    CGINCLUDE
+
+        #include "UnityCG.cginc"
+
+        sampler2D _MainTex;
+        sampler2D _IntensityMask;
+
+        uniform half4 _MainTex_TexelSize;
+        uniform half4 _Parameter;
+
+        struct v2f_tap
         {
-            CGPROGRAM
-#include "UnityCG.cginc"
+            float4 pos : SV_POSITION;
+            half2 uv20 : TEXCOORD0;
+            half2 uv21 : TEXCOORD1;
+            half2 uv22 : TEXCOORD2;
+            half2 uv23 : TEXCOORD3;
+        };
 
-//#pragma multi_compile CB_TYPE_ONE CB_TYPE_TWO
-#pragma target 3.0 // use shader model 3
-#pragma vertex vert_img // this defines the vert_img function as the vertex shader function
-#pragma fragment frag // this defines the frag function as the fragment shader function
-//#pragma fragmentoption ARB_precision_hint_fastest
-            
-            uniform sampler2D _MainTex;
-            uniform sampler2D _BlurIntensity;
-            uniform fixed _Radius;
-            float4 _MainTex_TexelSize;
-            
-            fixed4 frag(v2f_img i) : COLOR
-            {
-                // Direct3D9 needs texel offset
-                float2 tc = i.uv;
-#ifdef UNITY_HALF_TEXEL_OFFSET
-                tc.y += _MainTex_TexelSize.y;
-#endif
+        v2f_tap vert4Tap ( appdata_img v )
+        {
+            v2f_tap o;
 
-                // _ScreenParams is predefined in UnityShaderVariables.cginc included by UnityCG.cginc
-                float aspect = _ScreenParams.y / _ScreenParams.x;
-                fixed4 tmp = tex2D(_BlurIntensity, tc);
-                float radius = (tmp.r + tmp.g + tmp.b) / 3.0 * _Radius;
-                float4 sum = float4(0.0, 0.0, 0.0, 0.0);
+            o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+            o.uv20 = v.texcoord + _MainTex_TexelSize.xy;                
+            o.uv21 = v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,-0.5h);   
+            o.uv22 = v.texcoord + _MainTex_TexelSize.xy * half2(0.5h,-0.5h);        
+            o.uv23 = v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,0.5h);        
 
-                sum += tex2D(_MainTex, float2(tc.x + (0-2)/2.0*radius*aspect, tc.y + (0-2)/2.0*radius)) * 1;
-                sum += tex2D(_MainTex, float2(tc.x + (1-2)/2.0*radius*aspect, tc.y + (0-2)/2.0*radius)) * 4;
-                sum += tex2D(_MainTex, float2(tc.x + (2-2)/2.0*radius*aspect, tc.y + (0-2)/2.0*radius)) * 7;
-                sum += tex2D(_MainTex, float2(tc.x + (3-2)/2.0*radius*aspect, tc.y + (0-2)/2.0*radius)) * 4;
-                sum += tex2D(_MainTex, float2(tc.x + (4-2)/2.0*radius*aspect, tc.y + (0-2)/2.0*radius)) * 1;
-
-                sum += tex2D(_MainTex, float2(tc.x + (0-2)/2.0*radius*aspect, tc.y + (1-2)/2.0*radius)) * 4;
-                sum += tex2D(_MainTex, float2(tc.x + (1-2)/2.0*radius*aspect, tc.y + (1-2)/2.0*radius)) *16;
-                sum += tex2D(_MainTex, float2(tc.x + (2-2)/2.0*radius*aspect, tc.y + (1-2)/2.0*radius)) *26;
-                sum += tex2D(_MainTex, float2(tc.x + (3-2)/2.0*radius*aspect, tc.y + (1-2)/2.0*radius)) *16;
-                sum += tex2D(_MainTex, float2(tc.x + (4-2)/2.0*radius*aspect, tc.y + (1-2)/2.0*radius)) * 4;
-
-                sum += tex2D(_MainTex, float2(tc.x + (0-2)/2.0*radius*aspect, tc.y + (2-2)/2.0*radius)) * 7;
-                sum += tex2D(_MainTex, float2(tc.x + (1-2)/2.0*radius*aspect, tc.y + (2-2)/2.0*radius)) *26;
-                sum += tex2D(_MainTex, float2(tc.x + (2-2)/2.0*radius*aspect, tc.y + (2-2)/2.0*radius)) *41;
-                sum += tex2D(_MainTex, float2(tc.x + (3-2)/2.0*radius*aspect, tc.y + (2-2)/2.0*radius)) *26;
-                sum += tex2D(_MainTex, float2(tc.x + (4-2)/2.0*radius*aspect, tc.y + (2-2)/2.0*radius)) * 7;
-
-                sum += tex2D(_MainTex, float2(tc.x + (0-2)/2.0*radius*aspect, tc.y + (3-2)/2.0*radius)) * 4;
-                sum += tex2D(_MainTex, float2(tc.x + (1-2)/2.0*radius*aspect, tc.y + (3-2)/2.0*radius)) *16;
-                sum += tex2D(_MainTex, float2(tc.x + (2-2)/2.0*radius*aspect, tc.y + (3-2)/2.0*radius)) *26;
-                sum += tex2D(_MainTex, float2(tc.x + (3-2)/2.0*radius*aspect, tc.y + (3-2)/2.0*radius)) *16;
-                sum += tex2D(_MainTex, float2(tc.x + (4-2)/2.0*radius*aspect, tc.y + (3-2)/2.0*radius)) * 4;
-
-                sum += tex2D(_MainTex, float2(tc.x + (0-2)/2.0*radius*aspect, tc.y + (4-2)/2.0*radius)) * 1;
-                sum += tex2D(_MainTex, float2(tc.x + (1-2)/2.0*radius*aspect, tc.y + (4-2)/2.0*radius)) * 4;
-                sum += tex2D(_MainTex, float2(tc.x + (2-2)/2.0*radius*aspect, tc.y + (4-2)/2.0*radius)) * 7;
-                sum += tex2D(_MainTex, float2(tc.x + (3-2)/2.0*radius*aspect, tc.y + (4-2)/2.0*radius)) * 4;
-                sum += tex2D(_MainTex, float2(tc.x + (4-2)/2.0*radius*aspect, tc.y + (4-2)/2.0*radius)) * 1;
-
-                sum /= 273.0;
-                return sum;
-            }
-            ENDCG
+            return o; 
         }
-    }
-    FallBack off
+        
+        fixed4 fragDownsample ( v2f_tap i ) : SV_Target
+        {               
+            fixed4 color = tex2D (_MainTex, i.uv20);
+            color += tex2D (_MainTex, i.uv21);
+            color += tex2D (_MainTex, i.uv22);
+            color += tex2D (_MainTex, i.uv23);
+            return color / 4;
+        }
+    
+        // weight curves
+
+        static const half curve[7] = { 0.0205, 0.0855, 0.232, 0.324, 0.232, 0.0855, 0.0205 };  // gauss'ish blur weights
+
+        static const half4 curve4[7] = { half4(0.0205,0.0205,0.0205,0), half4(0.0855,0.0855,0.0855,0), half4(0.232,0.232,0.232,0),
+            half4(0.324,0.324,0.324,1), half4(0.232,0.232,0.232,0), half4(0.0855,0.0855,0.0855,0), half4(0.0205,0.0205,0.0205,0) };
+
+        struct v2f_withBlurCoords8
+        {
+            float4 pos : SV_POSITION;
+            half4 uv : TEXCOORD0;
+            half2 offs : TEXCOORD1;
+        };  
+        
+        struct v2f_withBlurCoordsSGX 
+        {
+            float4 pos : SV_POSITION;
+            half2 uv : TEXCOORD0;
+            half4 offs[3] : TEXCOORD1;
+        };
+
+        v2f_withBlurCoords8 vertBlurHorizontal (appdata_img v)
+        {
+            v2f_withBlurCoords8 o;
+            o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+            
+            o.uv = half4(v.texcoord.xy,1,1);
+            o.offs = _MainTex_TexelSize.xy * half2(1.0, 0.0) * _Parameter.x;
+
+            return o; 
+        }
+        
+        v2f_withBlurCoords8 vertBlurVertical (appdata_img v)
+        {
+            v2f_withBlurCoords8 o;
+            o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+            
+            o.uv = half4(v.texcoord.xy,1,1);
+            o.offs = _MainTex_TexelSize.xy * half2(0.0, 1.0) * _Parameter.x;
+             
+            return o; 
+        }   
+
+        half4 fragBlur8 ( v2f_withBlurCoords8 i ) : SV_Target
+        {
+            half2 uv = i.uv.xy; 
+            half strength = Luminance(tex2D(_IntensityMask, uv).rgb);
+            half2 netFilterWidth = i.offs * strength;
+            half2 coords = uv - netFilterWidth * 3.0;  
+            
+            half4 color = 0;
+            for( int l = 0; l < 7; l++ )  
+            {   
+                half4 tap = tex2D(_MainTex, coords);
+                color += tap * curve4[l];
+                coords += netFilterWidth;
+            }
+            return color;
+        }
+
+
+        v2f_withBlurCoordsSGX vertBlurHorizontalSGX (appdata_img v)
+        {
+            v2f_withBlurCoordsSGX o;
+            o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+            
+            o.uv = v.texcoord.xy;
+            half2 netFilterWidth = _MainTex_TexelSize.xy * half2(1.0, 0.0) * _Parameter.x; 
+            half4 coords = -netFilterWidth.xyxy * 3.0;
+            
+            o.offs[0] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+            coords += netFilterWidth.xyxy;
+            o.offs[1] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+            coords += netFilterWidth.xyxy;
+            o.offs[2] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+
+            return o; 
+        }       
+        
+        v2f_withBlurCoordsSGX vertBlurVerticalSGX (appdata_img v)
+        {
+            v2f_withBlurCoordsSGX o;
+            o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+            
+            o.uv = half4(v.texcoord.xy,1,1);
+            half2 netFilterWidth = _MainTex_TexelSize.xy * half2(0.0, 1.0) * _Parameter.x;
+            half4 coords = -netFilterWidth.xyxy * 3.0;
+            
+            o.offs[0] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+            coords += netFilterWidth.xyxy;
+            o.offs[1] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+            coords += netFilterWidth.xyxy;
+            o.offs[2] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+
+            return o; 
+        }   
+
+        half4 fragBlurSGX ( v2f_withBlurCoordsSGX i ) : SV_Target
+        {
+            half2 uv = i.uv.xy;
+            
+            half4 color = tex2D(_MainTex, i.uv) * curve4[3];
+            
+            for( int l = 0; l < 3; l++ )  
+            {   
+                half4 tapA = tex2D(_MainTex, i.offs[l].xy);
+                half4 tapB = tex2D(_MainTex, i.offs[l].zw); 
+                color += (tapA + tapB) * curve4[l];
+            }
+
+            return color;
+
+        }   
+                    
+    ENDCG
+    
+    SubShader {
+      ZTest Off Cull Off ZWrite Off Blend Off
+
+    // 0
+    Pass { 
+    
+        CGPROGRAM
+        
+        #pragma vertex vert4Tap
+        #pragma fragment fragDownsample
+        
+        ENDCG
+         
+        }
+
+    // 1
+    Pass {
+        ZTest Always
+        Cull Off
+        
+        CGPROGRAM 
+        
+        #pragma vertex vertBlurVertical
+        #pragma fragment fragBlur8
+        
+        ENDCG 
+        }   
+        
+    // 2
+    Pass {      
+        ZTest Always
+        Cull Off
+                
+        CGPROGRAM
+        
+        #pragma vertex vertBlurHorizontal
+        #pragma fragment fragBlur8
+        
+        ENDCG
+        }   
+
+    // alternate blur
+    // 3
+    Pass {
+        ZTest Always
+        Cull Off
+        
+        CGPROGRAM 
+        
+        #pragma vertex vertBlurVerticalSGX
+        #pragma fragment fragBlurSGX
+        
+        ENDCG
+        }   
+        
+    // 4
+    Pass {      
+        ZTest Always
+        Cull Off
+                
+        CGPROGRAM
+        
+        #pragma vertex vertBlurHorizontalSGX
+        #pragma fragment fragBlurSGX
+        
+        ENDCG
+        }   
+    }   
+
+    FallBack Off
 }

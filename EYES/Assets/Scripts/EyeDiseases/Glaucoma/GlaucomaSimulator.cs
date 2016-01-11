@@ -9,14 +9,16 @@ namespace eyediseases
     public class GlaucomaSimulator : EyeDisease
     {
         [SerializeField]
-        public float MaxRadius = 0.01f; // in uv-coordinates units
+        [Range(0.0f, 16.0f)]
+        public float BlurSize = 1.0f;
         [SerializeField]
-        public Shader ColorBlindShader;
-        protected Material ColorBlindMat;
+        [Range(0, 8)]
+        public int BlurIterations = 3;
+        protected Material BlurMaterial = null;
 
         public GameObject ConfigDialog;
 
-        public Texture2D SeverityTex;
+        public Texture2D Intensity;
 
         public GlaucomaSimulator ()
             : base("Glaucoma")
@@ -38,10 +40,16 @@ namespace eyediseases
         protected override bool CheckResources ()
         {
             CheckSupport (false);
-            ColorBlindShader = Shader.Find ("Hidden/GlaucomaSimulator");
-            ColorBlindMat = CreateMaterial (ColorBlindShader, ColorBlindMat);
 
-            return ColorBlindMat != null;
+            Shader ColorBlindShader = Shader.Find ("Hidden/Glaucoma");
+            BlurMaterial = CreateMaterial (ColorBlindShader, BlurMaterial);
+            if (BlurMaterial == null)
+            {
+                Debug.LogError("Failed to create BlurMaterial");
+                return false;
+            }
+
+            return true;
         }
 
         #endregion
@@ -50,53 +58,59 @@ namespace eyediseases
 
         void OnDisable ()
         {
-            if (ColorBlindMat != null) {
+            if (BlurMaterial != null) {
                 #if UNITY_EDITOR
                 if(!UnityEditor.EditorApplication.isPlaying)
-                    DestroyImmediate(ColorBlindMat, true);
+                    DestroyImmediate(BlurMaterial, true);
                 else
                 #endif
-                    Destroy (ColorBlindMat);
+                    Destroy (BlurMaterial);
             }
         }
 
         void OnRenderImage (RenderTexture _src, RenderTexture _dst)
         {
-            if (ColorBlindMat == null) {
+            if (BlurMaterial == null) {
                 if (!CheckResources ()) {
                     NotSupported ();
                     return;
                 }
             }
 
-//            switch (BlindMode) {
-//            case ColorBlindMode.Protanope:
-//                ColorBlindMat.shaderKeywords = new string[] { "CB_TYPE_ONE" };
-//                break;
-//            case ColorBlindMode.Deuteranope:
-//                ColorBlindMat.shaderKeywords = new string[] { "CB_TYPE_TWO" };
-//                break;
-//            }
-//
-//            switch (BlindAlgorithm) {
-//            case ColorBlindAlgorithm.GULTI:
-//                ColorBlindShader = Shader.Find ("Hidden/GULTI/ColorBlindSimulator");
-//                break;
-//            case ColorBlindAlgorithm.IntSim:
-//                ColorBlindShader = Shader.Find ("Hidden/GULTI/CVDSimulator");
-//                break;
-//            }
-//            ColorBlindMat.shader = ColorBlindShader;
-//
-//            // Intensity Set
-//            ColorBlindMat.SetFloat ("_BlindIntensity", BlindIntensity);
-            ColorBlindMat.SetFloat("_Radius", MaxRadius);
-            if (SeverityTex)
-            {
-                ColorBlindMat.SetTexture("_BlurIntensity", SeverityTex);
+            BlurMaterial.SetVector ("_Parameter", new Vector4 (BlurSize, -BlurSize, 0.0f, 0.0f));
+            BlurMaterial.SetTexture ("_IntensityMask", Intensity);
+            _src.filterMode = FilterMode.Bilinear;
+
+            // downsample
+            RenderTexture rt = RenderTexture.GetTemporary (_src.width, _src.height, 0, _src.format);
+
+            rt.filterMode = FilterMode.Bilinear;
+            Graphics.Blit (_src, rt, BlurMaterial, 0);
+
+            const int gaussianPass = 0;
+
+            for(int i = 0; i < BlurIterations; i++) {
+                float iterationOffs = (i*1.0f);
+                BlurMaterial.SetVector ("_Parameter", new Vector4 (BlurSize + iterationOffs, -BlurSize - iterationOffs, 0.0f, 0.0f));
+
+                // vertical blur
+                RenderTexture rt2 = RenderTexture.GetTemporary (_src.width, _src.height, 0, _src.format);
+                rt2.filterMode = FilterMode.Bilinear;
+                Graphics.Blit (rt, rt2, BlurMaterial, 1 + gaussianPass);
+                RenderTexture.ReleaseTemporary (rt);
+                rt = rt2;
+
+                // horizontal blur
+                rt2 = RenderTexture.GetTemporary (_src.width, _src.height, 0, _src.format);
+                rt2.filterMode = FilterMode.Bilinear;
+                Graphics.Blit (rt, rt2, BlurMaterial, 2 + gaussianPass);
+                RenderTexture.ReleaseTemporary (rt);
+                rt = rt2;
             }
 
-            Graphics.Blit (_src, _dst, ColorBlindMat);
+            Graphics.Blit (rt, _dst);
+
+            RenderTexture.ReleaseTemporary (rt);
         }
 
         #endregion
