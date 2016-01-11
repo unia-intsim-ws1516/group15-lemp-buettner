@@ -534,7 +534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &364027153
 Transform:
   m_ObjectHideFlags: 0
@@ -3453,6 +3453,7 @@ GameObject:
   - 114: {fileID: 1696989083}
   - 114: {fileID: 1696989085}
   - 114: {fileID: 1696989084}
+  - 114: {fileID: 1696989086}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -3644,6 +3645,21 @@ MonoBehaviour:
   blurIterations: 1
   blurType: 1
   blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
+--- !u!114 &1696989086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696989077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23cbac8d24236f4791c410dd08b2486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlurSize: 5.7
+  BlurIterations: 5
+  ConfigDialog: {fileID: 0}
+  Intensity: {fileID: 2800000, guid: 817c05b3dfa4feb4383a36cb732a15dc, type: 3}
 --- !u!1 &1852361768
 GameObject:
   m_ObjectHideFlags: 0
