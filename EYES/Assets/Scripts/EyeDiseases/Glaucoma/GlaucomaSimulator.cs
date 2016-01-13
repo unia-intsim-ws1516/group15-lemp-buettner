@@ -14,11 +14,11 @@ namespace eyediseases
         [SerializeField]
         [Range(0, 8)]
         public int BlurIterations = 3;
-        protected Material BlurMaterial = null;
 
         public GameObject ConfigDialog;
-
         public Texture2D Intensity;
+        public Shader GlaucomaShader;
+        private Material GlaucomaMaterial = null;
 
         public GlaucomaSimulator ()
             : base("Glaucoma")
@@ -41,9 +41,8 @@ namespace eyediseases
         {
             CheckSupport (false);
 
-            Shader ColorBlindShader = Shader.Find ("Hidden/Glaucoma");
-            BlurMaterial = CreateMaterial (ColorBlindShader, BlurMaterial);
-            if (BlurMaterial == null)
+            GlaucomaMaterial = CreateMaterial (GlaucomaShader, GlaucomaMaterial);
+            if (GlaucomaMaterial == null)
             {
                 Debug.LogError("Failed to create BlurMaterial");
                 return false;
@@ -58,52 +57,52 @@ namespace eyediseases
 
         void OnDisable ()
         {
-            if (BlurMaterial != null) {
+            if (GlaucomaMaterial != null) {
                 #if UNITY_EDITOR
                 if(!UnityEditor.EditorApplication.isPlaying)
-                    DestroyImmediate(BlurMaterial, true);
+                    DestroyImmediate(GlaucomaMaterial, true);
                 else
                 #endif
-                    Destroy (BlurMaterial);
+                    Destroy (GlaucomaMaterial);
             }
         }
 
         void OnRenderImage (RenderTexture _src, RenderTexture _dst)
         {
-            if (BlurMaterial == null) {
+            if (GlaucomaMaterial == null) {
                 if (!CheckResources ()) {
                     NotSupported ();
                     return;
                 }
             }
 
-            BlurMaterial.SetVector ("_Parameter", new Vector4 (BlurSize, -BlurSize, 0.0f, 0.0f));
-            BlurMaterial.SetTexture ("_IntensityMask", Intensity);
+            GlaucomaMaterial.SetVector ("_Parameter", new Vector4 (BlurSize, -BlurSize, 0.0f, 0.0f));
+            GlaucomaMaterial.SetTexture ("_IntensityMask", Intensity);
             _src.filterMode = FilterMode.Bilinear;
 
             // downsample
             RenderTexture rt = RenderTexture.GetTemporary (_src.width, _src.height, 0, _src.format);
 
             rt.filterMode = FilterMode.Bilinear;
-            Graphics.Blit (_src, rt, BlurMaterial, 0);
+            Graphics.Blit (_src, rt, GlaucomaMaterial, 0);
 
             const int gaussianPass = 0;
 
             for(int i = 0; i < BlurIterations; i++) {
                 float iterationOffs = (i*1.0f);
-                BlurMaterial.SetVector ("_Parameter", new Vector4 (BlurSize + iterationOffs, -BlurSize - iterationOffs, 0.0f, 0.0f));
+                GlaucomaMaterial.SetVector ("_Parameter", new Vector4 (BlurSize + iterationOffs, -BlurSize - iterationOffs, 0.0f, 0.0f));
 
                 // vertical blur
                 RenderTexture rt2 = RenderTexture.GetTemporary (_src.width, _src.height, 0, _src.format);
                 rt2.filterMode = FilterMode.Bilinear;
-                Graphics.Blit (rt, rt2, BlurMaterial, 1 + gaussianPass);
+                Graphics.Blit (rt, rt2, GlaucomaMaterial, 1 + gaussianPass);
                 RenderTexture.ReleaseTemporary (rt);
                 rt = rt2;
 
                 // horizontal blur
                 rt2 = RenderTexture.GetTemporary (_src.width, _src.height, 0, _src.format);
                 rt2.filterMode = FilterMode.Bilinear;
-                Graphics.Blit (rt, rt2, BlurMaterial, 2 + gaussianPass);
+                Graphics.Blit (rt, rt2, GlaucomaMaterial, 2 + gaussianPass);
                 RenderTexture.ReleaseTemporary (rt);
                 rt = rt2;
             }

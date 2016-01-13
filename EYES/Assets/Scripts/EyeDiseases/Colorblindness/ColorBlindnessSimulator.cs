@@ -35,9 +35,8 @@ namespace eyediseases
         public float
             BlindIntensity = 1.0f;
         [SerializeField]
-        public Shader
-            ColorBlindShader;
-        protected Material ColorBlindMat;
+        public Shader ColorBlindShader;
+        private Material ColorBlindMat;
 
         public enum ColorBlindAlgorithm
         {
@@ -108,6 +107,9 @@ namespace eyediseases
                 break;
             }
 
+            if (ColorBlindShader != null) {
+                DestroyImmediate (ColorBlindShader);
+            }
             switch (BlindAlgorithm) {
             case ColorBlindAlgorithm.GULTI:
                 ColorBlindShader = Shader.Find ("Hidden/GULTI/ColorBlindSimulator");

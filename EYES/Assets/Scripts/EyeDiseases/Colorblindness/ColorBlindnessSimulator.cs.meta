@@ -1,8 +1,12 @@
 fileFormatVersion: 2
 guid: 364a13ef71f9b40e58990911b66a39cd
+timeCreated: 1452603333
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ColorBlindShader: {fileID: 4800000, guid: 88e723f30bf154fbe91c8f4fe29a7ee9, type: 3}
+  - ConfigDialog: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
