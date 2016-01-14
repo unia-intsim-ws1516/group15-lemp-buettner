@@ -18596,6 +18596,7 @@ GameObject:
   - 124: {fileID: 768197864}
   - 92: {fileID: 768197863}
   - 81: {fileID: 768197862}
+  - 114: {fileID: 768197866}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -18670,6 +18671,22 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &768197866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768197860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23cbac8d24236f4791c410dd08b2486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlurSize: 1
+  BlurIterations: 3
+  ConfigDialog: {fileID: 0}
+  Intensity: {fileID: 2800000, guid: 817c05b3dfa4feb4383a36cb732a15dc, type: 3}
+  GlaucomaShader: {fileID: 4800000, guid: bf79f4d7d0d9d424286bc1cebdb17c25, type: 3}
 --- !u!1 &770010254
 GameObject:
   m_ObjectHideFlags: 0

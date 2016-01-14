@@ -82,7 +82,7 @@ public class menuScript : MonoBehaviour
 
 	public void levelGlaucoma ()
 	{
-		SceneManager.LoadScene(1); // load Glaucoma
+		SceneManager.LoadScene(2); // load Glaucoma
 	}
 
 	public void levelCataract ()
