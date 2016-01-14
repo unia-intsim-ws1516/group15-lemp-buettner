@@ -28,6 +28,14 @@ namespace eyediseases
             screenpoint = new Vector3(camera.pixelWidth / 2,
                 camera.pixelHeight / 2,
                 0.0f);
+
+            dof.highResolution = true;
+            dof.focalSize = 0.0f;
+            dof.aperture = 3.36f;
+            dof.blurType = DepthOfField.BlurType.DX11;
+            dof.maxBlurSize = 12.83f;
+            dof.nearBlur = true;
+            dof.foregroundOverlap = 10.0f;
     	}
     	
     	// Update is called once per frame
