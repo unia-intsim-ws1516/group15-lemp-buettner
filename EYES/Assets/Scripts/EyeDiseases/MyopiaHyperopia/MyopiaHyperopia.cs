@@ -35,7 +35,8 @@ namespace eyediseases
             Ray viewray = camera.ScreenPointToRay(screenpoint);
 
             RaycastHit hitInfo = new RaycastHit ();
-            float dist = 10000.0f;
+            const float maxDist = 10000.0f;
+            float dist = maxDist;
             if (Physics.Raycast(viewray, out hitInfo)) {
                 dist = hitInfo.distance;
                 Debug.Log ("Hit distance = " + dist);
@@ -44,6 +45,8 @@ namespace eyediseases
             // the cornea-retina distance
             float crd = 0.024f;
             float crd2 = crd / (1.0f - diopters * crd);
+
+            Debug.Log ("crd2 = " + crd2);
 
             float minF = 0.02068966f;
             float maxF = 0.024f;
@@ -58,7 +61,11 @@ namespace eyediseases
                 dof.focalLength = dist;
             } else if (f < minF){
                 // comput the distance capable with minF
-                dof.focalLength = crd2 * minF / (crd2 - minF);
+                if (crd2 > minF) {
+                    dof.focalLength = crd2 * minF / (crd2 - minF);
+                } else {
+                    dof.focalLength = maxDist;
+                }
             } else if (maxF < f) {
                 dof.focalLength = crd2 * maxF / (crd2 - maxF);
             }
