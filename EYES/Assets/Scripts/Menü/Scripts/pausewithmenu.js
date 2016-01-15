@@ -37,6 +37,8 @@ if(isPaused == true){
 		}
 		if(mousePos.y < 0.53 && mousePos.y > 0.2){
 			Application.LoadLevel(0);
+			isPaused = false;
+			Time.timeScale = 1;
 		}
 	}
 }
