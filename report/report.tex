@@ -1,4 +1,4 @@
-\documentclass{acm_proc_article-sp}
+\documentclass{sig-alternate-05-2015}
 
 \usepackage[T1]{fontenc}
 \usepackage{polyglossia}
@@ -7,7 +7,7 @@
 
 \usepackage{fontspec}
 \usepackage{xltxtra}
-\usepackage{libertine}
+%\usepackage{libertine}
 
 \usepackage[usenames, dvipsnames]{xcolor}
 \graphicspath{{./img/}}
@@ -36,6 +36,7 @@ filecolor=black%
 
 \begin{document}
 
+\conferenceinfo{IntSim}{2015, Augsburg}
 \title{
 Interactive Simulation WS 15/16\\ %
 Project Report
@@ -83,7 +84,13 @@ Stefan Büttner\\
 
 \maketitle
 \begin{abstract}
-Many diseases can be treated well if recognized early, that's why we want to inform the users about different eye diseases and their effects on the vision. That's why we build the EYES Simulator in compination with this paper. The User will experience 5 different Eye diseases in different levels. The player will be go shopping and collect special items from his shopping list. This szenario got espacilly picked because everybody knows the situation. Different to other eye diseas simulators its build up like an game. Where the player gets point for solving the task as fast as possible. 
+Many diseases can be treated well if recognized early.
+That's why we want to inform the users about different eye diseases and their effects on the vision.
+That's why we built the EYES Simulator in combination with this paper.
+The user will experience five different eye diseases in different levels.
+The player will go shopping and collect special items from his shopping list.
+We chose this scenario because everybody knows the situation.
+Different to other eye disease simulators it is build up like an game where the player gets point for solving the task as fast as possible. 
 \end{abstract}
 % Disease list:
 % -------------------------------------------------------------------------------
@@ -130,7 +137,6 @@ There are different eye disease simulators available in the web already.
 However, common ones, e.g. found on websites of health organizations, alter still 2D images and display them in the browser.
 For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases and four different images to apply them to. 
 There are also real-time simulations available as descriped by~\cite{eyediseasesim-zhuming} but the implementation is not available online.
-\todo{cite this?}~\cite{eyediseasesim}
 
 \section{Models and Methods}
 %\begin{itemize}
@@ -144,7 +150,7 @@ There are also real-time simulations available as descriped by~\cite{eyediseases
 %  \item Target platform: Android \& Google Cardboard to address many people
 %\end{itemize}
 
-Assets used: Standard Assets (Unity Technologies), Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
+%Assets used: Standard Assets (Unity Technologies), Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
 
 The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
 
@@ -355,8 +361,15 @@ Because of the clouding we decided to blure the hole shader a bit and reduce the
 
 \subsection{Myopia and Hyperopia}
 
-Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye.
+Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye as seen in \Fref{fig:hyperopia}.
 In either case, the focal range of the eye is altered since the lense cannot provide the required focal length for some distances anymore.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\columnwidth]{hyperopia.png}
+    \caption{Hyperotic eye and treatment by glasses.}
+    \label{fig:hyperopia}
+\end{figure}
 
 In order to simulate that in real-time a simulation of focal depth is needed.
 A brief overview can be found at~\cite{gpugems-DoF}.
