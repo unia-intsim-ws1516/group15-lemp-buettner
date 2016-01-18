@@ -15,7 +15,7 @@ public class PickUpItem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()  // if press E checks in the distance of 1.3 vectors if there is an item and if this item is already in the inventory, if not it gets pick uped and shown in the Invenotry and de Object will be deleted, if it is in the inventory it cant be picked up
     {
         if (_inventory != null && Input.GetKeyDown(KeyCode.E))
         {

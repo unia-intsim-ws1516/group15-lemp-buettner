@@ -11,7 +11,7 @@ public class menuScript : MonoBehaviour
 	public Button quitbutton;
 	public Button levelbutton;
 
-	void Start ()
+	void Start ()  // disables different supmenus and activates the buttons
 
 	{
 		QuitMenu = QuitMenu.GetComponent<Canvas>();
@@ -61,12 +61,12 @@ public class menuScript : MonoBehaviour
 		Application.Quit(); //this will quit our game. Note this will only work after building the game
 
 	}
-	public void goMenu ()
+	public void goMenu ()  //this will be used for the jump to the menu
 	{
 		SceneManager.LoadScene(0); // load Menu.
 	}
 
-	public void Levelpress ()
+	public void Levelpress ()  // this will be used for the Level menu 
 		
 	{
 		Levelmenu.enabled = true; //
@@ -75,27 +75,27 @@ public class menuScript : MonoBehaviour
 		levelbutton.enabled = false;
 	}
 
-	public void levelColorblindness ()
+	public void levelColorblindness () // this will be used for loading the level 1 ( Colorblindness)
 	{
 		SceneManager.LoadScene(1); // load Colorblindness
 	}
 
-	public void levelGlaucoma ()
+	public void levelGlaucoma () // this will be used for loading the level 2 ( Glacuoma)
 	{
 		SceneManager.LoadScene(2); // load Glaucoma
 	}
 
-	public void levelCataract ()
+	public void levelCataract () // this will be used for loading the level 3 (Cataract)
 	{
 		SceneManager.LoadScene(1); // load Cataract
 	}
 
-	public void levelMyopia ()
+	public void levelMyopia ()  // this will be used for loading the level 4 (Myopia)
 	{
 		SceneManager.LoadScene(1); // load Myopia
 	}
 
-	public void levelHyperopia ()
+	public void levelHyperopia ()  // this will be used for loading the level 5 (Hyperopia)
 	{
 		SceneManager.LoadScene(1); // load Hyperopia
 	}
