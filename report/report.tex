@@ -48,15 +48,15 @@ Project Report
 Sebastian Lemp\\
 %       \affaddr{Street, House}\\
 %       \affaddr{PLZ City}\\
-%       \affaddr{Country}\\
-%       \email{sebastian.lemp@student.uni-augsburg.de}
+       \affaddr{University of Augsburg}\\
+       \email{sebastian.lemp@student.uni-augsburg.de}
 % 2nd. author
 \alignauthor
 Stefan Büttner\\
 %       \affaddr{Street, House}\\
 %       \affaddr{PLZ City}\\
-%       \affaddr{Country}\\
-%       \email{stefan.buettner@student.uni-augsburg.de}
+       \affaddr{University of Augsburg}\\
+       \email{stefan.buettner@student.uni-augsburg.de}
 }
 %\additionalauthors{Additional Authors}
 
@@ -196,55 +196,58 @@ shaders (re-usability) is subject to the first research block. But since this
 appears to be a very well researched topic, we're confident that we won't run
 into any major difficulties.
 
-\begin{table}
-    \textbf{Glaucoma}\\
-    Sudden eye pain, blurred vision and loss of vision especially in the
-    outer regions.
-
-    \vspace{1em}\textbf{Cataracts}\\
-    Blurred vision especially in the center region.
-
-    \vspace{1em}\textbf{Diabetic Retinopathy}\\
-    Black spots in the view.
-
-    \vspace{1em}\textbf{Color blindness}\\
-    Some colours appear indistinguishable.
-
-    \vspace{1em}\textbf{Achromatopsia}\\
-    (Almost) No color sensitivity at all.
-
-    \vspace{1em}\textbf{Myopia / Hyperopia}\\
-    Commonly known as nearsightedness and farsightedness respectively.
-
-    \vspace{1em}\textbf{Kreatoconus}\\
-    The cornea deforms into a conical shape.
-    Multiple ghost images may be visible, arranged in a chaotic pattern,
-    the vision becomes blurry, and visual acuity decreases at all distances.
-    Poor night vision, photo-phobia, and eye strain are additional symptoms.
-
-    \vspace{1em}\textbf{Nyctalopia / Hermalopia}\\
-    High difficulty to see in relatively low and bright light respectively.
-
-    \vspace{1em}\textbf{Retinal detachment / Posterior vitreous detachment}\\
-    Flashes of light, very brief in the extreme peripheral region.
-    Sudden increase in the amount of floaters.
-    Slight feeling of heaviness in the eye.
-    \caption{Eye diseases}
-    \label{tab:eye_diseases}
-\end{table}
+%\begin{table}
+%    \textbf{Glaucoma}\\
+%    Sudden eye pain, blurred vision and loss of vision especially in the
+%    outer regions.
+%
+%    \vspace{1em}\textbf{Cataracts}\\
+%    Blurred vision especially in the center region.
+%
+%    \vspace{1em}\textbf{Diabetic Retinopathy}\\
+%    Black spots in the view.
+%
+%    \vspace{1em}\textbf{Color blindness}\\
+%    Some colours appear indistinguishable.
+%
+%    \vspace{1em}\textbf{Achromatopsia}\\
+%    (Almost) No color sensitivity at all.
+%
+%    \vspace{1em}\textbf{Myopia / Hyperopia}\\
+%    Commonly known as nearsightedness and farsightedness respectively.
+%
+%    \vspace{1em}\textbf{Kreatoconus}\\
+%    The cornea deforms into a conical shape.
+%    Multiple ghost images may be visible, arranged in a chaotic pattern,
+%    the vision becomes blurry, and visual acuity decreases at all distances.
+%    Poor night vision, photo-phobia, and eye strain are additional symptoms.
+%
+%    \vspace{1em}\textbf{Nyctalopia / Hermalopia}\\
+%    High difficulty to see in relatively low and bright light respectively.
+%
+%    \vspace{1em}\textbf{Retinal detachment / Posterior vitreous detachment}\\
+%    Flashes of light, very brief in the extreme peripheral region.
+%    Sudden increase in the amount of floaters.
+%    Slight feeling of heaviness in the eye.
+%    \caption{Eye diseases}
+%    \label{tab:eye_diseases}
+%\end{table}
 
 \section{The human eye}
 Since eye diseases are supposed to be simulated in a virtual environment this section begins with a brief overview over the human eye in comparison to man-made cameras and their abstraction of the pinhole camera used in modern computer graphics.
 
 As can be seen in \Fref{fig:humaneye} the human eye is a spherical shaped organ letting light enter through the pupil to form an image of the world at the retina.
 This hole consists of the cornea, the pupli and the lense which act as an objective enabling the eye to focus on various distances and adapt to bright and dark scenes.
+
 The cornea is a transparent layer with a rather fixed shape and therefore a fixed refractive index.
 It focuses the light on the pupil which prevents too much light from entering the eye like an aperture.
 The lense finally focuses the light on the retina by altering its shape which effectivly changes its focal length.
 So unlike in cameras focusing is not achieved by altering the distance of the lenses to the sensor but by altering the focal length.
+
 The retina is photosensitive tissue at the back of the eye consisting of rods and cones.
 Cones are responsible for color vision and operate in daylight light conditions whereas rods are more light sensitive and provide gray-scale night vision.
 But unlike camera sensors, where red, green, and blue pixels are evenly distributed, the retina has a inhomogene layout.
+
 There is the Macula, which is an area with a very high rod and cone density.
 The central part of the Macula is called the Fovea which consists solely of tightly packed cones.
 Compared to the Macula, the rest of the eye, however, has a fairly low resolution and mostly consists of the non-color sensitive rods.
@@ -271,6 +274,7 @@ Those responsitivity curves were first determined by a color matching experiment
     There is a change of basis matrix available to switch from one to the other.
     So let's assume LMS and XYZ to be the same for now.
 }
+
 Given a spectral power distribution of a light source, its XYZ color value, also called \emph{tristimulus}, can be computed by the following equations:
 %All other color spaces, like the sRGB color space, are defined based on the CIE XYZ 1931 color space or at least provide a mapping to it.
 \begin{eqnarray}
@@ -282,37 +286,38 @@ Given a spectral power distribution of a light source, its XYZ color value, also
 Color vision deficiency originates from anormal cone responses or the absense of one or more cone types.
 People missing one of the L-, M-, or S-cones entirely are called \emph{Protanopes}, \emph{Deuteranopes}, and \emph{Tritanopes} respectively.
 If all cone types are present but one of them is anormal in its response, it is refered to as \emph{Protanomaly}, \emph{Deuteranomaly}, and \emph{Tritanomaly} respectively.
+
 The idea of simulating color vision deficiencies is to mimic these changes by first approximating the original spectral power distribution and then computing the new color value based on altered responsitivity curves.
-%
+
 There is already a color blindness simulation available in the Unity Asset store based on Brettel \etal~\cite{brettel}.
 However, they focused on Protanopia and Deuteranopia since these are the most common forms.
 Machado \etal~\cite{Machado2009} improved this approach by introducing a model for anomalous cones and trying to take the opponent-stage model into account.
-%
+
 In the game, both approaches can be experienced.
-We extended the 
-$\bar x$, $\bar y$, and $\bar z$ define a subspace.
-Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace with a change of basis matrix $B$.
-%
-%
+We extended the existing asset by the model proposed by Machado by writing a new shader which implements their approach.
+
+%$\bar x$, $\bar y$, and $\bar z$ define a subspace.
+%Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace with a change of basis matrix $B$.
+
 \begin{figure}
     \includegraphics[width=\columnwidth]{lms-sensitivity.png}
     \caption{CIE 2º LMS spectral sensitivity functions~\cite{cvrl-lms-web}.}
     \label{fig:lmscurves}
 \end{figure}
-%
-%
+
 \subsection{Glaucoma}
+
 Glaucoma is one of the diseases which damages the optic nervers from the eyes. The result of this is a loss of vision and in the end cousing total blindness. 
 
-Several stuides shown that the eye pressure is the main faktor of an optic nerve damange. By Glaucoma the pressure in the eye is to high that the optic nerve gets damaged. Another faktor is the blood pressure, this also can infact the optic nerves.
+Several studies shown that the eye pressure is the main factor of an optic nerve damange. By Glaucoma the pressure in the eye is too high that the optic nerve gets damaged. Another factor is the blood pressure, this also can infact the optic nerves.
 
 How much pressure the optic nerves can tolerate is different for each person. So that is why you cant directly say at witch pressure the optic nerves get damaged.
 
-Glaucoma is espacially a problem for people with a family history of glaucoma. Or everybody over the age of 60. In case of Africans or Americans the risk is already getting higher at the age of 40.
+Glaucoma is especially a problem for people with a family history of glaucoma. Or everybody over the age of 60. In case of Africans or Americans the risk is already getting higher at the age of 40.
 
-There are no Symptoms in the beginng, the vision stays normal and it causes no pain. But without an treatment, people with glaucoma slowly lose their peripheral vison. Thats why the people start to see the things at the corner of there vision field bad.That is shown in Figure 5. Over the time the visionfield gets smaller and smaller.
+There are no Symptoms in the beginnig, the vision stays normal and it causes no pain. But without treatment, people with glaucoma slowly lose their peripheral vison. That's why people start to see the things at the corner of their vision field badly. That is shown in Figure 5. Over the time the visionfield gets smaller and smaller.~\cite{glaucomafacts}
 
-Thats why we made a shader which blurres the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
+That's why we made a shader which blurres the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
 
 \begin{figure}
     \centering
@@ -323,11 +328,11 @@ Thats why we made a shader which blurres the outer region of the vision. So that
 
 \subsection{Cataract}
 
-Cataract is a diseas which effects the lens of the eye. Its clouding the lens and the effect of this is that the person have difficulties to focus on objects and have a different color perception.
+Cataract is a diseas which effects the lens of the eye. It is clouding the lens and the effect of this is that the person have difficulties to focus on objects and have a different color perception.
 
-The protein in the eye arrange to keep the lens clear and let the light pass. But in the older ages the protain cant clear the lense anymore and they starting to clump together. This is calld a cataract. Its starts in small areas of the lense and grow lager over the time. Mostly this starts in the center of the lense. Like shown in Figure 6.
+The protein in the eye arrange to keep the lens clear and let the light pass. But in the older ages the protain cant clear the lense anymore and they starting to clump together. This is calld a cataract. Its starts in small areas of the lense and grow lager over the time. Mostly this starts in the center of the lense. Like shown in \Fref{fig:cataract}.
 
-The Risk of getting cataract is extremely high for people over the age of 80. The percantage for cataract by people over 80 is about 50\%.
+The Risk of getting cataract is extremely high for people over the age of 80. The percantage for cataract by people over 80 is about 50\%.~\cite{cataractfacts}
 
 Because of the clouding we decided to blure the hole shader a bit and reduce the colors.
 
@@ -339,12 +344,13 @@ Because of the clouding we decided to blure the hole shader a bit and reduce the
 \end{figure}
 
 \subsection{Myopia and Hyperopia}
+
 Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye.
 In either case, the focal range of the eye is altered since the lense cannot provide the required focal length for some distances anymore.
-%
+
 In order to simulate that in real-time a simulation of focal depth is needed.
 A brief overview can be found at~\cite{gpugems-DoF}.
-%
+
 Unity already provides a fast and decent implementation of real-time focal depth in its Standard Assets.
 This was used to simulate axial myopia/hyperopia by limiting the focal distance.
 
@@ -360,56 +366,36 @@ Given the cornea-retina distance of 24mm, the focal-length range of the human ey
     \centering
     \begin{tabular}{ll}
         Diopters                & 59-60 dpt \\
-        Focal length            & 17mm/22-24mm\footnote{See \cite{eye-focal, eyeascamera}} \\
-        Pupil diameter          & 2mm - 7/8mm (contracted - dilated)\footnote{See \cite{eyeascamera}} \\
-        Cornea-Retina distance  & 17mm/25mm\footnote{See \cite{eyeascamera}} \\
-        f-stop                  & ~f/3.2 or f/3.5\footnote{See \cite{eyeascamera}} \\
+        Focal length            & 22-24mm\\
+        Pupil diameter          & 2mm - 7/8mm (contracted - dilated) \\
+        Cornea-Retina distance  & 17mm/25mm \\
+        f-stop                  & ~f/3.2 or f/3.5 \\
         Cone of visual attention& ~55º \\
-        № Pixels                & 130 mega pix (6 mio cones, 124 rods) (compared to 24 mega pix) \\
-        Macula                  & 6mm radius, 150000 px/mm²\\
-        Fovea (inside macula)   & color only vision, densly packed with cones \\
+        Macula                  & 6mm radius, $\sim$150000 px/mm²\\
     \end{tabular}
-    \caption{Properties of the human eye}
+    \caption{Properties of the human eye~\cite{eye-focal, eyeascamera}}
     \label{tab:eyeproperties}
 \end{table}
-\begin{description}
-\item[Axial Myopia]
-    Increase in the eye's axial length.\\
-    Most common one!
-\item[Refractive Myopia]
-    \begin{description}
-    \item[Curvature myopia]
-    Execssive or increased curvature of one or more of the refractive surfaces of the eye. Mostly the cornea.
-    \item[Index myopia]
-    Variation of the index of reflection of one or more of the ocular media.
-    \end{description}
-\item[Nocturnal myopia]
-\end{description}
 
-For a reference on real-time focal blur/depth of field see \cite{gpugems-DoF, gpugems3-DoF}.
-
-Change in focal length yields zoom. Big focal length = big zoom, small focal length = wide angle\\
-Moving the fixed focal-length lense away and towards the canvas focuses. \\
-
-In order to simulate Myopia/Hyopia we calculate the required focal length for the altered retinal distance based on
-\begin{equation}
-    f = \frac{d_p d_I}{d_p + d_I}
-\end{equation}
-and truncate the value to the 
 
 \section{Project Requirements}
+
 In the following section its written, how the four Project Requirements where implemented.
 
 \subsection{Science}
+
 The game was build CoSMoS compliant espacilly the different diseases where discoverd,modelled, experimented and the end documented and build to interact with them. All models base on a scientific background as far as possible. The settings who advanced the state of the diseas is, is randomly choosen.
 
 \subsection{Gamification}
+
 The player can move free in the supermarket. He gets guidance in form of a textfield in the left corner, how he can move, pick up items or open his bag. The part of the game is to find all the requiered items and beat the time.
 
 \subsection{Complexity}
+
 Through the different eye diseases, its every time a new chellenge to find the right objects. These will be the main learning effect on the one hand and on the other hand, he learns about the info texts how he can recognize the diseases and what to do against it.
 
 \subsection{Aesthetics}
+
 The design of the game is hold quite simple that everybody can quickly understand what to do. All Textfields where set in the cornors to give the player the option to fully see the influences of the diseases. Its as far we found the first accessable 3D simulation with a game component.
 
 The player can get more informations of each diseas in the menu.
@@ -417,6 +403,7 @@ The player can get more informations of each diseas in the menu.
 %
 %
 \section{Summary \& Future Work}
+
 Add more of eye diseases like Kreatoconus,Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy. The diseases could change over the time the game runs. Aswell it would be nice to have more tasks like drinving or working to show the effects in different areas.
 
 The hole graphics could be reworked to make it as realistic as possible especially if you useing an VR Gadget.
