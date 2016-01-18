@@ -12,7 +12,7 @@
 \usepackage[usenames, dvipsnames]{xcolor}
 \graphicspath{{./img/}}
 
-\usepackage[backend=biber, style=alphabetic]{biblatex}\bibliography{literatur.bib}
+\usepackage[backend=biber, style=numeric]{biblatex}\bibliography{literatur.bib}
 
 \usepackage{subcaption}
 \usepackage{fancyref}
@@ -128,7 +128,11 @@ So we implemented three visual disease simulators in Unity3D and applied them in
 In this game the player has to collect items in a Supermarket, which is likely to be a well-known situation to everyone.
 
 \section{Related Work}
-Eye disease simulation\cite{eyediseasesim, absv}
+There are different eye disease simulators available in the web already.
+However, common ones, e.g. found on websites of health organizations, alter still 2D images and display them in the browser.
+For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases and four different images to apply them to. 
+There are also real-time simulations available as descriped by~\cite{eyediseasesim-zhuming} but the implementation is not available online.
+\todo{cite this?}~\cite{eyediseasesim}
 
 \section{Models and Methods}
 %\begin{itemize}
@@ -142,60 +146,24 @@ Eye disease simulation\cite{eyediseasesim, absv}
 %  \item Target platform: Android \& Google Cardboard to address many people
 %\end{itemize}
 
-The user should be able to experience different types of eye diseases,
-including early as well as severe stages in order to understand when to consult
-a doctor and why. Hopefully, this gives people better judgment on when to
-visit a doctor as well as the courage to do so, if they experience the symptoms
-of a particular disease.
+Assets: Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
 
-There will be at least the first 6 different eye diseases in
-\Fref{tab:eye_diseases} either to choose from in every task or appear at least
-once in the game.
-
-Possible tasks could be based on reading (visual acuity), distinguishing
-objects (color), and navigating in everyday environments
-(limited field of view).
-This may be realized required for cooking, working at a line in a factory
-sorting screws or similar things, using public transport or driving a car
-(at night), food shopping, going to the pharmacy getting the right medication,
-find hidden object given written hints, or board/care games.
-
-Ideally the chosen tasks would be individual levels which depend on each other
-and will tell a small story, like car driving → food shopping → cooking.
-The user can either choose the disease for the level himself or a random disease
-is selected in the beginning.
-The chosen disease should become worse over the time (within one level or
-across levels) but, if possible and accurate (neglecting the time), the user
-should also be able to slow down the process or even heal the disease
-completely. Therefore he/she has to take the appropriate measures for the
-specific disease.
-
-\section{Project Requirements}
-\subsection{Science}
-\subsection{Gamification}
-\subsection{Complexity}
-\subsection{Aesthetics}
+The player is able to experience different types of eye diseases varying in severity.
+%This is supposed to give people better judgment on when to visit a doctor as well as the courage to do so, if they experience the symptoms of a particular disease.
 %
+%There will be at least the first 6 different eye diseases in \Fref{tab:eye_diseases} either to choose from in every task or appear at least once in the game.
 %
-\section{Summary \& Future Work}
-In order to convincingly convey the topic, using a VR device like the
-Oculus Rift or an mobile phone / Google Cardboard combination would
-be beneficial to the project.
+%Possible tasks could be based on reading (visual acuity), distinguishing objects (color), and navigating in everyday environments (limited field of view).
+%This may be realized required for cooking, working at a line in a factory sorting screws or similar things, using public transport or driving a car (at night), food shopping, going to the pharmacy getting the right medication, find hidden object given written hints, or board/care games.
+The game is set in a supermarket where the player has to shop for different objects.
+There are five different eye diseases to experience in five different levels.
 
-Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order
-to evaluate the users eye direction and adept the displayed images in real-time.
-Because the effects of eye diseases follow the eye movement, i.e. are static
-with respect to the eye coordinate frame, they achieved more realistic results
-in comparison to rendering gaze-independent images.
-A consumer solution is under development by the German company
-SensoMotoric Instruments (SIM) which provides an gaze tracking solution update
-for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
-According to their website they also provide an integration into various VR
-engines, including Unity3D, available making it especially interesting for
-this project.
+%Ideally the chosen tasks would be individual levels which depend on each other and will tell a small story, like car driving → food shopping → cooking.
+%The user can either choose the disease for the level himself or a random disease is selected in the beginning.
+%The chosen disease should become worse over the time (within one level or across levels) but, if possible and accurate (neglecting the time), the user should also be able to slow down the process or even heal the disease completely.
+%Therefore he/she has to take the appropriate measures for the specific disease.
+%In order to convincingly convey the topic, using a VR device like the Oculus Rift or an mobile phone / Google Cardboard combination would be beneficial to the project.
 
-The gaze-direction would be useful to accurately simulate the vision fields
-and would also be an interesting human interface for the game mechanics.
 
 As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like
 blurry or distorted vision, floaters, and reduced field of view can be
@@ -243,12 +211,15 @@ into any major difficulties.
 \end{table}
 
 \section{The human eye}
+In order to simulate diseased human eyes it is beneficial to know some things about it.
+As can be seen in \Fref{fig:humaneye} the human eye is a spherical shaped organ.
+In some aspects it can be compared to human made cameras in others they differ tremendously.
 
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{human_eye_scheme.pdf}
     \caption{Scheme of the human eye.}
-    \label{humaneye}
+    \label{fig:humaneye}
 \end{figure}
 
 \begin{table}
@@ -298,6 +269,21 @@ In order to simulate Myopia/Hyopia we calculate the required focal length for th
     f = \frac{d_p d_I}{d_p + d_I}
 \end{equation}
 and truncate the value to the 
+
+\section{Project Requirements}
+\subsection{Science}
+\subsection{Gamification}
+\subsection{Complexity}
+\subsection{Aesthetics}
+%
+%
+\section{Summary \& Future Work}
+Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order to evaluate the users eye direction and adept the displayed images in real-time.
+Because the effects of eye diseases follow the eye movement, i.e. are static with respect to the eye coordinate frame, they achieved more realistic results in comparison to rendering gaze-independent images.
+A consumer solution is under development by the German company SensoMotoric Instruments (SIM) which provides an gaze tracking solution update for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
+According to their website they also provide an integration into various VR engines, including Unity3D, available making it especially interesting for this project.
+
+The gaze-direction would be useful to accurately simulate the vision fields and would also be an interesting human interface for the game mechanics.
 %
 \printbibliography
 
