@@ -211,9 +211,21 @@ into any major difficulties.
 \end{table}
 
 \section{The human eye}
-In order to simulate diseased human eyes it is beneficial to know some things about it.
-As can be seen in \Fref{fig:humaneye} the human eye is a spherical shaped organ.
-In some aspects it can be compared to human made cameras in others they differ tremendously.
+Since eye diseases are supposed to be simulated in a virtual environment this section begins with a brief overview over the human eye in comparison to man-made cameras and their abstraction of the pinhole camera used in modern computer graphics.
+
+As can be seen in \Fref{fig:humaneye} the human eye is a spherical shaped organ letting light enter through the pupil to form an image of the world at the retina.
+This hole consists of the cornea, the pupli and the lense which act as an objective enabling the eye to focus on various distances and adapt to bright and dark scenes.
+The cornea is a transparent layer with a rather fixed shape and therefore a fixed refractive index.
+It focuses the light on the pupil which prevents too much light from entering the eye like an aperture.
+The lense finally focuses the light on the retina by altering its shape which effectivly changes its focal length.
+So unlike in cameras focusing is not achieved by altering the distance of the lenses to the sensor but by altering the focal length.
+The retina is photosensitive tissue at the back of the eye consisting of rods and cones.
+Cones are responsible for color vision and operate in daylight light conditions whereas rods are more light sensitive and provide gray-scale night vision.
+But unlike camera sensors, where red, green, and blue pixels are evenly distributed, the retina has a inhomogene layout.
+There is the Macula, which is an area with a very high rod and cone density.
+The central part of the Macula is called the Fovea which consists solely of tightly packed cones.
+Compared to the Macula, the rest of the eye, however, has a fairly low resolution and mostly consists of the non-color sensitive rods.
+
 
 \begin{figure}
     \centering
@@ -221,7 +233,24 @@ In some aspects it can be compared to human made cameras in others they differ t
     \caption{Scheme of the human eye.}
     \label{fig:humaneye}
 \end{figure}
+%
+%
+\subsection{Color blindness}
+A first step in simulation color blindness is to understand what color actually is and how humans perceive it.
+At first color is nothing than an illusion created in our brain.
+From a physical point of view, light can be thought of its spectral intensities.
+Each cone type of the human eye has a responsitivity curve that defines how sensitive that cone type is to a specific wave length.
+Those responsitivity curves were first determined by a color matching experiment in 1931
 
+\begin{figure}
+    \includegraphics[width=\columnwidth]{lms-sensitivity.png}
+    \caption{CIE 2º LMS spectral sensitivity functions~\cite{cvrl-lms-web}.}
+    \label{fig:lmscurves}
+\end{figure}
+%
+%
+\subsection{Glaucoma}
+\subsection{Myopia and Hyperopia}
 \begin{table}
     \centering
     \begin{tabular}{ll}
@@ -238,10 +267,6 @@ In some aspects it can be compared to human made cameras in others they differ t
     \caption{Properties of the human eye}
     \label{tab:eyeproperties}
 \end{table}
-
-\subsection{Color blindness}
-\subsection{Glaucoma}
-\subsection{Myopia and Hyperopia}
 \begin{description}
 \item[Axial Myopia]
     Increase in the eye's axial length.\\
