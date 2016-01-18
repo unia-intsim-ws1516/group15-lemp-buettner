@@ -84,8 +84,7 @@ Stefan Büttner\\
 \maketitle
 \begin{abstract}
     \todo{write abstract}
-    Many diseases can be treated well if recognized early, that's why we want to inform the users about different eye diseases and their effects on the vision.
-\end{abstract}
+    Many diseases can be treated well if recognized early, that's why we want to inform the users about different eye diseases and their effects on the vision. That is shown in an common task for everyone. The szenario is in a Supermarket where you have to pick up differnt items, with an different eye disease each level. 
 
 % Disease list:
 % -------------------------------------------------------------------------------
@@ -146,7 +145,7 @@ There are also real-time simulations available as descriped by~\cite{eyediseases
 %  \item Target platform: Android \& Google Cardboard to address many people
 %\end{itemize}
 
-Assets: Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
+Assets used: Standard Assets (Unity Technologies), Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
 
 The player is able to experience different types of eye diseases varying in severity.
 %This is supposed to give people better judgment on when to visit a doctor as well as the courage to do so, if they experience the symptoms of a particular disease.
@@ -161,16 +160,16 @@ There are five different eye diseases to experience in five different levels.
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{Menu.png}
-    \caption{Menu.}
+    \caption{Shows the Menu which the Player sees at the beginning.}
     \label{fig:menu}
 \end{figure}
 
-When the game starts the player is able to see a menu shown in figure 1, in this he can choose between 5 different levels or exit the game. Each of levels got different eye dissease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in figure 2. Then he can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
+When the game starts the player is able to see a menu shown in figure 1, like u can see he can press Play or Quit. After he hit the play button he can select between the different Eye diseases to start the level. The Quit butten is to End the game. Each of levels got different eye dissease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in figure 2. You can see that there is in the left top corner a Textfield with the instruction how he can move and operate. In the right top corner there is his shopping list, these shows which item he has to collect. He can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{Game.png}
-    \caption{Overwiev over the view of the Player}
+    \caption{Gives an overview what the player sees when he selected a level.}
     \label{fig:gamestart}
 \end{figure}
 
@@ -179,11 +178,11 @@ If the player press I a shopping bag appears where he can see what items he alre
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{ShoppingBag.png}
-    \caption{Shopping Bag}
+    \caption{Shows the ShoppingBag and the tool tip of the items.}
     \label{fig:ShoppingBag}
 \end{figure}
 
-The game finish if the times runs out or the players goes to the till. After this he gets points for each correct item he picked up and a bonus for the left over time.
+The game finish if the times runs out or the players goes to the till. In the end he gets points for each correct item he has picked up and a bonus for the leftover time.
 
 
 
@@ -290,33 +289,22 @@ Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace wi
 %
 \subsection{Glaucoma}
 \subsection{Myopia and Hyperopia}
-Myopia and Hyperopia are nearsightedness and farsightedness respectively.
-Both can have different causes.
-There is \emph{refractive myopia/hyperopia}, which is caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia/hyperopia} which originates in an increased/decreased axial length of the eye.
+Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye.
 In either case, the focal range of the eye is altered since the lense cannot provide the required focal length for some distances anymore.
 %
-In order to simulate myopia/hyperopia in real-time a simulation of focal depth is needed.
-A brief overview over the problem itself and various approximation techniques can be found at~\cite{gpugems-DoF}.
+In order to simulate that in real-time a simulation of focal depth is needed.
+A brief overview can be found at~\cite{gpugems-DoF}.
 %
 Unity already provides a fast and decent implementation of real-time focal depth in its Standard Assets.
 This was used to simulate axial myopia/hyperopia by limiting the focal distance.
 
-%The focal depth asset in Unity has various parameters. Intresting ones are \emph{focal distance}, \emph{aperture}, and \emph{blur size}.
-%The blur size in combination with the aperture define the maximum blur radius.
+The focal depth asset in Unity has various parameters. Intresting ones are \emph{focal distance}, \emph{aperture}, and \emph{blur size}.
+The blur size in combination with the aperture define the maximum blur radius.
 The focal distance correlates to the focal length by means of the \emph{thin lens formula}:
 \begin{equation}
-    \frac{1}{d_p} + \frac{1}{d_I} = \frac{1}{f} \Leftrightarrow f = \frac{d_p d_I}{d_p + d_I}.
+    \frac{1}{d_p} + \frac{1}{d_I} = \frac{1}{f}.
 \end{equation}
-In this formula, $d_p$ and $d_I$ are distances from the lense, i.e. an object point and his image on the retina and $f$ is the focal length of the cornea/lense-system.
-Given a cornea-retina distance of 24mm, the focal-length range of the human eye can be estimated by [20,69mm-24mm] for a distance range from 15cm to ∞.
-%
-The severity of nearsightedness and farsightedness is specified in \emph{diopters} (dpt) which is the inverse of the focal length of a lense required to treat the impairment.
-Hence, the new retinal distance $\tilde d_I$ given $\delta$ diopters is given by
-\begin{equation}
-    \tilde d_I = \frac{1 - \delta d_I}{d_I}.
-\end{equation}
-This distance is used each frame to calculate the required focal distance for the point the player wants to focus at.
-If the required focal length is out of range, the minimum/maximum possible distance is calculated and used.
+Given the cornea-retina distance of 24mm, the focal-length range of the human eye can be estimated by [20,69mm - 24mm] for a distance range from 15cm to ∞.
 %
 \begin{table}
     \centering
@@ -334,9 +322,34 @@ If the required focal length is out of range, the minimum/maximum possible dista
     \caption{Properties of the human eye}
     \label{tab:eyeproperties}
 \end{table}
+\begin{description}
+\item[Axial Myopia]
+    Increase in the eye's axial length.\\
+    Most common one!
+\item[Refractive Myopia]
+    \begin{description}
+    \item[Curvature myopia]
+    Execssive or increased curvature of one or more of the refractive surfaces of the eye. Mostly the cornea.
+    \item[Index myopia]
+    Variation of the index of reflection of one or more of the ocular media.
+    \end{description}
+\item[Nocturnal myopia]
+\end{description}
+
+For a reference on real-time focal blur/depth of field see \cite{gpugems-DoF, gpugems3-DoF}.
+
+Change in focal length yields zoom. Big focal length = big zoom, small focal length = wide angle\\
+Moving the fixed focal-length lense away and towards the canvas focuses. \\
+
+In order to simulate Myopia/Hyopia we calculate the required focal length for the altered retinal distance based on
+\begin{equation}
+    f = \frac{d_p d_I}{d_p + d_I}
+\end{equation}
+and truncate the value to the 
 
 \section{Project Requirements}
 In the following section its written, how the four Project Requirements where implemented.
+
 \subsection{Science}
 The game was build CoSMoS compliant espacilly the different diseases where discoverd,modelled, experimented and the end documented and build to interact with them. All models base on a scientific background as far as possible. The settings who advanced the state of the diseas is, is randomly choosen.
 
@@ -354,6 +367,10 @@ The player can get more informations of each diseas in the menu.
 %
 %
 \section{Summary \& Future Work}
+Add more of eye diseases like Kreatoconus,Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy. The diseases could change over the time the game runs. Aswell it would be nice to have more tasks like drinving or working to show the effects in different areas.
+
+The hole graphics could be reworked to make it as realistic as possible especially if you useing an VR Gadget.
+
 Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order to evaluate the users eye direction and adept the displayed images in real-time.
 Because the effects of eye diseases follow the eye movement, i.e. are static with respect to the eye coordinate frame, they achieved more realistic results in comparison to rendering gaze-independent images.
 A consumer solution is under development by the German company SensoMotoric Instruments (SIM) which provides an gaze tracking solution update for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
