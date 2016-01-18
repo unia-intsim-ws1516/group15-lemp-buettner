@@ -148,9 +148,9 @@ Assets used: Standard Assets (Unity Technologies), Inventory Master - uGUI (Sand
 
 The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
 
-Each level has the same structe and the same target, its just different in what the Player has to pick up and which diseas he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move anylonger. 
+Each level has the same structe and the same target, its just different in what the Player has to pick up and which diseas he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move anylonger. This was done with the "Drag and Drop Pause Menu" Asset. 
 
-With the pausemenu he can aswell End the game and jump back to the main menu.
+With the pause menu it is possivble aswell to End the game or jump back to the main menu.
 
 \begin{figure}
     \centering
@@ -159,7 +159,9 @@ With the pausemenu he can aswell End the game and jump back to the main menu.
     \label{fig:menu}
 \end{figure}
 
-When the game starts the player is able to see a menu shown in figure 1, like u can see he can press Play or Quit. After he hit the play button he can select between the different Eye diseases to start the level. The Quit butten is to End the game. Each of levels got different eye dissease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in figure 2. You can see that there is in the left top corner a Textfield with the instruction how he can move and operate. In the right top corner there is his shopping list, these shows which item he has to collect. He can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
+When the game starts the player is able to see a menu shown in \Fref{fig:menu}, like u can see he can press Play or Quit. After he hit the play button he can select between the different Eye diseases to start the level. The Quit butten is to End the game. Each of levels got different eye dissease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in \Fref{fig:gamestart}. You can see that in the left top corner a Textfield with the instruction how he is able to move and operate. In the right top corner there is his shopping list to show which item he has to collect and bring to the till. He can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
+
+The jump function of the first person controller was diabeld that the player cant jump on the shelfs or over the counters.
 
 \begin{figure}
     \centering
@@ -168,7 +170,13 @@ When the game starts the player is able to see a menu shown in figure 1, like u 
     \label{fig:gamestart}
 \end{figure}
 
-If the player press I a shopping bag appears where he can see what items he already picked up. Each items got a small discription with some informations about it seen in figure 3. 
+If the player press I a shopping bag appears where he can see what items he already picked up. Each items got a small discription with some informations about it, seen in \Fref{fig:ShoppingBag}. 
+
+The Supermarket was build up with the "Supermarket Interior" Asset, there we added a first person controller and on every object collieders, that its not possible to walk through the objects. Aswell we rebuilded the items in the supermarket that in every shelf is just one item type. This was made to show the differents between the Items. All Items where added to a Database which comes with the "Inventory Master" Asset. All items got a pick up script that its possible to collect them. 
+
+In the Database we added the items and some small discripton. We choose nearly similar mashs like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
+
+The Shopping list was just done with a seperate Canvas, in the left top corner, with a text field to show the task to the PLayer. Aswell we put a image on it that it looks like an usual crumpled shopping list. 
 
 \begin{figure}
     \centering
@@ -178,6 +186,8 @@ If the player press I a shopping bag appears where he can see what items he alre
 \end{figure}
 
 The game finish if the times runs out or the players goes to the till. In the end he gets points for each correct item he has picked up and a bonus for the leftover time.
+
+In the End the Player got his accomplished points shown and can jump back to the menu to pick a different level. 
 
 
 
@@ -315,7 +325,7 @@ How much pressure the optic nerves can tolerate is different for each person. So
 
 Glaucoma is especially a problem for people with a family history of glaucoma. Or everybody over the age of 60. In case of Africans or Americans the risk is already getting higher at the age of 40.
 
-There are no Symptoms in the beginnig, the vision stays normal and it causes no pain. But without treatment, people with glaucoma slowly lose their peripheral vison. That's why people start to see the things at the corner of their vision field badly. That is shown in Figure 5. Over the time the visionfield gets smaller and smaller.~\cite{glaucomafacts}
+There are no Symptoms in the beginning, the vision stays normal and it causes no pain. But without treatment, people with glaucoma slowly lose their peripheral vison. That's why people start to see the things at the corner of their vision field badly. That is shown in \Fref{fig:glaucoma}. Over the time the visionfield gets smaller and smaller.~\cite{glaucomafacts}
 
 That's why we made a shader which blurres the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
 
@@ -405,6 +415,8 @@ The player can get more informations of each diseas in the menu.
 \section{Summary \& Future Work}
 
 Add more of eye diseases like Kreatoconus,Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy. The diseases could change over the time the game runs. Aswell it would be nice to have more tasks like drinving or working to show the effects in different areas.
+
+The Shopping List could get more interactiv that it tics stuff of when u got it in your shopping bag.
 
 The hole graphics could be reworked to make it as realistic as possible especially if you useing an VR Gadget.
 
