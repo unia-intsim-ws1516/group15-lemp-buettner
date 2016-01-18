@@ -136,7 +136,7 @@ In this game the player has to collect items in a Supermarket, which is likely t
 There are different eye disease simulators available in the web already.
 However, common ones, e.g. found on websites of health organizations, alter still 2D images and display them in the browser.
 For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases and four different images to apply them to. 
-There are also real-time simulations available as descriped by~\cite{eyediseasesim-zhuming} but the implementation is not available online.
+There are also real-time simulations available as described by~\cite{eyediseasesim-zhuming} but the implementation is not available online.
 
 \section{Models and Methods}
 %\begin{itemize}
@@ -154,9 +154,9 @@ There are also real-time simulations available as descriped by~\cite{eyediseases
 
 The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
 
-Each level has the same structe and the same target, its just different in what the Player has to pick up and which diseas he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move anylonger. This was done with the "Drag and Drop Pause Menu" Asset. 
+Each level has the same structure and the same target, its just different in what the Player has to pick up and which disease he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move any longer. This was done with the "Drag and Drop Pause Menu" Asset. 
 
-With the pause menu it is possivble aswell to End the game or jump back to the main menu.
+With the pause menu it is possible as well to End the game or jump back to the main menu.
 
 \begin{figure}
     \centering
@@ -165,9 +165,9 @@ With the pause menu it is possivble aswell to End the game or jump back to the m
     \label{fig:menu}
 \end{figure}
 
-When the game starts the player is able to see a menu shown in \Fref{fig:menu}, like u can see he can press Play or Quit. After he hit the play button he can select between the different Eye diseases to start the level. The Quit butten is to End the game. Each of levels got different eye dissease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in \Fref{fig:gamestart}. You can see that in the left top corner a Textfield with the instruction how he is able to move and operate. In the right top corner there is his shopping list to show which item he has to collect and bring to the till. He can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
+When the game starts the player is able to see a menu shown in \Fref{fig:menu}, like u can see he can press Play or Quit. After he hit the play button he can select between the different Eye diseases to start the level. The Quit button is to End the game. Each of levels got different eye disease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in \Fref{fig:gamestart}. You can see that in the left top corner a Text field with the instruction how he is able to move and operate. In the right top corner there is his shopping list to show which item he has to collect and bring to the till. He can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
 
-The jump function of the first person controller was diabeld that the player cant jump on the shelfs or over the counters.
+The jump function of the first person controller was disabled that the player cant jump on the shelves or over the counters.
 
 \begin{figure}
     \centering
@@ -176,18 +176,18 @@ The jump function of the first person controller was diabeld that the player can
     \label{fig:gamestart}
 \end{figure}
 
-If the player press I a shopping bag appears where he can see what items he already picked up. Each items got a small discription with some informations about it, seen in \Fref{fig:ShoppingBag}. 
+If the player press I a shopping bag appears where he can see what items he already picked up. Each items got a small description with some information about it, seen in \Fref{fig:ShoppingBag}. 
 
-The Supermarket was build up with the "Supermarket Interior" Asset, there we added a first person controller and on every object collieders, that its not possible to walk through the objects. Aswell we rebuilded the items in the supermarket that in every shelf is just one item type. This was made to show the differents between the Items. All Items where added to a Database which comes with the "Inventory Master" Asset. All items got a pick up script that its possible to collect them. 
+The Supermarket was build up with the "Supermarket Interior" Asset, there we added a first person controller and on every object colliders, that its not possible to walk through the objects. As well we rebuilt the items in the supermarket that in every shelf is just one item type. This was made to show the differences between the Items. All Items where added to a Database which comes with the "Inventory Master" Asset. All items got a pick up script that its possible to collect them. 
 
-In the Database we added the items and some small discripton. We choose nearly similar mashs like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
+In the Database we added the items and some small description. We choose nearly similar mesh like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
 
-The Shopping list was just done with a seperate Canvas, in the left top corner, with a text field to show the task to the PLayer. Aswell we put a image on it that it looks like an usual crumpled shopping list. 
+The Shopping list was just done with a separate Canvas, in the left top corner, with a text field to show the task to the PLayer. Aswell we put a image on it that it looks like an usual crumpled shopping list. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{ShoppingBag.png}
-    \caption{Shows the ShoppingBag and the tool tip of the items.}
+    \caption{Shows the Shopping Bag and the tool tip of the items.}
     \label{fig:ShoppingBag}
 \end{figure}
 
@@ -253,20 +253,20 @@ into any major difficulties.
 Since eye diseases are supposed to be simulated in a virtual environment this section begins with a brief overview over the human eye in comparison to man-made cameras and their abstraction of the pinhole camera used in modern computer graphics.
 
 As can be seen in \Fref{fig:humaneye} the human eye is a spherical shaped organ letting light enter through the pupil to form an image of the world at the retina.
-This hole consists of the cornea, the pupli and the lense which act as an objective enabling the eye to focus on various distances and adapt to bright and dark scenes.
+This hole consists of the cornea, the pupil and the lens which act as an objective enabling the eye to focus on various distances and adapt to bright and dark scenes.
 
 The cornea is a transparent layer with a rather fixed shape and therefore a fixed refractive index.
 It focuses the light on the pupil which prevents too much light from entering the eye like an aperture.
-The lense finally focuses the light on the retina by altering its shape which effectivly changes its focal length.
+The lens finally focuses the light on the retina by altering its shape which effectively changes its focal length.
 So unlike in cameras focusing is not achieved by altering the distance of the lenses to the sensor but by altering the focal length.
 
 The retina is photosensitive tissue at the back of the eye consisting of rods and cones.
 Cones are responsible for color vision and operate in daylight light conditions whereas rods are more light sensitive and provide gray-scale night vision.
-But unlike camera sensors, where red, green, and blue pixels are evenly distributed, the retina has a inhomogene layout.
+But unlike camera sensors, where red, green, and blue pixels are evenly distributed, the retina has a in-homogeneous layout.
 
-There is the Macula, which is an area with a very high rod and cone density.
-The central part of the Macula is called the Fovea which consists solely of tightly packed cones.
-Compared to the Macula, the rest of the eye, however, has a fairly low resolution and mostly consists of the non-color sensitive rods.
+There is the macula, which is an area with a very high rod and cone density.
+The central part of the macula is called the fovea which consists solely of tightly packed cones.
+Compared to the macula, the rest of the eye, however, has a fairly low resolution and mostly consists of the non-color sensitive rods.
 
 
 \begin{figure}
@@ -281,12 +281,12 @@ Compared to the Macula, the rest of the eye, however, has a fairly low resolutio
 A first step in simulation color blindness is to understand what color actually is and how humans perceive it.
 At first color is nothing than an illusion created in our brain.
 From a physical point of view, light can be thought of a wave and therefore described by the waves spectral intensities.
-Each cone type of the human eye has a responsitivity curve that defines how sensitive that cone type is to a specific wave length.
-Those responsitivity curves were first determined by a color matching experiment in 1931 and were used to define the CIE XYZ 1931 color space
+Each cone type of the human eye has a responsivity curve that defines how sensitive that cone type is to a specific wave length.
+Those responsivity curves were first determined by a color matching experiment in 1931 and were used to define the CIE XYZ 1931 color space
 \footnote{
     Actually those functions were transformed to have nice properties such as being non-negative.
     As a consequence the base vectors of the resulting XYZ color space describe colors which have no physical representation.
-    The color space based on the actual responsitivity curves $l$, $m$, and $s$ is called the LMS color space.
+    The color space based on the actual responsivity curves $l$, $m$, and $s$ is called the LMS color space.
     There is a change of basis matrix available to switch from one to the other.
     So let's assume LMS and XYZ to be the same for now.
 }
@@ -299,11 +299,11 @@ Given a spectral power distribution of a light source, its XYZ color value, also
     Z &= \int\bar z(\lambda) \ell(\lambda).
 \end{eqnarray}
 %
-Color vision deficiency originates from anormal cone responses or the absense of one or more cone types.
+Color vision deficiency originates from abnormal cone responses or the absence of one or more cone types.
 People missing one of the L-, M-, or S-cones entirely are called \emph{Protanopes}, \emph{Deuteranopes}, and \emph{Tritanopes} respectively.
-If all cone types are present but one of them is anormal in its response, it is refered to as \emph{Protanomaly}, \emph{Deuteranomaly}, and \emph{Tritanomaly} respectively.
+If all cone types are present but one of them is abnormal in its response, it is referred to as \emph{Protanomaly}, \emph{Deuteranomaly}, and \emph{Tritanomaly} respectively.
 
-The idea of simulating color vision deficiencies is to mimic these changes by first approximating the original spectral power distribution and then computing the new color value based on altered responsitivity curves.
+The idea of simulating color vision deficiencies is to mimic these changes by first approximating the original spectral power distribution and then computing the new color value based on altered responsivity curves.
 
 There is already a color blindness simulation available in the Unity Asset store based on Brettel \etal~\cite{brettel}.
 However, they focused on Protanopia and Deuteranopia since these are the most common forms.
@@ -323,17 +323,17 @@ We extended the existing asset by the model proposed by Machado by writing a new
 
 \subsection{Glaucoma}
 
-Glaucoma is one of the diseases which damages the optic nervers from the eyes. The result of this is a loss of vision and in the end cousing total blindness. 
+Glaucoma is one of the diseases which damages the optic nerves from the eyes. The result of this is a loss of vision and in the end causing total blindness. 
 
-Several studies shown that the eye pressure is the main factor of an optic nerve damange. By Glaucoma the pressure in the eye is too high that the optic nerve gets damaged. Another factor is the blood pressure, this also can infact the optic nerves.
+Several studies shown that the eye pressure is the main factor of an optic nerve damage. By Glaucoma the pressure in the eye is too high that the optic nerve gets damaged. Another factor is the blood pressure, this also can in fact the optic nerves.
 
 How much pressure the optic nerves can tolerate is different for each person. So that is why you cant directly say at witch pressure the optic nerves get damaged.
 
 Glaucoma is especially a problem for people with a family history of glaucoma. Or everybody over the age of 60. In case of Africans or Americans the risk is already getting higher at the age of 40.
 
-There are no Symptoms in the beginning, the vision stays normal and it causes no pain. But without treatment, people with glaucoma slowly lose their peripheral vison. That's why people start to see the things at the corner of their vision field badly. That is shown in \Fref{fig:glaucoma}. Over the time the visionfield gets smaller and smaller.~\cite{glaucomafacts}
+There are no Symptoms in the beginning, the vision stays normal and it causes no pain. But without treatment, people with glaucoma slowly lose their peripheral vision. That's why people start to see the things at the corner of their vision field badly. That is shown in \Fref{fig:glaucoma}. Over the time the vision field gets smaller and smaller.~\cite{glaucomafacts}
 
-That's why we made a shader which blurres the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
+That's why we made a shader which blurred the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
 
 \begin{figure}
     \centering
@@ -344,13 +344,13 @@ That's why we made a shader which blurres the outer region of the vision. So tha
 
 \subsection{Cataract}
 
-Cataract is a diseas which effects the lens of the eye. It is clouding the lens and the effect of this is that the person have difficulties to focus on objects and have a different color perception.
+Cataract is a disease which effects the lens of the eye. It is clouding the lens and the effect of this is that the person have difficulties to focus on objects and have a different color perception.
 
-The protein in the eye arrange to keep the lens clear and let the light pass. But in the older ages the protain cant clear the lense anymore and they starting to clump together. This is calld a cataract. Its starts in small areas of the lense and grow lager over the time. Mostly this starts in the center of the lense. Like shown in \Fref{fig:cataract}.
+The protein in the eye arrange to keep the lens clear and let the light pass. But in the older ages the protein cant clear the lens anymore and they starting to clump together. This is called a cataract. Its starts in small areas of the lens and grow lager over the time. Mostly this starts in the center of the lens. Like shown in \Fref{fig:cataract}.
 
-The Risk of getting cataract is extremely high for people over the age of 80. The percantage for cataract by people over 80 is about 50\%.~\cite{cataractfacts}
+The Risk of getting cataract is extremely high for people over the age of 80. The percentage for cataract by people over 80 is about 50\%.~\cite{cataractfacts}
 
-Because of the clouding we decided to blure the hole shader a bit and reduce the colors.
+Because of the clouding we decided to blur the hole shader a bit and reduce the colors.
 
 \begin{figure}
     \centering
@@ -361,8 +361,8 @@ Because of the clouding we decided to blure the hole shader a bit and reduce the
 
 \subsection{Myopia and Hyperopia}
 
-Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye as seen in \Fref{fig:hyperopia}.
-In either case, the focal range of the eye is altered since the lense cannot provide the required focal length for some distances anymore.
+Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lens and there is \emph{axial myopia} which originates in an increased axial length of the eye as seen in \Fref{fig:hyperopia}.
+In either case, the focal range of the eye is altered since the lens cannot provide the required focal length for some distances anymore.
 
 \begin{figure}
     \centering
@@ -377,7 +377,7 @@ A brief overview can be found at~\cite{gpugems-DoF}.
 Unity already provides a fast and decent implementation of real-time focal depth in its Standard Assets.
 This was used to simulate axial myopia/hyperopia by limiting the focal distance.
 
-The focal depth asset in Unity has various parameters. Intresting ones are \emph{focal distance}, \emph{aperture}, and \emph{blur size}.
+The focal depth asset in Unity has various parameters. Interesting ones are \emph{focal distance}, \emph{aperture}, and \emph{blur size}.
 The blur size in combination with the aperture define the maximum blur radius.
 The focal distance correlates to the focal length by means of the \emph{thin lens formula}:
 \begin{equation}
@@ -407,31 +407,31 @@ In the following section its written, how the four Project Requirements where im
 
 \subsection{Science}
 
-The game was build CoSMoS compliant espacilly the different diseases where discoverd,modelled. After wards we Tested the different effect of it and documented it in the end. All models base on a scientific background as far as possible. The settings show a specifig state of the diseas, these stats where so selectet that the effect is visuable.
+The game was build CoSMoS compliant especially the different diseases where discovered,modeled. After wards we Tested the different effect of it and documented it in the end. All models base on a scientific background as far as possible. The settings show a specific state of the disease, these stats where so selected that the effect is visible.
 
 \subsection{Gamification}
 
-The player can move free in the supermarket. He gets guidance in form of a textfield in the left corner, how he can move, pick up items or open his bag. The part of the game is to find all the requiered items and beat the time.
+The player can move free in the supermarket. He gets guidance in form of a text field in the left corner, how he can move, pick up items or open his bag. The part of the game is to find all the required items and beat the time.
 
 \subsection{Complexity}
 
-Through the different eye diseases, its every time a new chellenge to find the right objects. These will be the one of the main learning effect the other one is to learn with the info texts about the disesas can be recognize and what to do against it.
+Through the different eye diseases, its every time a new challenge to find the right objects. These will be the one of the main learning effect the other one is to learn with the info texts about the diseases can be recognize and what to do against it.
 
 \subsection{Aesthetics}
 
-The design of the game is hold quite simple that everybody can quickly understand what to do. All Textfields where set in the cornors to give the player the option to fully see the influences of the diseases. Its as far we found the first accessable 3D simulation with a game component.
+The design of the game is hold quite simple that everybody can quickly understand what to do. All Text fields where set in the corners to give the player the option to fully see the influences of the diseases. Its as far we found the first accessible 3D simulation with a game component.
 
-The player can get more informations of each diseas in the menu.
+The player can get more information of each disease in the menu.
 
 %
 %
 \section{Summary \& Future Work}
 
-Add more of eye diseases like Kreatoconus,Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy. The diseases could change over the time the game runs. Aswell it would be nice to have more tasks like drinving or working to show the effects in different areas.
+Add more of eye diseases like Kreatoconus,Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy. The diseases could change over the time the game runs. Aswell it would be nice to have more tasks like driving or working to show the effects in different areas.
 
-The Shopping List could get more interactiv that it tics stuff of when u got it in your shopping bag.
+The Shopping List could get more interactive that it tics stuff of when u got it in your shopping bag.
 
-The hole graphics could be reworked to make it as realistic as possible especially if you useing an VR Gadget.
+The hole graphics could be reworked to make it as realistic as possible especially if you using an VR Gadget.
 
 Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order to evaluate the users eye direction and adept the displayed images in real-time.
 Because the effects of eye diseases follow the eye movement, i.e. are static with respect to the eye coordinate frame, they achieved more realistic results in comparison to rendering gaze-independent images.
