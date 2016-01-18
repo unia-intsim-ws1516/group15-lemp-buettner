@@ -290,22 +290,33 @@ Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace wi
 %
 \subsection{Glaucoma}
 \subsection{Myopia and Hyperopia}
-Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye.
+Myopia and Hyperopia are nearsightedness and farsightedness respectively.
+Both can have different causes.
+There is \emph{refractive myopia/hyperopia}, which is caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia/hyperopia} which originates in an increased/decreased axial length of the eye.
 In either case, the focal range of the eye is altered since the lense cannot provide the required focal length for some distances anymore.
 %
-In order to simulate that in real-time a simulation of focal depth is needed.
-A brief overview can be found at~\cite{gpugems-DoF}.
+In order to simulate myopia/hyperopia in real-time a simulation of focal depth is needed.
+A brief overview over the problem itself and various approximation techniques can be found at~\cite{gpugems-DoF}.
 %
 Unity already provides a fast and decent implementation of real-time focal depth in its Standard Assets.
 This was used to simulate axial myopia/hyperopia by limiting the focal distance.
 
-The focal depth asset in Unity has various parameters. Intresting ones are \emph{focal distance}, \emph{aperture}, and \emph{blur size}.
-The blur size in combination with the aperture define the maximum blur radius.
+%The focal depth asset in Unity has various parameters. Intresting ones are \emph{focal distance}, \emph{aperture}, and \emph{blur size}.
+%The blur size in combination with the aperture define the maximum blur radius.
 The focal distance correlates to the focal length by means of the \emph{thin lens formula}:
 \begin{equation}
-    \frac{1}{d_p} + \frac{1}{d_I} = \frac{1}{f}.
+    \frac{1}{d_p} + \frac{1}{d_I} = \frac{1}{f} \Leftrightarrow f = \frac{d_p d_I}{d_p + d_I}.
 \end{equation}
-Given the cornea-retina distance of 24mm, the focal-length range of the human eye can be estimated by [20,69mm - 24mm] for a distance range from 15cm to ∞.
+In this formula, $d_p$ and $d_I$ are distances from the lense, i.e. an object point and his image on the retina and $f$ is the focal length of the cornea/lense-system.
+Given a cornea-retina distance of 24mm, the focal-length range of the human eye can be estimated by [20,69mm-24mm] for a distance range from 15cm to ∞.
+%
+The severity of nearsightedness and farsightedness is specified in \emph{diopters} (dpt) which is the inverse of the focal length of a lense required to treat the impairment.
+Hence, the new retinal distance $\tilde d_I$ given $\delta$ diopters is given by
+\begin{equation}
+    \tilde d_I = \frac{1 - \delta d_I}{d_I}.
+\end{equation}
+This distance is used each frame to calculate the required focal distance for the point the player wants to focus at.
+If the required focal length is out of range, the minimum/maximum possible distance is calculated and used.
 %
 \begin{table}
     \centering
@@ -323,30 +334,6 @@ Given the cornea-retina distance of 24mm, the focal-length range of the human ey
     \caption{Properties of the human eye}
     \label{tab:eyeproperties}
 \end{table}
-\begin{description}
-\item[Axial Myopia]
-    Increase in the eye's axial length.\\
-    Most common one!
-\item[Refractive Myopia]
-    \begin{description}
-    \item[Curvature myopia]
-    Execssive or increased curvature of one or more of the refractive surfaces of the eye. Mostly the cornea.
-    \item[Index myopia]
-    Variation of the index of reflection of one or more of the ocular media.
-    \end{description}
-\item[Nocturnal myopia]
-\end{description}
-
-For a reference on real-time focal blur/depth of field see \cite{gpugems-DoF, gpugems3-DoF}.
-
-Change in focal length yields zoom. Big focal length = big zoom, small focal length = wide angle\\
-Moving the fixed focal-length lense away and towards the canvas focuses. \\
-
-In order to simulate Myopia/Hyopia we calculate the required focal length for the altered retinal distance based on
-\begin{equation}
-    f = \frac{d_p d_I}{d_p + d_I}
-\end{equation}
-and truncate the value to the 
 
 \section{Project Requirements}
 In the following section its written, how the four Project Requirements where implemented.
