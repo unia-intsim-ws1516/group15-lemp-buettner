@@ -83,8 +83,7 @@ Stefan Büttner\\
 
 \maketitle
 \begin{abstract}
-    \todo{write abstract}
-    Many diseases can be treated well if recognized early, that's why we want to inform the users about different eye diseases and their effects on the vision. That is shown in an common task for everyone. The szenario is in a Supermarket where you have to pick up differnt items, with an different eye disease each level. 
+Many diseases can be treated well if recognized early, that's why we want to inform the users about different eye diseases and their effects on the vision. That's why we build the EYES Simulator in compination with this paper. The User will experience 5 different Eye diseases in different levels. The player will be go shopping and collect special items from his shopping list. This szenario got espacilly picked because everybody knows the situation. Different to other eye diseas simulators its build up like an game. Where the player gets point for solving the task as fast as possible. 
 \end{abstract}
 % Disease list:
 % -------------------------------------------------------------------------------
@@ -147,15 +146,11 @@ There are also real-time simulations available as descriped by~\cite{eyediseases
 
 Assets used: Standard Assets (Unity Technologies), Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
 
-The player is able to experience different types of eye diseases varying in severity.
-%This is supposed to give people better judgment on when to visit a doctor as well as the courage to do so, if they experience the symptoms of a particular disease.
-%
-%There will be at least the first 6 different eye diseases in \Fref{tab:eye_diseases} either to choose from in every task or appear at least once in the game.
-%
-%Possible tasks could be based on reading (visual acuity), distinguishing objects (color), and navigating in everyday environments (limited field of view).
-%This may be realized required for cooking, working at a line in a factory sorting screws or similar things, using public transport or driving a car (at night), food shopping, going to the pharmacy getting the right medication, find hidden object given written hints, or board/care games.
-The game is set in a supermarket where the player has to shop for different objects.
-There are five different eye diseases to experience in five different levels.
+The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
+
+Each level has the same structe and the same target, its just different in what the Player has to pick up and which diseas he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move anylonger. 
+
+With the pausemenu he can aswell End the game and jump back to the main menu.
 
 \begin{figure}
     \centering
@@ -307,6 +302,42 @@ Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace wi
 %
 %
 \subsection{Glaucoma}
+Glaucoma is one of the diseases which damages the optic nervers from the eyes. The result of this is a loss of vision and in the end cousing total blindness. 
+
+Several stuides shown that the eye pressure is the main faktor of an optic nerve damange. By Glaucoma the pressure in the eye is to high that the optic nerve gets damaged. Another faktor is the blood pressure, this also can infact the optic nerves.
+
+How much pressure the optic nerves can tolerate is different for each person. So that is why you cant directly say at witch pressure the optic nerves get damaged.
+
+Glaucoma is espacially a problem for people with a family history of glaucoma. Or everybody over the age of 60. In case of Africans or Americans the risk is already getting higher at the age of 40.
+
+There are no Symptoms in the beginng, the vision stays normal and it causes no pain. But without an treatment, people with glaucoma slowly lose their peripheral vison. Thats why the people start to see the things at the corner of there vision field bad.That is shown in Figure 5. Over the time the visionfield gets smaller and smaller.
+
+Thats why we made a shader which blurres the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{glaucomavision.png}
+    \caption{Vision of a Person with Glaucoma}
+    \label{fig:glaucoma}
+\end{figure}
+
+\subsection{Cataract}
+
+Cataract is a diseas which effects the lens of the eye. Its clouding the lens and the effect of this is that the person have difficulties to focus on objects and have a different color perception.
+
+The protein in the eye arrange to keep the lens clear and let the light pass. But in the older ages the protain cant clear the lense anymore and they starting to clump together. This is calld a cataract. Its starts in small areas of the lense and grow lager over the time. Mostly this starts in the center of the lense. Like shown in Figure 6.
+
+The Risk of getting cataract is extremely high for people over the age of 80. The percantage for cataract by people over 80 is about 50\%.
+
+Because of the clouding we decided to blure the hole shader a bit and reduce the colors.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{cataractvision.png}
+    \caption{Vision of a Person with Cataract}
+    \label{fig:cataract}
+\end{figure}
+
 \subsection{Myopia and Hyperopia}
 Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lense and there is \emph{axial myopia} which originates in an increased axial length of the eye.
 In either case, the focal range of the eye is altered since the lense cannot provide the required focal length for some distances anymore.
