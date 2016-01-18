@@ -85,7 +85,7 @@ Stefan Büttner\\
 \begin{abstract}
     \todo{write abstract}
     Many diseases can be treated well if recognized early, that's why we want to inform the users about different eye diseases and their effects on the vision. That is shown in an common task for everyone. The szenario is in a Supermarket where you have to pick up differnt items, with an different eye disease each level. 
-
+\end{abstract}
 % Disease list:
 % -------------------------------------------------------------------------------
 % (Stefan)     11 Disorders of sclera, cornea, iris and ciliary body
@@ -263,19 +263,38 @@ Compared to the Macula, the rest of the eye, however, has a fairly low resolutio
 \end{figure}
 %
 %
-\subsection{Color blindness}
+\subsection{Colorblindness}
 A first step in simulation color blindness is to understand what color actually is and how humans perceive it.
 At first color is nothing than an illusion created in our brain.
 From a physical point of view, light can be thought of a wave and therefore described by the waves spectral intensities.
 Each cone type of the human eye has a responsitivity curve that defines how sensitive that cone type is to a specific wave length.
-Those responsitivity curves were first determined by a color matching experiment in 1931 and were used to define the CIE XYZ 1931 color space.
+Those responsitivity curves were first determined by a color matching experiment in 1931 and were used to define the CIE XYZ 1931 color space
+\footnote{
+    Actually those functions were transformed to have nice properties such as being non-negative.
+    As a consequence the base vectors of the resulting XYZ color space describe colors which have no physical representation.
+    The color space based on the actual responsitivity curves $l$, $m$, and $s$ is called the LMS color space.
+    There is a change of basis matrix available to switch from one to the other.
+    So let's assume LMS and XYZ to be the same for now.
+}
+Given a spectral power distribution of a light source, its XYZ color value, also called \emph{tristimulus}, can be computed by the following equations:
 %All other color spaces, like the sRGB color space, are defined based on the CIE XYZ 1931 color space or at least provide a mapping to it.
 \begin{eqnarray}
     X &= \int\bar x(\lambda) \ell(\lambda) \\
     Y &= \int\bar y(\lambda) \ell(\lambda) \\
-    Z &= \int\bar z(\lambda) \ell(\lambda)
+    Z &= \int\bar z(\lambda) \ell(\lambda).
 \end{eqnarray}
 %
+Color vision deficiency originates from anormal cone responses or the absense of one or more cone types.
+People missing one of the L-, M-, or S-cones entirely are called \emph{Protanopes}, \emph{Deuteranopes}, and \emph{Tritanopes} respectively.
+If all cone types are present but one of them is anormal in its response, it is refered to as \emph{Protanomaly}, \emph{Deuteranomaly}, and \emph{Tritanomaly} respectively.
+The idea of simulating color vision deficiencies is to mimic these changes by first approximating the original spectral power distribution and then computing the new color value based on altered responsitivity curves.
+%
+There is already a color blindness simulation available in the Unity Asset store based on Brettel \etal~\cite{brettel}.
+However, they focused on Protanopia and Deuteranopia since these are the most common forms.
+Machado \etal~\cite{Machado2009} improved this approach by introducing a model for anomalous cones and trying to take the opponent-stage model into account.
+%
+In the game, both approaches can be experienced.
+We extended the 
 $\bar x$, $\bar y$, and $\bar z$ define a subspace.
 Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace with a change of basis matrix $B$.
 %
