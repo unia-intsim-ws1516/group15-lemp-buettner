@@ -141,8 +141,10 @@ In this game the player has to collect items in a Supermarket, which is likely t
 \section{Related Work}
 There are different eye disease simulators available in the web already.
 However, common ones, e.g. found on websites of health organizations, alter still 2D images and display them in the browser.
-For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases: "Grauer Star"( Cataract), "Makula-Degeneration" (Macular degeneration), "Grüner Star" (Glaucoma), Diabetische Retinopathie(Diabetic retinopathy) and "Retinitis Pigmentosa"(Retinitis pigmentosa) these you can test on different images like beeing at a crossraods, doing a puzzle or filling in a form. 
-There are also real-time simulations available as described by~\cite{eyediseasesim-zhuming} but the implementation is not available online. They focusing a VR solution with common task in the household.
+For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases: "Grauer Star" (Cataract), "Makula-Degeneration" (Macular degeneration), "Grüner Star" (Glaucoma), "Diabetische Retinopathie" (Diabetic retinopathy) and "Retinitis Pigmentosa" (Retinitis pigmentosa).
+These you can test on different images like being at a crossraods, doing a puzzle or filling in a form. 
+There are also real-time simulations available as described by Zhuming~\cite{eyediseasesim-zhuming} but the implementation is not available online.
+\todo{Grammar:}They focusing a VR solution with common task in the household.
 
 \section{Models and Methods}
 %\begin{itemize}
@@ -284,12 +286,13 @@ Compared to the macula, the rest of the eye, however, has a fairly low resolutio
 %
 %
 \subsection{Colorblindness}
-A first step in simulation color blindness is to understand what color actually is and how humans perceive it.
+A first step in simulation color vision deficiency is to understand what color actually is and how humans perceive it.
 At first color is nothing than an illusion created in our brain.
-From a physical point of view, light can be thought of a wave and therefore described by the waves spectral intensities.
-Each cone type of the human eye has a responsivity curve that defines how sensitive that cone type is to a specific wave length.
-Those responsivity curves were first determined by a color matching experiment in 1931 and were used to define the CIE XYZ 1931 color space
-\footnote{
+From a physical point of view, light can be thought of a wave and therefore described by the waves spectral intensities $\ell(\lambda)$.
+Light hitting the rods and cones stimulates them differently based on the wavelength of the incoming light.
+This can be described by responsivity curves which.
+For the three cone types $L$, $M$, and $S$ of the human eye they are denoted by $\bar l$, $\bar m$, and $\bar s$ and were first determined by a color matching experiment in 1931.
+They were used to define the CIE XYZ 1931 color space and are known as the CIE 1931 2º standard observer.\footnote{
     Actually those functions were transformed to have nice properties such as being non-negative.
     As a consequence the base vectors of the resulting XYZ color space describe colors which have no physical representation.
     The color space based on the actual responsivity curves $l$, $m$, and $s$ is called the LMS color space.
@@ -297,7 +300,7 @@ Those responsivity curves were first determined by a color matching experiment i
     So let's assume LMS and XYZ to be the same for now.
 }
 
-Given a spectral power distribution of a light source, its XYZ color value, also called \emph{tristimulus}, can be computed by the following equations:
+Given a spectral power distribution $\ell$ of a light source, its XYZ color value, also called \emph{tristimulus}, can be computed by the following equations:
 %All other color spaces, like the sRGB color space, are defined based on the CIE XYZ 1931 color space or at least provide a mapping to it.
 \begin{eqnarray}
     X &= \int\bar x(\lambda) \ell(\lambda) \\
@@ -306,11 +309,15 @@ Given a spectral power distribution of a light source, its XYZ color value, also
 \end{eqnarray}
 %
 Color vision deficiency originates from abnormal cone responses or the absence of one or more cone types.
-People missing one of the L-, M-, or S-cones entirely are called \emph{Protanopes}, \emph{Deuteranopes}, and \emph{Tritanopes} respectively.
+People missing one of the $L$-, $M$-, or $S$-cones entirely are called \emph{Protanopes}, \emph{Deuteranopes}, and \emph{Tritanopes} respectively.
 If all cone types are present but one of them is abnormal in its response, it is referred to as \emph{Protanomaly}, \emph{Deuteranomaly}, and \emph{Tritanomaly} respectively.
 
 The idea of simulating color vision deficiencies is to mimic these changes by first approximating the original spectral power distribution and then computing the new color value based on altered responsivity curves.
+Luckily this can be expressed by a linear mapping and therefore be efficiently implemented by means of a matrix multiplication.
 
+So the process of 
+
+\todo{Move this to the beginning of the section or to related work.}
 There is already a color blindness simulation available in the Unity Asset store based on Brettel \etal~\cite{brettel}.
 However, they focused on Protanopia and Deuteranopia since these are the most common forms.
 Machado \etal~\cite{Machado2009} improved this approach by introducing a model for anomalous cones and trying to take the opponent-stage model into account.
