@@ -160,6 +160,8 @@ There are also real-time simulations available as described by~\cite{eyediseases
 
 The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
 
+\subsection{Gerneral game objects}
+
 Each level has the same structure and the same target, its just different in what the Player has to pick up and which disease he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move any longer. This was done with the "Drag and Drop Pause Menu" Asset. 
 
 With the pause menu it is possible as well to End the game or jump back to the main menu.
@@ -184,7 +186,7 @@ The jump function of the first person controller was disabled that the player ca
 
 If the player press I a shopping bag appears where he can see what items he already picked up. Each items got a small description with some information about it, seen in \Fref{fig:ShoppingBag}. 
 
-The Supermarket was build up with the "Supermarket Interior" Asset, there we added a first person controller and on every object colliders, that its not possible to walk through the objects. As well we rebuilt the items in the supermarket that in every shelf is just one item type. This was made to show the differences between the Items. All Items where added to a Database which comes with the "Inventory Master" Asset. All items got a pick up script that its possible to collect them. 
+The Supermarket was build up with the "Supermarket Interior" Asset, there we added a first person controller and on every object colliders, that its not possible to walk through the objects. As well we reworked all items in the supermarket shelfs, that in every shelf is just one item type. This was made to make it not to difficult witch item should get picked uped. All Items where added to a Database which comes with the "Inventory Master" Asset. All items got a pick up script that its possible to collect them. We decided to put just one item with pick up script in the shelf that it is not possible to clear the hole racks.
 
 In the Database we added the items and some small description. We choose nearly similar mesh like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
 
@@ -209,6 +211,7 @@ In the End the Player got his accomplished points shown and can jump back to the
 %Therefore he/she has to take the appropriate measures for the specific disease.
 %In order to convincingly convey the topic, using a VR device like the Oculus Rift or an mobile phone / Google Cardboard combination would be beneficial to the project.
 
+\subsection{Diseases}
 
 As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like
 blurry or distorted vision, floaters, and reduced field of view can be
@@ -216,7 +219,7 @@ efficiently implemented by using fragment shaders. The individual properties
 of the shaders and how to decompose the individual diseases into different
 shaders (re-usability) is subject to the first research block. But since this
 appears to be a very well researched topic, we're confident that we won't run
-into any major difficulties.
+into any major difficulties. As closer descriped in section 4 we decided to take the four most common eye diseases in Germany: Colorblindess, Myopia and Hyperopia, Glaucoma and Cataract. The last two are more common for older people but espacilly they are important to regognize as early as possible. 
 
 %\begin{table}
 %    \textbf{Glaucoma}\\
