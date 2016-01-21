@@ -153,125 +153,87 @@ However, common ones, e.g. found on websites of health organizations, alter stil
 For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases: "Grauer Star" (Cataract), "Makula-Degeneration" (Macular degeneration), "Grüner Star" (Glaucoma), "Diabetische Retinopathie" (Diabetic retinopathy) and "Retinitis Pigmentosa" (Retinitis pigmentosa).
 These you can test on different images like being at a crossraods, doing a puzzle or filling in a form. 
 There are also real-time simulations available as described by Zhuming~\cite{eyediseasesim-zhuming} but the implementation is not available online.
-\todo{Grammar:}They focusing a VR solution with common task in the household.
 
 With regard to color vision deficiency and Unity3D, there is already a color blindness simulation available in the Unity Asset store based on the work of Brettel \etal~\cite{brettel}.
 However, they focused on Protanopia and Deuteranopia since these are the most common forms.
 Machado \etal~\cite{Machado2009} improved this approach by introducing a model for anomalous cones and trying to take the opponent-stage model into account.
 Their work provides more generality and is therefore adapted in \Fref{sec:colorblindness}.
 
-
 \section{Models and Methods}
-%\begin{itemize}
-%  \item Fulfill everyday tasks with impaired vision
-%  \item Possible boni: 
-%  \begin{itemize}
-%    \item Get rid of disease by performing the right actions
-%    e.g. take medication on the way or make a doctors appointment...
-%    \item Preventive measures during the task to not get disease in next lvl
-%  \end{itemize}
-%  \item Target platform: Android \& Google Cardboard to address many people
-%\end{itemize}
-
-%Assets used: Standard Assets (Unity Technologies), Inventory Master - uGUI (Sander Buchheim), Supermarket Interior (FireMesh), Drag and Drop Pause Menu (Cinopt Studios)
 
 The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
 
-\subsection{Gerneral game objects}
+\subsection{Gerneral Game Objects}
 
-Each level has the same structure and the same target, its just different in what the Player has to pick up and which disease he got. He is able to Pause the game by pressing ESC, then the time stops and he cant move any longer. This was done with the "Drag and Drop Pause Menu" Asset. 
+Each level has the same structure and the same objective, they only differ in what the player has to pick up and the diseases he suffers from.
+He is able to pause the game by pressing ESC, then the time stops and he cannot move any longer.
+This was done with the "Drag and Drop Pause Menu" Asset. 
 
-With the pause menu it is possible as well to End the game or jump back to the main menu.
-
+With the pause menu it is also possible to end the game or jump back to the main menu.
+%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{Menu.png}
     \caption{Shows the Menu which the Player sees at the beginning.}
     \label{fig:menu}
 \end{figure}
+%
+When the game starts the player is able to see the menu shown in \Fref{fig:menu}.
+He is confronted with the choice to play or to quit the program.
+After he hit the play button he can select between the different eye diseases which starts the game.
+The quit button ends the game.
+Each of levels got different eye disease which makes it more difficult to finish the level.
+In every level the player is asked to collect different items to finish his shopping list.
+The player starts near the entrance of the shop as seen in \Fref{fig:gamestart}.
+You can see that in the top left corner a text field informs the player about the movement and interaction controls.
+In the top right corner there is his shopping list to show which items he has to collect and bring to the checkstand.
+He can walk through the shop using \texttt{W},\texttt{A},\texttt{S},\texttt{D} and pick up different items like milk or bacon by pressing the \texttt{E}-button. 
 
-When the game starts the player is able to see a menu shown in \Fref{fig:menu}, like u can see he can press Play or Quit. After he hit the play button he can select between the different Eye diseases to start the level. The Quit button is to End the game. Each of levels got different eye disease witch makes it more difficult to finish the level. In all of the Level's the player is asked to collect different Items to finish his shopping list. The Player starts near the entrance of the shop as seen in \Fref{fig:gamestart}. You can see that in the left top corner a Text field with the instruction how he is able to move and operate. In the right top corner there is his shopping list to show which item he has to collect and bring to the till. He can walk with W,A,S,D through the shop and pick up different items like Milk or Bacon with pressing the E button. 
-
-The jump function of the first person controller was disabled that the player cant jump on the shelves or over the counters.
-
+The jump function of the first person controller was disabled so that the player cannot jump on the shelves or over the counters.
+%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{Game.png}
     \caption{Gives an overview what the player sees when he selected a level.}
     \label{fig:gamestart}
 \end{figure}
+%
+If the player presses \texttt{I} a shopping bag appears where he can see what items he already picked up.
+Each item got a small description with some information about it, as can be seen in \Fref{fig:ShoppingBag}. 
 
-If the player press I a shopping bag appears where he can see what items he already picked up. Each items got a small description with some information about it, seen in \Fref{fig:ShoppingBag}. 
+The supermarket was build up with the \emph{Supermarket Interior} asset.
+We added a first person controller and colliders to every object to prevent the player from walking through objects.
+We reworked all items in the supermarket shelfs, too, so that every shelf contains just one item type.
+This simplified the pick up mechanism a lot.
+All items were added to a database which is provided with the \emph{Inventory Master} asset.
+All items got a pick up script which gives the player the possibility to collect them.
+We decided to put just one item with a pick up script in each shelf so that it is not possible to clear the whole racks.
 
-The Supermarket was build up with the "Supermarket Interior" Asset, there we added a first person controller and on every object colliders, that its not possible to walk through the objects. As well we reworked all items in the supermarket shelfs, that in every shelf is just one item type. This was made to make it not to difficult witch item should get picked uped. All Items where added to a Database which comes with the "Inventory Master" Asset. All items got a pick up script that its possible to collect them. We decided to put just one item with pick up script in the shelf that it is not possible to clear the hole racks.
+In the database we added the items and some small description.
+We choose nearly similar meshs like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
 
-In the Database we added the items and some small description. We choose nearly similar mesh like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
-
-The Shopping list was just done with a separate Canvas, in the left top corner, with a text field to show the task to the PLayer. Aswell we put a image on it that it looks like an usual crumpled shopping list. 
-
+The shopping list was done with a separate Canvas, in the top left corner, with a text field to show the task to the player.
+We put an image on it that it looks like an usual crumpled shopping list, too.
+%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{ShoppingBag.png}
     \caption{Shows the Shopping Bag and the tool tip of the items.}
     \label{fig:ShoppingBag}
 \end{figure}
+%
+The game finish when the time runs out or the player goes to the checkstand.
+In the end he gets points for each correct item he has picked up and a bonus for the leftover time.
 
-The game finish if the times runs out or the players goes to the till. In the end he gets points for each correct item he has picked up and a bonus for the leftover time.
-
-In the End the Player got his accomplished points shown and can jump back to the menu to pick a different level. 
-
-
-
-%Ideally the chosen tasks would be individual levels which depend on each other and will tell a small story, like car driving → food shopping → cooking.
-%The user can either choose the disease for the level himself or a random disease is selected in the beginning.
-%The chosen disease should become worse over the time (within one level or across levels) but, if possible and accurate (neglecting the time), the user should also be able to slow down the process or even heal the disease completely.
-%Therefore he/she has to take the appropriate measures for the specific disease.
-%In order to convincingly convey the topic, using a VR device like the Oculus Rift or an mobile phone / Google Cardboard combination would be beneficial to the project.
+In the cnd the player got his accomplished points shown and can jump back to the menu to pick a different level. 
 
 \subsection{Diseases}
 
 As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like blurry or distorted vision, floaters, and reduced field of view can be efficiently implemented by using fragment shaders.
-The individual properties of the shaders and how to decompose the individual diseases into different shaders (re-usability) is subject to the first research block.
-But since this appears to be a very well researched topic, we're confident that we won't run into any major difficulties.
-As closer descriped in \Fref{sec:eyediseases} we decided to take the four most common eye diseases in Germany: Colorblindess, Myopia and Hyperopia, Glaucoma and Cataract.
+%The individual properties of the shaders and how to decompose the individual diseases into different shaders (re-usability) is subject to the first research block.
+%But since this appears to be a very well researched topic, we're confident that we won't run into any major difficulties.
+As closer described in \Fref{sec:eyediseases} we decided to take the four most common eye diseases in Germany: Colorblindess, Myopia and Hyperopia, Glaucoma and Cataract.
 The last two are more common among older people but for them it is especially important to regognize as early as possible. 
-
-%\begin{table}
-%    \textbf{Glaucoma}\\
-%    Sudden eye pain, blurred vision and loss of vision especially in the
-%    outer regions.
-%
-%    \vspace{1em}\textbf{Cataracts}\\
-%    Blurred vision especially in the center region.
-%
-%    \vspace{1em}\textbf{Diabetic Retinopathy}\\
-%    Black spots in the view.
-%
-%    \vspace{1em}\textbf{Color blindness}\\
-%    Some colours appear indistinguishable.
-%
-%    \vspace{1em}\textbf{Achromatopsia}\\
-%    (Almost) No color sensitivity at all.
-%
-%    \vspace{1em}\textbf{Myopia / Hyperopia}\\
-%    Commonly known as nearsightedness and farsightedness respectively.
-%
-%    \vspace{1em}\textbf{Kreatoconus}\\
-%    The cornea deforms into a conical shape.
-%    Multiple ghost images may be visible, arranged in a chaotic pattern,
-%    the vision becomes blurry, and visual acuity decreases at all distances.
-%    Poor night vision, photo-phobia, and eye strain are additional symptoms.
-%
-%    \vspace{1em}\textbf{Nyctalopia / Hermalopia}\\
-%    High difficulty to see in relatively low and bright light respectively.
-%
-%    \vspace{1em}\textbf{Retinal detachment / Posterior vitreous detachment}\\
-%    Flashes of light, very brief in the extreme peripheral region.
-%    Sudden increase in the amount of floaters.
-%    Slight feeling of heaviness in the eye.
-%    \caption{Eye diseases}
-%    \label{tab:eye_diseases}
-%\end{table}
 
 \subsection{The Human Eye}
 \label{sec:eyediseases}
@@ -292,8 +254,7 @@ But unlike camera sensors, where red, green, and blue pixels are evenly distribu
 There is the macula, which is an area with a very high rod and cone density.
 The central part of the macula is called the fovea which consists solely of tightly packed cones.
 Compared to the macula, the rest of the eye, however, has a fairly low resolution and mostly consists of the non-color sensitive rods.
-
-
+%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{human_eye_scheme.pdf}
@@ -333,7 +294,7 @@ Brettel and Machado used measured spectral power distributions $\varphi_R$, $\va
 Yet, as we don't have those distributions at hand we are going to approximate them.
 
 %Luckily this can be expressed by a linear mapping and therefore be efficiently implemented by means of a matrix multiplication.
-For further elaboration let all functions be in the space of continuous functions over the visible wavelengths $C([390nm, 830nm])$ and let $\langle f, g \rangle = \int f(\lambda) g(\lambda) \dlambda$ denote the canonical inner product.
+For further elaboration let all functions be in the space of continuous functions over the visible wavelengths $C([a,b])$ with $a=390nm$ and $b=830nm$ and let $\langle f, g \rangle = \int f(\lambda) g(\lambda) \dlambda$ denote the canonical inner product.
 Furthermore, let it be noted that the linear combination in the function space transforms directly to the appropriate coefficient spaces for any given stimulus $\varphi$ and coefficients as in \Fref{eqn:xyzdef}:
 \begin{eqnarray}
     \left( \bar x^\perp\ \bar y^\perp\ \bar z^\perp \right)^T
