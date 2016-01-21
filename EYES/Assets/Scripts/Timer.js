@@ -9,5 +9,5 @@ function Update() {
 }
 
 function OnGUI() {
-	GUI.Box(new Rect(10,50,50,20), "" + timer.ToString("0"));
+	GUI.Box(new Rect(10,65,50,20), "" + timer.ToString("0"));
 	}
