@@ -155,6 +155,12 @@ These you can test on different images like being at a crossraods, doing a puzzl
 There are also real-time simulations available as described by Zhuming~\cite{eyediseasesim-zhuming} but the implementation is not available online.
 \todo{Grammar:}They focusing a VR solution with common task in the household.
 
+With regard to color vision deficiency and Unity3D, there is already a color blindness simulation available in the Unity Asset store based on the work of Brettel \etal~\cite{brettel}.
+However, they focused on Protanopia and Deuteranopia since these are the most common forms.
+Machado \etal~\cite{Machado2009} improved this approach by introducing a model for anomalous cones and trying to take the opponent-stage model into account.
+Their work provides more generality and is therefore adapted in \Fref{sec:colorblindness}.
+
+
 \section{Models and Methods}
 %\begin{itemize}
 %  \item Fulfill everyday tasks with impaired vision
@@ -224,13 +230,11 @@ In the End the Player got his accomplished points shown and can jump back to the
 
 \subsection{Diseases}
 
-As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like
-blurry or distorted vision, floaters, and reduced field of view can be
-efficiently implemented by using fragment shaders. The individual properties
-of the shaders and how to decompose the individual diseases into different
-shaders (re-usability) is subject to the first research block. But since this
-appears to be a very well researched topic, we're confident that we won't run
-into any major difficulties. As closer descriped in section 4 we decided to take the four most common eye diseases in Germany: Colorblindess, Myopia and Hyperopia, Glaucoma and Cataract. The last two are more common for older people but espacilly they are important to regognize as early as possible. 
+As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like blurry or distorted vision, floaters, and reduced field of view can be efficiently implemented by using fragment shaders.
+The individual properties of the shaders and how to decompose the individual diseases into different shaders (re-usability) is subject to the first research block.
+But since this appears to be a very well researched topic, we're confident that we won't run into any major difficulties.
+As closer descriped in \Fref{sec:eyediseases} we decided to take the four most common eye diseases in Germany: Colorblindess, Myopia and Hyperopia, Glaucoma and Cataract.
+The last two are more common among older people but for them it is especially important to regognize as early as possible. 
 
 %\begin{table}
 %    \textbf{Glaucoma}\\
@@ -269,7 +273,8 @@ into any major difficulties. As closer descriped in section 4 we decided to take
 %    \label{tab:eye_diseases}
 %\end{table}
 
-\section{The human eye}
+\subsection{The Human Eye}
+\label{sec:eyediseases}
 Since eye diseases are supposed to be simulated in a virtual environment this section begins with a brief overview over the human eye in comparison to man-made cameras and their abstraction of the pinhole camera used in modern computer graphics.
 
 As can be seen in \Fref{fig:humaneye} the human eye is a spherical shaped organ letting light enter through the pupil to form an image of the world on the retina.
@@ -297,7 +302,8 @@ Compared to the macula, the rest of the eye, however, has a fairly low resolutio
 \end{figure}
 %
 %
-\subsection{Colorblindness}
+\subsubsection{Colorblindness}
+\label{sec:colorblindness}
 A first step in simulation color vision deficiency is to understand what color actually is and how humans perceive it.
 At first color is nothing than an illusion created in our brain.
 From a physical point of view, light can be thought of a wave and therefore described by the waves spectral intensities $\varphi(\lambda)$.
@@ -368,6 +374,7 @@ By writing Equation (10) in Machado \etal~\cite{Machado2009} in the following fo
 \end{equation}
 and using \Fref{eqn:coeff} along with Equation (1) in Machado as well as substituting $\varphi_i$ by $\tilde\varphi_i, i \in \{R, G, B\}$ the matrix $\Gamma$ can be written as
 \begin{equation}
+    \label{eqn:gamma}
     \Gamma =
     \tensor[_{OPP}]{T}{_{LMS}}
     \left(
@@ -378,7 +385,7 @@ and using \Fref{eqn:coeff} along with Equation (1) in Machado as well as substit
     \right)
     \tensor[_{XYZ}]{T}{_{RGB}}.
 \end{equation}
-
+The final color vision deficiency simulation can be applied according to the following equation where $\Gamma_{normal}$ and $\Gamma$ are \Fref{eqn:gamma} instantiated with the normal and altered cone responsivity functions respectively:
 \begin{equation}
     \begin{pmatrix}
         R_S \\ G_S \\ B_S
@@ -388,35 +395,31 @@ and using \Fref{eqn:coeff} along with Equation (1) in Machado as well as substit
     \Gamma
     \begin{pmatrix}
         R \\ G \\ B
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation}
 
 \begin{figure}
-    \begin{subfigure}[t]{0.5\columnwidth}
+    \centering
+    \begin{subfigure}[t]{0.48\columnwidth}
+        \centering
         \includegraphics[width=\textwidth]{74.png}
         \caption{Original plate.}
     \end{subfigure}
-    \begin{subfigure}[t]{0.5\columnwidth}
+    \begin{subfigure}[t]{0.48\columnwidth}
+        \centering
         \includegraphics[width=\textwidth]{74_tritanope_zero.png}
         \caption{Tritanopic vision with missing S-cones}
     \end{subfigure}
     \\
-    \begin{subfigure}[t]{0.5\columnwidth}
+    \begin{subfigure}[t]{0.48\columnwidth}
+        \centering
         \includegraphics[width=\textwidth]{74_protanope.png}
         \caption{Protanopic vision with shifted L-cones}
     \end{subfigure}
-    \begin{subfigure}[t]{0.5\columnwidth}
+    \begin{subfigure}[t]{0.48\columnwidth}
+        \centering
         \includegraphics[width=\textwidth]{74_protanope_zero.png}
         \caption{Protanopic vision with missing L-cones}
-    \end{subfigure}
-    \\
-    \begin{subfigure}[t]{0.5\columnwidth}
-        \includegraphics[width=\textwidth]{74_deuteranope.png}
-        \caption{Deuteranopic vision with shifted M-cones}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.5\columnwidth}
-        \includegraphics[width=\textwidth]{74_deuteranope_zero.png}
-        \caption{Deuteranopic vision with missing M-cones}
     \end{subfigure}
     \caption{Ishihara test plate 74 with different simulations.}
     \label{fig:plate74}
@@ -425,25 +428,19 @@ and using \Fref{eqn:coeff} along with Equation (1) in Machado as well as substit
 This approach is similar to Machado \etal~\cite{Machado2009} but differs in giving complete freedom in shaping the anomalous responsivity functions.
 Machado interpolated the shifted functions in order to get more realistic results.
 Since we wanted to give the player full control over these functions this behaviour does not make sense and was therefore not included.
-
-\todo{Move this to the beginning of the section or to related work.}
-There is already a color blindness simulation available in the Unity Asset store based on Brettel \etal~\cite{brettel}.
-However, they focused on Protanopia and Deuteranopia since these are the most common forms.
-Machado \etal~\cite{Machado2009} improved this approach by introducing a model for anomalous cones and trying to take the opponent-stage model into account.
+The effect of the algorithm on the Isihara color test plate 74 can be seen in \Fref{fig:plate74}.
 
 In the game, both approaches can be experienced.
-We extended the existing asset by the model proposed by Machado by writing a new shader which implements their approach.
-
-%$\bar x$, $\bar y$, and $\bar z$ define a subspace.
-%Let $\bar u$, $\bar v$, and $\bar w$ be an orthonormal basis of this subspace with a change of basis matrix $B$.
+We extended the existing asset by the model proposed apove by writing a new shader which implements their approach.
 
 \begin{figure}
+    \centering
     \includegraphics[width=\columnwidth]{lms-sensitivity.png}
     \caption{CIE 2º LMS spectral sensitivity functions~\cite{cvrl-lms-web}.}
     \label{fig:lmscurves}
 \end{figure}
 
-\subsection{Glaucoma}
+\subsubsection{Glaucoma}
 
 Glaucoma is one of the diseases which damages the optic nerves from the eyes. The result of this is a loss of vision and in the end causing total blindness. 
 
@@ -456,19 +453,24 @@ Glaucoma is especially a problem for people with a family history of glaucoma. O
 There are no Symptoms in the beginning, the vision stays normal and it causes no pain. But without treatment, people with glaucoma slowly lose their peripheral vision. That's why people start to see the things at the corner of their vision field badly. That is shown in \Fref{fig:glaucoma}. Over the time the vision field gets smaller and smaller.~\cite{glaucomafacts}
 
 That's why we made a shader which blurred the outer region of the vision. So that is difficult to see items in there outer regions of there vision.
-
-
-
+%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{glaucomavision.png}
     \caption{Vision of a Person with Glaucoma}
     \label{fig:glaucoma}
 \end{figure}
-
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{cataractvision.png}
+    \caption{Vision of a Person with cataract}
+    \label{fig:cataract}
+\end{figure}
+%
 The picture \Fref{fig:glaucoma} shows a certaian state of glaucoma where already a big part of the outer region of the vision is lost.
 
-\subsection{Cataract}
+\subsubsection{Cataract}
 
 Cataract is a disease which effects the lens of the eye. The symptoms are: a cloudy of blurry vision, the colors seem more pale, the nightvision is getting mutch worse and in some cases the person getting some multiple visions.
 
@@ -480,14 +482,7 @@ Because of the symptoms we decided to but a shader on the camara whitch blurrs t
 
 In \Fref{fig:cataract} you can see the effects, on the vision of a Person with cataract.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\columnwidth]{cataractvision.png}
-    \caption{Vision of a Person with cataract}
-    \label{fig:cataract}
-\end{figure}
-
-\subsection{Myopia and Hyperopia}
+\subsubsection{Myopia and Hyperopia}
 
 Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lens and there is \emph{axial myopia} which originates in an increased axial length of the eye as seen in \Fref{fig:hyperopia}.
 In either case, the focal range of the eye is altered since the lens cannot provide the required focal length for some distances anymore.
@@ -495,16 +490,18 @@ In either case, the focal range of the eye is altered since the lens cannot prov
 At myopia the eyeball stretches and is becomming to long, this can lead to holes in the retina. This can cause damage to the vision. The result of the damage is that the vision gets blurred. In the case of myopia the objects which are far away can not get focused. Many people got problems with Myopia or Hyperopia. In most cases myopia gets diagnosed between the age 8 and 12. Over the year in most cases it will be slightly getting worse. Children of parants with mypoia are more likley to get it. Another symptome which many peoble suffer is headache if its not corrected by eyegalsses, contact Lenses or a refractive Surgery.
 
 The opposite to myopia is hyperopia, in this case the eyeball is shorter. This changes the shape of the cornea that the lens can cause refractive errors. Hyperopia causes aswell a blurry vision but the problem with focussing object is more in the near area, it doesn't effect the vision in the far areas. Hyperopia can effect children and adults, but aswell if the parents got it, the children are more likly to get it. It got the same sight effects like mypopia, headache or eyepain. The most common treatments are eyeglasses, contact Lenses or a refractictive surgery. 
-
+%
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\columnwidth]{hyperopia.png}
+    \includegraphics[width=0.7\columnwidth]{hyperopia.png}
     \caption{Hyperotic eye and treatment by glasses.}
     \label{fig:hyperopia}
 \end{figure}
-
+%
 In order to simulate that in real-time a simulation of focal depth is needed.
-A brief overview can be found at~\cite{gpugems-DoF}.
+Yet, it turns out that it is a computationally too expensive task to perform realistic depth-of-field simulations in real-time.
+Because of that many approaches of faking the effect have been developed.
+A brief overview over some can be found at~\cite{gpugems-DoF}.
 
 Unity already provides a fast and decent implementation of real-time focal depth in its Standard Assets.
 This was used to simulate axial myopia/hyperopia by limiting the focal distance.
@@ -521,8 +518,8 @@ Given the cornea-retina distance of 24mm, the focal-length range of the human ey
     \centering
     \begin{tabular}{ll}
         Diopters                & 59-60 dpt \\
-        Focal length            & 22-24mm\\
-        Pupil diameter          & 2mm - 7/8mm (contracted - dilated) \\
+        Focal length            & 22-24mm \\
+        Pupil diameter          & 2mm - 7/8mm \\
         Cornea-Retina distance  & 17mm/25mm \\
         f-stop                  & ~f/3.2 or f/3.5 \\
         Cone of visual attention& ~55º \\
@@ -535,36 +532,51 @@ Given the cornea-retina distance of 24mm, the focal-length range of the human ey
 
 \section{Project Requirements}
 
-In the following section its written, how the four Project Requirements where implemented.
+The following section describes how the four project requirements are reflected in the program.
 
 \subsection{Science}
 
-The game was build CoSMoS compliant especially the different diseases where discovered,modeled. After wards we Tested the different effect of it and documented it in the end. All models base on a scientific background as far as possible. The settings show a specific state of the disease, these stats where so selected that the effect is visible.
+The game was build CoSMoS compliant, especially the different diseases where researched, modeled, simplified, and implemented.
+For example the causes of Myopia/Hyperopia were researched and the model adapted to fit the commonly used pinhole camera model used in real-time computer graphics.
+Furthermore, the model needed to be simplified in order to meet the interactivity requirement.
+Tests were performed throughout the whole development peaking at the end.
+Documentation of the scientific parts of the program were created during the development and collected in this paper. 
+%Afterwards we tested the different effectt of it and documented it in the end.
+%All models base on a scientific background as far as possible.
+%The settings show a specific state of the disease, these stats where so selected that the effect is visible.
 
 \subsection{Gamification}
 
-The player can move free in the supermarket. He gets guidance in form of a text field in the left corner, how he can move, pick up items or open his bag. The part of the game is to find all the required items and beat the time.
+The player can move freely in the supermarket.
+He gets guidance on the movement controls or environment interaction in form of a text field in the left corner.%, how he can move, pick up items or open his bag.
+The goal of the game is to find all the required items in time.
+The less time the player requires to collect all items, the more points he earns.
 
 \subsection{Complexity}
 
-Through the different eye diseases, its every time a new challenge to find the right objects. These will be the one of the main learning effect the other one is to learn with the info texts about the diseases can be recognize and what to do against it.
+Through the different eye diseases, it is every time a new challenge to find the right objects.
+This will be one of the main learning effects.
+The other one is to learn with the info texts about the diseases can be recognize and what to do against it.
 
 \subsection{Aesthetics}
 
-The design of the game is hold quite simple that everybody can quickly understand what to do. All Text fields where set in the corners to give the player the option to fully see the influences of the diseases. Its as far we found the first accessible 3D simulation with a game component.
+The design of the game is intentionally quite simple so everybody can quickly understand what to do.
+All text fields were placed in the corners to give the player the option to fully see the influences of the diseases.
+According to our research, it is the first accessible 3D eye disease simulation with a game component.
 
 The player can get more information of each disease in the menu.
-
 %
 %
 \section{Summary \& Future Work}
 
-Add more of eye diseases like Kreatoconus,Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy. The diseases could change over the time the game runs. Aswell it would be nice to have more tasks like driving or working to show the effects in different areas.
+For further development, adding more eye diseases like Kreatoconus, Retinal detachment / Posterior vitreous detachment or Diabetic Retinopathy would be an important point.
+The severity of diseases could change over the duration of a level or combinations of diseases could occur.
+It would be nice to have more tasks like driving or working to show the effects in different areas, as well.
 
-The Shopping List could get more interactive that it tics stuff of when u got it in your shopping bag.
+The shopping list could become more interactive, i.e. that it tics stuff off when you got it in your shopping bag.
 
-The hole graphics could be reworked to make it as realistic as possible especially if you using an VR Gadget.
-
+The graphics should be reworked to make it as realistic as possible especially if you using a VR gadget.
+%
 Vinnikov \etal \cite{gazedisplays} developed a Gaze-Contingent-Display in order to evaluate the users eye direction and adept the displayed images in real-time.
 Because the effects of eye diseases follow the eye movement, i.e. are static with respect to the eye coordinate frame, they achieved more realistic results in comparison to rendering gaze-independent images.
 A consumer solution is under development by the German company SensoMotoric Instruments (SIM) which provides an gaze tracking solution update for the Oculus Rift DK 2 \cite{smi-oculus, arstechoculus}.
