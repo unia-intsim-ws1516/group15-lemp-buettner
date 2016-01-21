@@ -9,3 +9,6 @@ include_directories(./)
 add_executable(colorblindness main.cpp)
 target_link_libraries(colorblindness ${OpenCV_LIBS})
 
+add_executable(colorblindness2 test_2.cpp)
+target_link_libraries(colorblindness2 ${OpenCV_LIBS})
+

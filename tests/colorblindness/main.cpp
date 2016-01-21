@@ -6,50 +6,12 @@
 #include <Eigen/Eigen>
 #include <cie_rgb_standard_observers.h>
 #include <cie_lms_sensitivity.h>
+#include <functionutility.h>
 
 using namespace cv;
 using namespace std;
 using namespace TCLAP;
 using namespace Eigen;
-
-
-/**
- * \param values Equidistant values of the function to integrate. There has to
- * to be an odd number of values.
- * \param h Distance between two consecutive values in values.
- */
-double integral(vector<double> const& values, double const& h)
-{
-    double I = 0.0;
-    for (int i = 0; i < static_cast<int>(values.size()) - 2; i += 2)
-    {
-        I += values[i] + 4.0 * values[i+1] + values[i+2];
-    }
-
-    return I * h / 3.0;
-}
-
-void shiftFunction(vector<double> const& inFunction, double step, double delta, vector<double>& outFunction)
-{
-    int const di = static_cast<int>(floor(delta / step));
-    int const dj = di + 1;
-    double const t = (delta / step) - static_cast<double>(di);
-    outFunction.resize(inFunction.size());
-
-//    cout << "di = " << di << ", dj = " << dj << ", t = " << t << endl;
-    for (size_t i = 0; i < inFunction.size(); ++i)
-    {
-        int const m = i + di;
-        int const n = i + dj;
-//        cout << "m = " << m << ", n = " << n << endl;
-        double y1 = 0.0;
-        double y2 = 0.0;
-        if ( (0 <= m) && (m < inFunction.size()) ) y1 = inFunction[m];
-        if ( (0 <= n) && (n < inFunction.size()) ) y2 = inFunction[n];
-        outFunction[i] = (1.0 - t) * y1 + t * y2;
-//        cout << "y1 = " << y1 << ", y2 = " << y2 << ", f = " << outFunction[i] << endl;
-    }
-}
 
 
 class LambdaMatrix
