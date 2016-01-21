@@ -6,6 +6,7 @@
 #include <Eigen/Eigen>
 #include <cie_rgb_standard_observers.h>
 #include <cie_lms_sensitivity.h>
+#include <cie_xyz_standard_observers.h>
 #include <functionutility.h>
 
 using namespace cv;
@@ -13,98 +14,18 @@ using namespace std;
 using namespace TCLAP;
 using namespace Eigen;
 
+// Vector3d xyzTrgb(Vector3d const&);
+// Vector3d rgbTxyz(Vector3d const&);
 
-class LambdaMatrix
-{
-public:
-    LambdaMatrix(vector<double> const& r, vector<double> const& g, vector<double> const& b)
-    : r_(r)
-    , g_(g)
-    , b_(b)
-    {}
 
-    Matrix3d operator() (vector<double> const& L, vector<double> const& M, vector<double> const& S, double step) const
-    {
-        vector<double> WS(L.size());
-        vector<double> YB(L.size());
-        vector<double> RG(L.size());
-    
-        Matrix3d const oppTlms( (Matrix3d() << 0.600,  0.400,  0.000,
-                                               0.240,  0.105, -0.700,
-                                               1.200, -1.600,  0.400).finished());
-    
-        for (size_t i = 0; i < L.size(); i++)
-        {
-            Vector3d const lms(L[i], M[i], S[i]);
-            Vector3d const wyr = oppTlms * lms;
-            WS[i] = wyr[0];
-            YB[i] = wyr[1];
-            RG[i] = wyr[2];
-        }
-    
-        Matrix3d lambda;
-    
-        vector<double> mul(WS.size());
-     
-        // WS_R
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = r_[i] * WS[i];
-        lambda(0,0) = integral(mul, step); // 5nm steps
-     
-        // WS_G
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = g_[i] * WS[i];
-        lambda(0,1) = integral(mul, step); // 5nm steps
-     
-        // WS_B
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = b_[i] * WS[i];
-        lambda(0,2) = integral(mul, step); // 5nm steps
-     
-        // YB_R
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = r_[i] * YB[i];
-        lambda(1,0) = integral(mul, step); // 5nm steps
-     
-        // YB_G
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = g_[i] * YB[i];
-        lambda(1,1) = integral(mul, step); // 5nm steps
-     
-        // YB_B
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = b_[i] * YB[i];
-        lambda(1,2) = integral(mul, step); // 5nm steps
-     
-        // RG_R
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = r_[i] * RG[i];
-        lambda(2,0) = integral(mul, step); // 5nm steps
-     
-        // RG_G
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = g_[i] * RG[i];
-        lambda(2,1) = integral(mul, step); // 5nm steps
-     
-        // RG_B
-        for (size_t i = 0; i < mul.size(); ++i)
-            mul[i] = b_[i] * RG[i];
-        lambda(2,2) = integral(mul, step); // 5nm steps
-    
-    
-        lambda.row(0) /= lambda(0,0) + lambda(0,1) + lambda(0,2);
-        lambda.row(1) /= lambda(1,0) + lambda(1,1) + lambda(1,2);
-        lambda.row(2) /= lambda(2,0) + lambda(2,1) + lambda(2,2);
-    
-        return lambda;
-    }
+/* Trafo from sRGB to XYZ */
+static Matrix3d const XYZ2RGB((Matrix3d() << 0.4124, 0.3576, 0.1805,
+                                             0.2126, 0.7152, 0.0722,
+                                             0.0193, 0.1192, 0.9505).finished());
 
-private:
-    vector<double> const r_;
-    vector<double> const g_;
-    vector<double> const b_;
-};
-
+static Matrix3d const RGB2XYZ((Matrix3d() << 3.2406, -1.5372, -0.4986,
+                                            -0.9689,  1.8758,  0.0415,
+                                             0.0557, -0.2040,  1.0570).finished());
 
 int main(int argc, char* argv[])
 {
@@ -128,93 +49,110 @@ int main(int argc, char* argv[])
     {
         cout << "Loaded '" << fileName.getValue() << "'." << endl;
     }
-
-    vector<double> R(cie_r.size());
-    vector<double> G(cie_g.size());
-    vector<double> B(cie_b.size());
-
-    double max_r = -numeric_limits<double>::max();
-    double max_g = -numeric_limits<double>::max();
-    double max_b = -numeric_limits<double>::max();
-    for (size_t i = 0; i < R.size(); ++i)
+    
+    if (!disableColorProcessing.getValue())
     {
-        max_r = max(max_r, cie_r[i]);
-        max_g = max(max_g, cie_g[i]);
-        max_b = max(max_b, cie_b[i]);
-    }
-    for (size_t i = 0; i < R.size(); ++i)
-    {
-        R[i] = cie_r[i] / max_r;
-        G[i] = cie_g[i] / max_g;
-        B[i] = cie_b[i] / max_b;
-    }
 
-//    vector<double> cie_l_norm(cie_l.size());
-//    vector<double> cie_m_norm(cie_m.size());
-//    vector<double> cie_s_norm(cie_s.size());
-//    double max_l = -numeric_limits<double>::max();
-//    double max_m = -numeric_limits<double>::max();
-//    double max_s = -numeric_limits<double>::max();
-//    for (size_t i = 0; i < cie_l.size(); ++i)
-//    {
-//        max_l = max(max_l, cie_l[i]);
-//        max_m = max(max_m, cie_m[i]);
-//        max_s = max(max_s, cie_s[i]);
-//    }
-//    double const max_lms = max(max_l, max(max_m, max_s));
-//    for (size_t i = 0; i < cie_l.size(); ++i)
-//    {
-//        cie_l_norm[i] = cie_l[i] / max_lms;
-//        cie_m_norm[i] = cie_m[i] / max_lms;
-//        cie_s_norm[i] = cie_s[i] / max_lms;
-//    }
-    double const area_L = integral(cie_l, 5.0);
-    double const area_M = integral(cie_m, 5.0);
-    double const area_S = integral(cie_s, 5.0);
-
-    vector<double> L;
-    vector<double> M;
-    vector<double> S;
-    double const shift = 2.0;
-//    shiftFunction(cie_l, 5.0,-shift, L);
-//    shiftFunction(cie_m, 5.0,  0.0, M);
-//    shiftFunction(cie_s, 5.0,  0.0, S);
-
-    double const alpha = (20.0 - shift) / 20.0;
-    for (size_t i = 0; i < L.size(); ++i)
-    {
-        L[i] = alpha * cie_l[i] + (1.0 - alpha) * area_L / area_M * 0.96 * cie_m[i];
-    }
-
-    LambdaMatrix lmb(R, G, B);
-//    LambdaMatrix lmb(cie_r, cie_g, cie_b);
-    Matrix3d const lambda_normal = lmb(cie_l, cie_m, cie_s, 5.0);
-    FullPivLU<Matrix3d> const lambda_normal_inv(lambda_normal);
-
-    Matrix3d const lambda = lmb(L, M, S, 5.0);
-    cout << "lambda:" << endl << lambda << endl << endl;
-
-    Matrix3f CVD(Matrix3f::Identity());
-    CVD = lambda_normal_inv.solve(lambda);
-    cout << "CVD:" << endl << CVD << endl << endl;
-
-    for (int y = 0; y < image.rows; ++y)
-    {
-        for (int x = 0; x < image.cols; ++x)
+        double const h = 5.0; // nm
+    
+        vector<double> L(cie_l.size());
+        vector<double> M(cie_m.size());
+        vector<double> S(cie_s.size());
+    
+        double max_l = -numeric_limits<double>::max();
+        double max_m = -numeric_limits<double>::max();
+        double max_s = -numeric_limits<double>::max();
+        for (size_t i = 0; i < L.size(); ++i)
         {
-            Vec3b px = image.at<Vec3b>(y, x);
-            Vector3f p(px.val[2], px.val[1], px.val[0]);
-            p = CVD*p;
-            if (123 == x && 321 == y)
+            max_l = max(max_l, cie_l[i]);
+            max_m = max(max_m, cie_m[i]);
+            max_s = max(max_s, cie_s[i]);
+        }
+        for (size_t i = 0; i < L.size(); ++i)
+        {
+            L[i] = cie_l[i] / max_l;
+            M[i] = cie_m[i] / max_m;
+            S[i] = cie_s[i] / max_s;
+        }
+        
+        /*
+         * Compute Lampda_normal
+         */
+        Matrix3d LNormal;
+        LNormal(0,0) = integral(L * cie_x, h);
+        LNormal(0,1) = integral(L * cie_y, h);
+        LNormal(0,2) = integral(L * cie_z, h);
+        LNormal(1,0) = integral(M * cie_x, h);
+        LNormal(1,1) = integral(M * cie_y, h);
+        LNormal(1,2) = integral(M * cie_z, h);
+        LNormal(2,0) = integral(S * cie_x, h);
+        LNormal(2,1) = integral(S * cie_y, h);
+        LNormal(2,2) = integral(S * cie_z, h);
+    
+        LNormal = LNormal * XYZ2RGB;
+    //    LNormal.row(0) = LNormal.row(0) / (LNormal(0,0) + LNormal(0,1) + LNormal(0,2));
+    //    LNormal.row(1) = LNormal.row(1) / (LNormal(1,0) + LNormal(1,1) + LNormal(1,2));
+    //    LNormal.row(2) = LNormal.row(2) / (LNormal(2,0) + LNormal(2,1) + LNormal(2,2));
+    
+        FullPivLU<Matrix3d> const LNormalInv(LNormal);
+    
+        /*
+         * Compute Lambda with the altered LMS functions.
+         */
+        vector<double> L2(L);
+        vector<double> M2(M);
+        vector<double> S2(S);
+    
+        // shift by 15 nm as suggested in Machado
+//        shiftFunction(L, h,  15.0, L2);
+//        shiftFunction(M, h, -19.0, M2);
+        L2 = 0.0 * L;
+    
+        Matrix3d Lambda = LNormal;
+        Lambda(0,0) = integral(L2 * cie_x, h);
+        Lambda(0,1) = integral(L2 * cie_y, h);
+        Lambda(0,2) = integral(L2 * cie_z, h);
+        Lambda(1,0) = integral(M2 * cie_x, h);
+        Lambda(1,1) = integral(M2 * cie_y, h);
+        Lambda(1,2) = integral(M2 * cie_z, h);
+        Lambda(2,0) = integral(S2 * cie_x, h);
+        Lambda(2,1) = integral(S2 * cie_y, h);
+        Lambda(2,2) = integral(S2 * cie_z, h);
+    
+        Lambda = Lambda * XYZ2RGB;
+    
+    //    Lambda.row(0) = Lambda.row(0) / (Lambda(0,0) + Lambda(0,1) + Lambda(0,2));
+    //    Lambda.row(1) = Lambda.row(1) / (Lambda(1,0) + Lambda(1,1) + Lambda(1,2));
+    //    Lambda.row(2) = Lambda.row(2) / (Lambda(2,0) + Lambda(2,1) + Lambda(2,2));
+    
+        Matrix3d CVD = Matrix3d::Identity();
+        CVD = LNormalInv.solve(Lambda);
+    
+        CVD.row(0) = CVD.row(0) / (CVD(0,0) + CVD(0,1) + CVD(0,2));
+        CVD.row(1) = CVD.row(1) / (CVD(1,0) + CVD(1,1) + CVD(1,2));
+        CVD.row(2) = CVD.row(2) / (CVD(2,0) + CVD(2,1) + CVD(2,2));
+    
+        cout << "CVD: " << endl << CVD << endl;
+    
+        for (int y = 0; y < image.rows; ++y)
+        {
+            for (int x = 0; x < image.cols; ++x)
             {
-                cout << "px[" << (int)px.val[2] << ", " << (int)px.val[1] << ", " << (int)px.val[0] << "] ";
-                cout << "p[" << p.transpose() << "] ";
-                cout << endl;
+                Vec3b px = image.at<Vec3b>(y, x);
+                Vector3d p(px.val[2], px.val[1], px.val[0]);
+    
+                p = CVD * p;
+                if (123 == x && 321 == y)
+                {
+                    cout << "px[" << (int)px.val[2] << ", " << (int)px.val[1] << ", " << (int)px.val[0] << "] ";
+                    cout << "p[" << p.transpose() << "] ";
+                    cout << endl;
+                }
+                px.val[0] = min(255.0, max(0.0, p[2]));
+                px.val[1] = min(255.0, max(0.0, p[1]));
+                px.val[2] = min(255.0, max(0.0, p[0]));
+                image.at<Vec3b>(y, x) = px;
             }
-            px.val[0] = min(255.0f, max(0.0f, p[2]));
-            px.val[1] = min(255.0f, max(0.0f, p[1]));
-            px.val[2] = min(255.0f, max(0.0f, p[0]));
-            image.at<Vec3b>(y, x) = px;
         }
     }
 
@@ -224,3 +162,24 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+
+// Vector3d xyzTrgb(Vector3d const& rgb)
+// {
+// 
+//     // rgb to xyz
+//     Vector3d const c1 = rgb / 12.92;
+//     Vector3d const c2 = ((rgb + 0.055 * Vector3d::Ones()) / 1.055).array().pow(2.4);
+//     Vector3d const q = (rgb.array() <= 0.04045).select(c1, c2);
+// 
+//     return XYZ2RGB * q;
+// }
+// 
+// Vector3d rgbTxyz(Vector3d const& xyz)
+// {
+//     Vector3d const q = RGB2XYZ * xyz;
+//     Vector3d const c1 = 12.92 * q;
+//     Vector3d const c2 = 1.055 * q.array().pow(1.0/2.4) - 0.055;
+//     return (q.array() <= 0.031308).select(c1, c2);
+// }
+

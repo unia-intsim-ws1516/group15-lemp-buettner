@@ -24,6 +24,7 @@ double integral(Function const& values, double const& h)
 
 /**
  * Shifts inFunction with step size step by delta and stores the result in outFünction.
+ * g(x) = f(x + delta)
  */
 void shiftFunction(Function const& inFunction, double step, double delta, Function& outFunction)
 {
