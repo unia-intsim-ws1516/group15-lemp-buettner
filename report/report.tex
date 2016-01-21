@@ -102,7 +102,7 @@ In order to address especially a young audience, the presentation is in form of 
 The player will experience five different eye diseases in different levels in which he will go shopping and collect special items from his shopping list.
 This scenario was chosen because we believe it to be a common, well known situation.
 %We chose this scenario because everybody knows the situation.
-In contrast to other eye disease simulators, which usually show the effects on static images, this one simulates colorblindness, glaucoma, cataract, and myopia/hyperopia interactivly.
+In contrast to other eye disease simulators, which usually show the effects on static images, this one simulates colorblindness, glaucoma, cataract, and myopia/hyperopia interactively.
 This is achieved by implementing the diseases as image effects using CGI shaders.
 %build up like an game where the player gets point for solving the task as fast as possible. Aswell the player should get the feeling of how difficult it can be living with one the the diseases.
 
@@ -151,7 +151,7 @@ In this game the player has to collect items in a Supermarket, which is likely t
 There are different eye disease simulators available in the web already.
 However, common ones, e.g. found on websites of health organizations, alter still 2D images and display them in the browser.
 For example, the "Sehbehinderungs-Simulator" of ABSV~\cite{absv} lets the user choose from five different diseases: "Grauer Star" (Cataract), "Makula-Degeneration" (Macular degeneration), "Grüner Star" (Glaucoma), "Diabetische Retinopathie" (Diabetic retinopathy) and "Retinitis Pigmentosa" (Retinitis pigmentosa).
-These you can test on different images like being at a crossraods, doing a puzzle or filling in a form. 
+These you can test on different images like being at a crossroads, doing a puzzle or filling in a form. 
 There are also real-time simulations available as described by Zhuming~\cite{eyediseasesim-zhuming} but the implementation is not available online.
 
 With regard to color vision deficiency and Unity3D, there is already a color blindness simulation available in the Unity Asset store based on the work of Brettel \etal~\cite{brettel}.
@@ -163,10 +163,10 @@ Their work provides more generality and is therefore adapted in \Fref{sec:colorb
 
 The player is able to experience different types of eye diseases varying in severity. The game is set in a supermarket where the player has to shop for different objects. There are five different eye diseases to experience in five different levels.
 
-\subsection{Gerneral Game Objects}
+\subsection{General Game Objects}
 
 Each level has the same structure and the same objective, they only differ in what the player has to pick up and the diseases he suffers from.
-He is able to pause the game by pressing ESC, then the time stops and he cannot move any longer.
+He is able to pause the game by pressing \texttt{ESC}, then the time stops and he cannot move any longer.
 This was done with the "Drag and Drop Pause Menu" Asset. 
 
 With the pause menu it is also possible to end the game or jump back to the main menu.
@@ -203,14 +203,14 @@ Each item got a small description with some information about it, as can be seen
 
 The supermarket was build up with the \emph{Supermarket Interior} asset.
 We added a first person controller and colliders to every object to prevent the player from walking through objects.
-We reworked all items in the supermarket shelfs, too, so that every shelf contains just one item type.
+We reworked all items in the supermarket shelves, too, so that every shelf contains just one item type.
 This simplified the pick up mechanism a lot.
 All items were added to a database which is provided with the \emph{Inventory Master} asset.
 All items got a pick up script which gives the player the possibility to collect them.
 We decided to put just one item with a pick up script in each shelf so that it is not possible to clear the whole racks.
 
 In the database we added the items and some small description.
-We choose nearly similar meshs like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
+We choose nearly similar meshes like a milk bottle with a red lid and a bottle with a white lid, to show the problems of a person with color blindness.
 
 The shopping list was done with a separate Canvas, in the top left corner, with a text field to show the task to the player.
 We put an image on it that it looks like an usual crumpled shopping list, too.
@@ -225,15 +225,15 @@ We put an image on it that it looks like an usual crumpled shopping list, too.
 The game finish when the time runs out or the player goes to the checkstand.
 In the end he gets points for each correct item he has picked up and a bonus for the leftover time.
 
-In the cnd the player got his accomplished points shown and can jump back to the menu to pick a different level. 
+In the end the player got his accomplished points shown and can jump back to the menu to pick a different level. 
 
 \subsection{Diseases}
 
 As described in \cite{gazedisplays} and \cite{eyediseasesim} effects like blurry or distorted vision, floaters, and reduced field of view can be efficiently implemented by using fragment shaders.
 %The individual properties of the shaders and how to decompose the individual diseases into different shaders (re-usability) is subject to the first research block.
 %But since this appears to be a very well researched topic, we're confident that we won't run into any major difficulties.
-As closer described in \Fref{sec:eyediseases} we decided to take the four most common eye diseases in Germany: Colorblindess, Myopia and Hyperopia, Glaucoma and Cataract.
-The last two are more common among older people but for them it is especially important to regognize as early as possible. 
+As closer described in \Fref{sec:eyediseases} we decided to take the four most common eye diseases in Germany: Colorblindness, Myopia and Hyperopia, Glaucoma and Cataract.
+The last two are more common among older people but for them it is especially important to recognize as early as possible. 
 
 \subsection{The Human Eye}
 \label{sec:eyediseases}
@@ -271,7 +271,7 @@ From a physical point of view, light can be thought of a wave and therefore desc
 Light hitting the rods and cones stimulates them differently based on the wavelength of the incoming light.
 This can be described by responsivity curves.
 For the three cone types $L$, $M$, and $S$ of the human eye they are denoted by $\bar l$, $\bar m$, and $\bar s$ and were first determined by a color matching experiment in 1931.
-Closly related are the color matching functions $\bar x$, $\bar y$, and $\bar z$ which define the CIE XYZ 1931 color space and are known as the CIE 1931 2º standard observer~\cite{cvrl-xyz-web}.
+Closely related are the color matching functions $\bar x$, $\bar y$, and $\bar z$ which define the CIE XYZ 1931 color space and are known as the CIE 1931 2º standard observer~\cite{cvrl-xyz-web}.
 Given a spectral power distribution $\varphi$ of a light source, its XYZ color value, also called \emph{tristimulus}, can be computed by the following equations:
 %All other color spaces, like the sRGB color space, are defined based on the CIE XYZ 1931 color space or at least provide a mapping to it.
 \begin{eqnarray}
@@ -388,11 +388,11 @@ The final color vision deficiency simulation can be applied according to the fol
 
 This approach is similar to Machado \etal~\cite{Machado2009} but differs in giving complete freedom in shaping the anomalous responsivity functions.
 Machado interpolated the shifted functions in order to get more realistic results.
-Since we wanted to give the player full control over these functions this behaviour does not make sense and was therefore not included.
+Since we wanted to give the player full control over these functions this behavior does not make sense and was therefore not included.
 The effect of the algorithm on the Isihara color test plate 74 can be seen in \Fref{fig:plate74}.
 
 In the game, both approaches can be experienced.
-We extended the existing asset by the model proposed apove by writing a new shader which implements their approach.
+We extended the existing asset by the model proposed above by writing a new shader which implements their approach.
 
 \begin{figure}
     \centering
@@ -429,17 +429,17 @@ That's why we made a shader which blurred the outer region of the vision. So tha
     \label{fig:cataract}
 \end{figure}
 %
-The picture \Fref{fig:glaucoma} shows a certaian state of glaucoma where already a big part of the outer region of the vision is lost.
+The picture \Fref{fig:glaucoma} shows a certain state of glaucoma where already a big part of the outer region of the vision is lost.
 
 \subsubsection{Cataract}
 
-Cataract is a disease which effects the lens of the eye. The symptoms are: a cloudy of blurry vision, the colors seem more pale, the nightvision is getting mutch worse and in some cases the person getting some multiple visions.
+Cataract is a disease which effects the lens of the eye. The symptoms are: a cloudy of blurry vision, the colors seem more pale, the nightvision is getting much worse and in some cases the person getting some multiple visions.
 
 The protein in the eye arrange to keep the lens clear and let the light pass. But in the older ages the protein cant clear the lens anymore and they starting to clump together. This is called a cataract. Its starts in small areas of the lens and grow lager over the time. Mostly this starts in the center of the lens. Like shown in \Fref{fig:cataract}.
 
-The Risk of getting cataract is extremely high for people over the age of 80. The percentage for cataract by people over 80 is about 50. But allready at the age of 40 it starts to clump but in this stage is has no effect on the vision. At the age of 50 most of them will start to get vision problems. The risk of cataract it getting higher if you get older but also if you got diabetes it can ingrease.\%.~\cite{cataractfacts}
+The Risk of getting cataract is extremely high for people over the age of 80. The percentage for cataract by people over 80 is about 50. But already at the age of 40 it starts to clump but in this stage is has no effect on the vision. At the age of 50 most of them will start to get vision problems. The risk of cataract it getting higher if you get older but also if you got diabetes it can increase.\%.~\cite{cataractfacts}
 
-Because of the symptoms we decided to but a shader on the camara whitch blurrs the hole vision for a bit and the colors look a bit faded.
+Because of the symptoms we decided to but a shader on the camara which blurs the hole vision for a bit and the colors look a bit faded.
 
 In \Fref{fig:cataract} you can see the effects, on the vision of a Person with cataract.
 
@@ -448,9 +448,9 @@ In \Fref{fig:cataract} you can see the effects, on the vision of a Person with c
 Myopia and Hyperopia can have different causes. There are \emph{refractive myopia} types which are caused by a changing refractive index of the cornea or lens and there is \emph{axial myopia} which originates in an increased axial length of the eye as seen in \Fref{fig:hyperopia}.
 In either case, the focal range of the eye is altered since the lens cannot provide the required focal length for some distances anymore.
 
-At myopia the eyeball stretches and is becomming to long, this can lead to holes in the retina. This can cause damage to the vision. The result of the damage is that the vision gets blurred. In the case of myopia the objects which are far away can not get focused. Many people got problems with Myopia or Hyperopia. In most cases myopia gets diagnosed between the age 8 and 12. Over the year in most cases it will be slightly getting worse. Children of parants with mypoia are more likley to get it. Another symptome which many peoble suffer is headache if its not corrected by eyegalsses, contact Lenses or a refractive Surgery.
+At myopia the eyeball stretches and is becoming to long, this can lead to holes in the retina. This can cause damage to the vision. The result of the damage is that the vision gets blurred. In the case of myopia the objects which are far away can not get focused. Many people got problems with Myopia or Hyperopia. In most cases myopia gets diagnosed between the age 8 and 12. Over the year in most cases it will be slightly getting worse. Children of parents with myopia are more likely to get it. Another symptoms which many people suffer is headache if its not corrected by eyeglasses, contact Lenses or a refractive Surgery.
 
-The opposite to myopia is hyperopia, in this case the eyeball is shorter. This changes the shape of the cornea that the lens can cause refractive errors. Hyperopia causes aswell a blurry vision but the problem with focussing object is more in the near area, it doesn't effect the vision in the far areas. Hyperopia can effect children and adults, but aswell if the parents got it, the children are more likly to get it. It got the same sight effects like mypopia, headache or eyepain. The most common treatments are eyeglasses, contact Lenses or a refractictive surgery. 
+The opposite to myopia is hyperopia, in this case the eyeball is shorter. This changes the shape of the cornea that the lens can cause refractive errors. Hyperopia causes as well a blurry vision but the problem with focusing object is more in the near area, it doesn't effect the vision in the far areas. Hyperopia can effect children and adults, but as well if the parents got it, the children are more likely to get it. It got the same sight effects like myopia, headache or eye pain. The most common treatments are eyeglasses, contact Lenses or a refractive surgery. 
 %
 \begin{figure}
     \centering
