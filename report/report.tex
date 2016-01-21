@@ -8,6 +8,8 @@
 \usepackage{fontspec}
 \usepackage{xltxtra}
 %\usepackage{libertine}
+\usepackage{amsmath}
+\usepackage{tensor}
 
 \usepackage[usenames, dvipsnames]{xcolor}
 \graphicspath{{./img/}}
@@ -34,6 +36,12 @@ filecolor=black%
 \newcommand{\etal}{\textit{et. al.}}
 \newcommand{\Gray}[1]{\textcolor{Gray}{#1}}
 \newcommand{\dlambda}{\mathrm{d}\lambda}
+
+\newcommand*{\fancyrefcndlabelprefix}{eqn}
+\frefformat{vario}{\fancyrefcndlabelprefix}{equation (#1) #3}
+\Frefformat{vario}{\fancyrefcndlabelprefix}{Equation (#1) #3}
+\frefformat{plain}{\fancyrefcndlabelprefix}{equation (#1)}
+\Frefformat{plain}{\fancyrefcndlabelprefix}{Equation (#1)}
 
 \begin{document}
 
@@ -300,6 +308,7 @@ Closly related are the color matching functions $\bar x$, $\bar y$, and $\bar z$
 Given a spectral power distribution $\varphi$ of a light source, its XYZ color value, also called \emph{tristimulus}, can be computed by the following equations:
 %All other color spaces, like the sRGB color space, are defined based on the CIE XYZ 1931 color space or at least provide a mapping to it.
 \begin{eqnarray}
+    \label{eqn:xyzdef}
     X &= \int\bar x(\lambda) \varphi(\lambda) \\
     Y &= \int\bar y(\lambda) \varphi(\lambda) \\
     Z &= \int\bar z(\lambda) \varphi(\lambda).
@@ -310,17 +319,102 @@ People missing one of the $L$-, $M$-, or $S$-cones entirely are called \emph{Pro
 If all cone types are present but one of them is abnormal in its response, it is referred to as \emph{Protanomaly}, \emph{Deuteranomaly}, and \emph{Tritanomaly} respectively.
 
 The idea of simulating color vision deficiencies is to mimic these changes by computing the new color value based on altered responsivity curves.
+
+Until now the whole discussion was based on actual spectral power distributions.
+Unfortunately, they are usually not available in computer graphics since colors are usually given as coordinates in sRGB space already.
+
 Brettel and Machado used measured spectral power distributions $\varphi_R$, $\varphi_G$, and $\varphi_B$ of their display devices in order to calculate the matrices.
 Yet, as we don't have those distributions at hand we are going to approximate them.
 
 %Luckily this can be expressed by a linear mapping and therefore be efficiently implemented by means of a matrix multiplication.
-For further elaboration let all functions be in the space of continuous functions over the visible wavelengths $C([390nm, 830nm])$ and let $\langle f, g \rangle = \int f(\lambda) g(\lambda) \dlambda$ denote the canonical inner product. 
-In order to approximate a given spectral power distribution $\varphi$ let $\bar x^\perp$, $\bar y^\perp$, and $\bar z^\perp$ be an orthogonal basis of the vector space defined by $\bar x$, $\bar y$, and $\bar z$ and $B^T$ the appropriate change of basis matrix satisfying $(\bar x^\perp\ \bar y^\perp\ \bar z^\perp) T = (\bar x\ \bar y\ \bar z)$.
-Then the best approximation of for example $\varphi_R$ is given by $\tilde\varphi_R = \langle \varphi_R, \bar x^\perp \rangle \bar x^\perp + \langle \varphi_R, \bar y^\perp \rangle \bar y^\perp + \langle \varphi_R, \bar z^\perp \rangle \bar z^\perp$.
+For further elaboration let all functions be in the space of continuous functions over the visible wavelengths $C([390nm, 830nm])$ and let $\langle f, g \rangle = \int f(\lambda) g(\lambda) \dlambda$ denote the canonical inner product.
+Furthermore, let it be noted that the linear combination in the function space transforms directly to the appropriate coefficient spaces for any given stimulus $\varphi$ and coefficients as in \Fref{eqn:xyzdef}:
+\begin{eqnarray}
+    \left( \bar x^\perp\ \bar y^\perp\ \bar z^\perp \right)^T
+    & =
+    T
+    \left( \bar r\ \bar g\ \bar b \right)^T \\
+    \label{eqn:coeff}
+    \Rightarrow
+    \left( X_\varphi^\perp\ Y_\varphi^\perp\ Z_\varphi^\perp \right)^T
+    & =
+    T
+    \left( R_\varphi\ G_\varphi\ B_\varphi \right)^T.
+\end{eqnarray}
 
+In order to approximate a given spectral power distribution $\varphi$ let $\bar x^\perp$, $\bar y^\perp$, and $\bar z^\perp$ be an orthogonal basis of the vector space defined by $\bar x$, $\bar y$, and $\bar z$.
+%and $S$ the appropriate change of basis matrix satisfying $(\bar x^\perp\ \bar y^\perp\ \bar z^\perp) = T (\bar x\ \bar y\ \bar z)$.
+Then, the best approximation of a color stimulus $\varphi$ is given by
+%\begin{eqnarray}
+%    \tilde\varphi & = \langle \varphi, \bar x^\perp \rangle \bar x^\perp + \langle \varphi, \bar y^\perp \rangle \bar y^\perp + \langle \varphi, \bar z^\perp \rangle \bar z^\perp \\
+%                  & = X^\perp \bar x^\perp + Y^\perp \bar y^\perp + Z^\perp \bar z^\perp
+%\end{eqnarray}
+\begin{equation}
+    \tilde\varphi = X^\perp \bar x^\perp + Y^\perp \bar y^\perp + Z^\perp \bar z^\perp.
+\end{equation}
+Especially the sRGB distributions can be expressed via
+\begin{equation}
+    (\tilde\varphi_R\ \tilde\varphi_G\ \tilde\varphi_B) = (\bar x^\perp\ \bar y^\perp\ \bar z^\perp) \tensor[_{XYZ^\perp}]{T}{_{XYZ}} \tensor[_{XYZ}]{T}{_{RGB}}
+\end{equation}
+where $\tensor[_{XYZ}]{T}{_{RGB}}$ is the sRGB definition based on the XYZ color space and $\tensor[_{XYZ^\perp}]{T}{_{XYZ}}$ the change of basis matrix to the orthonormal basis.
+By writing Equation (10) in Machado \etal~\cite{Machado2009} in the following form
+\begin{equation}
+    \Gamma = 
+    D
+    \int
+    \begin{pmatrix} WS(\lambda) \\ YB(\lambda) \\ RG(\lambda) \end{pmatrix}
+    \left( \varphi_R\ \varphi_G\ \varphi_B \right)
+    \dlambda
+\end{equation}
+and using \Fref{eqn:coeff} along with Equation (1) in Machado as well as substituting $\varphi_i$ by $\tilde\varphi_i, i \in \{R, G, B\}$ the matrix $\Gamma$ can be written as
+\begin{equation}
+    \Gamma =
+    \tensor[_{OPP}]{T}{_{LMS}}
+    \left(
+        \int
+        \begin{pmatrix} \bar l \\ \bar m \\ \bar s \end{pmatrix}
+        \left( \bar x\ \bar y\ \bar z \right)
+        \dlambda
+    \right)
+    \tensor[_{XYZ}]{T}{_{RGB}}.
+\end{equation}
 
+\begin{equation}
+    \begin{pmatrix}
+        R_S \\ G_S \\ B_S
+    \end{pmatrix}
+    =
+    \Gamma_{normal}^{-1}
+    \Gamma
+    \begin{pmatrix}
+        R \\ G \\ B
+    \end{pmatrix}
+\end{equation}
 
-This approach is similar to Machado \etal~\cite{Machado2009} but differs in not taking the opponent color space into account and giving complete freedom in shaping the anomalous responsivity functions.
+\begin{figure}
+    \begin{subfigure}[t]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{74.png}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{74_tritanope_zero.png}
+    \end{subfigure}
+    \\
+    \begin{subfigure}[t]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{74_protanope.png}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{74_protanope_zero.png}
+    \end{subfigure}
+    \\
+    \begin{subfigure}[t]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{74_deuteranope.png}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{74_deuteranope_zero.png}
+    \end{subfigure}
+\end{figure}
+
+This approach is similar to Machado \etal~\cite{Machado2009} but differs in giving complete freedom in shaping the anomalous responsivity functions.
 Machado interpolated the shifted functions in order to get more realistic results.
 Since we wanted to give the player full control over these functions this behaviour does not make sense and was therefore not included.
 
