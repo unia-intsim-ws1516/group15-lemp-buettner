@@ -10,6 +10,10 @@ public class menuScript : MonoBehaviour
 	public Button playbutton;
 	public Button quitbutton;
 	public Button levelbutton;
+	public GUIText scoreText;
+	private int score;
+	public Canvas EndMenu;
+
 
 	void Start ()  // disables different supmenus and activates the buttons
 
@@ -18,9 +22,15 @@ public class menuScript : MonoBehaviour
 		QuitMenu.enabled = false;
 		Levelmenu = Levelmenu.GetComponent<Canvas>();
 		Levelmenu.enabled = false;
+		EndMenu = EndMenu.GetComponent<Canvas>();
+		EndMenu.enabled = false;
 		playbutton = playbutton.GetComponent<Button> ();
 		quitbutton = quitbutton.GetComponent<Button> ();
 		levelbutton = levelbutton.GetComponent<Button> ();
+		score = 100;
+		UpdateScore ();
+
+
 
 
 	}
@@ -99,4 +109,15 @@ public class menuScript : MonoBehaviour
 	{
 		SceneManager.LoadScene(1); // load Hyperopia
 	}
+
+
+	void UpdateScore ()
+	{
+		scoreText.text = "Score: " + score;
+	}
+
+//	public void AddScore (int newScoreValue)
+//	{
+//		score += new
+//	}
 }

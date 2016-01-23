@@ -10,6 +10,7 @@ public class levelend2 : MonoBehaviour {
 		if(col.gameObject.name == "Player")
 			{
 			SceneManager.LoadScene (0);
+
 		}
 	}
 }
