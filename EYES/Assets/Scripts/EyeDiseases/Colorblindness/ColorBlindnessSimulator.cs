@@ -35,24 +35,35 @@ namespace eyediseases
         public float
             BlindIntensity = 1.0f;
         [SerializeField]
-        public Shader ColorBlindShader;
+        public Shader BrettelShader;
+        public Shader MachadoShader;
         private Material ColorBlindMat;
 
         public enum ColorBlindAlgorithm
         {
-            GULTI,
-            IntSim,
+            Brettel,
+            Machado,
         }
-        public ColorBlindAlgorithm BlindAlgorithm = ColorBlindAlgorithm.GULTI;
+        public ColorBlindAlgorithm BlindAlgorithm = ColorBlindAlgorithm.Machado;
 
         public GameObject ConfigDialog;
+
+        private DiscreteFunction L;
+        private DiscreteFunction M;
+        private DiscreteFunction S;
 
         public ColorBlindnessSimulator ()
             : base("Protanopia")
         {
+            Debug.Log ("ColorBlindnessSimulator::ctor");
+        }
+
+        void Awake () {
+            Debug.Log ("ColorBlindnessSimulator::Awake");
         }
 
         public void Start () {
+            Debug.Log ("ColorBlindnessSimulator::Start");
             ConfigDialog.SetActive (false);
             ConfigDialog.GetComponent<ColorBlindnessConfig>().cvdSim = this;
         }
@@ -67,8 +78,9 @@ namespace eyediseases
         protected override bool CheckResources ()
         {
             CheckSupport (false);
-            ColorBlindShader = Shader.Find ("Hidden/GULTI/ColorBlindSimulator");
-            ColorBlindMat = CreateMaterial (ColorBlindShader, ColorBlindMat);
+            BrettelShader = Shader.Find ("Hidden/CVDBrettel");
+            MachadoShader = Shader.Find ("Hidden/CVDMachado");
+            ColorBlindMat = CreateMaterial (MachadoShader, ColorBlindMat);
 
             return ColorBlindMat != null;
         }
@@ -107,18 +119,14 @@ namespace eyediseases
                 break;
             }
 
-            if (ColorBlindShader != null) {
-                DestroyImmediate (ColorBlindShader);
-            }
             switch (BlindAlgorithm) {
-            case ColorBlindAlgorithm.GULTI:
-                ColorBlindShader = Shader.Find ("Hidden/GULTI/ColorBlindSimulator");
+            case ColorBlindAlgorithm.Brettel:
+                ColorBlindMat.shader = BrettelShader;
                 break;
-            case ColorBlindAlgorithm.IntSim:
-                ColorBlindShader = Shader.Find ("Hidden/GULTI/CVDSimulator");
+            case ColorBlindAlgorithm.Machado:
+                ColorBlindMat.shader = MachadoShader;
                 break;
             }
-            ColorBlindMat.shader = ColorBlindShader;
 
             // Intensity Set
             ColorBlindMat.SetFloat ("_BlindIntensity", BlindIntensity);

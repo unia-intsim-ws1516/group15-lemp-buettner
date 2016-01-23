@@ -1,4 +1,4 @@
-Shader "Hidden/GULTI/ColorBlindSimulator"
+Shader "Hidden/CVDBrettel"
 {
 	Properties
 	{
