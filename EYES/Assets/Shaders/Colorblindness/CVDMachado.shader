@@ -1,4 +1,4 @@
-Shader "Hidden/GULTI/CVDSimulator"
+Shader "Hidden/CVDMachado"
 {
 	Properties
 	{
