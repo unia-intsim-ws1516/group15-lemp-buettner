@@ -60,12 +60,44 @@ namespace eyediseases
 
         void Awake () {
             Debug.Log ("ColorBlindnessSimulator::Awake");
+
+            // Load the responsivity functions
+            string text = System.IO.File.ReadAllText("responsivityFunctions/ciexyz31.csv");
+            string[] lines = text.Split("\n"[0]);
+
+            L.values.Clear ();
+            L.values.Capacity = lines.Length;
+            M.values.Clear ();
+            M.values.Capacity = lines.Length;
+            S.values.Clear ();
+            S.values.Capacity = lines.Length;
+
+            for (int i = 0; i < lines.Length; ++i) {
+                string[] dataText = lines[i].Split(","[0]);
+                Debug.Assert (dataText.Length >= 4);
+
+                if (0 == i) {
+                    double.TryParse (dataText[0], out L.minX);
+                } else if ((lines.Length - 1) == i) {
+                    double.TryParse (dataText[0], out L.maxX);
+                }
+
+                double tmp = 0.0f;
+                double.TryParse (dataText[1], out tmp);
+                L.values.Add (tmp);
+
+                double.TryParse (dataText[2], out tmp);
+                M.values.Add (tmp);
+
+                double.TryParse (dataText[3], out tmp);
+                M.values.Add (tmp);
+            }
         }
 
         public void Start () {
             Debug.Log ("ColorBlindnessSimulator::Start");
             ConfigDialog.SetActive (false);
-            ConfigDialog.GetComponent<ColorBlindnessConfig>().cvdSim = this;
+            ConfigDialog.GetComponent<ColorBlindnessConfig> ().cvdSim = this;
         }
 
         #region Overrides
