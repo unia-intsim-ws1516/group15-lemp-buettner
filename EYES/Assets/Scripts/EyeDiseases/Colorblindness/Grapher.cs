@@ -6,61 +6,108 @@ using eyediseases;
 
 public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private DiscreteFunction L = new DiscreteFunction ();
+    private DiscreteFunction L = null;
+    private DiscreteFunction M = null;
+    private DiscreteFunction S = null;
+
     private GameObject[] LPoints = null;
-    private List<GameObject> draggedPoints = new List<GameObject> ();
+    private GameObject[] MPoints = null;
+    private GameObject[] SPoints = null;
+
+    private List<int> draggedPoints = new List<int> ();
     private const float dragRadius = 15.0f; // in px
 
+
+    public void SetLCurve (DiscreteFunction L) {
+        this.L = L;
+        if (LPoints != null) {
+            foreach (GameObject go in LPoints) {
+                Destroy (go);
+            }
+        }
+        if (L != null) {
+            LPoints = new GameObject[L.values.Count];
+            CreatePoints(L, LPoints, Color.red);
+        }
+    }
+
+    public void SetMCurve (DiscreteFunction M) {
+        this.M = M;
+        if (MPoints != null) {
+            foreach (GameObject go in MPoints) {
+                Destroy (go);
+            }
+        }
+        if (M != null) {
+            MPoints = new GameObject[M.values.Count];
+            CreatePoints(M, MPoints, Color.green);
+        }
+    }
+
+    public void SetSCurve (DiscreteFunction S) {
+        this.S = S;
+        if (SPoints != null) {
+            foreach (GameObject go in SPoints) {
+                Destroy (go);
+            }
+        }
+        if (S != null) {
+            SPoints = new GameObject[S.values.Count];
+            CreatePoints(S, SPoints, Color.blue);
+        }
+    }
 
     void Awake () {
         Debug.Log ("Grapher::Awake");
     }
 
+
+    public void OnDisable () {
+        if (LPoints != null) {
+            foreach (GameObject go in LPoints) {
+                Destroy (go);
+            }
+        }
+        if (MPoints != null) {
+            foreach (GameObject go in MPoints) {
+                Destroy (go);
+            }
+        }
+        if (SPoints != null) {
+            foreach (GameObject go in SPoints) {
+                Destroy (go);
+            }
+        }
+    }
+
 	// Use this for initialization
 	void Start () {
         Debug.Log ("Grapher::Start");
+    }
 
-        // Load the responsivity functions
-        string text = System.IO.File.ReadAllText("responsivityFunctions/ciexyz31.csv");
-        string[] lines = text.Split("\n"[0]);
+    private void CreatePoints (DiscreteFunction f, GameObject[] points, Color color) {
+        Debug.Assert (f != null);
+        Debug.Assert (points != null);
+        Debug.Assert (f.values.Count == points.Length);
 
-        L.values.Clear ();
-        L.values.Capacity = lines.Length;
-
-        for (int i = 0; i < lines.Length; ++i) {
-            string[] dataText = lines[i].Split(","[0]);
-            Debug.Assert (dataText.Length >= 4);
-
-            if (0 == i) {
-                double.TryParse (dataText[0], out L.minX);
-            } else if ((lines.Length - 1) == i) {
-                double.TryParse (dataText[0], out L.maxX);
-            }
-
-            double tmp = 0.0f;
-            double.TryParse (dataText[1], out tmp);
-            L.values.Add (tmp);
-        }
-
-        LPoints = new GameObject[L.values.Count];
-        for (int i = 0; i < LPoints.Length; ++i) {
-            GameObject dot = LPoints[i] = new GameObject ();
+        for (int i = 0; i < points.Length; ++i) {
+            GameObject dot = points[i] = new GameObject ();
 
             dot.AddComponent<CanvasRenderer> ();
             RectTransform T = dot.AddComponent<RectTransform> ();
             T.SetParent (this.gameObject.GetComponent<RectTransform> (), false);
-            T.anchorMin = T.anchorMax = new Vector2 ((float)i/ (float)LPoints.Length, (float)L.values[i]);
+            T.anchorMin = T.anchorMax = new Vector2 ((float)i/ (float)points.Length, (float)f.values[i]);
             T.pivot = new Vector2 (0.5f, 0.0f);
             T.offsetMin = new Vector2 (-1.0f, -1.0f);
             T.offsetMax = new Vector2 (1.0f, 1.0f);
             T.anchoredPosition = new Vector2 (0.0f, 0.0f);
 
             UnityEngine.UI.RawImage image = dot.AddComponent<UnityEngine.UI.RawImage> ();
-            image.color = Color.red;
+            image.color = color;
 
-            dot.name = "Graphdot-L-" + i;
+            dot.name = "Graphdot-" + i;
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -72,25 +119,26 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
         draggedPoints.Clear ();
 
-        foreach (GameObject dot in LPoints) {
+        for (int i = 0; i < LPoints.Length; ++i) {
+            GameObject dot = LPoints[i];
             Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
             if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
-                draggedPoints.Add (dot);
+                draggedPoints.Add (i);
             }
         }
     }
 
     public void OnDrag (PointerEventData eventData) {
-        foreach (GameObject point in draggedPoints) {
+        foreach (int idx in draggedPoints) {
             Debug.Log ("I'm being dragged!!");
             RectTransform TParent = gameObject.GetComponent<RectTransform> ();
-            float width = TParent.rect.width;
             float height = TParent.rect.height;
-            RectTransform T = point.GetComponent<RectTransform> ();
-            Vector2 newPos = T.anchorMax + new Vector2 (0.0f, eventData.delta.y / height);
-            newPos.y = Mathf.Max (newPos.y, 0.0f);
-            newPos.y = Mathf.Min (newPos.y, 1.0f);
-            T.anchorMin = T.anchorMax = newPos;
+            RectTransform T = LPoints[idx].GetComponent<RectTransform> ();
+            float newF = T.anchorMax.y + (eventData.delta.y / height);
+            newF = Mathf.Max (newF, 0.0f);
+            newF = Mathf.Min (newF, 1.0f);
+            L.values[idx] = newF;
+            T.anchorMin = T.anchorMax = new Vector2 (T.anchorMax.x, newF);
         }
     }
 

@@ -12,7 +12,8 @@ namespace eyediseases
 
         public GameObject ConfigDialog;
         [HideInInspector] public ColorBlindnessSimulator cvdSim;
-        [HideInInspector] public DiscreteFunction L;
+
+        public Grapher grapher = null;
 
         void Awake () {
             Debug.Log ("ColorBlindnessConfig::Awake");
@@ -20,7 +21,22 @@ namespace eyediseases
 
         public void Start () {
             Debug.Log ("ColorBlindnessConfig::Start");
-            ConfigDialog.SetActive (false);
+        }
+
+        public void SetLCurve (DiscreteFunction L) {
+            grapher.SetLCurve(L);
+        }
+
+        public void SetMCurve (DiscreteFunction M) {
+            grapher.SetMCurve(M);
+        }
+
+        public void SetSCurve (DiscreteFunction S) {
+            grapher.SetSCurve(S);
+        }
+
+        public void SetActive (bool active) {
+            gameObject.SetActive (active);
         }
 
         public void OnProtanopiaClicked (bool enabled) {
