@@ -7,7 +7,7 @@ public class levelend2 : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 
 	{
-		if(col.gameObject.name == "Player")
+		if(col.gameObject.name == "Player_old")
 			{
 			
 			menuScript.score = 500 + (int)lefttime.timeRemaining;
