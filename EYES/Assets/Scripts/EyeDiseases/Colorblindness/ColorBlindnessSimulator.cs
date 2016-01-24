@@ -52,59 +52,49 @@ namespace eyediseases
         private DiscreteFunction M = new DiscreteFunction ();
         private DiscreteFunction S = new DiscreteFunction ();
 
+        private DiscreteFunction X = new DiscreteFunction ();
+        private DiscreteFunction Y = new DiscreteFunction ();
+        private DiscreteFunction Z = new DiscreteFunction ();
+
+        private Matrix4x4 XYZ2RGB = new Matrix4x4 ();
+        private Matrix4x4 GammaNormal = new Matrix4x4 ();
+
         public ColorBlindnessSimulator ()
             : base("Protanopia")
         {
             Debug.Log ("ColorBlindnessSimulator::ctor");
+            XYZ2RGB.SetRow (0, new Vector4  (0.4124f,  0.3576f,  0.1805f, 0.0f));
+            XYZ2RGB.SetRow (1, new Vector4 ( 0.2126f,  0.7152f,  0.0722f, 0.0f));
+            XYZ2RGB.SetRow (2, new Vector4 ( 0.0193f,  0.1192f,  0.9505f, 0.0f));
+            XYZ2RGB.SetRow (3, new Vector4 (    0.0f,     0.0f,     0.0f, 1.0f));
         }
 
         void Awake () {
             Debug.Log ("ColorBlindnessSimulator::Awake");
 
-            // Load the responsivity functions
-            string text = System.IO.File.ReadAllText("responsivityFunctions/ciexyz31.csv");
-            string[] lines = text.Split("\n"[0]);
+            L.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
+            M.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
+            S.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
 
-            L.values.Clear ();
-            L.values.Capacity = lines.Length;
-            M.values.Clear ();
-            M.values.Capacity = lines.Length;
-            S.values.Clear ();
-            S.values.Capacity = lines.Length;
+            X.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 1);
+            Y.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 2);
+            Z.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 3);
 
-            for (int i = 0; i < lines.Length; ++i) {
-                string[] dataText = lines[i].Split(","[0]);
-                Debug.Assert (dataText.Length >= 4);
+            GammaNormal.m00 = (L * X).integral();
+            GammaNormal.m01 = (L * Y).integral();
+            GammaNormal.m02 = (L * Z).integral();
+            GammaNormal.m03 = 0.0f;
+            GammaNormal.m10 = (M * X).integral();
+            GammaNormal.m11 = (M * Y).integral();
+            GammaNormal.m12 = (M * Z).integral();
+            GammaNormal.m13 = 0.0f;
+            GammaNormal.m20 = (S * X).integral();
+            GammaNormal.m21 = (S * Y).integral();
+            GammaNormal.m22 = (S * Z).integral();
+            GammaNormal.m23 = 0.0f;
+            GammaNormal.SetRow (3, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
 
-                if (0 == i) {
-                    float.TryParse (dataText[0], out L.minX);
-                } else if ((lines.Length - 1) == i) {
-                    float.TryParse (dataText[0], out L.maxX);
-                }
-
-                float tmp = 0.0f;
-                float.TryParse (dataText[1], out tmp);
-                L.values.Add (tmp);
-
-                float.TryParse (dataText[2], out tmp);
-                M.values.Add (tmp);
-
-                float.TryParse (dataText[3], out tmp);
-                S.values.Add (tmp);
-            }
-
-            // normalize the curves
-            float maxF = float.MinValue;
-            foreach (float v in L.values) { maxF = Mathf.Max (maxF, v);  }
-            for (int i = 0; i < L.values.Count; ++i) { L.values[i] /= maxF; }
-
-            maxF = float.MinValue;
-            foreach (float v in M.values) { maxF = Mathf.Max (maxF, v);  }
-            for (int i = 0; i < M.values.Count; ++i) { M.values[i] /= maxF; }
-
-            maxF = float.MinValue;
-            foreach (float v in S.values) { maxF = Mathf.Max (maxF, v);  }
-            for (int i = 0; i < S.values.Count; ++i) { S.values[i] /= maxF; }
+            GammaNormal = GammaNormal * XYZ2RGB;
         }
 
         public void Start () {
@@ -126,8 +116,6 @@ namespace eyediseases
         protected override bool CheckResources ()
         {
             CheckSupport (false);
-//            BrettelShader = Shader.Find ("Hidden/CVDBrettel");
-//            MachadoShader = Shader.Find ("Hidden/CVDMachado");
             ColorBlindMat = CreateMaterial (MachadoShader, ColorBlindMat);
 
             return ColorBlindMat != null;
@@ -158,26 +146,57 @@ namespace eyediseases
                 }
             }
 
-            switch (BlindMode) {
-            case ColorBlindMode.Protanope:
-                ColorBlindMat.shaderKeywords = new string[] { "CB_TYPE_ONE" };
-                break;
-            case ColorBlindMode.Deuteranope:
-                ColorBlindMat.shaderKeywords = new string[] { "CB_TYPE_TWO" };
-                break;
-            }
+            if (ColorBlindAlgorithm.Brettel == BlindAlgorithm) {
 
-            switch (BlindAlgorithm) {
-            case ColorBlindAlgorithm.Brettel:
                 ColorBlindMat.shader = BrettelShader;
-                break;
-            case ColorBlindAlgorithm.Machado:
-                ColorBlindMat.shader = MachadoShader;
-                break;
-            }
 
-            // Intensity Set
-            ColorBlindMat.SetFloat ("_BlindIntensity", BlindIntensity);
+                switch (BlindMode) {
+                case ColorBlindMode.Protanope:
+                    ColorBlindMat.shaderKeywords = new string[] { "CB_TYPE_ONE" };
+                    break;
+                case ColorBlindMode.Deuteranope:
+                    ColorBlindMat.shaderKeywords = new string[] { "CB_TYPE_TWO" };
+                    break;
+                }
+
+                // Intensity Set
+                ColorBlindMat.SetFloat ("_BlindIntensity", BlindIntensity);
+
+            } else if (ColorBlindAlgorithm.Machado == BlindAlgorithm) {
+                
+                ColorBlindMat.shader = MachadoShader;
+
+                Matrix4x4 Gamma = new Matrix4x4 ();
+                Gamma.m00 = (L * X).integral();
+                Gamma.m01 = (L * Y).integral();
+                Gamma.m02 = (L * Z).integral();
+                Gamma.m03 = 0.0f;
+                Gamma.m10 = (M * X).integral();
+                Gamma.m11 = (M * Y).integral();
+                Gamma.m12 = (M * Z).integral();
+                Gamma.m13 = 0.0f;
+                Gamma.m20 = (S * X).integral();
+                Gamma.m21 = (S * Y).integral();
+                Gamma.m22 = (S * Z).integral();
+                Gamma.m23 = 0.0f;
+                Gamma.SetRow (3, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
+
+                Matrix4x4 CVD = GammaNormal.inverse * Gamma * XYZ2RGB;
+
+                Vector4 tmp = CVD.GetRow (0);
+                float sum = (tmp.x + tmp.y + tmp.z);
+                CVD.SetRow (0, tmp / sum);
+
+                tmp = CVD.GetRow (1);
+                sum = (tmp.x + tmp.y + tmp.z);
+                CVD.SetRow (1, tmp / sum);
+
+                tmp = CVD.GetRow (2);
+                sum = (tmp.x + tmp.y + tmp.z);
+                CVD.SetRow (2, tmp / sum);
+
+                ColorBlindMat.SetMatrix ("_CVD", CVD);
+            }
 
             Graphics.Blit (_src, _dst, ColorBlindMat);
         }
