@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_LightmapsMode: 2
   m_GISettings:
     serializedVersion: 2
@@ -134,6 +134,8 @@ MonoBehaviour:
   playbutton: {fileID: 602260427}
   quitbutton: {fileID: 2008300848}
   levelbutton: {fileID: 392610171}
+  scoreText: {fileID: 0}
+  EndMenu: {fileID: 0}
 --- !u!114 &7465713
 MonoBehaviour:
   m_ObjectHideFlags: 0
