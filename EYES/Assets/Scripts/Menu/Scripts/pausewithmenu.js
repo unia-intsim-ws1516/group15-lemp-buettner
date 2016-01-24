@@ -22,15 +22,15 @@ if(menuFont != null){
 
 }
 
-function Update () { // 
+function Update () {
 
 var mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-if(Input.GetKeyDown("escape")){ // Pressing ESC activates the Pause menu
+if(Input.GetKeyDown("escape")){
 	doPause();
 }
 
-if(isPaused == true){  // Checking whitch button got selectet and A: pause the game or B: load the menu
+if(isPaused == true){
 	if(Input.GetMouseButtonDown(0)){
 		if(mousePos.y > 0.53 && mousePos.y < 0.8){
 			doPause();
@@ -77,7 +77,7 @@ if(Input.GetMouseButtonDown(0)){
 
 }
 
-function doPause () {  // stops the time and deactivates the firstperson controller
+function doPause () {
 
 if(isPaused == false){
 	isPaused = true;
