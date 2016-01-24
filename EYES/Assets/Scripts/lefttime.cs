@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class lefttime : MonoBehaviour {
-	float timeRemaining = 20.0f;
+	public static float timeRemaining = 400.0f;
 
 	void Update () {
 		timeRemaining -= Time.deltaTime;
