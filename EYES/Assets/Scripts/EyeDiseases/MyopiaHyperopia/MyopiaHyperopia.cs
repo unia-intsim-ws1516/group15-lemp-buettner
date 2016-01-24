@@ -15,6 +15,8 @@ namespace eyediseases
         private DepthOfField dof = null;
         private Vector3 screenpoint = Vector3.zero;
 
+        public MyopiaHyperopiaConfig ConfigDialog;
+
         public MyopiaHyperopia ()
             : base("Myopia")
         {
@@ -22,6 +24,8 @@ namespace eyediseases
 
     	// Use this for initialization
     	void Start () {
+            Debug.Log ("MyopiaHyperopia::Start");
+
             playerCam = GetComponent<Camera> ();
             dof = GetComponent<DepthOfField> ();
             screenpoint = new Vector3(playerCam.pixelWidth / 2,
@@ -35,6 +39,9 @@ namespace eyediseases
             dof.maxBlurSize = 12.83f;
             dof.nearBlur = true;
             dof.foregroundOverlap = 10.0f;
+
+            ConfigDialog.mhSim = this;
+            ConfigDialog.SetActive (false);
     	}
     	
     	// Update is called once per frame
@@ -78,12 +85,20 @@ namespace eyediseases
             }
     	}
 
+        public void OnDisable () {
+            dof.enabled = false;
+        }
+
+        public void OnEnable () {
+            dof.enabled = true;
+        }
+
         public override void showConfig () {
+            ConfigDialog.SetActive (true);
         }
 
         protected override bool CheckResources () {
             return true;
         }
     }
-
 }
