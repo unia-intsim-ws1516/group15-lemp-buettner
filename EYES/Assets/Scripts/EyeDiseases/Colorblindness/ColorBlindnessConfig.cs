@@ -20,6 +20,9 @@ namespace eyediseases
         public Toggle LChk;
         public Toggle MChk;
         public Toggle SChk;
+        public Button ResetLBtn;
+        public Button ResetMBtn;
+        public Button ResetSBtn;
         public GameObject Graph;
 
         [HideInInspector] public ColorBlindnessSimulator cvdSim;
@@ -27,23 +30,6 @@ namespace eyediseases
 
         void Awake () {
             Debug.Log ("ColorBlindnessConfig::Awake");
-            MachadoChk.isOn = false;
-            MachadoChk.interactable = false;
-            BrettelChk.isOn = false;
-            BrettelChk.interactable = false;
-            ProtanopiaChk.isOn = false;
-            ProtanopiaChk.interactable = false;
-            DeuteranopiaChk.isOn = false;
-            DeuteranopiaChk.interactable = false;
-            TritanopiaChk.isOn = false;
-            TritanopiaChk.interactable = false;
-            SeverityScroll.interactable = false;
-            LChk.isOn = false;
-            LChk.interactable = false;
-            MChk.isOn = false;
-            MChk.interactable = false;
-            SChk.isOn = false;
-            SChk.interactable = false;
             Graph.SetActive (false);
             grapher = Graph.GetComponent<Grapher> ();
         }
@@ -66,6 +52,18 @@ namespace eyediseases
 
         public void SetActive (bool active) {
             gameObject.SetActive (active);
+        }
+
+        public void OnResetLClicked () {
+            cvdSim.ResetL ();
+        }
+
+        public void OnResetMClicked () {
+            cvdSim.ResetM ();
+        }
+
+        public void OnResetSClicked () {
+            cvdSim.ResetS ();
         }
 
         public void OnProtanopiaClicked (bool enabled) {
@@ -91,6 +89,17 @@ namespace eyediseases
             if (enabled) {
                 Debug.Log ("Algorithm is Brettel.");
                 cvdSim.BlindAlgorithm = ColorBlindnessSimulator.ColorBlindAlgorithm.Brettel;
+
+                BrettelChk.interactable = true;
+                MachadoChk.interactable = true;
+                ProtanopiaChk.interactable = true;
+                DeuteranopiaChk.interactable = true;
+                TritanopiaChk.interactable = false;
+                SeverityScroll.interactable = true;
+                LChk.interactable = false;
+                MChk.interactable = false;
+                SChk.interactable = false;
+                Graph.SetActive (false);
             }
         }
 
@@ -99,9 +108,29 @@ namespace eyediseases
                 Debug.Log ("Algorithm is Machado.");
                 cvdSim.BlindAlgorithm = ColorBlindnessSimulator.ColorBlindAlgorithm.Machado;
 
+                BrettelChk.interactable = true;
+                MachadoChk.interactable = true;
+                ProtanopiaChk.interactable = false;
+                DeuteranopiaChk.interactable = false;
+                TritanopiaChk.interactable = false;
+                SeverityScroll.interactable = false;
+                LChk.interactable = true;
+                MChk.interactable = true;
+                SChk.interactable = true;
+                Graph.SetActive (true);
             }
         }
 
-    }
+        public void OnEditLClicked (bool enabled) {
+            grapher.EditL (enabled);
+        }
 
+        public void OnEditMClicked (bool enabled) {
+            grapher.EditM (enabled);
+        }
+
+        public void OnEditSClicked (bool enabled) {
+            grapher.EditS (enabled);
+        }
+    }
 } /* namespace eyediseases */

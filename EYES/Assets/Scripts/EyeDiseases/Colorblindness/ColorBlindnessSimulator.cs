@@ -11,6 +11,7 @@ namespace eyediseases
         {
             Protanope,
             Deuteranope,
+            Tritanope,
         }
         [SerializeField]
         public ColorBlindMode
@@ -44,9 +45,13 @@ namespace eyediseases
             Brettel,
             Machado,
         }
-        public ColorBlindAlgorithm BlindAlgorithm = ColorBlindAlgorithm.Machado;
+        public ColorBlindAlgorithm BlindAlgorithm = ColorBlindAlgorithm.Brettel;
 
         public ColorBlindnessConfig ConfigDialog;
+
+        private DiscreteFunction Loriginal = new DiscreteFunction ();
+        private DiscreteFunction Moriginal = new DiscreteFunction ();
+        private DiscreteFunction Soriginal = new DiscreteFunction ();
 
         private DiscreteFunction L = new DiscreteFunction ();
         private DiscreteFunction M = new DiscreteFunction ();
@@ -75,6 +80,10 @@ namespace eyediseases
             L.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
             M.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
             S.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
+
+            Loriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
+            Moriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
+            Soriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
 
             X.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 1);
             Y.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 2);
@@ -107,10 +116,32 @@ namespace eyediseases
 
 
         public override void showConfig () {
+            // Important to setActive(true) first in order to get the scripts executed
+            ConfigDialog.SetActive (true);
             ConfigDialog.SetLCurve (L);
             ConfigDialog.SetMCurve (M);
             ConfigDialog.SetSCurve (S);
-            ConfigDialog.SetActive (true);
+        }
+
+        public void ResetL () {
+            for (int i = 0; i < L.values.Count; ++i) {
+                L.values[i] = Loriginal.values[i];
+            }
+            ConfigDialog.SetLCurve (L);
+        }
+
+        public void ResetM () {
+            for (int i = 0; i < M.values.Count; ++i) {
+                M.values[i] = Moriginal.values[i];
+            }
+            ConfigDialog.SetMCurve (M);
+        }
+
+        public void ResetS () {
+            for (int i = 0; i < S.values.Count; ++i) {
+                S.values[i] = Soriginal.values[i];
+            }
+            ConfigDialog.SetSCurve (S);
         }
         
         protected override bool CheckResources ()

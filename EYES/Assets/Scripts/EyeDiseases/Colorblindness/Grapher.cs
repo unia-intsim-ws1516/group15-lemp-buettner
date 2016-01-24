@@ -14,7 +14,13 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
     private GameObject[] MPoints = null;
     private GameObject[] SPoints = null;
 
-    private List<int> draggedPoints = new List<int> ();
+    /* Null equas not draggable */
+    private List<int> draggedPointsL = new List<int> ();
+    /* Null equas not draggable */
+    private List<int> draggedPointsM = new List<int> ();
+    /* Null equas not draggable */
+    private List<int> draggedPointsS = new List<int> ();
+
     private const float dragRadius = 15.0f; // in px
 
 
@@ -61,8 +67,7 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
         Debug.Log ("Grapher::Awake");
     }
 
-
-    public void OnDisable () {
+    public void OnDestroy () {
         if (LPoints != null) {
             foreach (GameObject go in LPoints) {
                 Destroy (go);
@@ -77,6 +82,30 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
             foreach (GameObject go in SPoints) {
                 Destroy (go);
             }
+        }
+    }
+
+    public void EditL (bool edit) {
+        if (edit) {
+            draggedPointsL = new List<int> ();
+        } else {
+            draggedPointsL = null;
+        }
+    }
+
+    public void EditM (bool edit) {
+        if (edit) {
+            draggedPointsM = new List<int> ();
+        } else {
+            draggedPointsM = null;
+        }
+    }
+
+    public void EditS (bool edit) {
+        if (edit) {
+            draggedPointsS = new List<int> ();
+        } else {
+            draggedPointsS = null;
         }
     }
 
@@ -117,27 +146,68 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
     public void OnBeginDrag (PointerEventData eventData) {
         //Debug.Log ("OnBeginDrag: Click(" + eventData.pressPosition + "), dot(" + dot.transform.position + ")");
 
-        draggedPoints.Clear ();
+        if (draggedPointsL != null) {
+            
+            draggedPointsL.Clear ();
+            for (int i = 0; i < LPoints.Length; ++i) {
+                GameObject dot = LPoints[i];
+                Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
+                if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
+                    draggedPointsL.Add (i);
+                }
+            }
+        }
 
-        for (int i = 0; i < LPoints.Length; ++i) {
-            GameObject dot = LPoints[i];
-            Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
-            if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
-                draggedPoints.Add (i);
+
+        if (draggedPointsM != null) {
+            draggedPointsM.Clear ();
+            for (int i = 0; i < MPoints.Length; ++i) {
+                GameObject dot = MPoints[i];
+                Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
+                if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
+                    draggedPointsM.Add (i);
+                }
+            }
+        }
+
+
+        if (draggedPointsS != null) {
+            draggedPointsS.Clear ();
+            for (int i = 0; i < SPoints.Length; ++i) {
+                GameObject dot = SPoints[i];
+                Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
+                if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
+                    draggedPointsS.Add (i);
+                }
             }
         }
     }
 
     public void OnDrag (PointerEventData eventData) {
-        foreach (int idx in draggedPoints) {
-            Debug.Log ("I'm being dragged!!");
+        if (draggedPointsL != null) {
+            DragPoints (LPoints, draggedPointsL, L, eventData.delta);
+        }
+        if (draggedPointsM != null) {
+            DragPoints (MPoints, draggedPointsM, M, eventData.delta);
+        }
+        if (draggedPointsS != null) {
+            DragPoints (SPoints, draggedPointsS, S, eventData.delta);
+        }
+    }
+
+    /**
+     * Updates the points in points specified by indices in y-direction and
+     * updates the appropriate function value of f as well.
+     */
+    void DragPoints (GameObject[] points, List<int> indices, DiscreteFunction f, Vector2 delta) {
+        foreach (int idx in indices) {
             RectTransform TParent = gameObject.GetComponent<RectTransform> ();
             float height = TParent.rect.height;
-            RectTransform T = LPoints[idx].GetComponent<RectTransform> ();
-            float newF = T.anchorMax.y + (eventData.delta.y / height);
+            RectTransform T = points[idx].GetComponent<RectTransform> ();
+            float newF = T.anchorMax.y + (delta.y / height);
             newF = Mathf.Max (newF, 0.0f);
             newF = Mathf.Min (newF, 1.0f);
-            L.values[idx] = newF;
+            f.values[idx] = newF;
             T.anchorMin = T.anchorMax = new Vector2 (T.anchorMax.x, newF);
         }
     }
