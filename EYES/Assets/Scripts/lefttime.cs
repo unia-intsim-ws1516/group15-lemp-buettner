@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class lefttime : MonoBehaviour {
-	float timeRemaining = 20.0f;
+	public static float timeRemaining = 400.0f;
 
 	void Update () {
 		timeRemaining -= Time.deltaTime;
@@ -14,7 +14,7 @@ public class lefttime : MonoBehaviour {
 			GUI.Box(new Rect(0, 65, 100, 20), "" + "Time left:  " + (int)timeRemaining);
 		}
 		else{
-			menuScript.score = 300 + (int)timeReamaining;
+			menuScript.score = 300;
 			SceneManager.LoadScene(3);
 
 		}

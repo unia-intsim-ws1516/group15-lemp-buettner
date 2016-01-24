@@ -10,7 +10,7 @@ public class levelend2 : MonoBehaviour {
 		if(col.gameObject.name == "Player")
 			{
 			
-			menuScript.score = 500;
+			menuScript.score = 500 + (int)lefttime.timeRemaining;
 			SceneManager.LoadScene(3);
 
 
