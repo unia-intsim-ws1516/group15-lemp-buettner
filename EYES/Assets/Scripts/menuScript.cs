@@ -11,7 +11,7 @@ public class menuScript : MonoBehaviour
 	public Button quitbutton;
 	public Button levelbutton;
 	public GUIText scoreText;
-	public static double score;
+	public static int score;
 	public Canvas EndMenu;
 
 
@@ -27,7 +27,7 @@ public class menuScript : MonoBehaviour
 		playbutton = playbutton.GetComponent<Button> ();
 		quitbutton = quitbutton.GetComponent<Button> ();
 		levelbutton = levelbutton.GetComponent<Button> ();
-		score = 100;
+		menuScript.score = 100;
 		UpdateScore ();
 
 
