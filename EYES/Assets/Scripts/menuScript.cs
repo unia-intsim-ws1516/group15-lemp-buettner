@@ -14,6 +14,8 @@ public class menuScript : MonoBehaviour
 	public static int score;
 	public static int finalscore;
 	public Canvas EndMenu;
+	public Canvas Diseasemenu;
+	public Button Infobutton;
 
 
 	void Start ()  // disables different supmenus and activates the buttons
@@ -23,11 +25,14 @@ public class menuScript : MonoBehaviour
 		QuitMenu.enabled = false;
 		Levelmenu = Levelmenu.GetComponent<Canvas>();
 		Levelmenu.enabled = false;
+		Diseasemenu = Diseasemenu.GetComponent<Canvas>();
+		Diseasemenu.enabled = false;
 		EndMenu = EndMenu.GetComponent<Canvas>();
 		EndMenu.enabled = false;
 		playbutton = playbutton.GetComponent<Button> ();
 		quitbutton = quitbutton.GetComponent<Button> ();
 		levelbutton = levelbutton.GetComponent<Button> ();
+		Infobutton = Infobutton.GetComponent<Button> ();
 
 
 
@@ -43,6 +48,8 @@ public class menuScript : MonoBehaviour
 		quitbutton.enabled = false;
 		levelbutton.enabled = false;
 		Levelmenu.enabled = false;
+		Infobutton.enabled = false;
+		Diseasemenu.enabled = false;
 	}
 
 	public void NoPress() //this function will be used for our "NO" button in our Quit Menu
@@ -53,6 +60,9 @@ public class menuScript : MonoBehaviour
 		playbutton.enabled = true; //enable the Play and Exit buttons again so they can be clicked
 		quitbutton.enabled = true;
 		levelbutton.enabled = true;
+		Infobutton.enabled = true;
+		Diseasemenu.enabled = false;
+
 	
 
 
@@ -83,7 +93,21 @@ public class menuScript : MonoBehaviour
 		playbutton.enabled = false; //
 		quitbutton.enabled = false;
 		levelbutton.enabled = false;
+		Infobutton.enabled = false;
+		Diseasemenu.enabled = false;
 	}
+
+	public void Infopress () // this will be used for the info menu
+	{
+		Diseasemenu.enabled = true;
+		Levelmenu.enabled = false; //
+		playbutton.enabled = false; //
+		quitbutton.enabled = false;
+		levelbutton.enabled = false;
+		Infobutton.enabled = false;
+
+	}
+
 
 	public void levelColorblindness () // this will be used for loading the level 1 ( Colorblindness)
 	{
@@ -110,10 +134,30 @@ public class menuScript : MonoBehaviour
 		SceneManager.LoadScene(1); // load Hyperopia
 	}
 
+	public void infocolorblindness ()
+	{
+		Application.OpenURL ("https://nei.nih.gov/health/color_blindness/facts_about");
+	}
+
+	public void infoglaucoma ()
+	{
+		Application.OpenURL ("https://nei.nih.gov/health/glaucoma/glaucoma_facts");
+	}
 
 
-	public void AddScore (int newScoreValue)
-{
-		score += 500;
-}
+	public void infocataract ()
+	{
+		Application.OpenURL ("https://nei.nih.gov/health/cataract/cataract_facts");
+	}
+
+	public void infomyopia ()
+	{
+		Application.OpenURL ("https://nei.nih.gov/health/errors/myopia");
+	}
+
+	public void infohyperopia ()
+	{
+		Application.OpenURL ("https://nei.nih.gov/health/errors/hyperopia");
+	}
+
 }
