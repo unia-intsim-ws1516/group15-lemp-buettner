@@ -11,10 +11,9 @@ namespace eyediseases
     {
         public float diopters = -3.2f;
 
-        private Camera camera = null;
+        private Camera playerCam = null;
         private DepthOfField dof = null;
         private Vector3 screenpoint = Vector3.zero;
-        private Vector2 focalDistanceRange = new Vector2 (0.15f, float.MaxValue);
 
         public MyopiaHyperopia ()
             : base("Myopia")
@@ -23,10 +22,10 @@ namespace eyediseases
 
     	// Use this for initialization
     	void Start () {
-            camera = GetComponent<Camera> ();
+            playerCam = GetComponent<Camera> ();
             dof = GetComponent<DepthOfField> ();
-            screenpoint = new Vector3(camera.pixelWidth / 2,
-                camera.pixelHeight / 2,
+            screenpoint = new Vector3(playerCam.pixelWidth / 2,
+                playerCam.pixelHeight / 2,
                 0.0f);
 
             dof.highResolution = true;
@@ -40,7 +39,7 @@ namespace eyediseases
     	
     	// Update is called once per frame
     	void Update () {
-            Ray viewray = camera.ScreenPointToRay(screenpoint);
+            Ray viewray = playerCam.ScreenPointToRay(screenpoint);
 
             RaycastHit hitInfo = new RaycastHit ();
             const float maxDist = 10000.0f;

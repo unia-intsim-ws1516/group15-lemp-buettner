@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 364a13ef71f9b40e58990911b66a39cd
-timeCreated: 1452603333
+timeCreated: 1453551461
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - ColorBlindShader: {fileID: 4800000, guid: 88e723f30bf154fbe91c8f4fe29a7ee9, type: 3}
+  - BrettelShader: {fileID: 4800000, guid: 64a2842647c348c4288265646a2e572b, type: 3}
+  - MachadoShader: {fileID: 4800000, guid: 26520f694caf5e24296c7d9975db3788, type: 3}
   - ConfigDialog: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
