@@ -108,8 +108,10 @@ namespace eyediseases
 
         public void Start () {
             Debug.Log ("ColorBlindnessSimulator::Start");
-            ConfigDialog.cvdSim = this;
-            ConfigDialog.SetActive (false);
+			if (ConfigDialog != null) {
+				ConfigDialog.cvdSim = this;
+				ConfigDialog.SetActive (false);
+			}
         }
 
         #region Overrides
@@ -117,31 +119,39 @@ namespace eyediseases
 
         public override void showConfig () {
             // Important to setActive(true) first in order to get the scripts executed
-            ConfigDialog.SetActive (true);
-            ConfigDialog.SetLCurve (L);
-            ConfigDialog.SetMCurve (M);
-            ConfigDialog.SetSCurve (S);
+			if (ConfigDialog != null) {
+				ConfigDialog.SetActive (true);
+				ConfigDialog.SetLCurve (L);
+				ConfigDialog.SetMCurve (M);
+				ConfigDialog.SetSCurve (S); 
+			}
         }
 
         public void ResetL () {
             for (int i = 0; i < L.values.Count; ++i) {
                 L.values[i] = Loriginal.values[i];
             }
-            ConfigDialog.SetLCurve (L);
+			if (ConfigDialog != null) {
+				ConfigDialog.SetLCurve (L);
+			}
         }
 
         public void ResetM () {
             for (int i = 0; i < M.values.Count; ++i) {
                 M.values[i] = Moriginal.values[i];
             }
-            ConfigDialog.SetMCurve (M);
+			if (ConfigDialog != null) {
+				ConfigDialog.SetMCurve (M);
+			}
         }
 
         public void ResetS () {
             for (int i = 0; i < S.values.Count; ++i) {
                 S.values[i] = Soriginal.values[i];
             }
-            ConfigDialog.SetSCurve (S);
+			if (ConfigDialog != null) {
+				ConfigDialog.SetSCurve (S);
+			}
         }
         
         protected override bool CheckResources ()
