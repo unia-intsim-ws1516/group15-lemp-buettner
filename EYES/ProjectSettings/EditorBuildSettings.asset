@@ -10,6 +10,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Colorblindness.unity
   - enabled: 1
-    path: Assets/Scenes/sample 3.unity
+    path: Assets/Scenes/Glaucoma.unity
+  - enabled: 1
+    path: Assets/Scenes/Cataract.unity
+  - enabled: 1
+    path: Assets/Scenes/Myopia.unity
+  - enabled: 1
+    path: Assets/Scenes/Hyperopia.unity
+  - enabled: 1
+    path: Assets/Scenes/Explorationlevel.unity
   - enabled: 1
     path: Assets/Scenes/pointoverview.unity
