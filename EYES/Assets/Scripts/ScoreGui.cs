@@ -6,12 +6,9 @@ public class ScoreGui : MonoBehaviour {
 
 	public Text scoreText;
 
-
 	void Start () {
-		Score.score += 0 + (int)lefttime.timeRemaining;
-		scoreText.text = "Score: " + Score.score;
+        Score.score += (int)lefttime.timeRemaining;
+        scoreText.text = "Score: " + Score.score;
 	}
-
-
 }
 

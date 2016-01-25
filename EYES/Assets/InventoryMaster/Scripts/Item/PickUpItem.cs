@@ -30,6 +30,9 @@ public class PickUpItem : MonoBehaviour
 					_inventory.stackableSettings ();
 					Destroy (this.gameObject);
 
+                    if (Score.shoppingList.Contains(item.itemID)) {
+                        Score.score += 100;
+                    }
 				}
 			}
 		}
