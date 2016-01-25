@@ -13,7 +13,7 @@ namespace eyediseases
         private BlurOptimized blur = null;
 
         public Cateract ()
-            : base ("Cateract")
+            : base ("Cataract")
         {}
 
         void Awake () {
