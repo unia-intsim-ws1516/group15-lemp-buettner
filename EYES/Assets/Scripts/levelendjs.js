@@ -5,7 +5,7 @@ function OnTriggerEnter (Coll : Collider)
 	if(Coll.tag == "Player")
 
 	{
-		Application.LoadLevel(3);
+		Application.LoadLevel(7);
 
 	}
 }

@@ -119,22 +119,22 @@ public class menuScript : MonoBehaviour
 
 	public void levelCataract () // this will be used for loading the level 3 (Cataract)
 	{
-		SceneManager.LoadScene(1); // load Cataract
+		SceneManager.LoadScene(3); // load Cataract
 	}
 
 	public void levelMyopia ()  // this will be used for loading the level 4 (Myopia)
 	{
-		SceneManager.LoadScene(1); // load Myopia
+		SceneManager.LoadScene(4); // load Myopia
 	}
 
 	public void levelHyperopia ()  // this will be used for loading the level 5 (Hyperopia)
 	{
-		SceneManager.LoadScene(1); // load Hyperopia
+		SceneManager.LoadScene(5); // load Hyperopia
 	}
 
 	public void levelexploration ()  // this will be used for loading the Explorationlevel
 	{
-		SceneManager.LoadScene(1); // load Exploration level
+		SceneManager.LoadScene(6); // load Exploration level
 	}
 
 	public void infocolorblindness ()

@@ -15,7 +15,7 @@ public class lefttime : MonoBehaviour {
 		}
 		else{
 			
-			SceneManager.LoadScene(3);
+			SceneManager.LoadScene(7);
 
 		}
 	}
