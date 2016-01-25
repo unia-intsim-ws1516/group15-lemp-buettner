@@ -11,8 +11,6 @@ public class menuScript : MonoBehaviour
 	public Button quitbutton;
 	public Button levelbutton;
 	public GUIText scoreText;
-	public static int score;
-	public static int finalscore;
 	public Canvas EndMenu;
 	public Canvas Diseasemenu;
 	public Button Infobutton;
@@ -132,6 +130,11 @@ public class menuScript : MonoBehaviour
 	public void levelHyperopia ()  // this will be used for loading the level 5 (Hyperopia)
 	{
 		SceneManager.LoadScene(1); // load Hyperopia
+	}
+
+	public void levelexploration ()  // this will be used for loading the Explorationlevel
+	{
+		SceneManager.LoadScene(1); // load Exploration level
 	}
 
 	public void infocolorblindness ()
