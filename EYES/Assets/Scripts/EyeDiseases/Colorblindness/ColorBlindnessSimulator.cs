@@ -14,8 +14,7 @@ namespace eyediseases
             Tritanope,
         }
         [SerializeField]
-        public ColorBlindMode
-            BlindMode_ = ColorBlindMode.Protanope;
+        public ColorBlindMode BlindMode_ = ColorBlindMode.Protanope;
 
         public ColorBlindMode BlindMode {
             get { return BlindMode_; }
@@ -33,8 +32,7 @@ namespace eyediseases
         }
 
         [SerializeField]
-        public float
-            BlindIntensity = 1.0f;
+        public float BlindIntensity = 1.0f;
         [SerializeField]
         public Shader BrettelShader;
         public Shader MachadoShader;
@@ -45,6 +43,7 @@ namespace eyediseases
             Brettel,
             Machado,
         }
+
         public ColorBlindAlgorithm BlindAlgorithm = ColorBlindAlgorithm.Brettel;
 
         public ColorBlindnessConfig ConfigDialog;
@@ -77,17 +76,17 @@ namespace eyediseases
         void Awake () {
             Debug.Log ("ColorBlindnessSimulator::Awake");
 
-            L.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
-            M.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
-            S.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
+            L.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 1);
+            M.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 2);
+            S.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 3);
 
-            Loriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
-            Moriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
-            Soriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
+            Loriginal.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 1);
+            Moriginal.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 2);
+            Soriginal.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 3);
 
-            X.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 1);
-            Y.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 2);
-            Z.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 3);
+            X.LoadFromCSV ("Assets/responsivityFunctions/ciexyz31.csv", 0, 1);
+            Y.LoadFromCSV ("Assets/responsivityFunctions/ciexyz31.csv", 0, 2);
+            Z.LoadFromCSV ("Assets/responsivityFunctions/ciexyz31.csv", 0, 3);
 
             GammaNormal[0,0] = (L * X).integral();
             GammaNormal[0,1] = (L * Y).integral();
@@ -104,14 +103,15 @@ namespace eyediseases
             GammaNormal.SetRow (3, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
 
             GammaNormal = GammaNormal * XYZ2RGB;
+
+            if (ConfigDialog != null) {
+                ConfigDialog.cvdSim = this;
+                ConfigDialog.SetActive (false);
+            }
         }
 
         public void Start () {
             Debug.Log ("ColorBlindnessSimulator::Start");
-			if (ConfigDialog != null) {
-				ConfigDialog.cvdSim = this;
-				ConfigDialog.SetActive (false);
-			}
         }
 
         #region Overrides

@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.15686275, g: 0.15686275, b: 0.23529412, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 2100000, guid: bf1bf92a3ce592e40b898be6c21cc2fa, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 45393aeb3a23e41448c136a05980c848, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -50,7 +50,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 3
@@ -66,7 +66,8 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000001, guid: 80ea7f8b25b67444eb02f78e2bea389a,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -14603,7 +14604,8 @@ Prefab:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 181849482}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4560768, guid: 0043e98d7fc0cf944a4ebf0af6166cd3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0043e98d7fc0cf944a4ebf0af6166cd3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &686821459
@@ -38359,16 +38361,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualizeFocus: 0
-  focalLength: 0.25000003
-  focalSize: 0
-  aperture: 3.36
+  focalLength: 1.7932775
+  focalSize: 0.08
+  aperture: 4
   focalTransform: {fileID: 0}
-  maxBlurSize: 12.83
+  maxBlurSize: 3.75
   highResolution: 1
   blurType: 1
   blurSampleCount: 2
   nearBlur: 1
-  foregroundOverlap: 10
+  foregroundOverlap: 1
   dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
   dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
   dx11BokehThreshold: 0.5
