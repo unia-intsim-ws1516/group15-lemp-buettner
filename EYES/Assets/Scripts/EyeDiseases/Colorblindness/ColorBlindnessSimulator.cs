@@ -76,17 +76,17 @@ namespace eyediseases
         void Awake () {
             Debug.Log ("ColorBlindnessSimulator::Awake");
 
-            L.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 1);
-            M.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 2);
-            S.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 3);
+            L.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
+            M.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
+            S.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
 
-            Loriginal.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 1);
-            Moriginal.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 2);
-            Soriginal.LoadFromCSV ("Assets/responsivityFunctions/linss10e_5.csv", 0, 3);
+            Loriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
+            Moriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
+            Soriginal.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 3);
 
-            X.LoadFromCSV ("Assets/responsivityFunctions/ciexyz31.csv", 0, 1);
-            Y.LoadFromCSV ("Assets/responsivityFunctions/ciexyz31.csv", 0, 2);
-            Z.LoadFromCSV ("Assets/responsivityFunctions/ciexyz31.csv", 0, 3);
+            X.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 1);
+            Y.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 2);
+            Z.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 3);
 
             GammaNormal[0,0] = (L * X).integral();
             GammaNormal[0,1] = (L * Y).integral();
