@@ -53,14 +53,14 @@ namespace eyediseases
             float dist = maxDist;
             if (Physics.Raycast(viewray, out hitInfo)) {
                 dist = hitInfo.distance;
-                Debug.Log ("Hit distance = " + dist);
+                //Debug.Log ("Hit distance = " + dist);
             }
 
             // the cornea-retina distance
             float crd = 0.024f;
             float crd2 = crd / (1.0f - diopters * crd);
 
-            Debug.Log ("crd2 = " + crd2);
+            //Debug.Log ("crd2 = " + crd2);
 
             float minF = 0.02068966f;
             float maxF = 0.024f;
@@ -68,7 +68,7 @@ namespace eyediseases
             // compute the required focal length for the diseased eye and the given distance
             float f = dist * crd2 / (dist + crd2);
 
-            Debug.Log ("f = " + f);
+            //Debug.Log ("f = " + f);
 
             // if the lense can provide the focal length, approve.
             if ( minF <= f && f <= maxF) {

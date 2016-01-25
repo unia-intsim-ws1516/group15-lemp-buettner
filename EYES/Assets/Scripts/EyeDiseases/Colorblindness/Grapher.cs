@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using eyediseases;
 
-public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IScrollHandler
 {
     private DiscreteFunction L = null;
     private DiscreteFunction M = null;
@@ -21,7 +22,9 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
     /* Null equas not draggable */
     private List<int> draggedPointsS = new List<int> ();
 
-    private const float dragRadius = 15.0f; // in px
+    private float dragRadius = 15.0f; // in px
+    public GameObject dragRadiusGizmo;
+    private GraphicRaycaster rayCaster;
 
 
     public void SetLCurve (DiscreteFunction L) {
@@ -65,6 +68,7 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
     void Awake () {
         Debug.Log ("Grapher::Awake");
+        rayCaster = GetComponentInParent<GraphicRaycaster> ();
     }
 
     public void OnDestroy () {
@@ -137,11 +141,6 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
             dot.name = "Graphdot-" + i;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void OnBeginDrag (PointerEventData eventData) {
         //Debug.Log ("OnBeginDrag: Click(" + eventData.pressPosition + "), dot(" + dot.transform.position + ")");
@@ -213,10 +212,49 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
     }
 
     public void OnPointerExit (PointerEventData eventData) {
-        Debug.Log ("P in");
+        Debug.Log ("P out");
+        dragRadiusGizmo.SetActive (false);
     }
 
     public void OnPointerEnter (PointerEventData eventData) {
-        Debug.Log ("P out");
+        Debug.Log ("P in");
+        dragRadiusGizmo.SetActive (true);
+
+        // Set the size of the gizmo
+        RectTransform tf = dragRadiusGizmo.GetComponent<RectTransform> ();
+        tf.offsetMin = -Vector2.one * dragRadius;
+        tf.offsetMax =  Vector2.one * dragRadius;
     }
+
+    // Update is called once per frame
+    void Update () {
+
+        Debug.Log ("MousePos: " + UnityEngine.Input.mousePosition);
+        dragRadiusGizmo.transform.localPosition = UnityEngine.Input.mousePosition - transform.position;
+    }
+
+    public void OnScroll (PointerEventData eventData) {
+        Debug.Log ("Scroll " + eventData.scrollDelta);
+        RectTransform tf = dragRadiusGizmo.GetComponent<RectTransform> ();
+        dragRadius -= eventData.scrollDelta.y * 3.0f;
+        tf.offsetMin = -Vector2.one * dragRadius;
+        tf.offsetMax =  Vector2.one * dragRadius;
+    }
+
+//    IEnumerator TrackPointer () {
+//        GraphicRaycaster ray = GetComponentInParent<GraphicRaycaster> ();
+//        StandaloneInputModule Input = FindObjectOfType<StandaloneInputModule> ();
+//
+//        if (ray != null && Input != null) {
+//            while ( Application.isPlaying ) {
+//                Vector2 localPos;
+//                RectTransformUtility.ScreenPointToLocalPointInRectangle (transform as RectTransform, UnityEngine.Input.mousePosition, ray.eventCamera, out localPos);
+//
+//                dragRadiusGizmo.transform.localPosition = localPos;
+//                yield return 0;
+//            }
+//        }
+//        else
+//            Debug.LogWarning ("Could not find GraphicRaycaster and/or StandaloneInputModule");
+//    }
 }

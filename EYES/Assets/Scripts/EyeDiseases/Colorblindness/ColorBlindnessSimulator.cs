@@ -89,18 +89,18 @@ namespace eyediseases
             Y.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 2);
             Z.LoadFromCSV ("responsivityFunctions/ciexyz31.csv", 0, 3);
 
-            GammaNormal.m00 = (L * X).integral();
-            GammaNormal.m01 = (L * Y).integral();
-            GammaNormal.m02 = (L * Z).integral();
-            GammaNormal.m03 = 0.0f;
-            GammaNormal.m10 = (M * X).integral();
-            GammaNormal.m11 = (M * Y).integral();
-            GammaNormal.m12 = (M * Z).integral();
-            GammaNormal.m13 = 0.0f;
-            GammaNormal.m20 = (S * X).integral();
-            GammaNormal.m21 = (S * Y).integral();
-            GammaNormal.m22 = (S * Z).integral();
-            GammaNormal.m23 = 0.0f;
+            GammaNormal[0,0] = (L * X).integral();
+            GammaNormal[0,1] = (L * Y).integral();
+            GammaNormal[0,2] = (L * Z).integral();
+            GammaNormal[0,3] = 0.0f;
+            GammaNormal[1,0] = (M * X).integral();
+            GammaNormal[1,1] = (M * Y).integral();
+            GammaNormal[1,2] = (M * Z).integral();
+            GammaNormal[1,3] = 0.0f;
+            GammaNormal[2,0] = (S * X).integral();
+            GammaNormal[2,1] = (S * Y).integral();
+            GammaNormal[2,2] = (S * Z).integral();
+            GammaNormal[2,3] = 0.0f;
             GammaNormal.SetRow (3, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
 
             GammaNormal = GammaNormal * XYZ2RGB;
@@ -198,19 +198,21 @@ namespace eyediseases
                 ColorBlindMat.shader = MachadoShader;
 
                 Matrix4x4 Gamma = new Matrix4x4 ();
-                Gamma.m00 = (L * X).integral();
-                Gamma.m01 = (L * Y).integral();
-                Gamma.m02 = (L * Z).integral();
-                Gamma.m03 = 0.0f;
-                Gamma.m10 = (M * X).integral();
-                Gamma.m11 = (M * Y).integral();
-                Gamma.m12 = (M * Z).integral();
-                Gamma.m13 = 0.0f;
-                Gamma.m20 = (S * X).integral();
-                Gamma.m21 = (S * Y).integral();
-                Gamma.m22 = (S * Z).integral();
-                Gamma.m23 = 0.0f;
+                Gamma[0,0] = (L * X).integral();
+                Gamma[0,1] = (L * Y).integral();
+                Gamma[0,2] = (L * Z).integral();
+                Gamma[0,3] = 0.0f;
+                Gamma[1,0] = (M * X).integral();
+                Gamma[1,1] = (M * Y).integral();
+                Gamma[1,2] = (M * Z).integral();
+                Gamma[1,3] = 0.0f;
+                Gamma[2,0] = (S * X).integral();
+                Gamma[2,1] = (S * Y).integral();
+                Gamma[2,2] = (S * Z).integral();
+                Gamma[2,3] = 0.0f;
                 Gamma.SetRow (3, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
+
+                //Debug.Log ("Gamma: " + Gamma);
 
                 Matrix4x4 CVD = GammaNormal.inverse * Gamma * XYZ2RGB;
 
