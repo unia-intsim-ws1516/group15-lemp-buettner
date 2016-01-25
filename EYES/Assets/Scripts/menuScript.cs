@@ -11,8 +11,6 @@ public class menuScript : MonoBehaviour
 	public Button quitbutton;
 	public Button levelbutton;
 	public GUIText scoreText;
-	public static int score;
-	public static int finalscore;
 	public Canvas EndMenu;
 	public Canvas Diseasemenu;
 	public Button Infobutton;
