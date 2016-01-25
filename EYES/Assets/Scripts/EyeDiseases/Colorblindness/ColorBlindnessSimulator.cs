@@ -65,7 +65,7 @@ namespace eyediseases
         private Matrix4x4 GammaNormal = new Matrix4x4 ();
 
         public ColorBlindnessSimulator ()
-            : base("Protanopia")
+            : base("Color vision deficiency")
         {
             Debug.Log ("ColorBlindnessSimulator::ctor");
             XYZ2RGB.SetRow (0, new Vector4  (0.4124f,  0.3576f,  0.1805f, 0.0f));
