@@ -24,7 +24,6 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
     private float dragRadius = 15.0f; // in px
     public GameObject dragRadiusGizmo;
-    private GraphicRaycaster rayCaster;
 
 
     public void SetLCurve (DiscreteFunction L) {
@@ -68,7 +67,6 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
     void Awake () {
         Debug.Log ("Grapher::Awake");
-        rayCaster = GetComponentInParent<GraphicRaycaster> ();
     }
 
     public void OnDestroy () {

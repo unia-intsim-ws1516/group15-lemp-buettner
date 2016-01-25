@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -35,13 +36,9 @@ public class DiseaseOverviewList : MonoBehaviour
             DiseaseListItem diseaseItem = item.GetComponent<DiseaseListItem> ();
             diseaseItem.diseaseSwitchLabel.text = disease.diseaseName;
             diseaseItem.disease = disease;
+            Toggle tg = diseaseItem.GetComponentInChildren<Toggle> ();
+            tg.isOn = disease.isActiveAndEnabled;
             diseaseListItems.Add(diseaseItem);
         }
-    }
-    
-    // Update is called once per frame
-    void Update ()
-    {
-    
     }
 }
