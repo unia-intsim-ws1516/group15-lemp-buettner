@@ -14,7 +14,7 @@ public class lefttime : MonoBehaviour {
 			GUI.Box(new Rect(0, 65, 100, 20), "" + "Time left:  " + (int)timeRemaining);
 		}
 		else{
-			menuScript.score = 300;
+			
 			SceneManager.LoadScene(3);
 
 		}
