@@ -132,6 +132,11 @@ public class menuScript : MonoBehaviour
 		SceneManager.LoadScene(1); // load Hyperopia
 	}
 
+	public void levelexploration ()  // this will be used for loading the Explorationlevel
+	{
+		SceneManager.LoadScene(1); // load Exploration level
+	}
+
 	public void infocolorblindness ()
 	{
 		Application.OpenURL ("https://nei.nih.gov/health/color_blindness/facts_about");
