@@ -24,6 +24,7 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
     private float dragRadius = 15.0f; // in px
     public GameObject dragRadiusGizmo;
+    GraphicRaycaster rayCaster = null;
 
 
     public void SetLCurve (DiscreteFunction L) {
@@ -67,6 +68,7 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
     void Awake () {
         Debug.Log ("Grapher::Awake");
+        rayCaster = GetComponentInParent<GraphicRaycaster> ();
     }
 
     public void OnDestroy () {
@@ -135,6 +137,7 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
             UnityEngine.UI.RawImage image = dot.AddComponent<UnityEngine.UI.RawImage> ();
             image.color = color;
+            image.raycastTarget = false;
 
             dot.name = "Graphdot-" + i;
         }
@@ -226,9 +229,9 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
 
     // Update is called once per frame
     void Update () {
-
-        Debug.Log ("MousePos: " + UnityEngine.Input.mousePosition);
-        dragRadiusGizmo.transform.localPosition = UnityEngine.Input.mousePosition - transform.position;
+        Vector2 localPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle (transform as RectTransform, UnityEngine.Input.mousePosition, rayCaster.eventCamera, out localPos);
+        dragRadiusGizmo.transform.localPosition = localPos;
     }
 
     public void OnScroll (PointerEventData eventData) {
