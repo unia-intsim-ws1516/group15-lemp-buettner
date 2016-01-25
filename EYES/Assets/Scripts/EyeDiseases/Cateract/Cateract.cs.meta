@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ef6ac91c2900b0b42a76638b05129a34
+timeCreated: 1453736093
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - TintTexture: {fileID: 2800000, guid: cd5790c234d093c419de4c1f692c502c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
