@@ -8,7 +8,7 @@ public class ScoreGui : MonoBehaviour {
 
 
 	void Start () {
-		menuScript.score += 0 + (int)lefttime.timeRemaining;
+		Score.score += 0 + (int)lefttime.timeRemaining;
 		scoreText.text = "Score: " + Score.score;
 	}
 
