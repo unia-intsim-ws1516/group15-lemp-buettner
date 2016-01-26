@@ -32,6 +32,8 @@ public class PickUpItem : MonoBehaviour
 
                     if (Score.shoppingList.Contains(item.itemID)) {
                         Score.score += 100;
+                    } else {
+                        Score.score -= 100;
                     }
 				}
 			}
