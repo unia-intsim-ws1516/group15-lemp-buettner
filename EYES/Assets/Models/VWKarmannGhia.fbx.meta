@@ -36,6 +36,33 @@ ModelImporter:
     100056: VW emblem.004
     100058: //RootNode
     100060: Wheel smoothie (5.002
+    100062: BalloonTire.000
+    100064: BalloonTire.001
+    100066: BalloonTire.002
+    100068: BalloonTire.003
+    100070: BumperBack
+    100072: BumperFront
+    100074: DoorLeft
+    100076: DoorRight
+    100078: EngineLid
+    100080: GrilleLeft
+    100082: GrilleRight
+    100084: HeadlightLeft
+    100086: HeadlightRight
+    100088: HubcabInner.001
+    100090: HubcabInner.002
+    100092: HubcabInner.003
+    100094: HubcapInner.000
+    100096: SeatLeft
+    100098: SeatRight
+    100100: TaillightLeft
+    100102: TaillightRight
+    100104: Trunk
+    100106: VWEmblem
+    100108: Wheel.000
+    100110: Wheel.001
+    100112: Wheel.002
+    100114: Wheel.003
     400000: balloonTire
     400002: balloonTire.001
     400004: balloonTire.002
@@ -67,6 +94,33 @@ ModelImporter:
     400056: VW emblem.004
     400058: //RootNode
     400060: Wheel smoothie (5.002
+    400062: BalloonTire.000
+    400064: BalloonTire.001
+    400066: BalloonTire.002
+    400068: BalloonTire.003
+    400070: BumperBack
+    400072: BumperFront
+    400074: DoorLeft
+    400076: DoorRight
+    400078: EngineLid
+    400080: GrilleLeft
+    400082: GrilleRight
+    400084: HeadlightLeft
+    400086: HeadlightRight
+    400088: HubcabInner.001
+    400090: HubcabInner.002
+    400092: HubcabInner.003
+    400094: HubcapInner.000
+    400096: SeatLeft
+    400098: SeatRight
+    400100: TaillightLeft
+    400102: TaillightRight
+    400104: Trunk
+    400106: VWEmblem
+    400108: Wheel.000
+    400110: Wheel.001
+    400112: Wheel.002
+    400114: Wheel.003
     2300000: balloonTire
     2300002: balloonTire.001
     2300004: balloonTire.002
@@ -97,6 +151,33 @@ ModelImporter:
     2300054: Trunk ghia
     2300056: VW emblem.004
     2300058: //RootNode
+    2300060: BalloonTire.000
+    2300062: BalloonTire.001
+    2300064: BalloonTire.002
+    2300066: BalloonTire.003
+    2300068: BumperBack
+    2300070: BumperFront
+    2300072: DoorLeft
+    2300074: DoorRight
+    2300076: EngineLid
+    2300078: GrilleLeft
+    2300080: GrilleRight
+    2300082: HeadlightLeft
+    2300084: HeadlightRight
+    2300086: HubcabInner.001
+    2300088: HubcabInner.002
+    2300090: HubcabInner.003
+    2300092: HubcapInner.000
+    2300094: SeatLeft
+    2300096: SeatRight
+    2300098: TaillightLeft
+    2300100: TaillightRight
+    2300102: Trunk
+    2300104: VWEmblem
+    2300106: Wheel.000
+    2300108: Wheel.001
+    2300110: Wheel.002
+    2300112: Wheel.003
     3300000: balloonTire
     3300002: balloonTire.001
     3300004: balloonTire.002
@@ -127,6 +208,33 @@ ModelImporter:
     3300054: Trunk ghia
     3300056: VW emblem.004
     3300058: //RootNode
+    3300060: BalloonTire.000
+    3300062: BalloonTire.001
+    3300064: BalloonTire.002
+    3300066: BalloonTire.003
+    3300068: BumperBack
+    3300070: BumperFront
+    3300072: DoorLeft
+    3300074: DoorRight
+    3300076: EngineLid
+    3300078: GrilleLeft
+    3300080: GrilleRight
+    3300082: HeadlightLeft
+    3300084: HeadlightRight
+    3300086: HubcabInner.001
+    3300088: HubcabInner.002
+    3300090: HubcabInner.003
+    3300092: HubcapInner.000
+    3300094: SeatLeft
+    3300096: SeatRight
+    3300098: TaillightLeft
+    3300100: TaillightRight
+    3300102: Trunk
+    3300104: VWEmblem
+    3300106: Wheel.000
+    3300108: Wheel.001
+    3300110: Wheel.002
+    3300112: Wheel.003
     4300000: Body Ghia
     4300002: VW emblem.004
     4300004: hub smoothie.003
@@ -155,6 +263,20 @@ ModelImporter:
     4300050: Door Ghia R
     4300052: Engine lid Ghia
     4300054: clean back
+    4300056: Body
+    4300058: EngineLid
+    4300060: DoorRight
+    4300062: TaillightLeft
+    4300064: HeadlightLeft
+    4300066: BumperFront
+    4300068: BumperBack
+    4300070: GrilleLeft
+    4300072: Trunk
+    4300074: SeatLeft
+    4300076: Wheel.000
+    4300078: HubcapInner.000
+    4300080: BalloonTire.000
+    4300082: VWEmblem
   materials:
     importMaterials: 1
     materialName: 0

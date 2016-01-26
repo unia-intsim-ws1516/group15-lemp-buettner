@@ -36,6 +36,33 @@ ModelImporter:
     100056: Tire.003
     100058: VW emblem.002
     100060: //RootNode
+    100062: Headlight.000
+    100064: Headlight.001
+    100066: Hood
+    100068: Hubcab.001
+    100070: Hubcab.002
+    100072: Hubcab.003
+    100074: Hupcap.000
+    100076: taillights late.000
+    100078: Wheel.000
+    100080: Wheel.001
+    100082: Wheel.002
+    100084: Wheel.003
+    100086: BumperBack
+    100088: BumperFront
+    100090: DoorLeft
+    100092: DoorRight
+    100094: HoodHandle
+    100096: Rim.000
+    100098: Rim.001
+    100100: Rim.002
+    100102: Rim.003
+    100104: Seat.000
+    100106: Seat.001
+    100108: Taillights.000
+    100110: Taillights.001
+    100112: TrunkHood
+    100114: VWEmblem
     400000: body beetle.001
     400002: body beetle.002
     400004: bumper back
@@ -67,6 +94,33 @@ ModelImporter:
     400056: Tire.003
     400058: VW emblem.002
     400060: //RootNode
+    400062: Headlight.000
+    400064: Headlight.001
+    400066: Hood
+    400068: Hubcab.001
+    400070: Hubcab.002
+    400072: Hubcab.003
+    400074: Hupcap.000
+    400076: taillights late.000
+    400078: Wheel.000
+    400080: Wheel.001
+    400082: Wheel.002
+    400084: Wheel.003
+    400086: BumperBack
+    400088: BumperFront
+    400090: DoorLeft
+    400092: DoorRight
+    400094: HoodHandle
+    400096: Rim.000
+    400098: Rim.001
+    400100: Rim.002
+    400102: Rim.003
+    400104: Seat.000
+    400106: Seat.001
+    400108: Taillights.000
+    400110: Taillights.001
+    400112: TrunkHood
+    400114: VWEmblem
     2300000: body beetle.001
     2300002: body beetle.002
     2300004: bumper back
@@ -98,6 +152,33 @@ ModelImporter:
     2300056: Tire.003
     2300058: VW emblem.002
     2300060: //RootNode
+    2300062: Headlight.000
+    2300064: Headlight.001
+    2300066: Hood
+    2300068: Hubcab.001
+    2300070: Hubcab.002
+    2300072: Hubcab.003
+    2300074: Hupcap.000
+    2300076: taillights late.000
+    2300078: Wheel.000
+    2300080: Wheel.001
+    2300082: Wheel.002
+    2300084: Wheel.003
+    2300086: BumperBack
+    2300088: BumperFront
+    2300090: DoorLeft
+    2300092: DoorRight
+    2300094: HoodHandle
+    2300096: Rim.000
+    2300098: Rim.001
+    2300100: Rim.002
+    2300102: Rim.003
+    2300104: Seat.000
+    2300106: Seat.001
+    2300108: Taillights.000
+    2300110: Taillights.001
+    2300112: TrunkHood
+    2300114: VWEmblem
     3300000: body beetle.001
     3300002: body beetle.002
     3300004: bumper back
@@ -129,6 +210,33 @@ ModelImporter:
     3300056: Tire.003
     3300058: VW emblem.002
     3300060: //RootNode
+    3300062: Headlight.000
+    3300064: Headlight.001
+    3300066: Hood
+    3300068: Hubcab.001
+    3300070: Hubcab.002
+    3300072: Hubcab.003
+    3300074: Hupcap.000
+    3300076: taillights late.000
+    3300078: Wheel.000
+    3300080: Wheel.001
+    3300082: Wheel.002
+    3300084: Wheel.003
+    3300086: BumperBack
+    3300088: BumperFront
+    3300090: DoorLeft
+    3300092: DoorRight
+    3300094: HoodHandle
+    3300096: Rim.000
+    3300098: Rim.001
+    3300100: Rim.002
+    3300102: Rim.003
+    3300104: Seat.000
+    3300106: Seat.001
+    3300108: Taillights.000
+    3300110: Taillights.001
+    3300112: TrunkHood
+    3300114: VWEmblem
     4300000: body beetle
     4300002: seat x1.002
     4300004: seat x1.005
@@ -160,6 +268,27 @@ ModelImporter:
     4300056: Door beetle.001
     4300058: Door beetle
     4300060: bumper front
+    4300062: Hood
+    4300064: Wheel.001
+    4300066: Hubcab.001
+    4300068: Headlight.001
+    4300070: BumperFront
+    4300072: DoorLeft
+    4300074: BumperBack
+    4300076: Taillights.001
+    4300078: TrunkHood
+    4300080: HoodHandle
+    4300082: VWEmblem
+    4300084: Rim.001
+    4300086: Seat.000
+    4300088: BodyBeetle
+    4300090: Seat.001
+    4300092: Headlight.000
+    4300094: Wheel.000
+    4300096: Rim.000
+    4300098: Hupcap.000
+    4300100: Taillights.000
+    4300102: DoorRight
   materials:
     importMaterials: 1
     materialName: 0

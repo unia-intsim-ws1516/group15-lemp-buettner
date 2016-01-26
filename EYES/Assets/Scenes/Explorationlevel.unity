@@ -23,8 +23,8 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.43137255, g: 0.47058824, b: 0.54901963, a: 1}
   m_AmbientEquatorColor: {r: 0.43137255, g: 0.47058824, b: 0.54901963, a: 1}
   m_AmbientGroundColor: {r: 0.15686275, g: 0.15686275, b: 0.23529412, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientIntensity: 0
+  m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: 45393aeb3a23e41448c136a05980c848, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -33,7 +33,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: a7bed68887a07e34394d4191b3081359, type: 3}
   m_Sun: {fileID: 0}
@@ -42,7 +42,7 @@ LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_GIWorkflowMode: 1
-  m_LightmapsMode: 2
+  m_LightmapsMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -50,24 +50,24 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 0
+    m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 3
     m_Resolution: 1
-    m_BakeResolution: 50
+    m_BakeResolution: 10
     m_TextureWidth: 1024
     m_TextureHeight: 1024
     m_AOMaxDistance: 1
     m_Padding: 2
     m_CompAOExponent: 1
-    m_LightmapParameters: {fileID: 0}
+    m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000,
+      type: 0}
     m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 112000001, guid: a13e65f44f222144a909a908b9013cdc,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -96,7 +96,7 @@ GameObject:
   - 4: {fileID: 4082229}
   - 33: {fileID: 4082231}
   - 23: {fileID: 4082230}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - 4: {fileID: 12780481}
   - 33: {fileID: 12780483}
   - 23: {fileID: 12780482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - 4: {fileID: 21869833}
   - 33: {fileID: 21869835}
   - 23: {fileID: 21869834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - 4: {fileID: 33043333}
   - 33: {fileID: 33043335}
   - 23: {fileID: 33043334}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - 4: {fileID: 33993813}
   - 33: {fileID: 33993815}
   - 23: {fileID: 33993814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - 4: {fileID: 46242900}
   - 33: {fileID: 46242902}
   - 23: {fileID: 46242901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ GameObject:
   - 33: {fileID: 46489591}
   - 23: {fileID: 46489590}
   - 64: {fileID: 46489592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_atm_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   - 4: {fileID: 57270043}
   - 33: {fileID: 57270045}
   - 23: {fileID: 57270044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - 4: {fileID: 65787522}
   - 33: {fileID: 65787524}
   - 23: {fileID: 65787523}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - 33: {fileID: 67476946}
   - 23: {fileID: 67476945}
   - 64: {fileID: 67476947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   - 4: {fileID: 69368263}
   - 33: {fileID: 69368265}
   - 23: {fileID: 69368264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   - 4: {fileID: 70894509}
   - 33: {fileID: 70894511}
   - 23: {fileID: 70894510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +962,7 @@ GameObject:
   - 4: {fileID: 71959298}
   - 33: {fileID: 71959300}
   - 23: {fileID: 71959299}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1027,7 @@ GameObject:
   - 33: {fileID: 75014255}
   - 23: {fileID: 75014254}
   - 64: {fileID: 75014256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ GameObject:
   - 4: {fileID: 78466120}
   - 33: {fileID: 78466122}
   - 23: {fileID: 78466121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,7 +1168,7 @@ GameObject:
   - 4: {fileID: 86635682}
   - 33: {fileID: 86635684}
   - 23: {fileID: 86635683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,7 +1233,7 @@ GameObject:
   - 33: {fileID: 87071180}
   - 23: {fileID: 87071179}
   - 64: {fileID: 87071181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cash_out_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1311,7 @@ GameObject:
   - 33: {fileID: 87934299}
   - 23: {fileID: 87934298}
   - 64: {fileID: 87934300}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1389,7 @@ GameObject:
   - 33: {fileID: 90852410}
   - 23: {fileID: 90852409}
   - 64: {fileID: 90852411}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1467,7 +1467,7 @@ GameObject:
   - 33: {fileID: 92415437}
   - 23: {fileID: 92415436}
   - 64: {fileID: 92415438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1544,7 +1544,7 @@ GameObject:
   - 4: {fileID: 94082899}
   - 33: {fileID: 94082901}
   - 23: {fileID: 94082900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1609,7 +1609,7 @@ GameObject:
   - 4: {fileID: 97708327}
   - 33: {fileID: 97708329}
   - 23: {fileID: 97708328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1674,7 +1674,7 @@ GameObject:
   - 33: {fileID: 102243508}
   - 23: {fileID: 102243507}
   - 64: {fileID: 102243509}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1753,7 @@ GameObject:
   - 33: {fileID: 104758206}
   - 23: {fileID: 104758205}
   - 64: {fileID: 104758207}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1829,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 109091857}
   - 108: {fileID: 109091858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,7 +1892,7 @@ GameObject:
   - 4: {fileID: 110055719}
   - 33: {fileID: 110055721}
   - 23: {fileID: 110055720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1956,7 +1956,7 @@ GameObject:
   - 4: {fileID: 114256215}
   - 33: {fileID: 114256217}
   - 23: {fileID: 114256216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2020,7 @@ GameObject:
   - 4: {fileID: 115116783}
   - 33: {fileID: 115116785}
   - 23: {fileID: 115116784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2085,7 +2085,7 @@ GameObject:
   - 33: {fileID: 118688011}
   - 23: {fileID: 118688010}
   - 64: {fileID: 118688012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2163,7 +2163,7 @@ GameObject:
   - 4: {fileID: 123014230}
   - 33: {fileID: 123014232}
   - 23: {fileID: 123014231}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2227,7 @@ GameObject:
   - 4: {fileID: 124780781}
   - 33: {fileID: 124780783}
   - 23: {fileID: 124780782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2291,7 +2291,7 @@ GameObject:
   - 4: {fileID: 127830009}
   - 33: {fileID: 127830011}
   - 23: {fileID: 127830010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2356,7 +2356,7 @@ GameObject:
   - 33: {fileID: 131840866}
   - 23: {fileID: 131840865}
   - 64: {fileID: 131840867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2434,7 @@ GameObject:
   - 33: {fileID: 132588376}
   - 23: {fileID: 132588375}
   - 64: {fileID: 132588377}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2511,7 +2511,7 @@ GameObject:
   - 4: {fileID: 133452702}
   - 33: {fileID: 133452704}
   - 23: {fileID: 133452703}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2574,7 +2574,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 137450968}
   - 108: {fileID: 137450969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2637,7 +2637,7 @@ GameObject:
   - 4: {fileID: 140147534}
   - 33: {fileID: 140147536}
   - 23: {fileID: 140147535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2767,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 145645673}
   - 108: {fileID: 145645674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2831,7 +2831,7 @@ GameObject:
   - 33: {fileID: 147159689}
   - 23: {fileID: 147159688}
   - 64: {fileID: 147159690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2909,7 +2909,7 @@ GameObject:
   - 33: {fileID: 158964231}
   - 23: {fileID: 158964230}
   - 64: {fileID: 158964232}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2976,6 +2976,66 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300056, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1 &161014487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 161014491}
+  - 33: {fileID: 161014490}
+  - 65: {fileID: 161014489}
+  - 114: {fileID: 161014488}
+  m_Layer: 0
+  m_Name: Levelend3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &161014488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161014487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7418cde2ce2164ec2bbb9454618d86b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &161014489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161014487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &161014490
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161014487}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &161014491
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161014487}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -24.651, y: 1.636, z: -3.476}
+  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &161357888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,7 +3122,7 @@ GameObject:
   - 4: {fileID: 166819467}
   - 33: {fileID: 166819469}
   - 23: {fileID: 166819468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3126,7 +3186,7 @@ GameObject:
   - 4: {fileID: 167686057}
   - 33: {fileID: 167686059}
   - 23: {fileID: 167686058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,7 +3250,7 @@ GameObject:
   - 4: {fileID: 171466937}
   - 33: {fileID: 171466939}
   - 23: {fileID: 171466938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3256,7 +3316,7 @@ GameObject:
   - 33: {fileID: 173427054}
   - 23: {fileID: 173427053}
   - 64: {fileID: 173427055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3333,7 +3393,7 @@ GameObject:
   - 4: {fileID: 173958991}
   - 33: {fileID: 173958993}
   - 23: {fileID: 173958992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3399,7 +3459,7 @@ GameObject:
   - 33: {fileID: 174009963}
   - 23: {fileID: 174009962}
   - 64: {fileID: 174009964}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3477,7 +3537,7 @@ GameObject:
   - 33: {fileID: 179303438}
   - 23: {fileID: 179303437}
   - 64: {fileID: 179303439}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3695,7 +3755,7 @@ GameObject:
   - 33: {fileID: 182139104}
   - 23: {fileID: 182139103}
   - 64: {fileID: 182139105}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3773,7 +3833,7 @@ GameObject:
   - 33: {fileID: 183099041}
   - 23: {fileID: 183099040}
   - 64: {fileID: 183099042}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3851,7 +3911,7 @@ GameObject:
   - 33: {fileID: 184942586}
   - 23: {fileID: 184942585}
   - 64: {fileID: 184942587}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3929,7 +3989,7 @@ GameObject:
   - 4: {fileID: 186310397}
   - 33: {fileID: 186310399}
   - 23: {fileID: 186310398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3993,7 +4053,7 @@ GameObject:
   - 4: {fileID: 193838001}
   - 33: {fileID: 193838003}
   - 23: {fileID: 193838002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4058,7 +4118,7 @@ GameObject:
   - 33: {fileID: 194817626}
   - 23: {fileID: 194817625}
   - 64: {fileID: 194817627}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4135,7 +4195,7 @@ GameObject:
   - 4: {fileID: 196002598}
   - 33: {fileID: 196002600}
   - 23: {fileID: 196002599}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_number_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4199,7 +4259,7 @@ GameObject:
   - 4: {fileID: 196167584}
   - 33: {fileID: 196167586}
   - 23: {fileID: 196167585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4263,7 +4323,7 @@ GameObject:
   - 4: {fileID: 204474824}
   - 33: {fileID: 204474826}
   - 23: {fileID: 204474825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4328,7 +4388,7 @@ GameObject:
   - 4: {fileID: 204647988}
   - 33: {fileID: 204647990}
   - 23: {fileID: 204647989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4392,7 +4452,7 @@ GameObject:
   - 4: {fileID: 207025473}
   - 33: {fileID: 207025475}
   - 23: {fileID: 207025474}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4446,6 +4506,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 207025472}
   m_Mesh: {fileID: 4300032, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &210198356
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &214450274
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,7 +4562,7 @@ GameObject:
   - 4: {fileID: 214450275}
   - 33: {fileID: 214450277}
   - 23: {fileID: 214450276}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4519,7 +4625,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 217611456}
   - 108: {fileID: 217611457}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4649,7 +4755,7 @@ GameObject:
   - 4: {fileID: 223500059}
   - 33: {fileID: 223500061}
   - 23: {fileID: 223500060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4713,7 +4819,7 @@ GameObject:
   - 4: {fileID: 231811281}
   - 33: {fileID: 231811283}
   - 23: {fileID: 231811282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4777,7 +4883,7 @@ GameObject:
   - 4: {fileID: 233816186}
   - 33: {fileID: 233816188}
   - 23: {fileID: 233816187}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4842,7 +4948,7 @@ GameObject:
   - 33: {fileID: 237428486}
   - 23: {fileID: 237428485}
   - 64: {fileID: 237428487}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +5025,7 @@ GameObject:
   - 4: {fileID: 240002755}
   - 33: {fileID: 240002757}
   - 23: {fileID: 240002756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_chair_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4983,7 +5089,7 @@ GameObject:
   - 4: {fileID: 240856151}
   - 33: {fileID: 240856153}
   - 23: {fileID: 240856152}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5047,7 +5153,7 @@ GameObject:
   - 4: {fileID: 244960205}
   - 33: {fileID: 244960207}
   - 23: {fileID: 244960206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_number_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5112,7 +5218,7 @@ GameObject:
   - 33: {fileID: 251826972}
   - 23: {fileID: 251826971}
   - 64: {fileID: 251826973}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5190,7 +5296,7 @@ GameObject:
   - 4: {fileID: 256542395}
   - 33: {fileID: 256542397}
   - 23: {fileID: 256542396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5314,7 +5420,7 @@ GameObject:
   - 4: {fileID: 261365604}
   - 33: {fileID: 261365606}
   - 23: {fileID: 261365605}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5378,7 +5484,7 @@ GameObject:
   - 4: {fileID: 268981747}
   - 33: {fileID: 268981749}
   - 23: {fileID: 268981748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5442,7 +5548,7 @@ GameObject:
   - 4: {fileID: 273128723}
   - 33: {fileID: 273128725}
   - 23: {fileID: 273128724}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5506,7 +5612,7 @@ GameObject:
   - 4: {fileID: 274684770}
   - 33: {fileID: 274684772}
   - 23: {fileID: 274684771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5634,7 +5740,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 283921318}
   - 108: {fileID: 283921319}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5698,7 +5804,7 @@ GameObject:
   - 33: {fileID: 284562777}
   - 23: {fileID: 284562776}
   - 64: {fileID: 284562778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5779,7 +5885,7 @@ GameObject:
   - 33: {fileID: 285170167}
   - 23: {fileID: 285170166}
   - 64: {fileID: 285170168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5857,7 +5963,7 @@ GameObject:
   - 33: {fileID: 287173165}
   - 23: {fileID: 287173164}
   - 64: {fileID: 287173166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5961,7 +6067,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 441568, guid: f063e8796512f0e42b677acaa9b311b2, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f063e8796512f0e42b677acaa9b311b2, type: 2}
@@ -5976,7 +6082,7 @@ GameObject:
   - 4: {fileID: 287934482}
   - 33: {fileID: 287934484}
   - 23: {fileID: 287934483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_chair_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6041,7 +6147,7 @@ GameObject:
   - 33: {fileID: 291020368}
   - 23: {fileID: 291020367}
   - 64: {fileID: 291020369}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6118,7 +6224,7 @@ GameObject:
   - 4: {fileID: 293067054}
   - 33: {fileID: 293067056}
   - 23: {fileID: 293067055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6183,7 +6289,7 @@ GameObject:
   - 33: {fileID: 293687633}
   - 23: {fileID: 293687632}
   - 64: {fileID: 293687634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6261,7 +6367,7 @@ GameObject:
   - 33: {fileID: 295213211}
   - 23: {fileID: 295213210}
   - 64: {fileID: 295213212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6338,7 +6444,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 299101910}
   - 108: {fileID: 299101911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6402,7 +6508,7 @@ GameObject:
   - 33: {fileID: 301854001}
   - 23: {fileID: 301854000}
   - 64: {fileID: 301854002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6480,7 +6586,7 @@ GameObject:
   - 4: {fileID: 304512894}
   - 33: {fileID: 304512896}
   - 23: {fileID: 304512895}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6544,7 +6650,7 @@ GameObject:
   - 4: {fileID: 313043927}
   - 33: {fileID: 313043929}
   - 23: {fileID: 313043928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6608,7 +6714,7 @@ GameObject:
   - 4: {fileID: 313276259}
   - 33: {fileID: 313276261}
   - 23: {fileID: 313276260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6672,7 +6778,7 @@ GameObject:
   - 4: {fileID: 313989325}
   - 33: {fileID: 313989327}
   - 23: {fileID: 313989326}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6736,7 +6842,7 @@ GameObject:
   - 4: {fileID: 317976827}
   - 33: {fileID: 317976829}
   - 23: {fileID: 317976828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6800,7 +6906,7 @@ GameObject:
   - 4: {fileID: 329619503}
   - 33: {fileID: 329619505}
   - 23: {fileID: 329619504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6865,7 +6971,7 @@ GameObject:
   - 4: {fileID: 329633895}
   - 33: {fileID: 329633897}
   - 23: {fileID: 329633896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6930,7 +7036,7 @@ GameObject:
   - 33: {fileID: 332531372}
   - 23: {fileID: 332531371}
   - 64: {fileID: 332531373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7000,6 +7106,10 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300006, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!4 &335377550 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 441568, guid: f063e8796512f0e42b677acaa9b311b2, type: 2}
+  m_PrefabInternal: {fileID: 287712046}
 --- !u!1 &336016385
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,7 +7120,7 @@ GameObject:
   - 4: {fileID: 336016386}
   - 33: {fileID: 336016388}
   - 23: {fileID: 336016387}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7073,7 +7183,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 339342978}
   - 108: {fileID: 339342979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7136,7 +7246,7 @@ GameObject:
   - 4: {fileID: 341452725}
   - 33: {fileID: 341452727}
   - 23: {fileID: 341452726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7200,7 +7310,7 @@ GameObject:
   - 4: {fileID: 342085949}
   - 33: {fileID: 342085951}
   - 23: {fileID: 342085950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7265,7 +7375,7 @@ GameObject:
   - 33: {fileID: 346146182}
   - 23: {fileID: 346146181}
   - 64: {fileID: 346146183}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7342,7 +7452,7 @@ GameObject:
   - 4: {fileID: 346778514}
   - 33: {fileID: 346778516}
   - 23: {fileID: 346778515}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7406,7 +7516,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 349827671}
   - 108: {fileID: 349827672}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7470,7 +7580,7 @@ GameObject:
   - 33: {fileID: 351717905}
   - 23: {fileID: 351717904}
   - 64: {fileID: 351717906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7549,7 +7659,7 @@ GameObject:
   - 33: {fileID: 353869554}
   - 23: {fileID: 353869553}
   - 64: {fileID: 353869555}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7630,7 +7740,7 @@ GameObject:
   - 33: {fileID: 354008054}
   - 23: {fileID: 354008053}
   - 64: {fileID: 354008055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7707,7 +7817,7 @@ GameObject:
   - 4: {fileID: 357487142}
   - 33: {fileID: 357487144}
   - 23: {fileID: 357487143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7770,7 +7880,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 357912919}
   - 108: {fileID: 357912920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7832,7 +7942,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 358247885}
   - 108: {fileID: 358247886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7895,7 +8005,7 @@ GameObject:
   - 4: {fileID: 361730426}
   - 33: {fileID: 361730428}
   - 23: {fileID: 361730427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7960,7 +8070,7 @@ GameObject:
   - 33: {fileID: 362516525}
   - 23: {fileID: 362516524}
   - 64: {fileID: 362516526}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8037,7 +8147,7 @@ GameObject:
   - 4: {fileID: 370295274}
   - 33: {fileID: 370295276}
   - 23: {fileID: 370295275}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8101,7 +8211,7 @@ GameObject:
   - 4: {fileID: 376438816}
   - 33: {fileID: 376438818}
   - 23: {fileID: 376438817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8166,7 +8276,7 @@ GameObject:
   - 33: {fileID: 377189522}
   - 23: {fileID: 377189521}
   - 64: {fileID: 377189523}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8233,48 +8343,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300018, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
---- !u!1001 &384024810
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -10.14378
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.8903418
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &391915394
 GameObject:
   m_ObjectHideFlags: 0
@@ -8285,7 +8353,7 @@ GameObject:
   - 4: {fileID: 391915395}
   - 33: {fileID: 391915397}
   - 23: {fileID: 391915396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8349,7 +8417,7 @@ GameObject:
   - 4: {fileID: 395705197}
   - 33: {fileID: 395705199}
   - 23: {fileID: 395705198}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8413,7 +8481,7 @@ GameObject:
   - 4: {fileID: 402567312}
   - 33: {fileID: 402567314}
   - 23: {fileID: 402567313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8478,7 +8546,7 @@ GameObject:
   - 33: {fileID: 405690365}
   - 23: {fileID: 405690364}
   - 64: {fileID: 405690366}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8555,7 +8623,7 @@ GameObject:
   - 4: {fileID: 407606134}
   - 33: {fileID: 407606136}
   - 23: {fileID: 407606135}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8619,7 +8687,7 @@ GameObject:
   - 4: {fileID: 425880424}
   - 33: {fileID: 425880426}
   - 23: {fileID: 425880425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8684,7 +8752,7 @@ GameObject:
   - 33: {fileID: 427752447}
   - 23: {fileID: 427752446}
   - 64: {fileID: 427752448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8761,7 +8829,7 @@ GameObject:
   - 4: {fileID: 437678318}
   - 33: {fileID: 437678320}
   - 23: {fileID: 437678319}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8824,7 +8892,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 438466755}
   - 108: {fileID: 438466756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8969,7 +9037,7 @@ GameObject:
   - 4: {fileID: 445277394}
   - 33: {fileID: 445277396}
   - 23: {fileID: 445277395}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9034,7 +9102,7 @@ GameObject:
   - 33: {fileID: 445296528}
   - 23: {fileID: 445296527}
   - 64: {fileID: 445296529}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9110,7 +9178,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446621128}
   - 108: {fileID: 446621129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9173,7 +9241,7 @@ GameObject:
   - 4: {fileID: 446869699}
   - 33: {fileID: 446869701}
   - 23: {fileID: 446869700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9238,7 +9306,7 @@ GameObject:
   - 33: {fileID: 457970641}
   - 23: {fileID: 457970640}
   - 64: {fileID: 457970642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9316,7 +9384,7 @@ GameObject:
   - 33: {fileID: 462015988}
   - 23: {fileID: 462015987}
   - 64: {fileID: 462015989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9392,7 +9460,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 464421272}
   - 108: {fileID: 464421273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9455,7 +9523,7 @@ GameObject:
   - 4: {fileID: 464663562}
   - 33: {fileID: 464663564}
   - 23: {fileID: 464663563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_TV_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9521,7 +9589,7 @@ GameObject:
   - 33: {fileID: 465189081}
   - 23: {fileID: 465189080}
   - 64: {fileID: 465189082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9597,7 +9665,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 467926225}
   - 108: {fileID: 467926226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9728,7 +9796,7 @@ GameObject:
   - 33: {fileID: 472232988}
   - 23: {fileID: 472232987}
   - 64: {fileID: 472232989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9805,7 +9873,7 @@ GameObject:
   - 4: {fileID: 472633367}
   - 33: {fileID: 472633369}
   - 23: {fileID: 472633368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9870,7 +9938,7 @@ GameObject:
   - 33: {fileID: 479238581}
   - 23: {fileID: 479238580}
   - 64: {fileID: 479238582}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9948,7 +10016,7 @@ GameObject:
   - 33: {fileID: 479774437}
   - 23: {fileID: 479774436}
   - 64: {fileID: 479774438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10026,7 +10094,7 @@ GameObject:
   - 4: {fileID: 484794811}
   - 33: {fileID: 484794813}
   - 23: {fileID: 484794812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10089,7 +10157,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 484812062}
   - 108: {fileID: 484812063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10226,7 +10294,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 492842649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FLOOR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10355,7 +10423,7 @@ GameObject:
   - 33: {fileID: 494623633}
   - 23: {fileID: 494623632}
   - 64: {fileID: 494623634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10432,7 +10500,7 @@ GameObject:
   - 4: {fileID: 497551448}
   - 33: {fileID: 497551450}
   - 23: {fileID: 497551449}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10563,7 +10631,7 @@ GameObject:
   - 4: {fileID: 503612884}
   - 33: {fileID: 503612886}
   - 23: {fileID: 503612885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10627,7 +10695,7 @@ GameObject:
   - 4: {fileID: 505853388}
   - 33: {fileID: 505853390}
   - 23: {fileID: 505853389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10693,7 +10761,7 @@ GameObject:
   - 23: {fileID: 506479008}
   - 64: {fileID: 506479011}
   - 64: {fileID: 506479010}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10793,7 +10861,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 512533676}
   - 108: {fileID: 512533677}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10823,7 +10891,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 0.8235294, b: 0.6627451, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0.8
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -10857,7 +10925,7 @@ GameObject:
   - 33: {fileID: 514141452}
   - 23: {fileID: 514141451}
   - 64: {fileID: 514141453}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10934,7 +11002,7 @@ GameObject:
   - 4: {fileID: 516605206}
   - 33: {fileID: 516605208}
   - 23: {fileID: 516605207}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10997,7 +11065,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 521215900}
   - 108: {fileID: 521215901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11150,7 +11218,7 @@ GameObject:
   - 4: {fileID: 522248359}
   - 33: {fileID: 522248361}
   - 23: {fileID: 522248360}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11215,7 +11283,7 @@ GameObject:
   - 33: {fileID: 523311067}
   - 23: {fileID: 523311066}
   - 64: {fileID: 523311068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11292,7 +11360,7 @@ GameObject:
   - 4: {fileID: 523560573}
   - 33: {fileID: 523560575}
   - 23: {fileID: 523560574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11357,7 +11425,7 @@ GameObject:
   - 33: {fileID: 523624590}
   - 23: {fileID: 523624589}
   - 64: {fileID: 523624591}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11435,7 +11503,7 @@ GameObject:
   - 33: {fileID: 527863588}
   - 23: {fileID: 527863587}
   - 64: {fileID: 527863589}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11513,7 +11581,7 @@ GameObject:
   - 33: {fileID: 533445828}
   - 23: {fileID: 533445827}
   - 64: {fileID: 533445829}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11591,7 +11659,7 @@ GameObject:
   - 33: {fileID: 534532946}
   - 23: {fileID: 534532945}
   - 64: {fileID: 534532947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11669,7 +11737,7 @@ GameObject:
   - 4: {fileID: 541871876}
   - 33: {fileID: 541871878}
   - 23: {fileID: 541871877}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11731,7 +11799,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 542822317}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WALLS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11793,7 +11861,7 @@ GameObject:
   - 33: {fileID: 544054157}
   - 23: {fileID: 544054156}
   - 64: {fileID: 544054158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11870,7 +11938,7 @@ GameObject:
   - 4: {fileID: 547769638}
   - 33: {fileID: 547769640}
   - 23: {fileID: 547769639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11934,7 +12002,7 @@ GameObject:
   - 4: {fileID: 549825474}
   - 33: {fileID: 549825476}
   - 23: {fileID: 549825475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11999,7 +12067,7 @@ GameObject:
   - 33: {fileID: 550614048}
   - 23: {fileID: 550614047}
   - 64: {fileID: 550614049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12077,7 +12145,7 @@ GameObject:
   - 4: {fileID: 554009103}
   - 33: {fileID: 554009105}
   - 23: {fileID: 554009104}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12140,7 +12208,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 554096639}
   - 108: {fileID: 554096640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12203,7 +12271,7 @@ GameObject:
   - 4: {fileID: 555543614}
   - 33: {fileID: 555543616}
   - 23: {fileID: 555543615}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12267,7 +12335,7 @@ GameObject:
   - 4: {fileID: 560274049}
   - 33: {fileID: 560274051}
   - 23: {fileID: 560274050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12331,7 +12399,7 @@ GameObject:
   - 4: {fileID: 566277810}
   - 33: {fileID: 566277812}
   - 23: {fileID: 566277811}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12396,7 +12464,7 @@ GameObject:
   - 33: {fileID: 569098946}
   - 23: {fileID: 569098945}
   - 64: {fileID: 569098947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12474,7 +12542,7 @@ GameObject:
   - 33: {fileID: 570298372}
   - 23: {fileID: 570298371}
   - 64: {fileID: 570298373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12551,7 +12619,7 @@ GameObject:
   - 4: {fileID: 570823064}
   - 33: {fileID: 570823066}
   - 23: {fileID: 570823065}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12616,7 +12684,7 @@ GameObject:
   - 33: {fileID: 578097032}
   - 23: {fileID: 578097031}
   - 64: {fileID: 578097033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12693,7 +12761,7 @@ GameObject:
   - 4: {fileID: 581712079}
   - 33: {fileID: 581712081}
   - 23: {fileID: 581712080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12758,7 +12826,7 @@ GameObject:
   - 33: {fileID: 581863310}
   - 23: {fileID: 581863309}
   - 64: {fileID: 581863311}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12835,7 +12903,7 @@ GameObject:
   - 4: {fileID: 585321612}
   - 33: {fileID: 585321614}
   - 23: {fileID: 585321613}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12899,7 +12967,7 @@ GameObject:
   - 4: {fileID: 589366851}
   - 33: {fileID: 589366853}
   - 23: {fileID: 589366852}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12965,7 +13033,7 @@ GameObject:
   - 33: {fileID: 592029746}
   - 23: {fileID: 592029745}
   - 64: {fileID: 592029747}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13043,7 +13111,7 @@ GameObject:
   - 33: {fileID: 593865023}
   - 23: {fileID: 593865022}
   - 64: {fileID: 593865024}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13110,6 +13178,52 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300076, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &598262432
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -29.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &599844262
 GameObject:
   m_ObjectHideFlags: 0
@@ -13119,7 +13233,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 599844263}
   - 108: {fileID: 599844264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13172,6 +13286,52 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!1001 &604387469
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -29.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &606329323
 GameObject:
   m_ObjectHideFlags: 0
@@ -13182,7 +13342,7 @@ GameObject:
   - 4: {fileID: 606329324}
   - 33: {fileID: 606329326}
   - 23: {fileID: 606329325}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13247,7 +13407,7 @@ GameObject:
   - 33: {fileID: 607092173}
   - 23: {fileID: 607092172}
   - 64: {fileID: 607092174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13324,7 +13484,7 @@ GameObject:
   - 4: {fileID: 609057081}
   - 33: {fileID: 609057083}
   - 23: {fileID: 609057082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13388,7 +13548,7 @@ GameObject:
   - 4: {fileID: 610246423}
   - 33: {fileID: 610246425}
   - 23: {fileID: 610246424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13453,7 +13613,7 @@ GameObject:
   - 33: {fileID: 611059418}
   - 23: {fileID: 611059417}
   - 64: {fileID: 611059419}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13531,7 +13691,7 @@ GameObject:
   - 4: {fileID: 620373818}
   - 33: {fileID: 620373820}
   - 23: {fileID: 620373819}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13595,7 +13755,7 @@ GameObject:
   - 4: {fileID: 628301939}
   - 33: {fileID: 628301941}
   - 23: {fileID: 628301940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13660,7 +13820,7 @@ GameObject:
   - 33: {fileID: 629492065}
   - 23: {fileID: 629492064}
   - 64: {fileID: 629492066}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13824,7 +13984,7 @@ GameObject:
   - 4: {fileID: 631624690}
   - 33: {fileID: 631624692}
   - 23: {fileID: 631624691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13889,7 +14049,7 @@ GameObject:
   - 33: {fileID: 633288888}
   - 23: {fileID: 633288887}
   - 64: {fileID: 633288889}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13957,6 +14117,52 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300080, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &633433706
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &638682032
 GameObject:
   m_ObjectHideFlags: 0
@@ -13968,7 +14174,7 @@ GameObject:
   - 33: {fileID: 638682035}
   - 23: {fileID: 638682034}
   - 64: {fileID: 638682036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14046,7 +14252,7 @@ GameObject:
   - 4: {fileID: 652017087}
   - 33: {fileID: 652017089}
   - 23: {fileID: 652017088}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14276,7 +14482,7 @@ GameObject:
   - 4: {fileID: 656108653}
   - 33: {fileID: 656108655}
   - 23: {fileID: 656108654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14339,7 +14545,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 656231355}
   - 108: {fileID: 656231356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14402,7 +14608,7 @@ GameObject:
   - 4: {fileID: 664686145}
   - 33: {fileID: 664686147}
   - 23: {fileID: 664686146}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14467,7 +14673,7 @@ GameObject:
   - 33: {fileID: 664934660}
   - 23: {fileID: 664934659}
   - 64: {fileID: 664934661}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14545,7 +14751,7 @@ GameObject:
   - 33: {fileID: 666781222}
   - 23: {fileID: 666781221}
   - 64: {fileID: 666781223}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14622,7 +14828,7 @@ GameObject:
   - 4: {fileID: 667345173}
   - 33: {fileID: 667345175}
   - 23: {fileID: 667345174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14687,7 +14893,7 @@ GameObject:
   - 4: {fileID: 673941397}
   - 33: {fileID: 673941399}
   - 23: {fileID: 673941398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14798,7 +15004,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 686821460}
   - 108: {fileID: 686821461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14951,7 +15157,7 @@ GameObject:
   - 4: {fileID: 693371036}
   - 33: {fileID: 693371038}
   - 23: {fileID: 693371037}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15015,7 +15221,7 @@ GameObject:
   - 4: {fileID: 696188840}
   - 33: {fileID: 696188842}
   - 23: {fileID: 696188841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15080,7 +15286,7 @@ GameObject:
   - 33: {fileID: 697497437}
   - 23: {fileID: 697497436}
   - 64: {fileID: 697497438}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15158,7 +15364,7 @@ GameObject:
   - 33: {fileID: 701518280}
   - 23: {fileID: 701518279}
   - 64: {fileID: 701518281}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15236,7 +15442,7 @@ GameObject:
   - 4: {fileID: 702733016}
   - 33: {fileID: 702733018}
   - 23: {fileID: 702733017}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_TV_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15301,7 +15507,7 @@ GameObject:
   - 4: {fileID: 704539848}
   - 33: {fileID: 704539850}
   - 23: {fileID: 704539849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15364,7 +15570,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 709519982}
   - 108: {fileID: 709519983}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15428,7 +15634,7 @@ GameObject:
   - 33: {fileID: 713483378}
   - 23: {fileID: 713483377}
   - 64: {fileID: 713483379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15573,7 +15779,7 @@ GameObject:
   - 33: {fileID: 716604416}
   - 23: {fileID: 716604415}
   - 64: {fileID: 716604417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15650,7 +15856,7 @@ GameObject:
   - 4: {fileID: 718352538}
   - 33: {fileID: 718352540}
   - 23: {fileID: 718352539}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15714,7 +15920,7 @@ GameObject:
   - 4: {fileID: 726613266}
   - 33: {fileID: 726613268}
   - 23: {fileID: 726613267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15778,7 +15984,7 @@ GameObject:
   - 4: {fileID: 726907788}
   - 33: {fileID: 726907790}
   - 23: {fileID: 726907789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15843,7 +16049,7 @@ GameObject:
   - 4: {fileID: 732088263}
   - 33: {fileID: 732088265}
   - 23: {fileID: 732088264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15908,7 +16114,7 @@ GameObject:
   - 4: {fileID: 743149383}
   - 33: {fileID: 743149385}
   - 23: {fileID: 743149384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15972,7 +16178,7 @@ GameObject:
   - 4: {fileID: 746449140}
   - 33: {fileID: 746449142}
   - 23: {fileID: 746449141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16037,7 +16243,7 @@ GameObject:
   - 33: {fileID: 746685258}
   - 23: {fileID: 746685257}
   - 64: {fileID: 746685259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16115,7 +16321,7 @@ GameObject:
   - 33: {fileID: 747915183}
   - 23: {fileID: 747915182}
   - 64: {fileID: 747915184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16192,7 +16398,7 @@ GameObject:
   - 4: {fileID: 749659434}
   - 33: {fileID: 749659436}
   - 23: {fileID: 749659435}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16256,7 +16462,7 @@ GameObject:
   - 4: {fileID: 751010601}
   - 33: {fileID: 751010603}
   - 23: {fileID: 751010602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16320,7 +16526,7 @@ GameObject:
   - 4: {fileID: 753146943}
   - 33: {fileID: 753146945}
   - 23: {fileID: 753146944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16384,7 +16590,7 @@ GameObject:
   - 4: {fileID: 756519892}
   - 33: {fileID: 756519894}
   - 23: {fileID: 756519893}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_chair_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16448,7 +16654,7 @@ GameObject:
   - 4: {fileID: 757083351}
   - 33: {fileID: 757083353}
   - 23: {fileID: 757083352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16513,7 +16719,7 @@ GameObject:
   - 33: {fileID: 757358614}
   - 23: {fileID: 757358613}
   - 64: {fileID: 757358615}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16590,7 +16796,7 @@ GameObject:
   - 4: {fileID: 759124561}
   - 33: {fileID: 759124563}
   - 23: {fileID: 759124562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16655,7 +16861,7 @@ GameObject:
   - 33: {fileID: 761014424}
   - 23: {fileID: 761014423}
   - 64: {fileID: 761014425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16732,7 +16938,7 @@ GameObject:
   - 4: {fileID: 770010255}
   - 33: {fileID: 770010257}
   - 23: {fileID: 770010256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16786,6 +16992,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 770010254}
   m_Mesh: {fileID: 4300036, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &783039744
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &788558001
 GameObject:
   m_ObjectHideFlags: 0
@@ -16797,7 +17049,7 @@ GameObject:
   - 33: {fileID: 788558004}
   - 23: {fileID: 788558003}
   - 64: {fileID: 788558005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16874,7 +17126,7 @@ GameObject:
   - 4: {fileID: 789737815}
   - 33: {fileID: 789737817}
   - 23: {fileID: 789737816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16939,7 +17191,7 @@ GameObject:
   - 33: {fileID: 794852212}
   - 23: {fileID: 794852211}
   - 64: {fileID: 794852213}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17016,7 +17268,7 @@ GameObject:
   - 4: {fileID: 795295668}
   - 33: {fileID: 795295670}
   - 23: {fileID: 795295669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17080,7 +17332,7 @@ GameObject:
   - 4: {fileID: 799027619}
   - 33: {fileID: 799027621}
   - 23: {fileID: 799027620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17144,7 +17396,7 @@ GameObject:
   - 4: {fileID: 800846383}
   - 33: {fileID: 800846385}
   - 23: {fileID: 800846384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17209,7 +17461,7 @@ GameObject:
   - 33: {fileID: 803014752}
   - 23: {fileID: 803014751}
   - 64: {fileID: 803014753}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17286,7 +17538,7 @@ GameObject:
   - 4: {fileID: 803292049}
   - 33: {fileID: 803292051}
   - 23: {fileID: 803292050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17340,6 +17592,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 803292048}
   m_Mesh: {fileID: 4300054, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &803359528
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -19.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &803977227
 GameObject:
   m_ObjectHideFlags: 0
@@ -17350,7 +17644,7 @@ GameObject:
   - 4: {fileID: 803977228}
   - 33: {fileID: 803977230}
   - 23: {fileID: 803977229}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17413,7 +17707,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 805195984}
   - 108: {fileID: 805195985}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17443,7 +17737,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 0.8235294, b: 0.6627451, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 1.6
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -17475,7 +17769,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 805222392}
   - 108: {fileID: 805222393}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17539,7 +17833,7 @@ GameObject:
   - 33: {fileID: 807783035}
   - 23: {fileID: 807783034}
   - 64: {fileID: 807783036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17617,7 +17911,7 @@ GameObject:
   - 33: {fileID: 809768539}
   - 23: {fileID: 809768538}
   - 64: {fileID: 809768540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17694,7 +17988,7 @@ GameObject:
   - 4: {fileID: 810949050}
   - 33: {fileID: 810949052}
   - 23: {fileID: 810949051}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17758,7 +18052,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 813209621}
   - 108: {fileID: 813209622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17821,7 +18115,7 @@ GameObject:
   - 4: {fileID: 813769598}
   - 33: {fileID: 813769600}
   - 23: {fileID: 813769599}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17886,7 +18180,7 @@ GameObject:
   - 33: {fileID: 814117957}
   - 23: {fileID: 814117956}
   - 64: {fileID: 814117958}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17964,7 +18258,7 @@ GameObject:
   - 33: {fileID: 814359037}
   - 23: {fileID: 814359036}
   - 64: {fileID: 814359038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18041,7 +18335,7 @@ GameObject:
   - 4: {fileID: 815320310}
   - 33: {fileID: 815320312}
   - 23: {fileID: 815320311}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18106,7 +18400,7 @@ GameObject:
   - 33: {fileID: 815733169}
   - 23: {fileID: 815733168}
   - 64: {fileID: 815733170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18183,7 +18477,7 @@ GameObject:
   - 4: {fileID: 820085858}
   - 33: {fileID: 820085860}
   - 23: {fileID: 820085859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18248,7 +18542,7 @@ GameObject:
   - 33: {fileID: 824276580}
   - 23: {fileID: 824276579}
   - 64: {fileID: 824276581}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18325,7 +18619,7 @@ GameObject:
   - 4: {fileID: 824838820}
   - 33: {fileID: 824838822}
   - 23: {fileID: 824838821}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18390,7 +18684,7 @@ GameObject:
   - 4: {fileID: 828569370}
   - 33: {fileID: 828569372}
   - 23: {fileID: 828569371}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18526,7 +18820,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 841912017}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CEILING
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18630,7 +18924,7 @@ GameObject:
   - 4: {fileID: 847740069}
   - 33: {fileID: 847740071}
   - 23: {fileID: 847740070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18694,7 +18988,7 @@ GameObject:
   - 4: {fileID: 852063565}
   - 33: {fileID: 852063567}
   - 23: {fileID: 852063566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18791,7 +19085,7 @@ GameObject:
   - 33: {fileID: 871618490}
   - 23: {fileID: 871618489}
   - 64: {fileID: 871618491}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18858,6 +19152,48 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300014, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &875408593
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.14378
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.8903418
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &877070775
 GameObject:
   m_ObjectHideFlags: 0
@@ -18899,7 +19235,7 @@ GameObject:
   - 33: {fileID: 880244379}
   - 23: {fileID: 880244378}
   - 64: {fileID: 880244380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18976,7 +19312,7 @@ GameObject:
   - 4: {fileID: 881068190}
   - 33: {fileID: 881068192}
   - 23: {fileID: 881068191}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19040,7 +19376,7 @@ GameObject:
   - 4: {fileID: 883771128}
   - 33: {fileID: 883771130}
   - 23: {fileID: 883771129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19105,7 +19441,7 @@ GameObject:
   - 33: {fileID: 890755185}
   - 23: {fileID: 890755184}
   - 64: {fileID: 890755186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19185,7 +19521,7 @@ GameObject:
   - 4: {fileID: 891004595}
   - 33: {fileID: 891004597}
   - 23: {fileID: 891004596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19249,7 +19585,7 @@ GameObject:
   - 4: {fileID: 894435498}
   - 33: {fileID: 894435500}
   - 23: {fileID: 894435499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19314,7 +19650,7 @@ GameObject:
   - 33: {fileID: 896444603}
   - 23: {fileID: 896444602}
   - 64: {fileID: 896444604}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cash_out_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19391,7 +19727,7 @@ GameObject:
   - 4: {fileID: 901288182}
   - 33: {fileID: 901288184}
   - 23: {fileID: 901288183}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19456,7 +19792,7 @@ GameObject:
   - 4: {fileID: 901597457}
   - 33: {fileID: 901597459}
   - 23: {fileID: 901597458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19519,7 +19855,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 902438885}
   - 108: {fileID: 902438886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19582,7 +19918,7 @@ GameObject:
   - 4: {fileID: 904818208}
   - 33: {fileID: 904818210}
   - 23: {fileID: 904818209}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19646,7 +19982,7 @@ GameObject:
   - 4: {fileID: 911748360}
   - 33: {fileID: 911748362}
   - 23: {fileID: 911748361}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19710,7 +20046,7 @@ GameObject:
   - 4: {fileID: 917251185}
   - 33: {fileID: 917251187}
   - 23: {fileID: 917251186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19774,7 +20110,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 930324947}
   - 108: {fileID: 930324948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19837,7 +20173,7 @@ GameObject:
   - 4: {fileID: 930906785}
   - 33: {fileID: 930906787}
   - 23: {fileID: 930906786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19901,7 +20237,7 @@ GameObject:
   - 4: {fileID: 934038366}
   - 33: {fileID: 934038368}
   - 23: {fileID: 934038367}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19966,7 +20302,7 @@ GameObject:
   - 33: {fileID: 938052871}
   - 23: {fileID: 938052870}
   - 64: {fileID: 938052872}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20044,7 +20380,7 @@ GameObject:
   - 33: {fileID: 938068897}
   - 23: {fileID: 938068896}
   - 64: {fileID: 938068898}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20142,7 +20478,7 @@ GameObject:
   - 4: {fileID: 938894641}
   - 33: {fileID: 938894643}
   - 23: {fileID: 938894642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20206,7 +20542,7 @@ GameObject:
   - 4: {fileID: 939146252}
   - 33: {fileID: 939146254}
   - 23: {fileID: 939146253}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20271,7 +20607,7 @@ GameObject:
   - 33: {fileID: 941672191}
   - 23: {fileID: 941672190}
   - 64: {fileID: 941672192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20349,7 +20685,7 @@ GameObject:
   - 33: {fileID: 942232441}
   - 23: {fileID: 942232440}
   - 64: {fileID: 942232442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20426,7 +20762,7 @@ GameObject:
   - 4: {fileID: 947417910}
   - 33: {fileID: 947417912}
   - 23: {fileID: 947417911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20490,7 +20826,7 @@ GameObject:
   - 4: {fileID: 948192343}
   - 33: {fileID: 948192345}
   - 23: {fileID: 948192344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20554,7 +20890,7 @@ GameObject:
   - 4: {fileID: 952843432}
   - 33: {fileID: 952843434}
   - 23: {fileID: 952843433}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20686,7 +21022,7 @@ GameObject:
   - 4: {fileID: 955926768}
   - 33: {fileID: 955926770}
   - 23: {fileID: 955926769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20751,7 +21087,7 @@ GameObject:
   - 33: {fileID: 957758423}
   - 23: {fileID: 957758422}
   - 64: {fileID: 957758424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_information_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20827,7 +21163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 959749992}
   - 108: {fileID: 959749993}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20889,7 +21225,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 963378937}
   - 108: {fileID: 963378938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20952,7 +21288,7 @@ GameObject:
   - 4: {fileID: 965853820}
   - 33: {fileID: 965853822}
   - 23: {fileID: 965853821}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21016,7 +21352,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 965916457}
   - 108: {fileID: 965916458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21079,7 +21415,7 @@ GameObject:
   - 4: {fileID: 969127437}
   - 33: {fileID: 969127439}
   - 23: {fileID: 969127438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21143,7 +21479,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 981302624}
   - 108: {fileID: 981302625}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21207,7 +21543,7 @@ GameObject:
   - 33: {fileID: 994505152}
   - 23: {fileID: 994505151}
   - 64: {fileID: 994505153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21274,6 +21610,52 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300056, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &997964296
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &998756879
 GameObject:
   m_ObjectHideFlags: 0
@@ -21284,7 +21666,7 @@ GameObject:
   - 4: {fileID: 998756880}
   - 33: {fileID: 998756882}
   - 23: {fileID: 998756881}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21338,48 +21720,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998756879}
   m_Mesh: {fileID: 4300036, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
---- !u!1001 &1001905664
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -19.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 453680, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2bd24a031f772184a8219f6ff693c14c, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1003191787
 GameObject:
   m_ObjectHideFlags: 0
@@ -21391,7 +21731,7 @@ GameObject:
   - 33: {fileID: 1003191790}
   - 23: {fileID: 1003191789}
   - 64: {fileID: 1003191791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21469,7 +21809,7 @@ GameObject:
   - 33: {fileID: 1003553205}
   - 23: {fileID: 1003553204}
   - 64: {fileID: 1003553206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21549,7 +21889,7 @@ GameObject:
   - 4: {fileID: 1007173801}
   - 33: {fileID: 1007173803}
   - 23: {fileID: 1007173802}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21614,7 +21954,7 @@ GameObject:
   - 33: {fileID: 1015029024}
   - 23: {fileID: 1015029023}
   - 64: {fileID: 1015029025}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21691,7 +22031,7 @@ GameObject:
   - 4: {fileID: 1020877426}
   - 33: {fileID: 1020877428}
   - 23: {fileID: 1020877427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21755,7 +22095,7 @@ GameObject:
   - 4: {fileID: 1020922776}
   - 33: {fileID: 1020922778}
   - 23: {fileID: 1020922777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21820,7 +22160,7 @@ GameObject:
   - 4: {fileID: 1026707937}
   - 33: {fileID: 1026707939}
   - 23: {fileID: 1026707938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21885,7 +22225,7 @@ GameObject:
   - 33: {fileID: 1031092982}
   - 23: {fileID: 1031092981}
   - 64: {fileID: 1031092983}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21963,7 +22303,7 @@ GameObject:
   - 33: {fileID: 1039136063}
   - 23: {fileID: 1039136062}
   - 64: {fileID: 1039136064}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22040,7 +22380,7 @@ GameObject:
   - 4: {fileID: 1046277826}
   - 33: {fileID: 1046277828}
   - 23: {fileID: 1046277827}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22104,7 +22444,7 @@ GameObject:
   - 4: {fileID: 1051344768}
   - 33: {fileID: 1051344770}
   - 23: {fileID: 1051344769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22169,7 +22509,7 @@ GameObject:
   - 33: {fileID: 1052414964}
   - 23: {fileID: 1052414963}
   - 64: {fileID: 1052414965}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22369,7 +22709,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1057830607}
   - 108: {fileID: 1057830608}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22432,7 +22772,7 @@ GameObject:
   - 4: {fileID: 1058016067}
   - 33: {fileID: 1058016069}
   - 23: {fileID: 1058016068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_chair_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22496,7 +22836,7 @@ GameObject:
   - 4: {fileID: 1059550859}
   - 33: {fileID: 1059550861}
   - 23: {fileID: 1059550860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22560,7 +22900,7 @@ GameObject:
   - 4: {fileID: 1065321712}
   - 33: {fileID: 1065321714}
   - 23: {fileID: 1065321713}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22625,7 +22965,7 @@ GameObject:
   - 33: {fileID: 1067318233}
   - 23: {fileID: 1067318232}
   - 64: {fileID: 1067318234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22702,7 +23042,7 @@ GameObject:
   - 4: {fileID: 1071177183}
   - 33: {fileID: 1071177185}
   - 23: {fileID: 1071177184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22764,12 +23104,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1074759723}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PROPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1074759723
 Transform:
@@ -22848,7 +23188,7 @@ GameObject:
   - 33: {fileID: 1077050713}
   - 23: {fileID: 1077050712}
   - 64: {fileID: 1077050714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22925,7 +23265,7 @@ GameObject:
   - 4: {fileID: 1081125452}
   - 33: {fileID: 1081125454}
   - 23: {fileID: 1081125453}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22991,7 +23331,7 @@ GameObject:
   - 33: {fileID: 1085676722}
   - 23: {fileID: 1085676721}
   - 64: {fileID: 1085676723}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23068,7 +23408,7 @@ GameObject:
   - 4: {fileID: 1088549414}
   - 33: {fileID: 1088549416}
   - 23: {fileID: 1088549415}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23132,7 +23472,7 @@ GameObject:
   - 4: {fileID: 1091186424}
   - 33: {fileID: 1091186426}
   - 23: {fileID: 1091186425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23335,7 +23675,7 @@ GameObject:
   - 33: {fileID: 1122968636}
   - 23: {fileID: 1122968635}
   - 64: {fileID: 1122968637}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23412,7 +23752,7 @@ GameObject:
   - 4: {fileID: 1124107565}
   - 33: {fileID: 1124107567}
   - 23: {fileID: 1124107566}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23476,7 +23816,7 @@ GameObject:
   - 4: {fileID: 1124173136}
   - 33: {fileID: 1124173138}
   - 23: {fileID: 1124173137}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23614,7 +23954,7 @@ GameObject:
   - 33: {fileID: 1124463037}
   - 23: {fileID: 1124463036}
   - 64: {fileID: 1124463038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23691,7 +24031,7 @@ GameObject:
   - 4: {fileID: 1124761295}
   - 33: {fileID: 1124761297}
   - 23: {fileID: 1124761296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23745,6 +24085,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1124761294}
   m_Mesh: {fileID: 4300040, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &1124870137
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1131240826
 GameObject:
   m_ObjectHideFlags: 0
@@ -23755,7 +24141,7 @@ GameObject:
   - 4: {fileID: 1131240827}
   - 33: {fileID: 1131240829}
   - 23: {fileID: 1131240828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23819,7 +24205,7 @@ GameObject:
   - 4: {fileID: 1133064445}
   - 33: {fileID: 1133064447}
   - 23: {fileID: 1133064446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23883,7 +24269,7 @@ GameObject:
   - 4: {fileID: 1138607251}
   - 33: {fileID: 1138607253}
   - 23: {fileID: 1138607252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23948,7 +24334,7 @@ GameObject:
   - 33: {fileID: 1140488757}
   - 23: {fileID: 1140488756}
   - 64: {fileID: 1140488758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24025,7 +24411,7 @@ GameObject:
   - 4: {fileID: 1142206555}
   - 33: {fileID: 1142206557}
   - 23: {fileID: 1142206556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24089,7 +24475,7 @@ GameObject:
   - 4: {fileID: 1147774630}
   - 33: {fileID: 1147774632}
   - 23: {fileID: 1147774631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24154,7 +24540,7 @@ GameObject:
   - 33: {fileID: 1150152565}
   - 23: {fileID: 1150152564}
   - 64: {fileID: 1150152566}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24231,7 +24617,7 @@ GameObject:
   - 4: {fileID: 1153778661}
   - 33: {fileID: 1153778663}
   - 23: {fileID: 1153778662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24295,7 +24681,7 @@ GameObject:
   - 4: {fileID: 1160183395}
   - 33: {fileID: 1160183397}
   - 23: {fileID: 1160183396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24359,7 +24745,7 @@ GameObject:
   - 4: {fileID: 1164878436}
   - 33: {fileID: 1164878438}
   - 23: {fileID: 1164878437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24424,7 +24810,7 @@ GameObject:
   - 4: {fileID: 1165907883}
   - 33: {fileID: 1165907885}
   - 23: {fileID: 1165907884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24489,7 +24875,7 @@ GameObject:
   - 33: {fileID: 1166044280}
   - 23: {fileID: 1166044279}
   - 64: {fileID: 1166044281}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24566,7 +24952,7 @@ GameObject:
   - 4: {fileID: 1168497899}
   - 33: {fileID: 1168497901}
   - 23: {fileID: 1168497900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24629,7 +25015,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1171425140}
   - 108: {fileID: 1171425141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24659,7 +25045,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 0.8235294, b: 0.6627451, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 1.6
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -24691,7 +25077,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1172096703}
   - 108: {fileID: 1172096704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24754,7 +25140,7 @@ GameObject:
   - 4: {fileID: 1201189128}
   - 33: {fileID: 1201189130}
   - 23: {fileID: 1201189129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24819,7 +25205,7 @@ GameObject:
   - 33: {fileID: 1202545294}
   - 23: {fileID: 1202545293}
   - 64: {fileID: 1202545295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24897,7 +25283,7 @@ GameObject:
   - 4: {fileID: 1205917471}
   - 33: {fileID: 1205917473}
   - 23: {fileID: 1205917472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24961,7 +25347,7 @@ GameObject:
   - 4: {fileID: 1207814141}
   - 33: {fileID: 1207814143}
   - 23: {fileID: 1207814142}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25025,7 +25411,7 @@ GameObject:
   - 4: {fileID: 1212413798}
   - 33: {fileID: 1212413800}
   - 23: {fileID: 1212413799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25090,7 +25476,7 @@ GameObject:
   - 33: {fileID: 1217175516}
   - 23: {fileID: 1217175515}
   - 64: {fileID: 1217175517}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25168,7 +25554,7 @@ GameObject:
   - 4: {fileID: 1217829921}
   - 33: {fileID: 1217829923}
   - 23: {fileID: 1217829922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25232,7 +25618,7 @@ GameObject:
   - 4: {fileID: 1220363627}
   - 33: {fileID: 1220363629}
   - 23: {fileID: 1220363628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25297,7 +25683,7 @@ GameObject:
   - 33: {fileID: 1227648972}
   - 23: {fileID: 1227648971}
   - 64: {fileID: 1227648973}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25374,7 +25760,7 @@ GameObject:
   - 4: {fileID: 1231642841}
   - 33: {fileID: 1231642843}
   - 23: {fileID: 1231642842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25438,7 +25824,7 @@ GameObject:
   - 4: {fileID: 1234872641}
   - 33: {fileID: 1234872643}
   - 23: {fileID: 1234872642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25502,7 +25888,7 @@ GameObject:
   - 4: {fileID: 1235014956}
   - 33: {fileID: 1235014958}
   - 23: {fileID: 1235014957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25566,7 +25952,7 @@ GameObject:
   - 4: {fileID: 1235660095}
   - 33: {fileID: 1235660097}
   - 23: {fileID: 1235660096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25631,7 +26017,7 @@ GameObject:
   - 33: {fileID: 1247527035}
   - 23: {fileID: 1247527034}
   - 64: {fileID: 1247527036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25793,7 +26179,7 @@ GameObject:
   - 4: {fileID: 1251453649}
   - 33: {fileID: 1251453651}
   - 23: {fileID: 1251453650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25857,7 +26243,7 @@ GameObject:
   - 4: {fileID: 1254029217}
   - 33: {fileID: 1254029219}
   - 23: {fileID: 1254029218}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25921,7 +26307,7 @@ GameObject:
   - 4: {fileID: 1259391808}
   - 33: {fileID: 1259391810}
   - 23: {fileID: 1259391809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25985,7 +26371,7 @@ GameObject:
   - 4: {fileID: 1266726747}
   - 33: {fileID: 1266726749}
   - 23: {fileID: 1266726748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26050,7 +26436,7 @@ GameObject:
   - 33: {fileID: 1270419334}
   - 23: {fileID: 1270419333}
   - 64: {fileID: 1270419335}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26127,7 +26513,7 @@ GameObject:
   - 4: {fileID: 1278845234}
   - 33: {fileID: 1278845236}
   - 23: {fileID: 1278845235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26192,7 +26578,7 @@ GameObject:
   - 33: {fileID: 1279128187}
   - 23: {fileID: 1279128186}
   - 64: {fileID: 1279128188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26270,7 +26656,7 @@ GameObject:
   - 33: {fileID: 1279438885}
   - 23: {fileID: 1279438884}
   - 64: {fileID: 1279438886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26347,7 +26733,7 @@ GameObject:
   - 4: {fileID: 1279945827}
   - 33: {fileID: 1279945829}
   - 23: {fileID: 1279945828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26411,7 +26797,7 @@ GameObject:
   - 4: {fileID: 1290803493}
   - 33: {fileID: 1290803495}
   - 23: {fileID: 1290803494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26476,7 +26862,7 @@ GameObject:
   - 33: {fileID: 1299021171}
   - 23: {fileID: 1299021170}
   - 64: {fileID: 1299021172}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26553,7 +26939,7 @@ GameObject:
   - 4: {fileID: 1304332207}
   - 33: {fileID: 1304332209}
   - 23: {fileID: 1304332208}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26620,7 +27006,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1308151946}
   - 108: {fileID: 1308151947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26682,7 +27068,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1309642082}
   - 108: {fileID: 1309642083}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26712,7 +27098,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 0.8235294, b: 0.6627451, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0.8
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -26745,7 +27131,7 @@ GameObject:
   - 4: {fileID: 1310053166}
   - 33: {fileID: 1310053168}
   - 23: {fileID: 1310053167}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_number_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26809,7 +27195,7 @@ GameObject:
   - 4: {fileID: 1310227383}
   - 33: {fileID: 1310227385}
   - 23: {fileID: 1310227384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26874,7 +27260,7 @@ GameObject:
   - 33: {fileID: 1314379840}
   - 23: {fileID: 1314379839}
   - 64: {fileID: 1314379841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26952,7 +27338,7 @@ GameObject:
   - 33: {fileID: 1314508037}
   - 23: {fileID: 1314508036}
   - 64: {fileID: 1314508038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27029,7 +27415,7 @@ GameObject:
   - 4: {fileID: 1319880692}
   - 33: {fileID: 1319880694}
   - 23: {fileID: 1319880693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27093,7 +27479,7 @@ GameObject:
   - 4: {fileID: 1324925048}
   - 33: {fileID: 1324925050}
   - 23: {fileID: 1324925049}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27157,7 +27543,7 @@ GameObject:
   - 4: {fileID: 1329558687}
   - 33: {fileID: 1329558689}
   - 23: {fileID: 1329558688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27306,7 +27692,7 @@ GameObject:
   - 4: {fileID: 1332894621}
   - 33: {fileID: 1332894623}
   - 23: {fileID: 1332894622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27371,7 +27757,7 @@ GameObject:
   - 33: {fileID: 1335651679}
   - 23: {fileID: 1335651678}
   - 64: {fileID: 1335651680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27448,7 +27834,7 @@ GameObject:
   - 4: {fileID: 1339250219}
   - 33: {fileID: 1339250221}
   - 23: {fileID: 1339250220}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27610,7 +27996,7 @@ GameObject:
   - 4: {fileID: 1350627487}
   - 33: {fileID: 1350627489}
   - 23: {fileID: 1350627488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_number_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27673,7 +28059,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1362647579}
   - 108: {fileID: 1362647580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27737,7 +28123,7 @@ GameObject:
   - 33: {fileID: 1363412499}
   - 23: {fileID: 1363412498}
   - 64: {fileID: 1363412500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27815,7 +28201,7 @@ GameObject:
   - 33: {fileID: 1364831335}
   - 23: {fileID: 1364831334}
   - 64: {fileID: 1364831336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27892,7 +28278,7 @@ GameObject:
   - 4: {fileID: 1365999337}
   - 33: {fileID: 1365999339}
   - 23: {fileID: 1365999338}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27956,7 +28342,7 @@ GameObject:
   - 4: {fileID: 1366277982}
   - 33: {fileID: 1366277984}
   - 23: {fileID: 1366277983}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28021,7 +28407,7 @@ GameObject:
   - 33: {fileID: 1366599246}
   - 23: {fileID: 1366599245}
   - 64: {fileID: 1366599247}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28098,7 +28484,7 @@ GameObject:
   - 4: {fileID: 1366636162}
   - 33: {fileID: 1366636164}
   - 23: {fileID: 1366636163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28162,7 +28548,7 @@ GameObject:
   - 4: {fileID: 1367645891}
   - 33: {fileID: 1367645893}
   - 23: {fileID: 1367645892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28227,7 +28613,7 @@ GameObject:
   - 33: {fileID: 1371058411}
   - 23: {fileID: 1371058410}
   - 64: {fileID: 1371058412}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28304,7 +28690,7 @@ GameObject:
   - 4: {fileID: 1371544005}
   - 33: {fileID: 1371544007}
   - 23: {fileID: 1371544006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28368,7 +28754,7 @@ GameObject:
   - 4: {fileID: 1381220132}
   - 33: {fileID: 1381220134}
   - 23: {fileID: 1381220133}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28430,7 +28816,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1382964248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ROOF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28516,7 +28902,7 @@ GameObject:
   - 4: {fileID: 1384152287}
   - 33: {fileID: 1384152289}
   - 23: {fileID: 1384152288}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28580,7 +28966,7 @@ GameObject:
   - 4: {fileID: 1390472750}
   - 33: {fileID: 1390472752}
   - 23: {fileID: 1390472751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28719,7 +29105,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1394630732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OUT_WALLS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28773,7 +29159,7 @@ GameObject:
   - 4: {fileID: 1396048437}
   - 33: {fileID: 1396048439}
   - 23: {fileID: 1396048438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_TV_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28838,7 +29224,7 @@ GameObject:
   - 4: {fileID: 1396812900}
   - 33: {fileID: 1396812902}
   - 23: {fileID: 1396812901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28903,7 +29289,7 @@ GameObject:
   - 33: {fileID: 1398822477}
   - 23: {fileID: 1398822476}
   - 64: {fileID: 1398822478}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29048,7 +29434,7 @@ GameObject:
   - 4: {fileID: 1413382242}
   - 33: {fileID: 1413382244}
   - 23: {fileID: 1413382243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29114,7 +29500,7 @@ GameObject:
   - 33: {fileID: 1414246951}
   - 23: {fileID: 1414246950}
   - 64: {fileID: 1414246952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29191,7 +29577,7 @@ GameObject:
   - 4: {fileID: 1418293085}
   - 33: {fileID: 1418293087}
   - 23: {fileID: 1418293086}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29256,7 +29642,7 @@ GameObject:
   - 33: {fileID: 1424017240}
   - 23: {fileID: 1424017239}
   - 64: {fileID: 1424017241}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29333,7 +29719,7 @@ GameObject:
   - 4: {fileID: 1427391823}
   - 33: {fileID: 1427391825}
   - 23: {fileID: 1427391824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29398,7 +29784,7 @@ GameObject:
   - 33: {fileID: 1429263224}
   - 23: {fileID: 1429263223}
   - 64: {fileID: 1429263225}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29476,7 +29862,7 @@ GameObject:
   - 33: {fileID: 1435384436}
   - 23: {fileID: 1435384435}
   - 64: {fileID: 1435384437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29553,7 +29939,7 @@ GameObject:
   - 4: {fileID: 1441440307}
   - 33: {fileID: 1441440309}
   - 23: {fileID: 1441440308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_TV_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29618,7 +30004,7 @@ GameObject:
   - 4: {fileID: 1442027057}
   - 33: {fileID: 1442027059}
   - 23: {fileID: 1442027058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29682,7 +30068,7 @@ GameObject:
   - 4: {fileID: 1442175518}
   - 33: {fileID: 1442175520}
   - 23: {fileID: 1442175519}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29747,7 +30133,7 @@ GameObject:
   - 33: {fileID: 1442627948}
   - 23: {fileID: 1442627947}
   - 64: {fileID: 1442627949}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29825,7 +30211,7 @@ GameObject:
   - 33: {fileID: 1446342452}
   - 23: {fileID: 1446342451}
   - 64: {fileID: 1446342453}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29902,7 +30288,7 @@ GameObject:
   - 4: {fileID: 1446484738}
   - 33: {fileID: 1446484740}
   - 23: {fileID: 1446484739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29965,7 +30351,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1452209945}
   - 108: {fileID: 1452209946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30028,7 +30414,7 @@ GameObject:
   - 4: {fileID: 1458683770}
   - 33: {fileID: 1458683772}
   - 23: {fileID: 1458683771}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30092,7 +30478,7 @@ GameObject:
   - 4: {fileID: 1463068742}
   - 33: {fileID: 1463068744}
   - 23: {fileID: 1463068743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30157,7 +30543,7 @@ GameObject:
   - 4: {fileID: 1463916880}
   - 33: {fileID: 1463916882}
   - 23: {fileID: 1463916881}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_case_01_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30221,7 +30607,7 @@ GameObject:
   - 4: {fileID: 1468006776}
   - 33: {fileID: 1468006778}
   - 23: {fileID: 1468006777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30286,7 +30672,7 @@ GameObject:
   - 33: {fileID: 1474969540}
   - 23: {fileID: 1474969539}
   - 64: {fileID: 1474969541}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30353,6 +30739,52 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300018, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &1479629029
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1484026291
 GameObject:
   m_ObjectHideFlags: 0
@@ -30363,7 +30795,7 @@ GameObject:
   - 4: {fileID: 1484026292}
   - 33: {fileID: 1484026294}
   - 23: {fileID: 1484026293}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30428,7 +30860,7 @@ GameObject:
   - 33: {fileID: 1489455567}
   - 23: {fileID: 1489455566}
   - 64: {fileID: 1489455568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30505,7 +30937,7 @@ GameObject:
   - 4: {fileID: 1497404549}
   - 33: {fileID: 1497404551}
   - 23: {fileID: 1497404550}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30569,7 +31001,7 @@ GameObject:
   - 4: {fileID: 1498299313}
   - 33: {fileID: 1498299315}
   - 23: {fileID: 1498299314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30634,7 +31066,7 @@ GameObject:
   - 33: {fileID: 1503973218}
   - 23: {fileID: 1503973217}
   - 64: {fileID: 1503973219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30711,7 +31143,7 @@ GameObject:
   - 4: {fileID: 1507323423}
   - 33: {fileID: 1507323425}
   - 23: {fileID: 1507323424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30777,7 +31209,7 @@ GameObject:
   - 33: {fileID: 1509272169}
   - 23: {fileID: 1509272168}
   - 64: {fileID: 1509272170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30855,7 +31287,7 @@ GameObject:
   - 33: {fileID: 1510413709}
   - 23: {fileID: 1510413708}
   - 64: {fileID: 1510413710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30933,7 +31365,7 @@ GameObject:
   - 4: {fileID: 1512640857}
   - 33: {fileID: 1512640859}
   - 23: {fileID: 1512640858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30997,7 +31429,7 @@ GameObject:
   - 4: {fileID: 1512902911}
   - 33: {fileID: 1512902913}
   - 23: {fileID: 1512902912}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31059,7 +31491,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1514275820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CASHOUT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31120,7 +31552,7 @@ GameObject:
   - 4: {fileID: 1516780099}
   - 33: {fileID: 1516780101}
   - 23: {fileID: 1516780100}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31184,7 +31616,7 @@ GameObject:
   - 4: {fileID: 1517517672}
   - 33: {fileID: 1517517674}
   - 23: {fileID: 1517517673}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31248,7 +31680,7 @@ GameObject:
   - 4: {fileID: 1518202901}
   - 33: {fileID: 1518202903}
   - 23: {fileID: 1518202902}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31312,7 +31744,7 @@ GameObject:
   - 4: {fileID: 1518757111}
   - 33: {fileID: 1518757113}
   - 23: {fileID: 1518757112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31375,7 +31807,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1525447490}
   - 108: {fileID: 1525447491}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31438,7 +31870,7 @@ GameObject:
   - 4: {fileID: 1527348521}
   - 33: {fileID: 1527348523}
   - 23: {fileID: 1527348522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31503,7 +31935,7 @@ GameObject:
   - 4: {fileID: 1528302407}
   - 33: {fileID: 1528302409}
   - 23: {fileID: 1528302408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31567,7 +31999,7 @@ GameObject:
   - 4: {fileID: 1528461500}
   - 33: {fileID: 1528461502}
   - 23: {fileID: 1528461501}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31632,7 +32064,7 @@ GameObject:
   - 33: {fileID: 1528695801}
   - 23: {fileID: 1528695800}
   - 64: {fileID: 1528695802}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31712,7 +32144,7 @@ GameObject:
   - 4: {fileID: 1530026482}
   - 33: {fileID: 1530026484}
   - 23: {fileID: 1530026483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31777,7 +32209,7 @@ GameObject:
   - 33: {fileID: 1538152268}
   - 23: {fileID: 1538152267}
   - 64: {fileID: 1538152269}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31854,7 +32286,7 @@ GameObject:
   - 4: {fileID: 1550169797}
   - 33: {fileID: 1550169799}
   - 23: {fileID: 1550169798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31936,7 +32368,7 @@ Transform:
   - {fileID: 831588520}
   - {fileID: 1936911714}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1554748701
 GameObject:
   m_ObjectHideFlags: 0
@@ -31948,7 +32380,7 @@ GameObject:
   - 33: {fileID: 1554748704}
   - 23: {fileID: 1554748703}
   - 64: {fileID: 1554748705}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32026,7 +32458,7 @@ GameObject:
   - 33: {fileID: 1557690954}
   - 23: {fileID: 1557690953}
   - 64: {fileID: 1557690955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32103,7 +32535,7 @@ GameObject:
   - 4: {fileID: 1570625648}
   - 33: {fileID: 1570625650}
   - 23: {fileID: 1570625649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_case_01_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32167,7 +32599,7 @@ GameObject:
   - 4: {fileID: 1574805070}
   - 33: {fileID: 1574805072}
   - 23: {fileID: 1574805071}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32221,6 +32653,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1574805069}
   m_Mesh: {fileID: 4300070, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &1579405829
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1580884714
 Prefab:
   m_ObjectHideFlags: 0
@@ -32273,7 +32751,7 @@ GameObject:
   - 4: {fileID: 1598730121}
   - 33: {fileID: 1598730123}
   - 23: {fileID: 1598730122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32337,7 +32815,7 @@ GameObject:
   - 4: {fileID: 1599738163}
   - 33: {fileID: 1599738165}
   - 23: {fileID: 1599738164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32402,7 +32880,7 @@ GameObject:
   - 33: {fileID: 1603004750}
   - 23: {fileID: 1603004749}
   - 64: {fileID: 1603004751}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32479,7 +32957,7 @@ GameObject:
   - 4: {fileID: 1603518375}
   - 33: {fileID: 1603518377}
   - 23: {fileID: 1603518376}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32542,7 +33020,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1604027574}
   - 108: {fileID: 1604027575}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32605,7 +33083,7 @@ GameObject:
   - 4: {fileID: 1606715967}
   - 33: {fileID: 1606715969}
   - 23: {fileID: 1606715968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32669,7 +33147,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1607046059}
   - 108: {fileID: 1607046060}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32733,7 +33211,7 @@ GameObject:
   - 33: {fileID: 1608358858}
   - 23: {fileID: 1608358857}
   - 64: {fileID: 1608358859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32810,7 +33288,7 @@ GameObject:
   - 4: {fileID: 1611142317}
   - 33: {fileID: 1611142319}
   - 23: {fileID: 1611142318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32875,7 +33353,7 @@ GameObject:
   - 33: {fileID: 1611997753}
   - 23: {fileID: 1611997752}
   - 64: {fileID: 1611997754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32952,7 +33430,7 @@ GameObject:
   - 4: {fileID: 1614113848}
   - 33: {fileID: 1614113850}
   - 23: {fileID: 1614113849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33016,7 +33494,7 @@ GameObject:
   - 4: {fileID: 1615006089}
   - 33: {fileID: 1615006091}
   - 23: {fileID: 1615006090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33081,7 +33559,7 @@ GameObject:
   - 33: {fileID: 1617964049}
   - 23: {fileID: 1617964048}
   - 64: {fileID: 1617964050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33157,7 +33635,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1623648986}
   - 108: {fileID: 1623648987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33221,7 +33699,7 @@ GameObject:
   - 33: {fileID: 1625830135}
   - 23: {fileID: 1625830134}
   - 64: {fileID: 1625830136}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33299,7 +33777,7 @@ GameObject:
   - 33: {fileID: 1629056010}
   - 23: {fileID: 1629056009}
   - 64: {fileID: 1629056011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33377,7 +33855,7 @@ GameObject:
   - 4: {fileID: 1630760214}
   - 33: {fileID: 1630760216}
   - 23: {fileID: 1630760215}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33442,7 +33920,7 @@ GameObject:
   - 33: {fileID: 1632102609}
   - 23: {fileID: 1632102608}
   - 64: {fileID: 1632102610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cash_out_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33517,7 +33995,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1655083009}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: COLIDERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33584,7 +34062,7 @@ GameObject:
   - 4: {fileID: 1660973973}
   - 33: {fileID: 1660973975}
   - 23: {fileID: 1660973974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33649,7 +34127,7 @@ GameObject:
   - 33: {fileID: 1662667156}
   - 23: {fileID: 1662667155}
   - 64: {fileID: 1662667157}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33725,7 +34203,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1662936929}
   - 108: {fileID: 1662936930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33788,7 +34266,7 @@ GameObject:
   - 4: {fileID: 1663500640}
   - 33: {fileID: 1663500642}
   - 23: {fileID: 1663500641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33851,7 +34329,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1665616670}
   - 108: {fileID: 1665616671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33913,7 +34391,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1668394857}
   - 108: {fileID: 1668394858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33977,7 +34455,7 @@ GameObject:
   - 33: {fileID: 1670646119}
   - 23: {fileID: 1670646118}
   - 64: {fileID: 1670646120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_case_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34055,7 +34533,7 @@ GameObject:
   - 4: {fileID: 1674641116}
   - 33: {fileID: 1674641118}
   - 23: {fileID: 1674641117}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34120,7 +34598,7 @@ GameObject:
   - 33: {fileID: 1679039770}
   - 23: {fileID: 1679039769}
   - 64: {fileID: 1679039771}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34197,7 +34675,7 @@ GameObject:
   - 4: {fileID: 1680853380}
   - 33: {fileID: 1680853382}
   - 23: {fileID: 1680853381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34262,7 +34740,7 @@ GameObject:
   - 4: {fileID: 1684996882}
   - 33: {fileID: 1684996884}
   - 23: {fileID: 1684996883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34325,7 +34803,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1685031504}
   - 108: {fileID: 1685031505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34388,7 +34866,7 @@ GameObject:
   - 4: {fileID: 1687813920}
   - 33: {fileID: 1687813922}
   - 23: {fileID: 1687813921}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34452,7 +34930,7 @@ GameObject:
   - 4: {fileID: 1691897309}
   - 33: {fileID: 1691897311}
   - 23: {fileID: 1691897310}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34515,7 +34993,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1694275603}
   - 108: {fileID: 1694275604}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34578,7 +35056,7 @@ GameObject:
   - 4: {fileID: 1694598293}
   - 33: {fileID: 1694598295}
   - 23: {fileID: 1694598294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34632,6 +35110,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694598292}
   m_Mesh: {fileID: 4300050, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
+--- !u!1001 &1697788717
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1700021162
 GameObject:
   m_ObjectHideFlags: 0
@@ -34643,7 +35163,7 @@ GameObject:
   - 33: {fileID: 1700021165}
   - 23: {fileID: 1700021164}
   - 64: {fileID: 1700021166}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34721,7 +35241,7 @@ GameObject:
   - 33: {fileID: 1704315026}
   - 23: {fileID: 1704315025}
   - 64: {fileID: 1704315027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34798,7 +35318,7 @@ GameObject:
   - 4: {fileID: 1710713739}
   - 33: {fileID: 1710713741}
   - 23: {fileID: 1710713740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34862,7 +35382,7 @@ GameObject:
   - 4: {fileID: 1711957553}
   - 33: {fileID: 1711957555}
   - 23: {fileID: 1711957554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34927,7 +35447,7 @@ GameObject:
   - 4: {fileID: 1714524629}
   - 33: {fileID: 1714524631}
   - 23: {fileID: 1714524630}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_set_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34991,7 +35511,7 @@ GameObject:
   - 4: {fileID: 1723922239}
   - 33: {fileID: 1723922241}
   - 23: {fileID: 1723922240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35055,7 +35575,7 @@ GameObject:
   - 4: {fileID: 1724392653}
   - 33: {fileID: 1724392655}
   - 23: {fileID: 1724392654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35117,7 +35637,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1725312991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LIGHTS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35200,7 +35720,7 @@ GameObject:
   - 4: {fileID: 1732315377}
   - 33: {fileID: 1732315379}
   - 23: {fileID: 1732315378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35325,7 +35845,7 @@ GameObject:
   - 4: {fileID: 1741317704}
   - 33: {fileID: 1741317706}
   - 23: {fileID: 1741317705}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35389,7 +35909,7 @@ GameObject:
   - 4: {fileID: 1743814423}
   - 33: {fileID: 1743814425}
   - 23: {fileID: 1743814424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35453,7 +35973,7 @@ GameObject:
   - 4: {fileID: 1745986887}
   - 33: {fileID: 1745986889}
   - 23: {fileID: 1745986888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35519,7 +36039,7 @@ GameObject:
   - 33: {fileID: 1749485150}
   - 23: {fileID: 1749485149}
   - 64: {fileID: 1749485151}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35598,7 +36118,7 @@ GameObject:
   - 33: {fileID: 1749878684}
   - 23: {fileID: 1749878683}
   - 64: {fileID: 1749878685}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35677,7 +36197,7 @@ GameObject:
   - 33: {fileID: 1759839793}
   - 23: {fileID: 1759839792}
   - 64: {fileID: 1759839794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35755,7 +36275,7 @@ GameObject:
   - 33: {fileID: 1761893573}
   - 23: {fileID: 1761893572}
   - 64: {fileID: 1761893574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35833,7 +36353,7 @@ GameObject:
   - 33: {fileID: 1762136200}
   - 23: {fileID: 1762136199}
   - 64: {fileID: 1762136201}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35910,7 +36430,7 @@ GameObject:
   - 4: {fileID: 1769279649}
   - 33: {fileID: 1769279651}
   - 23: {fileID: 1769279650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35975,7 +36495,7 @@ GameObject:
   - 33: {fileID: 1770968212}
   - 23: {fileID: 1770968211}
   - 64: {fileID: 1770968213}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_case_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36053,7 +36573,7 @@ GameObject:
   - 4: {fileID: 1776592170}
   - 33: {fileID: 1776592172}
   - 23: {fileID: 1776592171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36117,7 +36637,7 @@ GameObject:
   - 4: {fileID: 1785102316}
   - 33: {fileID: 1785102318}
   - 23: {fileID: 1785102317}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36182,7 +36702,7 @@ GameObject:
   - 33: {fileID: 1787651965}
   - 23: {fileID: 1787651964}
   - 64: {fileID: 1787651966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36261,7 +36781,7 @@ GameObject:
   - 33: {fileID: 1787721560}
   - 23: {fileID: 1787721559}
   - 64: {fileID: 1787721561}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36338,7 +36858,7 @@ GameObject:
   - 4: {fileID: 1789879334}
   - 33: {fileID: 1789879336}
   - 23: {fileID: 1789879335}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cashout_number_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36403,7 +36923,7 @@ GameObject:
   - 33: {fileID: 1797322750}
   - 23: {fileID: 1797322749}
   - 64: {fileID: 1797322751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36522,7 +37042,7 @@ GameObject:
   - 4: {fileID: 1799816380}
   - 33: {fileID: 1799816382}
   - 23: {fileID: 1799816381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36586,7 +37106,7 @@ GameObject:
   - 4: {fileID: 1800287896}
   - 33: {fileID: 1800287898}
   - 23: {fileID: 1800287897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_TV_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36651,7 +37171,7 @@ GameObject:
   - 4: {fileID: 1804853640}
   - 33: {fileID: 1804853642}
   - 23: {fileID: 1804853641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36716,7 +37236,7 @@ GameObject:
   - 33: {fileID: 1809256952}
   - 23: {fileID: 1809256951}
   - 64: {fileID: 1809256953}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36793,7 +37313,7 @@ GameObject:
   - 4: {fileID: 1809998031}
   - 33: {fileID: 1809998033}
   - 23: {fileID: 1809998032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36858,7 +37378,7 @@ GameObject:
   - 33: {fileID: 1814329971}
   - 23: {fileID: 1814329970}
   - 64: {fileID: 1814329972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36935,7 +37455,7 @@ GameObject:
   - 4: {fileID: 1816896159}
   - 33: {fileID: 1816896161}
   - 23: {fileID: 1816896160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36999,7 +37519,7 @@ GameObject:
   - 4: {fileID: 1817587298}
   - 33: {fileID: 1817587300}
   - 23: {fileID: 1817587299}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37063,7 +37583,7 @@ GameObject:
   - 4: {fileID: 1846233142}
   - 33: {fileID: 1846233144}
   - 23: {fileID: 1846233143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37127,7 +37647,7 @@ GameObject:
   - 4: {fileID: 1851434068}
   - 33: {fileID: 1851434070}
   - 23: {fileID: 1851434069}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37194,7 +37714,7 @@ GameObject:
   - 23: {fileID: 1859972344}
   - 64: {fileID: 1859972347}
   - 64: {fileID: 1859972346}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37284,7 +37804,7 @@ GameObject:
   - 4: {fileID: 1861556174}
   - 33: {fileID: 1861556176}
   - 23: {fileID: 1861556175}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37348,7 +37868,7 @@ GameObject:
   - 4: {fileID: 1869898866}
   - 33: {fileID: 1869898868}
   - 23: {fileID: 1869898867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37413,7 +37933,7 @@ GameObject:
   - 33: {fileID: 1871810534}
   - 23: {fileID: 1871810533}
   - 64: {fileID: 1871810535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cash_out_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37490,7 +38010,7 @@ GameObject:
   - 4: {fileID: 1877926553}
   - 33: {fileID: 1877926555}
   - 23: {fileID: 1877926554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37555,7 +38075,7 @@ GameObject:
   - 33: {fileID: 1878059216}
   - 23: {fileID: 1878059215}
   - 64: {fileID: 1878059217}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37632,7 +38152,7 @@ GameObject:
   - 4: {fileID: 1882620121}
   - 33: {fileID: 1882620123}
   - 23: {fileID: 1882620122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37697,7 +38217,7 @@ GameObject:
   - 33: {fileID: 1886631113}
   - 23: {fileID: 1886631112}
   - 64: {fileID: 1886631114}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37774,7 +38294,7 @@ GameObject:
   - 4: {fileID: 1891976228}
   - 33: {fileID: 1891976230}
   - 64: {fileID: 1891976229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37824,7 +38344,7 @@ GameObject:
   - 4: {fileID: 1901823356}
   - 33: {fileID: 1901823358}
   - 23: {fileID: 1901823357}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37888,7 +38408,7 @@ GameObject:
   - 4: {fileID: 1903397101}
   - 33: {fileID: 1903397103}
   - 23: {fileID: 1903397102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37952,7 +38472,7 @@ GameObject:
   - 4: {fileID: 1908118467}
   - 33: {fileID: 1908118466}
   - 23: {fileID: 1908118465}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38017,7 +38537,7 @@ GameObject:
   - 33: {fileID: 1908712879}
   - 23: {fileID: 1908712878}
   - 64: {fileID: 1908712880}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_atm_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38095,7 +38615,7 @@ GameObject:
   - 33: {fileID: 1909696323}
   - 23: {fileID: 1909696322}
   - 64: {fileID: 1909696324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38172,7 +38692,7 @@ GameObject:
   - 4: {fileID: 1910646781}
   - 33: {fileID: 1910646783}
   - 23: {fileID: 1910646782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38236,7 +38756,7 @@ GameObject:
   - 4: {fileID: 1914917388}
   - 33: {fileID: 1914917390}
   - 23: {fileID: 1914917389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38300,7 +38820,7 @@ GameObject:
   - 4: {fileID: 1916572698}
   - 33: {fileID: 1916572700}
   - 23: {fileID: 1916572699}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38365,7 +38885,7 @@ GameObject:
   - 33: {fileID: 1917753717}
   - 23: {fileID: 1917753716}
   - 64: {fileID: 1917753718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38446,7 +38966,7 @@ GameObject:
   - 33: {fileID: 1920647644}
   - 23: {fileID: 1920647643}
   - 64: {fileID: 1920647645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38525,7 +39045,7 @@ GameObject:
   - 23: {fileID: 1922196286}
   - 64: {fileID: 1922196288}
   - 114: {fileID: 1922196289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38731,7 +39251,7 @@ GameObject:
   - 4: {fileID: 1944340132}
   - 33: {fileID: 1944340134}
   - 23: {fileID: 1944340133}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38795,7 +39315,7 @@ GameObject:
   - 4: {fileID: 1947070384}
   - 33: {fileID: 1947070386}
   - 23: {fileID: 1947070385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_top_lamp_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38859,7 +39379,7 @@ GameObject:
   - 4: {fileID: 1948075097}
   - 33: {fileID: 1948075099}
   - 23: {fileID: 1948075098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38922,7 +39442,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1951108939}
   - 108: {fileID: 1951108940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38952,7 +39472,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 0.8235294, b: 0.6627451, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0.8
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -38986,7 +39506,7 @@ GameObject:
   - 33: {fileID: 1951495518}
   - 23: {fileID: 1951495517}
   - 64: {fileID: 1951495519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39063,7 +39583,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1951517971}
   - 108: {fileID: 1951517972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39126,7 +39646,7 @@ GameObject:
   - 4: {fileID: 1951800645}
   - 33: {fileID: 1951800647}
   - 23: {fileID: 1951800646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39190,7 +39710,7 @@ GameObject:
   - 4: {fileID: 1952698280}
   - 33: {fileID: 1952698282}
   - 23: {fileID: 1952698281}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39328,7 +39848,7 @@ GameObject:
   - 4: {fileID: 1956657841}
   - 33: {fileID: 1956657843}
   - 23: {fileID: 1956657842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39392,7 +39912,7 @@ GameObject:
   - 4: {fileID: 1961916298}
   - 33: {fileID: 1961916300}
   - 23: {fileID: 1961916299}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39484,7 +40004,7 @@ GameObject:
   - 4: {fileID: 1964946209}
   - 33: {fileID: 1964946211}
   - 23: {fileID: 1964946210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39548,7 +40068,7 @@ GameObject:
   - 4: {fileID: 1965279302}
   - 33: {fileID: 1965279304}
   - 23: {fileID: 1965279303}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39612,7 +40132,7 @@ GameObject:
   - 4: {fileID: 1967281312}
   - 33: {fileID: 1967281314}
   - 23: {fileID: 1967281313}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39676,7 +40196,7 @@ GameObject:
   - 4: {fileID: 1971104068}
   - 33: {fileID: 1971104070}
   - 23: {fileID: 1971104069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39740,7 +40260,7 @@ GameObject:
   - 4: {fileID: 1971300807}
   - 33: {fileID: 1971300809}
   - 23: {fileID: 1971300808}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_02_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39872,7 +40392,7 @@ GameObject:
   - 33: {fileID: 1973974165}
   - 23: {fileID: 1973974164}
   - 64: {fileID: 1973974166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39953,7 +40473,7 @@ GameObject:
   - 33: {fileID: 1976301057}
   - 23: {fileID: 1976301056}
   - 64: {fileID: 1976301058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40116,7 +40636,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1979949634}
   - 108: {fileID: 1979949635}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40180,7 +40700,7 @@ GameObject:
   - 33: {fileID: 1985019436}
   - 23: {fileID: 1985019435}
   - 64: {fileID: 1985019437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40263,7 +40783,7 @@ GameObject:
   - 33: {fileID: 1987221151}
   - 23: {fileID: 1987221150}
   - 64: {fileID: 1987221152}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_column_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40340,7 +40860,7 @@ GameObject:
   - 4: {fileID: 1989438051}
   - 33: {fileID: 1989438053}
   - 23: {fileID: 1989438052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40404,7 +40924,7 @@ GameObject:
   - 4: {fileID: 1992510021}
   - 33: {fileID: 1992510023}
   - 23: {fileID: 1992510022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40468,7 +40988,7 @@ GameObject:
   - 4: {fileID: 2000169054}
   - 33: {fileID: 2000169056}
   - 23: {fileID: 2000169055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_food_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40532,7 +41052,7 @@ GameObject:
   - 4: {fileID: 2004980095}
   - 33: {fileID: 2004980097}
   - 23: {fileID: 2004980096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ceiling_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40594,7 +41114,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2005534884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SHELFS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40703,6 +41223,52 @@ Transform:
   - {fileID: 2131725700}
   m_Father: {fileID: 1660212526}
   m_RootOrder: 6
+--- !u!1001 &2009081206
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2009736424
 GameObject:
   m_ObjectHideFlags: 0
@@ -40714,7 +41280,7 @@ GameObject:
   - 33: {fileID: 2009736427}
   - 23: {fileID: 2009736426}
   - 64: {fileID: 2009736428}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40791,7 +41357,7 @@ GameObject:
   - 4: {fileID: 2015857338}
   - 33: {fileID: 2015857340}
   - 23: {fileID: 2015857339}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40856,7 +41422,7 @@ GameObject:
   - 4: {fileID: 2016322201}
   - 33: {fileID: 2016322203}
   - 23: {fileID: 2016322202}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40920,7 +41486,7 @@ GameObject:
   - 4: {fileID: 2021429483}
   - 33: {fileID: 2021429485}
   - 23: {fileID: 2021429484}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40984,7 +41550,7 @@ GameObject:
   - 4: {fileID: 2022677931}
   - 33: {fileID: 2022677933}
   - 23: {fileID: 2022677932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41048,7 +41614,7 @@ GameObject:
   - 4: {fileID: 2023554063}
   - 33: {fileID: 2023554065}
   - 23: {fileID: 2023554064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41113,7 +41679,7 @@ GameObject:
   - 33: {fileID: 2024317530}
   - 23: {fileID: 2024317529}
   - 64: {fileID: 2024317531}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41191,7 +41757,7 @@ GameObject:
   - 33: {fileID: 2024386167}
   - 23: {fileID: 2024386166}
   - 64: {fileID: 2024386168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41268,7 +41834,7 @@ GameObject:
   - 4: {fileID: 2024536468}
   - 33: {fileID: 2024536470}
   - 23: {fileID: 2024536469}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41332,7 +41898,7 @@ GameObject:
   - 4: {fileID: 2026755447}
   - 33: {fileID: 2026755449}
   - 23: {fileID: 2026755448}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41397,7 +41963,7 @@ GameObject:
   - 33: {fileID: 2027499961}
   - 23: {fileID: 2027499960}
   - 64: {fileID: 2027499962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41476,7 +42042,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2029469959}
   - 108: {fileID: 2029469960}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41539,7 +42105,7 @@ GameObject:
   - 4: {fileID: 2029520432}
   - 33: {fileID: 2029520434}
   - 23: {fileID: 2029520433}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41603,7 +42169,7 @@ GameObject:
   - 4: {fileID: 2029834623}
   - 33: {fileID: 2029834625}
   - 23: {fileID: 2029834624}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41667,7 +42233,7 @@ GameObject:
   - 4: {fileID: 2030071218}
   - 33: {fileID: 2030071220}
   - 23: {fileID: 2030071219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41731,7 +42297,7 @@ GameObject:
   - 4: {fileID: 2030882426}
   - 33: {fileID: 2030882428}
   - 23: {fileID: 2030882427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41873,7 +42439,7 @@ GameObject:
   - 4: {fileID: 2042254976}
   - 33: {fileID: 2042254978}
   - 23: {fileID: 2042254977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41938,7 +42504,7 @@ GameObject:
   - 33: {fileID: 2043126459}
   - 23: {fileID: 2043126458}
   - 64: {fileID: 2043126460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cart_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42015,7 +42581,7 @@ GameObject:
   - 4: {fileID: 2047308783}
   - 33: {fileID: 2047308785}
   - 23: {fileID: 2047308784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42079,7 +42645,7 @@ GameObject:
   - 4: {fileID: 2051309094}
   - 33: {fileID: 2051309096}
   - 23: {fileID: 2051309095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_01_B_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42144,7 +42710,7 @@ GameObject:
   - 33: {fileID: 2053408140}
   - 23: {fileID: 2053408139}
   - 64: {fileID: 2053408141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42221,7 +42787,7 @@ GameObject:
   - 4: {fileID: 2053433824}
   - 33: {fileID: 2053433826}
   - 23: {fileID: 2053433825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_chair_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42286,7 +42852,7 @@ GameObject:
   - 33: {fileID: 2056183599}
   - 23: {fileID: 2056183598}
   - 64: {fileID: 2056183600}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_out_wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42363,7 +42929,7 @@ GameObject:
   - 4: {fileID: 2057200051}
   - 33: {fileID: 2057200053}
   - 23: {fileID: 2057200052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_door_03_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42427,7 +42993,7 @@ GameObject:
   - 4: {fileID: 2058739516}
   - 33: {fileID: 2058739518}
   - 23: {fileID: 2058739517}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_TV_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42493,7 +43059,7 @@ GameObject:
   - 33: {fileID: 2060722945}
   - 23: {fileID: 2060722944}
   - 64: {fileID: 2060722946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_cash_out_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42570,7 +43136,7 @@ GameObject:
   - 4: {fileID: 2060764269}
   - 33: {fileID: 2060764271}
   - 23: {fileID: 2060764270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42635,7 +43201,7 @@ GameObject:
   - 33: {fileID: 2061626980}
   - 23: {fileID: 2061626979}
   - 64: {fileID: 2061626981}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42712,7 +43278,7 @@ GameObject:
   - 4: {fileID: 2063094237}
   - 33: {fileID: 2063094239}
   - 23: {fileID: 2063094238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh_roof_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42776,7 +43342,7 @@ GameObject:
   - 4: {fileID: 2065605306}
   - 33: {fileID: 2065605308}
   - 23: {fileID: 2065605307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_03_A_glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42839,7 +43405,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2077434653}
   - 108: {fileID: 2077434654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42902,7 +43468,7 @@ GameObject:
   - 4: {fileID: 2080239305}
   - 33: {fileID: 2080239307}
   - 23: {fileID: 2080239306}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42966,7 +43532,7 @@ GameObject:
   - 4: {fileID: 2084881868}
   - 33: {fileID: 2084881870}
   - 23: {fileID: 2084881869}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_fence_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43020,66 +43586,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2084881867}
   m_Mesh: {fileID: 4300106, guid: e33ec5e7ebfb27c478ac7f9c489ba6bc, type: 3}
---- !u!1 &2091567557
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2091567561}
-  - 33: {fileID: 2091567560}
-  - 65: {fileID: 2091567559}
-  - 114: {fileID: 2091567558}
-  m_Layer: 0
-  m_Name: Levelend3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2091567558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091567557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7418cde2ce2164ec2bbb9454618d86b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &2091567559
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091567557}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &2091567560
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091567557}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2091567561
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2091567557}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -24.611, y: 1.636, z: -3.476}
-  m_LocalScale: {x: 2, y: 3, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
 --- !u!1 &2091897905
 GameObject:
   m_ObjectHideFlags: 0
@@ -43090,7 +43596,7 @@ GameObject:
   - 4: {fileID: 2091897906}
   - 33: {fileID: 2091897908}
   - 23: {fileID: 2091897907}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43153,7 +43659,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2097745474}
   - 108: {fileID: 2097745475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43216,7 +43722,7 @@ GameObject:
   - 4: {fileID: 2105117890}
   - 33: {fileID: 2105117892}
   - 23: {fileID: 2105117891}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_billboard_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43449,7 +43955,7 @@ GameObject:
   - 33: {fileID: 2117216572}
   - 23: {fileID: 2117216571}
   - 64: {fileID: 2117216573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_ice_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43527,7 +44033,7 @@ GameObject:
   - 33: {fileID: 2122099535}
   - 23: {fileID: 2122099534}
   - 64: {fileID: 2122099536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43605,7 +44111,7 @@ GameObject:
   - 33: {fileID: 2131725702}
   - 23: {fileID: 2131725701}
   - 64: {fileID: 2131725703}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_icebox_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43683,7 +44189,7 @@ GameObject:
   - 33: {fileID: 2134479785}
   - 23: {fileID: 2134479784}
   - 64: {fileID: 2134479786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_shelfs_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43760,7 +44266,7 @@ GameObject:
   - 4: {fileID: 2136423536}
   - 33: {fileID: 2136423538}
   - 23: {fileID: 2136423537}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_trashcan_01_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43823,7 +44329,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2137829091}
   - 108: {fileID: 2137829092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43876,6 +44382,52 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!1001 &2139130972
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335377550}
+    m_Modifications:
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424796, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 154112, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+      propertyPath: m_Name
+      value: MarketLight (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f01368c1c8722874a9b2a7f0250bcb94, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2140151771
 GameObject:
   m_ObjectHideFlags: 0
@@ -43962,7 +44514,7 @@ GameObject:
   - 4: {fileID: 2147389417}
   - 33: {fileID: 2147389419}
   - 23: {fileID: 2147389418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh_inner_wall_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}

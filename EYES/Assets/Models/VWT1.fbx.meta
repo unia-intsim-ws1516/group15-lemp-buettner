@@ -31,6 +31,31 @@ ModelImporter:
     100046: turn light 63.002
     100048: VW emblem split
     100050: //RootNode
+    100052: BacklightLeft
+    100054: BacklightRight
+    100056: BalloonTire.000
+    100058: BalloonTire.001
+    100060: BalloonTire.002
+    100062: BalloonTire.003
+    100064: BumperBack
+    100066: BumperFront
+    100068: DoorLeft
+    100070: DoorRight
+    100072: EngineLid
+    100074: HeadlightLeft
+    100076: HeadlightRight
+    100078: HubcabInner.000
+    100080: HubcabInner.001
+    100082: HubcabInner.002
+    100084: HubcabInner.003
+    100086: RearDoor
+    100088: TurnlightLeft
+    100090: TurnlightRight
+    100092: VWEmblem
+    100094: Wheel.000
+    100096: Wheel.001
+    100098: Wheel.002
+    100100: Wheel.003
     400000: balloonTire.004
     400002: balloonTire.005
     400004: balloonTire.006
@@ -57,6 +82,31 @@ ModelImporter:
     400046: turn light 63.002
     400048: VW emblem split
     400050: //RootNode
+    400052: BacklightLeft
+    400054: BacklightRight
+    400056: BalloonTire.000
+    400058: BalloonTire.001
+    400060: BalloonTire.002
+    400062: BalloonTire.003
+    400064: BumperBack
+    400066: BumperFront
+    400068: DoorLeft
+    400070: DoorRight
+    400072: EngineLid
+    400074: HeadlightLeft
+    400076: HeadlightRight
+    400078: HubcabInner.000
+    400080: HubcabInner.001
+    400082: HubcabInner.002
+    400084: HubcabInner.003
+    400086: RearDoor
+    400088: TurnlightLeft
+    400090: TurnlightRight
+    400092: VWEmblem
+    400094: Wheel.000
+    400096: Wheel.001
+    400098: Wheel.002
+    400100: Wheel.003
     2300000: balloonTire.004
     2300002: balloonTire.005
     2300004: balloonTire.006
@@ -83,6 +133,31 @@ ModelImporter:
     2300046: turn light 63.002
     2300048: VW emblem split
     2300050: //RootNode
+    2300052: BacklightLeft
+    2300054: BacklightRight
+    2300056: BalloonTire.000
+    2300058: BalloonTire.001
+    2300060: BalloonTire.002
+    2300062: BalloonTire.003
+    2300064: BumperBack
+    2300066: BumperFront
+    2300068: DoorLeft
+    2300070: DoorRight
+    2300072: EngineLid
+    2300074: HeadlightLeft
+    2300076: HeadlightRight
+    2300078: HubcabInner.000
+    2300080: HubcabInner.001
+    2300082: HubcabInner.002
+    2300084: HubcabInner.003
+    2300086: RearDoor
+    2300088: TurnlightLeft
+    2300090: TurnlightRight
+    2300092: VWEmblem
+    2300094: Wheel.000
+    2300096: Wheel.001
+    2300098: Wheel.002
+    2300100: Wheel.003
     3300000: balloonTire.004
     3300002: balloonTire.005
     3300004: balloonTire.006
@@ -109,6 +184,31 @@ ModelImporter:
     3300046: turn light 63.002
     3300048: VW emblem split
     3300050: //RootNode
+    3300052: BacklightLeft
+    3300054: BacklightRight
+    3300056: BalloonTire.000
+    3300058: BalloonTire.001
+    3300060: BalloonTire.002
+    3300062: BalloonTire.003
+    3300064: BumperBack
+    3300066: BumperFront
+    3300068: DoorLeft
+    3300070: DoorRight
+    3300072: EngineLid
+    3300074: HeadlightLeft
+    3300076: HeadlightRight
+    3300078: HubcabInner.000
+    3300080: HubcabInner.001
+    3300082: HubcabInner.002
+    3300084: HubcabInner.003
+    3300086: RearDoor
+    3300088: TurnlightLeft
+    3300090: TurnlightRight
+    3300092: VWEmblem
+    3300094: Wheel.000
+    3300096: Wheel.001
+    3300098: Wheel.002
+    3300100: Wheel.003
     4300000: Body TOne
     4300002: hub T1.003
     4300004: hubcap speherical.007
@@ -135,6 +235,19 @@ ModelImporter:
     4300046: Door T1
     4300048: Door T1.001
     4300050: Headlight pre-68
+    4300052: Body
+    4300054: HeadlightRight
+    4300056: DoorRight
+    4300058: RearDoor
+    4300060: EngineLid
+    4300062: VWEmblem
+    4300064: BumperFront
+    4300066: BumperBack
+    4300068: TurnlightRight
+    4300070: BacklightLeft
+    4300072: Wheel.000
+    4300074: HubcabInner.000
+    4300076: BalloonTire.000
   materials:
     importMaterials: 1
     materialName: 0
