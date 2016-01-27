@@ -5,32 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class menuScript : MonoBehaviour 
 {
-	public Canvas QuitMenu;
-	public Canvas Levelmenu;
-	public Button playbutton;
-	public Button quitbutton;
-	public Button levelbutton;
-	public GUIText scoreText;
-	public Canvas EndMenu;
-	public Canvas Diseasemenu;
-	public Button Infobutton;
+	public GameObject QuitMenu;
+    public GameObject LevelMenu;
+	public Button QuitButton;
+	public Button LevelButton;
+    public GameObject DiseaseMenu;
+	public Button InfoButton;
 
 
 	void Start ()  // disables different supmenus and activates the buttons
 
 	{
-		QuitMenu = QuitMenu.GetComponent<Canvas>();
-		QuitMenu.enabled = false;
-		Levelmenu = Levelmenu.GetComponent<Canvas>();
-		Levelmenu.enabled = false;
-		Diseasemenu = Diseasemenu.GetComponent<Canvas>();
-		Diseasemenu.enabled = false;
-		EndMenu = EndMenu.GetComponent<Canvas>();
-		EndMenu.enabled = false;
-		playbutton = playbutton.GetComponent<Button> ();
-		quitbutton = quitbutton.GetComponent<Button> ();
-		levelbutton = levelbutton.GetComponent<Button> ();
-		Infobutton = Infobutton.GetComponent<Button> ();
+		//QuitMenu = QuitMenu.GetComponent<Canvas>();
+		//QuitMenu.enabled = false;
+        QuitMenu.SetActive (false);
+		//Levelmenu = Levelmenu.GetComponent<Canvas>();
+		//Levelmenu.enabled = false;
+        LevelMenu.SetActive (false);
+		//Diseasemenu = Diseasemenu.GetComponent<Canvas>();
+		//Diseasemenu.enabled = false;
+        DiseaseMenu.SetActive (false);
+		QuitButton = QuitButton.GetComponent<Button> ();
+		LevelButton = LevelButton.GetComponent<Button> ();
+		InfoButton = InfoButton.GetComponent<Button> ();
 
 
 
@@ -41,25 +38,29 @@ public class menuScript : MonoBehaviour
 	 public void ExitPress() //this function will be used on our Exit button
 
 	 {
-		QuitMenu.enabled = true; //enable the Quit menu when we click the Exit button
-		playbutton.enabled = false; //then disable the Play and Exit buttons so they cannot be clicked
-		quitbutton.enabled = false;
-		levelbutton.enabled = false;
-		Levelmenu.enabled = false;
-		Infobutton.enabled = false;
-		Diseasemenu.enabled = false;
+		//QuitMenu.enabled = true; //enable the Quit menu when we click the Exit button
+        QuitMenu.SetActive (true);
+		QuitButton.enabled = false;
+		LevelButton.enabled = false;
+		//Levelmenu.enabled = false;
+        LevelMenu.SetActive (false);
+		InfoButton.enabled = false;
+		//DiseaseMenu.enabled = false;
+        DiseaseMenu.SetActive (false);
 	}
 
 	public void NoPress() //this function will be used for our "NO" button in our Quit Menu
 
 	{
-		QuitMenu.enabled = false;	//we'll disable the quit menu, meaning it won't be visible anymore
-		Levelmenu.enabled = false;
-		playbutton.enabled = true; //enable the Play and Exit buttons again so they can be clicked
-		quitbutton.enabled = true;
-		levelbutton.enabled = true;
-		Infobutton.enabled = true;
-		Diseasemenu.enabled = false;
+		//QuitMenu.enabled = false;	//we'll disable the quit menu, meaning it won't be visible anymore
+        QuitMenu.SetActive (false);
+		//Levelmenu.enabled = false;
+        LevelMenu.SetActive (false);
+		QuitButton.enabled = true;
+		LevelButton.enabled = true;
+		InfoButton.enabled = true;
+		//DiseaseMenu.enabled = false;
+        DiseaseMenu.SetActive (false);
 
 	
 
@@ -87,22 +88,24 @@ public class menuScript : MonoBehaviour
 	public void Levelpress ()  // this will be used for the Level menu 
 		
 	{
-		Levelmenu.enabled = true; //
-		playbutton.enabled = false; //
-		quitbutton.enabled = false;
-		levelbutton.enabled = false;
-		Infobutton.enabled = false;
-		Diseasemenu.enabled = false;
+		//Levelmenu.enabled = true; //
+        LevelMenu.SetActive (true);
+		QuitButton.enabled = false;
+		LevelButton.enabled = false;
+		InfoButton.enabled = false;
+		//DiseaseMenu.enabled = false;
+        DiseaseMenu.SetActive (false);
 	}
 
 	public void Infopress () // this will be used for the info menu
 	{
-		Diseasemenu.enabled = true;
-		Levelmenu.enabled = false; //
-		playbutton.enabled = false; //
-		quitbutton.enabled = false;
-		levelbutton.enabled = false;
-		Infobutton.enabled = false;
+		//DiseaseMenu.enabled = true;
+        DiseaseMenu.SetActive (true);
+		//Levelmenu.enabled = false; //
+        LevelMenu.SetActive (false);
+		QuitButton.enabled = false;
+		LevelButton.enabled = false;
+		InfoButton.enabled = false;
 
 	}
 

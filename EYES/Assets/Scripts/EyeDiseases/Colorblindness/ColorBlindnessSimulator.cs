@@ -66,7 +66,6 @@ namespace eyediseases
         public ColorBlindnessSimulator ()
             : base("Color vision deficiency")
         {
-            Debug.Log ("ColorBlindnessSimulator::ctor");
             XYZ2RGB.SetRow (0, new Vector4  (0.4124f,  0.3576f,  0.1805f, 0.0f));
             XYZ2RGB.SetRow (1, new Vector4 ( 0.2126f,  0.7152f,  0.0722f, 0.0f));
             XYZ2RGB.SetRow (2, new Vector4 ( 0.0193f,  0.1192f,  0.9505f, 0.0f));
@@ -74,7 +73,6 @@ namespace eyediseases
         }
 
         void Awake () {
-            Debug.Log ("ColorBlindnessSimulator::Awake");
 
             L.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 1);
             M.LoadFromCSV ("responsivityFunctions/linss10e_5.csv", 0, 2);
@@ -111,7 +109,6 @@ namespace eyediseases
         }
 
         public void Start () {
-            Debug.Log ("ColorBlindnessSimulator::Start");
         }
 
         #region Overrides
@@ -234,8 +231,6 @@ namespace eyediseases
                 Gamma[2,2] = (S * Z).integral();
                 Gamma[2,3] = 0.0f;
                 Gamma.SetRow (3, new Vector4(0.0f, 0.0f, 0.0f, 1.0f));
-
-                //Debug.Log ("Gamma: " + Gamma);
 
                 Matrix4x4 CVD = GammaNormal.inverse * Gamma * XYZ2RGB;
 

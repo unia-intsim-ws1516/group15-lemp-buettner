@@ -14,7 +14,6 @@ public class PlayerInventory : MonoBehaviour
     private Inventory mainInventory;
     private Inventory characterSystemInventory;
     private Tooltip toolTip;
-    private DiseaseOverviewList diseaseList;
 
     private InputManager inputManagerDatabase;
 
@@ -186,8 +185,6 @@ public class PlayerInventory : MonoBehaviour
             characterSystemInventory = characterSystem.GetComponent<Inventory>();
         if (craftSystem != null)
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
-        if (diseaseOverview != null)
-            diseaseList = diseaseOverview.GetComponent<DiseaseOverviewList>();
     }
 
     //void UpdateHPBar()

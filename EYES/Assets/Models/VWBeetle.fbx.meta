@@ -63,6 +63,8 @@ ModelImporter:
     100110: Taillights.001
     100112: TrunkHood
     100114: VWEmblem
+    100116: Interior
+    100118: SteeringWheel
     400000: body beetle.001
     400002: body beetle.002
     400004: bumper back
@@ -121,6 +123,8 @@ ModelImporter:
     400110: Taillights.001
     400112: TrunkHood
     400114: VWEmblem
+    400116: Interior
+    400118: SteeringWheel
     2300000: body beetle.001
     2300002: body beetle.002
     2300004: bumper back
@@ -179,6 +183,8 @@ ModelImporter:
     2300110: Taillights.001
     2300112: TrunkHood
     2300114: VWEmblem
+    2300116: Interior
+    2300118: SteeringWheel
     3300000: body beetle.001
     3300002: body beetle.002
     3300004: bumper back
@@ -237,6 +243,8 @@ ModelImporter:
     3300110: Taillights.001
     3300112: TrunkHood
     3300114: VWEmblem
+    3300116: Interior
+    3300118: SteeringWheel
     4300000: body beetle
     4300002: seat x1.002
     4300004: seat x1.005
@@ -289,6 +297,8 @@ ModelImporter:
     4300098: Hupcap.000
     4300100: Taillights.000
     4300102: DoorRight
+    4300104: Interior
+    4300106: SteeringWheel
   materials:
     importMaterials: 1
     materialName: 0

@@ -63,15 +63,11 @@ namespace eyediseases
             float crd = 0.024f;
             float crd2 = crd / (1.0f + diopters * crd);
 
-            Debug.Log ("crd2 = " + crd2);
-
             float minF = 0.02068966f;
             float maxF = 0.024f;
 
             // compute the required focal length for the diseased eye and the given distance
             float f = dist * crd2 / (dist + crd2);
-
-            Debug.Log ("f = " + f);
 
             // if the lense can provide the focal length, approve.
             if ( minF <= f && f <= maxF) {
@@ -99,8 +95,13 @@ namespace eyediseases
         public override void showConfig (bool show) {
             if (ConfigDialog == null)
                 return;
-            
-            ConfigDialog.SetActive (show);
+
+            if (show) {
+                ConfigDialog.SetActive (true);
+                ConfigDialog.CurrentValueLable.text = diopters.ToString ();
+            } else {
+                ConfigDialog.SetActive (false);
+            }
         }
 
         public override bool isConfigDisplayed () {

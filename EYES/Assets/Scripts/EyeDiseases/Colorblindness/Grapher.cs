@@ -251,7 +251,13 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
             float weight = 1f;
             if (idxRadius != 0) {
-                weight = 1.0f - (float)Mathf.Abs(idx - centerIdx) / (float)idxRadius;
+                // gaussian weighting
+                float x = (float)(idx - centerIdx);
+                float sigma = idxRadius / 3f;
+                weight = Mathf.Exp(-x*x/(2.0f * sigma * sigma));
+
+                // linear weighting
+                //weight = 1.0f - (float)Mathf.Abs(idx - centerIdx) / (float)idxRadius;
             }
 
             float newF = T.anchorMax.y + (delta.y / height) * weight;
