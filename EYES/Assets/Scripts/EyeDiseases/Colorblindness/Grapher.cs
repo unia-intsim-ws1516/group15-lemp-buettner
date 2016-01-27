@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using eyediseases;
 
-public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IScrollHandler
+public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IScrollHandler
 {
     private DiscreteFunction L = null;
     private DiscreteFunction M = null;
@@ -21,6 +21,8 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
     private List<int> draggedPointsM = new List<int> ();
     /* Null equas not draggable */
     private List<int> draggedPointsS = new List<int> ();
+    private int centerIdx = -1;
+    private int idxRadius = -1;
 
     private float dragRadius = 15.0f; // in px
     public GameObject dragRadiusGizmo;
@@ -146,14 +148,22 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
     public void OnBeginDrag (PointerEventData eventData) {
         //Debug.Log ("OnBeginDrag: Click(" + eventData.pressPosition + "), dot(" + dot.transform.position + ")");
 
+        float closestDist = float.MaxValue;
         if (draggedPointsL != null) {
             
             draggedPointsL.Clear ();
             for (int i = 0; i < LPoints.Length; ++i) {
                 GameObject dot = LPoints[i];
                 Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
-                if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
+                float dist = (dotPos - eventData.pressPosition).magnitude;
+
+                if (dist < dragRadius) {
                     draggedPointsL.Add (i);
+
+                    if (dist < closestDist) {
+                        centerIdx = i;
+                        closestDist = dist;
+                    }
                 }
             }
         }
@@ -164,8 +174,14 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
             for (int i = 0; i < MPoints.Length; ++i) {
                 GameObject dot = MPoints[i];
                 Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
-                if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
+                float dist = (dotPos - eventData.pressPosition).magnitude;
+                if (dist < dragRadius) {
                     draggedPointsM.Add (i);
+
+                    if (dist < closestDist) {
+                        centerIdx = i;
+                        closestDist = dist;
+                    }
                 }
             }
         }
@@ -176,9 +192,32 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
             for (int i = 0; i < SPoints.Length; ++i) {
                 GameObject dot = SPoints[i];
                 Vector2 dotPos = new Vector2 (dot.transform.position.x, dot.transform.position.y);
-                if ((dotPos - eventData.pressPosition).magnitude < dragRadius) {
+                float dist = (dotPos - eventData.pressPosition).magnitude;
+                if (dist < dragRadius) {
                     draggedPointsS.Add (i);
+
+                    if (dist < closestDist) {
+                        centerIdx = i;
+                        closestDist = dist;
+                    }
                 }
+            }
+        }
+
+        // Determine the index radius
+        if (draggedPointsL != null) {
+            foreach (int idx in draggedPointsL) {
+                idxRadius = Mathf.Max(idxRadius, Mathf.Abs(centerIdx - idx));
+            }
+        }
+        if (draggedPointsM != null) {
+            foreach (int idx in draggedPointsM) {
+                idxRadius = Mathf.Max(idxRadius, Mathf.Abs(centerIdx - idx));
+            }
+        }
+        if (draggedPointsS != null) {
+            foreach (int idx in draggedPointsS) {
+                idxRadius = Mathf.Max(idxRadius, Mathf.Abs(centerIdx - idx));
             }
         }
     }
@@ -195,6 +234,11 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
         }
     }
 
+    public void OnEndDrag (PointerEventData eventData) {
+        centerIdx = -1;
+        idxRadius = -1;
+    }
+
     /**
      * Updates the points in points specified by indices in y-direction and
      * updates the appropriate function value of f as well.
@@ -204,9 +248,16 @@ public class Grapher : MonoBehaviour, IBeginDragHandler, IDragHandler, IPointerE
             RectTransform TParent = gameObject.GetComponent<RectTransform> ();
             float height = TParent.rect.height;
             RectTransform T = points[idx].GetComponent<RectTransform> ();
-            float newF = T.anchorMax.y + (delta.y / height);
+
+            float weight = 1f;
+            if (idxRadius != 0) {
+                weight = 1.0f - (float)Mathf.Abs(idx - centerIdx) / (float)idxRadius;
+            }
+
+            float newF = T.anchorMax.y + (delta.y / height) * weight;
             newF = Mathf.Max (newF, 0.0f);
             newF = Mathf.Min (newF, 1.0f);
+
             f.values[idx] = newF;
             T.anchorMin = T.anchorMax = new Vector2 (T.anchorMax.x, newF);
         }

@@ -9,15 +9,10 @@ public class DiseaseListItem : MonoBehaviour {
     public Toggle diseaseSwitch;
     public Text diseaseSwitchLabel;
     public eyediseases.EyeDisease disease;
-    private bool isConfigDisplayed = false;
 
     public void OnShowConfig () {
         Debug.Log ("Show configuration");
-        if (!isConfigDisplayed)
-            disease.showConfig ();
-        else
-            disease.hideConfig ();
-        isConfigDisplayed = !isConfigDisplayed;
+        disease.showConfig (!disease.isConfigDisplayed ());
     }
 
     public void OnToggle () {

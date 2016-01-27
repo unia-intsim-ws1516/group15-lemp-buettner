@@ -24,8 +24,8 @@ namespace eyediseases
             diseaseName = name;
         }
 
-        public abstract void showConfig();
-        public abstract void hideConfig();
+        public abstract void showConfig(bool show);
+        public abstract bool isConfigDisplayed();
 
         /* Use this for initialization */
         void Start () {

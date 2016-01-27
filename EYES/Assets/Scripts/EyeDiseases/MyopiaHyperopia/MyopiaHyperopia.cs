@@ -96,18 +96,18 @@ namespace eyediseases
             dof.enabled = true;
         }
 
-        public override void showConfig () {
+        public override void showConfig (bool show) {
             if (ConfigDialog == null)
                 return;
             
-            ConfigDialog.SetActive (true);
+            ConfigDialog.SetActive (show);
         }
 
-        public override void hideConfig () {
+        public override bool isConfigDisplayed () {
             if (ConfigDialog == null)
-                return;
+                return false;
 
-            ConfigDialog.SetActive (false);
+            return ConfigDialog.isActiveAndEnabled;
         }
 
         protected override bool CheckResources () {

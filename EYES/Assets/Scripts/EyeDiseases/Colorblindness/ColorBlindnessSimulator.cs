@@ -117,20 +117,27 @@ namespace eyediseases
         #region Overrides
 
 
-        public override void showConfig () {
-            // Important to setActive(true) first in order to get the scripts executed
-			if (ConfigDialog != null) {
+        public override void showConfig (bool show) {
+            if (ConfigDialog == null)
+                return;
+            
+            if (show) {
+                // Important to setActive(true) first in order to get the scripts executed
 				ConfigDialog.SetActive (true);
 				ConfigDialog.SetLCurve (L);
 				ConfigDialog.SetMCurve (M);
 				ConfigDialog.SetSCurve (S); 
-			}
-        }
 
-        public override void hideConfig () {
-            if (ConfigDialog != null) {
+            } else {
                 ConfigDialog.SetActive (false);
             }
+        }
+
+        public override bool isConfigDisplayed () {
+            if (ConfigDialog == null)
+                return false;
+            
+            return ConfigDialog.isActiveAndEnabled;
         }
 
         public void ResetL () {
