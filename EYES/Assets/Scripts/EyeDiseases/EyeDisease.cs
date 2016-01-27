@@ -25,6 +25,7 @@ namespace eyediseases
         }
 
         public abstract void showConfig();
+        public abstract void hideConfig();
 
         /* Use this for initialization */
         void Start () {

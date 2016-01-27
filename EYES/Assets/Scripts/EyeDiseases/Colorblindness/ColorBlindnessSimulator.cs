@@ -127,6 +127,12 @@ namespace eyediseases
 			}
         }
 
+        public override void hideConfig () {
+            if (ConfigDialog != null) {
+                ConfigDialog.SetActive (false);
+            }
+        }
+
         public void ResetL () {
             for (int i = 0; i < L.values.Count; ++i) {
                 L.values[i] = Loriginal.values[i];

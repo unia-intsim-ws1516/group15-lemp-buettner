@@ -103,6 +103,13 @@ namespace eyediseases
             ConfigDialog.SetActive (true);
         }
 
+        public override void hideConfig () {
+            if (ConfigDialog == null)
+                return;
+
+            ConfigDialog.SetActive (false);
+        }
+
         protected override bool CheckResources () {
             return true;
         }

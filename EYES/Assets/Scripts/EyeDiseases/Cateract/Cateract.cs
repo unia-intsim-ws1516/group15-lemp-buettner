@@ -32,6 +32,9 @@ namespace eyediseases
         public override void showConfig () {
         }
 
+        public override void hideConfig () {
+        }
+
         protected override bool CheckResources () {
             return true;
         }

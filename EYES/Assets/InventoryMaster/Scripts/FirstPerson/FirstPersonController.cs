@@ -22,6 +22,7 @@ public class FirstPersonController : MonoBehaviour
     GameObject inventory;
     GameObject craftSystem;
     GameObject characterSystem;
+    GameObject diseaseOverview;
 
     Camera firstPersonCamera;
 
@@ -41,6 +42,8 @@ public class FirstPersonController : MonoBehaviour
                 craftSystem = playerInv.craftSystem;
             if (playerInv.characterSystem != null)
                 characterSystem = playerInv.characterSystem;
+            if (playerInv.diseaseOverview != null)
+                diseaseOverview = playerInv.diseaseOverview;
         }
     }
 
@@ -86,6 +89,8 @@ public class FirstPersonController : MonoBehaviour
         else if (characterSystem != null && characterSystem.activeSelf)
             return true;
         else if (craftSystem != null && craftSystem.activeSelf)
+            return true;
+        else if (diseaseOverview != null && diseaseOverview.activeSelf)
             return true;
         else
             return false;

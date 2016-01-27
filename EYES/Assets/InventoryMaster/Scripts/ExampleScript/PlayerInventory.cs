@@ -8,11 +8,13 @@ public class PlayerInventory : MonoBehaviour
     public GameObject inventory;
     public GameObject characterSystem;
     public GameObject craftSystem;
+    public GameObject diseaseOverview;
     private Inventory craftSystemInventory;
     private CraftSystem cS;
     private Inventory mainInventory;
     private Inventory characterSystemInventory;
     private Tooltip toolTip;
+    private DiseaseOverviewList diseaseList;
 
     private InputManager inputManagerDatabase;
 
@@ -184,6 +186,8 @@ public class PlayerInventory : MonoBehaviour
             characterSystemInventory = characterSystem.GetComponent<Inventory>();
         if (craftSystem != null)
             craftSystemInventory = craftSystem.GetComponent<Inventory>();
+        if (diseaseOverview != null)
+            diseaseList = diseaseOverview.GetComponent<DiseaseOverviewList>();
     }
 
     //void UpdateHPBar()
@@ -328,6 +332,10 @@ public class PlayerInventory : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            diseaseOverview.SetActive(!diseaseOverview.activeSelf);
+        }
     }
 
 }
