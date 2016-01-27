@@ -40,11 +40,11 @@ public class menuScript : MonoBehaviour
 	 {
 		//QuitMenu.enabled = true; //enable the Quit menu when we click the Exit button
         QuitMenu.SetActive (true);
-		QuitButton.enabled = false;
-		LevelButton.enabled = false;
+		QuitButton.interactable = false;
+		LevelButton.interactable = false;
 		//Levelmenu.enabled = false;
         LevelMenu.SetActive (false);
-		InfoButton.enabled = false;
+		InfoButton.interactable = false;
 		//DiseaseMenu.enabled = false;
         DiseaseMenu.SetActive (false);
 	}
@@ -56,9 +56,9 @@ public class menuScript : MonoBehaviour
         QuitMenu.SetActive (false);
 		//Levelmenu.enabled = false;
         LevelMenu.SetActive (false);
-		QuitButton.enabled = true;
-		LevelButton.enabled = true;
-		InfoButton.enabled = true;
+		QuitButton.interactable = true;
+		LevelButton.interactable = true;
+		InfoButton.interactable = true;
 		//DiseaseMenu.enabled = false;
         DiseaseMenu.SetActive (false);
 
@@ -90,9 +90,9 @@ public class menuScript : MonoBehaviour
 	{
 		//Levelmenu.enabled = true; //
         LevelMenu.SetActive (true);
-		QuitButton.enabled = false;
-		LevelButton.enabled = false;
-		InfoButton.enabled = false;
+		QuitButton.interactable = false;
+		LevelButton.interactable = false;
+		InfoButton.interactable = false;
 		//DiseaseMenu.enabled = false;
         DiseaseMenu.SetActive (false);
 	}
@@ -103,9 +103,9 @@ public class menuScript : MonoBehaviour
         DiseaseMenu.SetActive (true);
 		//Levelmenu.enabled = false; //
         LevelMenu.SetActive (false);
-		QuitButton.enabled = false;
-		LevelButton.enabled = false;
-		InfoButton.enabled = false;
+        QuitButton.interactable = false;
+		LevelButton.interactable = false;
+        InfoButton.interactable = false;
 
 	}
 
