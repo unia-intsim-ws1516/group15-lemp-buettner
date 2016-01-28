@@ -5260,6 +5260,22 @@ Prefab:
       propertyPath: m_ImportantGI
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 185614, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 160790, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 104498, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 165764, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
   m_IsPrefabParent: 0

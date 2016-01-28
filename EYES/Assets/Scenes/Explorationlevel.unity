@@ -4264,7 +4264,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 2
+  m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: a7bed68887a07e34394d4191b3081359, type: 3}
   m_Sun: {fileID: 0}
@@ -4286,15 +4286,15 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 3
     m_Resolution: 1
-    m_BakeResolution: 10
-    m_TextureWidth: 1024
+    m_BakeResolution: 5
+    m_TextureWidth: 512
     m_TextureHeight: 1024
     m_AOMaxDistance: 1
     m_Padding: 2
     m_CompAOExponent: 1
     m_LightmapParameters: {fileID: 15201, guid: 0000000000000000f000000000000000,
       type: 0}
-    m_TextureCompression: 0
+    m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
@@ -22967,15 +22967,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.14378
+      value: -14.53
       objectReference: {fileID: 0}
     - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.09
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.8903418
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 404322, guid: 9b3a5eaef732f49efa8edeea53f4c837, type: 2}
       propertyPath: m_LocalRotation.x
@@ -26497,7 +26497,7 @@ Prefab:
       objectReference: {fileID: 1121718742}
     - target: {fileID: 190210, guid: 6f3a748f19b2f564ebb045c77612621c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f3a748f19b2f564ebb045c77612621c, type: 2}
@@ -27504,8 +27504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23cbac8d24236f4791c410dd08b2486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlurSize: 1
-  BlurIterations: 3
+  BlurSize: 9
+  BlurIterations: 5
   BlurIntensity: {fileID: 2800000, guid: 49b54a04a8e5a184db33065a3fbecb00, type: 3}
   BlurShader: {fileID: 4800000, guid: bf79f4d7d0d9d424286bc1cebdb17c25, type: 3}
 --- !u!1 &1122968633
