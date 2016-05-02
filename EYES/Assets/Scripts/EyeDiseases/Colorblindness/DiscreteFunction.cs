@@ -39,8 +39,7 @@ namespace eyediseases {
             Debug.Assert (csvYColumn >= 0);
 
             // Load the responsivity functions
-            string text = System.IO.File.ReadAllText(path);
-            string[] lines = text.Split("\n"[0]);
+            string[] lines = System.IO.File.ReadAllLines(path);
 
             values.Clear ();
             values.Capacity = lines.Length;
